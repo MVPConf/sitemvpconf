@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl mb-4 text-blue-100 max-w-3xl mx-auto leading-relaxed">
             O maior encontro de especialistas Microsoft do Brasil. 
-            Conecte-se com líderes tecnológicos e descubra as últimas inovações.
+            Conecte-se com líderes renomados e descubra as últimas inovações.
           </p>
           <p className="text-base sm:text-lg text-blue-200 mb-12">
             Uma experiência única de aprendizado, networking e inspiração
@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 card-hover">
             <Calendar className="h-8 w-8 mx-auto mb-4 text-blue-200" />
             <h3 className="text-lg font-semibold mb-2">Data</h3>
-            <p className="text-blue-100">15-16 Março 2025</p>
+            <p className="text-blue-100">24-25 Outubro 2025</p>
           </div>
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 card-hover">
             <MapPin className="h-8 w-8 mx-auto mb-4 text-blue-200" />

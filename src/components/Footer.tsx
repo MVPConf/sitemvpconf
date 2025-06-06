@@ -1,10 +1,17 @@
 import React from 'react';
-import { Award, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
 import { useLegalPages } from './LegalPages';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   const { openPrivacyPolicy, openTermsOfUse, openCodeOfConduct, LegalPagesComponent } = useLegalPages();
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -14,9 +21,15 @@ const Footer: React.FC = () => {
           <div className="py-16 grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Brand Section */}
             <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="p-2 bg-ms-blue-600 rounded-lg">
-                  <Award className="h-8 w-8 text-white" />
+              <div className="flex items-center space-x-3 mb-6 cursor-pointer"
+              onClick={() => scrollToSection("#hero")}
+              >
+                <div className="p-2 bg-ms-white-600 rounded-lg">
+                  <img
+                    src="/logo_blue.png"
+                    alt="Logo MVP Conf"
+                    className="h-8 w-8 bg-ms-white-600 rounded-lg"
+                  />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold">MVP Conf</h3>
@@ -28,17 +41,20 @@ const Footer: React.FC = () => {
                 compartilhando conhecimento e inspirando inovação.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="p-2 bg-gray-800 rounded-lg hover:bg-ms-blue-600 transition-colors">
+                <a href="https://facebook.com/MVPConference" className="p-2 bg-gray-800 rounded-lg hover:bg-ms-blue-600 transition-colors">
                   <Facebook className="h-5 w-5" />
                 </a>
-                <a href="#" className="p-2 bg-gray-800 rounded-lg hover:bg-ms-blue-600 transition-colors">
+                <a href="https://twitter.com/MVPConference" className="p-2 bg-gray-800 rounded-lg hover:bg-ms-blue-600 transition-colors">
                   <Twitter className="h-5 w-5" />
                 </a>
-                <a href="#" className="p-2 bg-gray-800 rounded-lg hover:bg-ms-blue-600 transition-colors">
+                <a href="https://www.linkedin.com/company/mvp-conf" className="p-2 bg-gray-800 rounded-lg hover:bg-ms-blue-600 transition-colors">
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href="#" className="p-2 bg-gray-800 rounded-lg hover:bg-ms-blue-600 transition-colors">
+                <a href="https://www.instagram.com/mvpconf/" className="p-2 bg-gray-800 rounded-lg hover:bg-ms-blue-600 transition-colors">
                   <Instagram className="h-5 w-5" />
+                </a>
+                <a href="https://www.youtube.com/@mvpconf" className="p-2 bg-gray-800 rounded-lg hover:bg-ms-blue-600 transition-colors">
+                  <Youtube className="h-5 w-5" />
                 </a>
               </div>
             </div>
@@ -106,21 +122,6 @@ const Footer: React.FC = () => {
                   <Mail className="h-5 w-5 text-ms-blue-400 mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="text-gray-300">contato@mvpconf.com.br</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Phone className="h-5 w-5 text-ms-blue-400 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-gray-300">(11) 3456-7890</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <MapPin className="h-5 w-5 text-ms-blue-400 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-gray-300">
-                      Av. Paulista, 1578<br />
-                      São Paulo, SP
-                    </p>
                   </div>
                 </div>
               </div>

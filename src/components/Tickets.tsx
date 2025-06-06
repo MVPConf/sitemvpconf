@@ -97,8 +97,9 @@ const Tickets: React.FC = () => {
                 selectedPlan === plan.id ? 'ring-2 ring-ms-blue-600' : ''
               }`}
             >
+
               {plan.popular && (
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="absolute top-1 left-1/2 -translate-x-1/2">
                   <span className="bg-ms-blue-600 text-white px-4 py-1 rounded-full text-sm font-medium">
                     Mais Popular
                   </span>
