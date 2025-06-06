@@ -75,9 +75,9 @@ const Contact: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-12">
           {/* Informações de Contato */}
-          <div className="space-y-8">
+          {/* <div className="space-y-8">
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Fale Conosco</h3>
               
@@ -119,17 +119,7 @@ const Contact: React.FC = () => {
                 </div>
               </div>
             </div>
-
-            {/* Horário de Atendimento */}
-            <div className="bg-gradient-to-br from-ms-blue-50 to-ms-blue-100 rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Horário de Atendimento</h3>
-              <div className="space-y-2 text-gray-700">
-                <p><strong>Segunda à Sexta:</strong> 09:00 - 18:00</p>
-                <p><strong>Sábado:</strong> 09:00 - 12:00</p>
-                <p><strong>Domingo:</strong> Fechado</p>
-              </div>
-            </div>
-          </div>
+          </div> */}
 
           {/* Formulário de Contato */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
