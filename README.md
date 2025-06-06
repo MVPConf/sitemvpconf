@@ -87,7 +87,7 @@ Site oficial do **MVP Conf 2025 Brasil**, o maior evento de especialistas Micros
 ```bash
 # Clone o repositório
 git clone https://github.com/MVPConf/sitemvpconf.git
-cd mvp-conf-2025
+cd sitemvpconf
 
 # Instale as dependências
 npm install

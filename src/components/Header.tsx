@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Award } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,10 +37,15 @@ const Header: React.FC = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="flex items-center space-x-3">
-            <div className="p-2 bg-ms-blue-600 rounded-lg">
-              <Award className="h-8 w-8 text-white" />
-            </div>
+          <div className="flex items-center space-x-3 cursor-pointer"
+               onClick={() => scrollToSection("#hero")} >
+            <div className="p-2 bg-ms-white-600 rounded-lg">
+              <img
+                src="/logo_blue.png"
+                alt="Logo MVP Conf"
+                className="h-8 w-8 bg-ms-white-600 rounded-lg"
+              />
+              </div>
             <div>
               <h1 className={`text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
                 MVP Conf
