@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Car, Plane, Train, Clock } from 'lucide-react';
+import { MapPin, Car, Hotel, Train, Clock } from 'lucide-react';
 
 const Location: React.FC = () => {
   return (
@@ -20,7 +20,7 @@ const Location: React.FC = () => {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
               <div className="aspect-video bg-gradient-to-br from-ms-blue-100 to-ms-blue-200 relative">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.6564!3d-23.5618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt!2sbr!4v1635959876543!5m2!1spt!2sbr"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.8801966183287!2d-46.64216172365544!3d-23.5727458787919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5999978b48df%3A0xceb9c9263e11fa9e!2sUNIP%20-%20Para%C3%ADso%2FVergueiro!5e0!3m2!1sen!2sbr!4v1749242947469!5m2!1sen!2sbr"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -41,11 +41,11 @@ const Location: React.FC = () => {
                   <MapPin className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Centro de Convenções Faria Lima</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">UNIP Campus Paraíso/Vergueiro</h3>
                   <p className="text-gray-600">
-                    Av. Brigadeiro Faria Lima, 2232<br />
-                    Jardim Paulistano, São Paulo - SP<br />
-                    CEP: 01451-905
+                    Rua Vergueiro, 1211<br />
+                    Paraíso, São Paulo/SP<br />
+                    CEP: 01504-000
                   </p>
                 </div>
               </div>
@@ -56,13 +56,13 @@ const Location: React.FC = () => {
                   <div className="flex items-center space-x-3">
                     <Clock className="h-5 w-5 text-ms-blue-600" />
                     <span className="text-gray-700">
-                      <strong>Dia 15/03:</strong> 08:00 - 18:00
+                      <strong>Dia 24/10:</strong> 09:00 - 18:00
                     </span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Clock className="h-5 w-5 text-ms-blue-600" />
                     <span className="text-gray-700">
-                      <strong>Dia 16/03:</strong> 08:00 - 17:00
+                      <strong>Dia 25/10:</strong> 09:00 - 18:00
                     </span>
                   </div>
                 </div>
@@ -79,7 +79,8 @@ const Location: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Metrô</h4>
-                    <p className="text-gray-600 text-sm">Linha 4-Amarela - Estação Faria Lima (5 min caminhada)</p>
+                    <p className="text-gray-600 text-sm">Estação Paraíso – Linha Azul</p>
+                    <p className="text-gray-600 text-sm">Estação Vergueiro – Linha Azul</p>
                   </div>
                 </div>
 
@@ -89,40 +90,46 @@ const Location: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Carro</h4>
-                    <p className="text-gray-600 text-sm">Estacionamento no local (R$ 15/dia)</p>
+                    <p className="text-gray-600 text-sm">Estacionamento no local</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
                   <div className="p-2 bg-purple-100 rounded-lg">
-                    <Plane className="h-5 w-5 text-purple-600" />
+                    <MapPin className="h-5 w-5 text-purple-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Aeroporto</h4>
-                    <p className="text-gray-600 text-sm">40 min de Congonhas, 60 min de Guarulhos</p>
+                    <h4 className="font-semibold text-gray-900">Pontos de Referência</h4>
+                    <p className="text-gray-600 text-sm">Avenida Paulista</p>
+                    <p className="text-gray-600 text-sm">Avenida 23 de Maio  </p>
+                    <p className="text-gray-600 text-sm">Centro Cultural de São Paulo  </p> 
+                    <p className="text-gray-600 text-sm">Centro de Controle do Metrô </p> 
+                    <p className="text-gray-600 text-sm">Hospital AC Camargo</p>   
+                    <p className="text-gray-600 text-sm">Hospital Oswaldo Cruz</p> 
                   </div>
-                </div>
+                </div>               
               </div>
             </div>
 
-            {/* Hotéis Próximos */}
-            <div className="bg-gradient-to-br from-ms-blue-50 to-ms-blue-100 rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Hotéis Recomendados</h3>
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-gray-700">Hotel Faria Lima Premium</span>
-                  <span className="text-ms-blue-600 font-medium">2 min</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-700">Comfort Suites Berrini</span>
-                  <span className="text-ms-blue-600 font-medium">8 min</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-700">Hilton São Paulo Morumbi</span>
-                  <span className="text-ms-blue-600 font-medium">12 min</span>
-                </div>
+            {/* Hotéis */}
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Hotéis Recomendados</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-4">
+                  <div className="p-2 bg-cyan-100 rounded-lg">
+                    <Hotel className="h-5 w-5 text-cyan-600" />
+                  </div>
+                  <div>
+                    <p className="text-gray-600 text-sm">Angatu Hostel - 2.4km</p>
+                    <p className="text-gray-600 text-sm">Pullman São Paulo Ibirapuera - 2.4km</p>
+                    <p className="text-gray-600 text-sm">Transamerica Executive Nova Paulista - 2.5 km</p> 
+                    <p className="text-gray-600 text-sm">Slaviero São Paulo Moema - 2.5 km</p> 
+                    <p className="text-gray-600 text-sm">Ibis SP Congonhas - 2.6 km</p>   
+                  </div>
+                </div>                
               </div>
             </div>
+
           </div>
         </div>
       </div>

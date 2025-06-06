@@ -189,14 +189,23 @@ const Sponsors: React.FC = () => {
               Junte-se a nós e apoie a maior comunidade de especialistas Microsoft do Brasil. 
               Diversas oportunidades de patrocínio disponíveis.
             </p>
-            <button 
-              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="btn-primary"
-            >
-              Entre em Contato
-            </button>
+            <div className="flex flex-col items-center gap-4 md:flex-row md:justify-center md:gap-0 md:space-x-4">
+              <button 
+                onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="btn-primary"
+              >
+                Entre em Contato
+              </button>
+              <a
+                href="MVPConfMidiaKit2025.pdf"
+                className="btn-secondary"
+                target="_blank"
+              >
+                Baixe nosso Media Kit
+              </a>
+            </div>
           </div>
-        </div>
+        </div>        
 
         {/* Indicador de cache */}
         <div className="mt-8 text-center">
