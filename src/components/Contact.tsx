@@ -76,51 +76,6 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-12">
-          {/* Informações de Contato */}
-          {/* <div className="space-y-8">
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Fale Conosco</h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-ms-blue-600 rounded-xl">
-                    <Mail className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Email</h4>
-                    <p className="text-gray-600">contato@mvpconf.com.br</p>
-                    <p className="text-gray-600">patrocinio@mvpconf.com.br</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-ms-blue-600 rounded-xl">
-                    <Phone className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Telefone</h4>
-                    <p className="text-gray-600">(11) 3456-7890</p>
-                    <p className="text-gray-600">(11) 99876-5432</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-ms-blue-600 rounded-xl">
-                    <MapPin className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Escritório</h4>
-                    <p className="text-gray-600">
-                      Av. Paulista, 1578 - 5º andar<br />
-                      Bela Vista, São Paulo - SP<br />
-                      CEP: 01310-200
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
-
           {/* Formulário de Contato */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Envie sua Mensagem</h3>
