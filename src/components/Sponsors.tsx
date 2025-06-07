@@ -87,85 +87,10 @@ const Sponsors: React.FC = () => {
     );
   };
 
-  if (loading) {
-    return (
-      <section id="sponsors" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Nossos <span className="gradient-text">Patrocinadores</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Empresas que apoiam e impulsionam a comunidade Microsoft no Brasil
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center justify-center py-20">
-            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-ms-blue-600 mb-4"></div>
-            <p className="text-gray-600 text-lg">Carregando patrocinadores...</p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section id="sponsors" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Nossos <span className="gradient-text">Patrocinadores</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Empresas que apoiam e impulsionam a comunidade Microsoft no Brasil
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center justify-center py-20">
-            <div className="bg-red-50 border border-red-200 rounded-xl p-8 max-w-md mx-auto text-center">
-              <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-red-800 mb-2">Erro ao Carregar</h3>
-              <p className="text-red-600 mb-4">{error}</p>
-              <button
-                onClick={refreshSponsors}
-                className="flex items-center space-x-2 mx-auto bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
-              >
-                <RefreshCw className="h-4 w-4" />
-                <span>Tentar Novamente</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (sponsors.length === 0) {
-    return (
-      <section id="sponsors" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Nossos <span className="gradient-text">Patrocinadores</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Empresas que apoiam e impulsionam a comunidade Microsoft no Brasil
-            </p>
-          </div>
-
-          <div className="text-center py-20">
-            <p className="text-gray-600 text-lg">Em breve anunciaremos nossos patrocinadores!</p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section id="sponsors" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        {/* <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Nossos <span className="gradient-text">Patrocinadores</span>
           </h2>
@@ -178,7 +103,7 @@ const Sponsors: React.FC = () => {
           {renderSponsorTier('platinum')}
           {renderSponsorTier('gold')}
           {renderSponsorTier('silver')}
-        </div>
+        </div> */}
 
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-ms-blue-50 to-ms-blue-100 rounded-2xl p-8">
