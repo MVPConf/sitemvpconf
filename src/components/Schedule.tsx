@@ -40,81 +40,6 @@ const Schedule: React.FC = () => {
     }
   };
 
-  if (loading) {
-    return (
-      <section id="schedule" className="py-20 bg-gradient-to-br from-ms-light-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              <span className="gradient-text">Cronograma</span> de Palestras
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Dois dias repletos de conteúdo técnico, workshops práticos e networking com os melhores especialistas Microsoft
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center justify-center py-20">
-            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-ms-blue-600 mb-4"></div>
-            <p className="text-gray-600 text-lg">Carregando cronograma...</p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section id="schedule" className="py-20 bg-gradient-to-br from-ms-light-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              <span className="gradient-text">Cronograma</span> de Palestras
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Dois dias repletos de conteúdo técnico, workshops práticos e networking com os melhores especialistas Microsoft
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center justify-center py-20">
-            <div className="bg-red-50 border border-red-200 rounded-xl p-8 max-w-md mx-auto text-center">
-              <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-red-800 mb-2">Erro ao Carregar</h3>
-              <p className="text-red-600 mb-4">{error}</p>
-              <button
-                onClick={refreshSchedule}
-                className="flex items-center space-x-2 mx-auto bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
-              >
-                <RefreshCw className="h-4 w-4" />
-                <span>Tentar Novamente</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (schedule.length === 0) {
-    return (
-      <section id="schedule" className="py-20 bg-gradient-to-br from-ms-light-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              <span className="gradient-text">Cronograma</span> de Palestras
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Dois dias repletos de conteúdo técnico, workshops práticos e networking com os melhores especialistas Microsoft
-            </p>
-          </div>
-
-          <div className="text-center py-20">
-            <p className="text-gray-600 text-lg">Em breve divulgaremos o cronograma completo!</p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section id="schedule" className="py-20 bg-gradient-to-br from-ms-light-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,13 +47,17 @@ const Schedule: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             <span className="gradient-text">Cronograma</span> de Palestras
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Dois dias repletos de conteúdo técnico, workshops práticos e networking com os melhores especialistas Microsoft
-          </p>
+          </p> */}
+
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Em breve anunciaremos a grade completa! Fiquem ligados nas nossas redes sociais para mais informações.
+          </p> 
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center mb-12">
+        {/* <div className="flex justify-center mb-12">
           <div className="bg-white rounded-2xl shadow-lg p-2 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
             {schedule.map((day, index) => (
               <button
@@ -150,10 +79,10 @@ const Schedule: React.FC = () => {
               </button>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Schedule Content */}
-        <div className="space-y-6">
+        {/* <div className="space-y-6">
           {schedule[activeDay]?.sessions.map((session) => (
             <div
               key={session.id}
@@ -161,7 +90,6 @@ const Schedule: React.FC = () => {
             >
               <div className="p-8">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-8">
-                  {/* Time and Type */}
                   <div className="flex-shrink-0 mb-6 lg:mb-0">
                     <div className="flex items-center space-x-4 mb-4">
                       <div className="flex items-center space-x-2 text-gray-600">
@@ -181,7 +109,6 @@ const Schedule: React.FC = () => {
                     )}
                   </div>
 
-                  {/* Content */}
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
                       {session.title}
@@ -217,7 +144,6 @@ const Schedule: React.FC = () => {
                       {session.summary}
                     </p>
 
-                    {/* Tags */}
                     {session.tags && session.tags.length > 0 && (
                       <div className="flex flex-wrap gap-2">
                         {session.tags.map((tag, index) => (
@@ -232,7 +158,6 @@ const Schedule: React.FC = () => {
                     )}
                   </div>
 
-                  {/* Arrow for interactive feel */}
                   {session.type !== 'break' && session.type !== 'networking' && (
                     <div className="flex-shrink-0 hidden lg:block">
                       <ChevronRight className="h-6 w-6 text-gray-400" />
@@ -242,10 +167,10 @@ const Schedule: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Call to Action */}
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-ms-blue-50 to-ms-blue-100 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Não perca nenhuma palestra!
@@ -261,14 +186,14 @@ const Schedule: React.FC = () => {
               Garantir Meu Ingresso
             </button>
           </div>
-        </div>
+        </div> */}
 
         {/* Indicador de cache */}
-        <div className="mt-8 text-center">
+        {/* <div className="mt-8 text-center">
           <p className="text-sm text-gray-500">
             Dados atualizados automaticamente a cada 10 minutos
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );
