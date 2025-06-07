@@ -82,12 +82,15 @@ const Tickets: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Escolha seu <span className="gradient-text">Ingresso</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Diferentes opções para atender suas necessidades. Todos os ingressos incluem acesso completo ao evento.
+          </p> */}
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Em breve disponibilizaremos as opções de ingressos! Fiquem ligados nas nossas redes sociais para mais informações.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.id}
@@ -158,7 +161,7 @@ const Tickets: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Informações Adicionais */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -180,14 +183,14 @@ const Tickets: React.FC = () => {
         </div>
 
         {/* Contador de Ingressos */}
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-red-50 to-red-100 rounded-full px-8 py-4">
             <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
             <span className="text-red-700 font-medium">
               Restam apenas <strong>47 ingressos</strong> Early Bird
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
