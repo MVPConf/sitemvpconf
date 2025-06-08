@@ -90,7 +90,8 @@ const Sponsors: React.FC = () => {
   return (
     <section id="sponsors" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* <div className="text-center mb-16">
+        
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Nossos <span className="gradient-text">Patrocinadores</span>
           </h2>
@@ -103,7 +104,8 @@ const Sponsors: React.FC = () => {
           {renderSponsorTier('platinum')}
           {renderSponsorTier('gold')}
           {renderSponsorTier('silver')}
-        </div> */}
+        </div> 
+        
 
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-ms-blue-50 to-ms-blue-100 rounded-2xl p-8">

@@ -16,7 +16,7 @@ const Header: React.FC = () => {
   const navItems = [
     { name: 'Início', href: '#hero' },
     { name: 'Palestrantes', href: '#speakers' },
-    { name: 'Cronograma', href: '#schedule' },
+    { name: 'Agenda', href: '#schedule' },
     { name: 'Patrocinadores', href: '#sponsors' },
     { name: 'Local', href: '#location' },
     { name: 'Ingressos', href: '#tickets' },
