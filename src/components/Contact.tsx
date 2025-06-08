@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-12">
           {/* Formulário de Contato */}
-          <div className="bg-white rounded-2xl shadow-lg p-8">
+          {/* <div className="bg-white rounded-2xl shadow-lg p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Envie sua Mensagem</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -190,6 +190,17 @@ const Contact: React.FC = () => {
                 )}
               </button>
             </form>
+          </div> */}
+
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-12">
+            <div className="w-full h-[90vh] flex overflow-hidden">
+              <iframe
+                src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAYAAIGTNfNUOFVQNVkwTlVNTldRRzBTSUJDQU9aNkQ2QS4u&embed=true"
+                allowFullScreen
+                className="w-full h-full border-0 rounded-2xl shadow-lg bg-white"
+                title="Formulário de Contato"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>

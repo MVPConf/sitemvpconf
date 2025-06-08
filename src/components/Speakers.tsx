@@ -3,7 +3,7 @@ import React from 'react';
 //import { useSpeakers } from '../hooks/useSpeakers';
 
 const Speakers: React.FC = () => {
-  //const { speakers, loading, error, refreshSpeakers } = useSpeakers();
+//const { speakers, loading, error, refreshSpeakers } = useSpeakers();
 
   return (
     <section id="speakers" className="py-20 bg-gradient-to-br from-ms-light-50 to-white">
@@ -29,7 +29,8 @@ const Speakers: React.FC = () => {
         )}         
         */}
 
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* 
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {speakers.map((speaker) => (
             <div key={speaker.id} className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover group">
               <div className="relative">
@@ -98,7 +99,8 @@ const Speakers: React.FC = () => {
               </div>
             </div>
           ))}
-        </div> */}
+        </div>  
+        */}
 
         {/* Indicador de cache
         <div className="mt-8 text-center">

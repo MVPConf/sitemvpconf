@@ -129,7 +129,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Newsletter Section */}
-          <div className="py-8 border-t border-gray-800">
+          {/* <div className="py-8 border-t border-gray-800">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
                 <h4 className="text-xl font-semibold mb-2">Fique por dentro das novidades</h4>
@@ -148,7 +148,7 @@ const Footer: React.FC = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Bottom Bar */}
           <div className="py-6 border-t border-gray-800">
