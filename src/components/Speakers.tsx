@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Twitter, RefreshCw, AlertCircle } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, Youtube , RefreshCw, AlertCircle } from 'lucide-react';
 import { useSpeakers } from '../hooks/useSpeakers';
 
 const Speakers: React.FC = () => {
@@ -31,7 +31,7 @@ const { speakers, loading, error, refreshSpeakers } = useSpeakers();
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = `https://images.pexels.com/photos/3791664/pexels-photo-3791664.jpeg?auto=compress&cs=tinysrgb&w=400`;
+                      target.src = speaker.image ;
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -84,6 +84,26 @@ const { speakers, loading, error, refreshSpeakers } = useSpeakers();
                         className="p-2 text-gray-400 hover:text-ms-blue-600 transition-colors"
                       >
                         <Github className="h-5 w-5" />
+                      </a>
+                    )}
+                    {speaker.social?.instagram && (
+                      <a 
+                        href={speaker.social.instagram} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="p-2 text-gray-400 hover:text-ms-blue-600 transition-colors"
+                      >
+                        <Instagram className="h-5 w-5" />
+                      </a>
+                    )}
+                    {speaker.social?.youtube && (
+                      <a 
+                        href={speaker.social.youtube} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="p-2 text-gray-400 hover:text-ms-blue-600 transition-colors"
+                      >
+                        <Youtube className="h-5 w-5" />
                       </a>
                     )}
                   </div>

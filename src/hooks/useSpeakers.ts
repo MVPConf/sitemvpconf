@@ -12,6 +12,8 @@ interface Speaker {
     github?: string;
     linkedin?: string;
     twitter?: string;
+    instagram?: string;
+    youtube?: string;
   };
 }
 
@@ -103,6 +105,7 @@ export const useSpeakers = () => {
       // Se não há cache válido, busca da API
       fetchSpeakers();
     }
+
   }, []);
 
   const refreshSpeakers = () => {
