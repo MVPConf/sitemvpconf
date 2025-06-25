@@ -1,9 +1,9 @@
 import React from 'react';
-import { Github, Linkedin, Twitter, Instagram, Youtube , RefreshCw, AlertCircle } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, Youtube } from 'lucide-react';
 import { useSpeakers } from '../hooks/useSpeakers';
 
 const Speakers: React.FC = () => {
-const { speakers, loading, error, refreshSpeakers } = useSpeakers();
+const { speakers, loading } = useSpeakers();
 
   return (
     <section id="speakers" className="py-20 bg-gradient-to-br from-ms-light-50 to-white">
@@ -34,7 +34,7 @@ const { speakers, loading, error, refreshSpeakers } = useSpeakers();
                       target.src = speaker.image ;
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
                 </div>
                 
                 <div className="p-6">
