@@ -1,9 +1,9 @@
 import React from 'react';
-import { Github, Linkedin, Twitter, Instagram, Youtube , RefreshCw, AlertCircle } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, Youtube } from 'lucide-react';
 import { useSpeakers } from '../hooks/useSpeakers';
 
 const Speakers: React.FC = () => {
-const { speakers, loading, error, refreshSpeakers } = useSpeakers();
+const { speakers, loading } = useSpeakers();
 
   return (
     <section id="speakers" className="py-20 bg-gradient-to-br from-ms-light-50 to-white">
