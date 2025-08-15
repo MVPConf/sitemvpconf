@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Star, Users, Gift } from 'lucide-react';
+import { Check, Star, Users, Gift, ExternalLink } from 'lucide-react';
 
 interface TicketPlan {
   id: string;
@@ -80,14 +80,23 @@ const Tickets: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Escolha seu <span className="gradient-text">Ingresso</span>
+            Garanta seu <span className="gradient-text">ingresso</span> agora
           </h2>
           {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Diferentes opções para atender suas necessidades. Todos os ingressos incluem acesso completo ao evento.
           </p> */}
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Em breve disponibilizaremos as opções de ingressos! Fiquem ligados nas nossas redes sociais para mais informações.
-          </p>
+          </p> */}
+          <a
+            href="https://www.hubingressos.com.br/evento/mvpconf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex mt-6 px-8 py-4 rounded-lg bg-ms-blue-600 hover:bg-ms-blue-700 text-white text-xl font-semibold shadow-lg transition-all duration-300 items-center justify-center gap-2"
+          >
+            Comprar Agora
+            <ExternalLink className="w-5 h-5 ml-2" aria-label="Abrir site externo" />
+          </a>
         </div>
 
         {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
