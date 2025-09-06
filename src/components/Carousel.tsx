@@ -1,6 +1,7 @@
 import React from "react";
 
 const images = [
+    "https://raw.githubusercontent.com/MVPConf/picture/refs/heads/master/foto000.jpeg",
   "https://raw.githubusercontent.com/MVPConf/picture/refs/heads/master/foto111.jpg",
   "https://raw.githubusercontent.com/MVPConf/picture/refs/heads/master/foto47.jpg",
   "https://raw.githubusercontent.com/MVPConf/picture/refs/heads/master/foto77.jpg",
