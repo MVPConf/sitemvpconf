@@ -24,7 +24,8 @@ const SobreEvento: React.FC = () => (
       </p>
     </div>
 
-    <BuyTickets title="Adquira seu Ingresso" />
+  
+  <BuyTickets title="Adquira seu Ingresso" />
 
   </section>
 );
