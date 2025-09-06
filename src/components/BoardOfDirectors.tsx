@@ -15,7 +15,7 @@ const BoardOfDirectors: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-blue-50">
+    <section id="board" className="py-16 bg-blue-50">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-6">
             Conselho <span className="gradient-text">Administrativo</span>

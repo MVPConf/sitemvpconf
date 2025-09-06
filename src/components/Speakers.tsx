@@ -24,7 +24,7 @@ const { speakers, loading } = useSpeakers();
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {speakers.map((speaker) => (
-              <div key={speaker.id} className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover group flex flex-col items-center py-8">
+              <div key={speaker.id} className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover group flex flex-col items-center py-8 px-6">
                 <img 
                   src={speaker.image} 
                   alt={speaker.name}
@@ -34,7 +34,7 @@ const { speakers, loading } = useSpeakers();
                     target.src = speaker.image;
                   }}
                 />
-                <h3 className="text-lg font-bold text-gray-900 text-center">{speaker.name}</h3>
+                <h3 className="text-base font-bold text-gray-900 text-center">{speaker.name}</h3>
                 {speaker.title && (
                   <p className="text-ms-blue-900 text-base font-medium text-center mb-1">{speaker.title}</p>
                 )}

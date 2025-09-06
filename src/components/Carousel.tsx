@@ -14,7 +14,7 @@ const Carousel: React.FC = () => {
   const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <section className="py-32 min-h-[60vh] bg-white flex items-center">
+    <section id="Carousel" className="py-32 min-h-[60vh] bg-blue-50 flex items-center">
       <div className="max-w-6xl mx-auto px-4 w-full">
 
     <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-6">

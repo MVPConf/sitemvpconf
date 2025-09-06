@@ -14,13 +14,15 @@ const Header: React.FC = () => {
   }, []);
 
   const navItems = [
-    { name: 'Início', href: '#hero' },
+    // { name: 'Início', href: '#hero' },
     { name: 'Sobre o Evento', href: '#sobre-evento' },
+    { name: 'Galeria', href: '#Carousel' },
     { name: 'Palestrantes', href: '#speakers' },
     { name: 'Agenda', href: '#schedule' },
     { name: 'Patrocinadores', href: '#sponsors' },
     { name: 'Local', href: '#location' },
     { name: 'Ingressos', href: '#tickets' },
+    { name: 'Conselho', href: '#board' },
     { name: 'Contato', href: '#contact' },
   ];
 
