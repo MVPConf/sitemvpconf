@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 // Data structure for tracks per day (English)
 const mockData = [
   {
-    name: "Primeiro Dia",
-    date: "24 de outubro",
+    name: "24 de outubro",
+    date: "Sexta-feira",
     tracks: [
       {
         name: "Business Application ",
@@ -89,8 +89,8 @@ const mockData = [
     ],
   },
     {
-    name: "Segundo Dia",
-    date: "25 de outubro",
+    name: "25 de outubro",
+    date: "Sábado",
     tracks: [
       {
         name: "Business Application ",
