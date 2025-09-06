@@ -35,6 +35,19 @@ const { speakers, loading } = useSpeakers();
                   }}
                 />
                 <h3 className="text-lg font-bold text-gray-900 text-center">{speaker.name}</h3>
+                {speaker.title && (
+                  <p className="text-ms-blue-900 text-base font-medium text-center mb-1">{speaker.title}</p>
+                )}
+                {speaker.social?.linkedin && (
+                  <a
+                    href={speaker.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block text-ms-blue-600 hover:underline hover:text-ms-blue-800 transition-colors"
+                  >
+                    LinkedIn
+                  </a>
+                )}
               </div>
             ))}
           </div>
