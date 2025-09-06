@@ -1,17 +1,9 @@
 import React from 'react';
-import { RefreshCw, AlertCircle } from 'lucide-react';
 import { useSponsors } from '../hooks/useSponsors';
 
-interface Sponsor {
-  id: number;
-  name: string;
-  logo: string;
-  tier: 'platinum' | 'gold' | 'silver';
-  website: string;
-}
 
 const Sponsors: React.FC = () => {
-  const { sponsors, loading, error, refreshSponsors } = useSponsors();
+  const { sponsors } = useSponsors();
 
   const tierConfig = {
     platinum: {
@@ -133,13 +125,6 @@ const Sponsors: React.FC = () => {
             </div>
           </div>
         </div>        
-
-        {/* Indicador de cache */}
-        {/* <div className="mt-8 text-center">
-          <p className="text-sm text-gray-500">
-            Dados atualizados automaticamente a cada 10 minutos
-          </p>
-        </div> */}
       </div>
     </section>
   );
