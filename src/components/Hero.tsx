@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 card-hover">
             <MapPin className="h-8 w-8 mx-auto mb-4 text-blue-200" />
             <h3 className="text-lg font-semibold mb-2">Local</h3>
-            <p className="text-blue-100">São Paulo, SP</p>
+            <p className="text-blue-100">UNIP Campus Paraíso/Vergueiro</p>
           </div>
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 card-hover">
             <Users className="h-8 w-8 mx-auto mb-4 text-blue-200" />

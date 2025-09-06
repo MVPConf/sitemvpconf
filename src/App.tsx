@@ -1,4 +1,5 @@
 import Header from './components/Header';
+import About from './components/About';
 import Hero from './components/Hero';
 import Speakers from './components/Speakers';
 import Schedule from './components/Schedule';
@@ -13,6 +14,7 @@ function App() {
     <div className="min-h-screen">
       <Header />
       <Hero />
+      <About />
       <Speakers />
       <Schedule />
       <Sponsors />
