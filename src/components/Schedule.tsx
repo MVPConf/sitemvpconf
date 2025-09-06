@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSchedule } from "../hooks/useSchedule";
+import BuyTickets from "./BuyTickets";
 
 type Talk = {
   title: string;
@@ -57,7 +58,7 @@ const Schedule = () => {
                 <div key={idx} className="bg-white rounded-lg shadow p-6 flex flex-col">
                   <h3 className="text-xl font-semibold mb-2 text-blue-700">{track.name}</h3>
                   <p className="text-sm text-gray-500 mb-4">
-                    <span className="font-medium">Coordinators:</span> {track.coordinators.join(", ")}
+                    <span className="font-medium">Coordenadores:</span> {track.coordinators.join(", ")}
                   </p>
                   {track.talks && track.talks.length > 0 ? (
                     <ul className="flex-1 space-y-3">
@@ -84,6 +85,9 @@ const Schedule = () => {
           </>
         )}
       </div>
+
+        <BuyTickets title="Adquira seu Ingresso" />
+
     </section>
   );
 };
