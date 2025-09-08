@@ -4,7 +4,6 @@ export function useRemoteData<T>(url: string ): {
   data: T | null;
   loading: boolean;
   error: string | null;
-  refresh: () => void;
 } {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true);
@@ -34,9 +33,5 @@ export function useRemoteData<T>(url: string ): {
     fetchData();
   }, [fetchData]);
 
-  const refresh = () => {
-    fetchData();
-  };
-
-  return { data, loading, error, refresh };
+  return { data, loading, error };
 }

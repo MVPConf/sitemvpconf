@@ -11,11 +11,11 @@ export interface Sponsor {
 const API_URL = 'https://raw.githubusercontent.com/MVPConf/2025/refs/heads/main/sponsors.json';
 
 export const useSponsors = () => {
-  const { data, loading, error, refresh } = useRemoteData<Sponsor[]>(API_URL);
+  const { data, loading, error } = useRemoteData<Sponsor[]>(API_URL);
+  const sorted = (data ?? []).slice().sort((a, b) => a.name.localeCompare(b.name));
   return {
-    sponsors: data ?? [],
+    sponsors: sorted,
     loading,
-    error,
-    refreshSponsors: refresh
+    error
   };
 };
