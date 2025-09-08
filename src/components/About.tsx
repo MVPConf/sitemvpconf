@@ -11,7 +11,7 @@ const SobreEvento: React.FC = () => (
     </h2>
 
       <p className="text-lg text-gray-700 mb-4">
-        O MVP Conf foi idealizado por Heber Lopes, João Benito e André Ruschel, e nasceu em 2018 como um evento criado pela comunidade Microsoft MVP.
+        O MVP Conf foi idealizado por André Ruschel, Heber Lopes e João Benito, e nasceu em 2018 como um evento criado pela comunidade Microsoft MVP.
       </p>
       <p className="text-lg text-gray-700 mb-4">
         Desde então, temos compartilhado conhecimento técnico, conectado pessoas e gerado impacto social nas comunidades do Brasil.
@@ -24,7 +24,7 @@ const SobreEvento: React.FC = () => (
       </p>
     </div>
 
-  
+
   <BuyTickets title="Adquira seu Ingresso" />
 
   </section>
