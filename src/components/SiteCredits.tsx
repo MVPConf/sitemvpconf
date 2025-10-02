@@ -1,15 +1,15 @@
 import React from 'react';
-import { Code, Heart } from 'lucide-react';
+import { Code, Heart, Linkedin } from 'lucide-react';
 
 interface Creator {
   name: string;
-  role: string;
+  linkedinUrl: string;
 }
 
 const SiteCredits: React.FC = () => {
   const creators: Creator[] = [
-    { name: 'Angelo Belchior', role: 'Desenvolvedor' },
-    { name: 'Rafael Almeira', role: 'Desenvolvedor' }
+    { name: 'Angelo Belchior', linkedinUrl: 'https://www.linkedin.com/in/angelobelchior/' },
+    { name: 'Rafael Almeida',  linkedinUrl: 'https://www.linkedin.com/in/ralmsdeveloper/' }
   ];
 
   return (
@@ -26,7 +26,15 @@ const SiteCredits: React.FC = () => {
             {creators.map((creator, index) => (
               <React.Fragment key={creator.name}>
                 {index > 0 && <span className="text-gray-600">•</span>}
-                <span className="text-gray-300 font-medium">{creator.name}</span>
+                <a 
+                  href={creator.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-1 text-gray-300 font-medium hover:text-white transition-colors group"
+                >
+                  <span>{creator.name}</span>
+                  <Linkedin className="h-3 w-3 opacity-60 group-hover:opacity-100 transition-opacity" />
+                </a>
               </React.Fragment>
             ))}
           </div>
