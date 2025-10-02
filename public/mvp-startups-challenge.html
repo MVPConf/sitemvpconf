@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MVP Startups Challenge 2025 | Transforme sua ideia em realidade</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-blue: #0066ff;
@@ -88,10 +88,10 @@
       height: 100%;
       background: 
         linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><text x="50" y="50" text-anchor="middle" dominant-baseline="middle" fill="rgba(255,255,255,0.3)" font-size="8">IMAGEM DE DESTAQUE</text></svg>');
+        url('./images/MVPStartupChallenge.png');
       background-size: cover;
       background-position: center;
-      opacity: 0.3;
+      opacity: 0.8;
       z-index: 0;
     }
 
@@ -102,19 +102,67 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 800;
+      font-family: 'Orbitron', 'JetBrains Mono', monospace;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
       margin-bottom: 20px;
-      background: linear-gradient(135deg, #ffffff, #e2e8f0);
+      background: linear-gradient(135deg, #ffffff, #f8fafc, #e2e8f0, #ffffff);
+      background-size: 400% 400%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+      text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.2),
+        0 0 40px rgba(255, 255, 255, 0.1);
+      animation: 
+        titleGlow 4s ease-in-out infinite alternate,
+        gradientShift 6s ease-in-out infinite,
+        textPulse 3s ease-in-out infinite;
+      position: relative;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    @keyframes titleGlow {
+      from {
+        text-shadow: 
+          0 0 10px rgba(255, 255, 255, 0.3),
+          0 0 20px rgba(255, 255, 255, 0.2),
+          0 0 40px rgba(255, 255, 255, 0.1);
+      }
+      to {
+        text-shadow: 
+          0 0 15px rgba(255, 255, 255, 0.4),
+          0 0 30px rgba(255, 255, 255, 0.3),
+          0 0 50px rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes textPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.01);
+      }
     }
 
     .hero-subtitle {
       font-size: 1.25rem;
-      color: var(--text-secondary);
+      color: #ffffff;
       margin-bottom: 30px;
       font-weight: 400;
     }
@@ -412,6 +460,46 @@
 
     ::-webkit-scrollbar-thumb:hover {
       background: var(--primary-purple);
+    }
+
+    /* Efeito de partículas tecnológicas no título */
+    .hero h1::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+      transform: translate(-50%, -50%);
+      animation: scanLine 5s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes particleFloat {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.5;
+      }
+      50% {
+        transform: translateY(-8px) rotate(1deg);
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes scanLine {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scaleX(0);
+      }
+      50% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scaleX(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scaleX(0);
+      }
     }
   </style>
 </head>
