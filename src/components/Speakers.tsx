@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Github, Linkedin, Twitter, Instagram, Youtube} from 'lucide-react';
 import { useSpeakers } from '../hooks/useSpeakers';
 import BuyTickets from './BuyTickets';
 

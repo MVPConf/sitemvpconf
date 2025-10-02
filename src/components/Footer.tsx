@@ -1,6 +1,7 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
+import { Mail, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
 import { useLegalPages } from './LegalPages';
+import SiteCredits from './SiteCredits';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -76,7 +77,7 @@ const Footer: React.FC = () => {
                     onClick={() => document.querySelector('#schedule')?.scrollIntoView({ behavior: 'smooth' })}
                     className="text-gray-300 hover:text-white transition-colors"
                   >
-                    Cronograma
+                    Agenda
                   </button>
                 </li>
                 <li>
@@ -128,28 +129,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Newsletter Section */}
-          {/* <div className="py-8 border-t border-gray-800">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h4 className="text-xl font-semibold mb-2">Fique por dentro das novidades</h4>
-                <p className="text-gray-300">
-                  Receba atualizações sobre o evento, palestrantes e promoções exclusivas.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <input
-                  type="email"
-                  placeholder="Seu email"
-                  className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-ms-blue-600 focus:border-transparent text-white placeholder-gray-400"
-                />
-                <button className="btn-primary whitespace-nowrap">
-                  Inscrever-se
-                </button>
-              </div>
-            </div>
-          </div> */}
-
           {/* Bottom Bar */}
           <div className="py-6 border-t border-gray-800">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
@@ -179,6 +158,9 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
+        
+        {/* Site Credits */}
+        <SiteCredits />
       </footer>
       
       {/* Render Legal Pages */}

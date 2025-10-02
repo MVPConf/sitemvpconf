@@ -12,6 +12,7 @@ const BoardOfDirectors: React.FC = () => {
     { nome: "Claudio Raposo", funcao: "Conselho Fiscal" },
     { nome: "Thaise Medeiros", funcao: "Conselho Fiscal" },
     { nome: "Vanessa Valle", funcao: "Conselho Fiscal" },
+    { nome: "Jamil Lopes", funcao: "Conselho Consultivo" }
   ];
 
   return (
