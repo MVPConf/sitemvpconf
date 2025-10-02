@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MVP Startups Challenge 2025 | Transforme sua ideia em realidade</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-blue: #0066ff;
+      --primary-purple: #6366f1;
+      --dark-bg: #0a0a0a;
+      --card-bg: #111111;
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --accent-cyan: #06b6d4;
+      --accent-green: #10b981;
+      --gradient-primary: linear-gradient(135deg, #0066ff 0%, #6366f1 50%, #8b5cf6 100%);
+      --gradient-card: linear-gradient(145deg, #111111 0%, #1a1a1a 100%);
+      --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.3);
+      --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Background Animation */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+      z-index: -1;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(1deg); }
+    }
+
+    /* Hero Section with Image Placeholder */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      background: var(--gradient-primary);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .hero-image-placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><text x="50" y="50" text-anchor="middle" dominant-baseline="middle" fill="rgba(255,255,255,0.3)" font-size="8">IMAGEM DE DESTAQUE</text></svg>');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffffff, #e2e8f0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 16px 32px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .cta-button:hover::before {
+      left: 100%;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Section Styling */
+    .section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 60px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Card Grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--gradient-card);
+      border-radius: 20px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gradient-primary);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-card);
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--text-primary);
+    }
+
+    .card-content {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .card-content li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .card-content li::before {
+      content: '▶';
+      position: absolute;
+      left: 0;
+      color: var(--primary-blue);
+      font-size: 12px;
+    }
+
+    /* Prizes Section */
+    .prizes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .prize-card {
+      background: var(--gradient-card);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .prize-card::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      background: var(--gradient-primary);
+      border-radius: 20px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .prize-card:hover::before {
+      opacity: 0.1;
+    }
+
+    .prize-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(99, 102, 241, 0.5);
+    }
+
+    .prize-rank {
+      font-size: 3rem;
+      font-weight: 800;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .prize-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .prize-description {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Code Block Styling */
+    .code-block {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--accent-cyan);
+      margin: 20px 0;
+      position: relative;
+      overflow-x: auto;
+    }
+
+    .code-block::before {
+      content: '// Dados necessários';
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--card-bg);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--primary-blue);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .section {
+        padding: 60px 0;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--dark-bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gradient-primary);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-purple);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section with Image Placeholder -->
+<section class="hero">
+  <div class="hero-image-placeholder"></div>
+  <div class="hero-content">
+    <h1>MVP Startups Challenge</h1>
+    <p class="hero-subtitle">Quer participar de um verdadeiro Shark Tank de ideias? Ganhar prêmios, conhecer a Microsoft e uma mentoria com
+profissionais do Mercado?</p>
+    <a href="#formulario" class="cta-button">🚀 Participar Agora</a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Sobre o Challenge</h2>
+    <p class="section-subtitle">Uma oportunidade única de apresentar sua ideia para uma banca de especialistas e concorrer a prêmios incríveis</p>
+    
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🦈</div>
+        <h3>MVP Startups Challenge</h3>
+        <div class="card-content">
+          <ul>
+            <li>Participe de um verdadeiro Shark Tank de ideias tecnológicas</li>
+            <li>Apresente para investidores e especialistas do mercado</li>
+            <li>Networking com profissionais da área</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">💡</div>
+        <h3>Sua Ideia Importa</h3>
+        <div class="card-content">
+          <ul>
+            <li>Não é necessário ter uma startup constituída, produto ou serviço, basta ter uma ideia inovadora.</li>
+            <li>Chame até 3 amigos e a mostre no maior evento de tecnologia do Brasil!</li>
+            <li>Leia o regulamento, preencha o formulário e participe! Vagas limitadas!</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">👥</div>
+        <h3>Time dos Sonhos</h3>
+        <div class="card-content">
+          <ul>
+            <li>Monte sua equipe com até 3 pessoas</li>
+            <li>Combine diferentes habilidades e expertise</li>
+            <li>Trabalhe em equipe para maximizar o potencial</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Form Section -->
+<section class="section" id="formulario">
+  <div class="container">
+    <h2 class="section-title">Dados para Inscrição</h2>
+    <p class="section-subtitle">Prepare essas informações para sua inscrição no challenge</p>
+    
+    <div class="card">
+      <div class="card-icon">📝</div>
+      <h3>Aqui vai o formulário</h3>
+      <div>....</div>
+    </div>
+  </div>
+</section>
+
+<!-- Rules Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Especificações Técnicas</h2>
+    
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">👨‍💻</div>
+        <h3>Composição da Equipe</h3>
+        <div class="card-content">
+          <ul>
+            <li>Mínimo: 1 pessoa (solo founder)</li>
+            <li>Máximo: 3 pessoas (full team)</li>
+            <li>Diversidade de skills é um diferencial</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Apresentação</h3>
+        <div class="card-content">
+          <ul>
+            <li>Format: PowerPoint (até 8 slides)</li>
+            <li>Tempo: máximo 8 minutos</li>
+            <li>Áudio/vídeo inclusos no tempo limite</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Voting Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Sistema de Avaliação</h2>
+    
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">⚖️</div>
+        <h3>Banca Especializada</h3>
+        <div class="card-content">
+          <ul>
+            <li>Avaliação por especialistas do mercado</li>
+            <li>Critérios técnicos e de inovação</li>
+            <li>Viabilidade comercial</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Voto Popular</h3>
+        <div class="card-content">
+          <ul>
+            <li>Votação da plateia presente</li>
+            <li>Engajamento online via Instagram</li>
+            <li>Poder da comunidade tech</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Prizes Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Recompensas</h2>
+    <p class="section-subtitle">Prêmios que vão acelerar sua jornada empreendedora</p>
+    
+    <div class="prizes-grid">
+      <div class="prize-card">
+        <div class="prize-rank">🥇</div>
+        <div class="prize-title">1º Lugar</div>
+        <div class="prize-description">Notebook Top de Linha<br>Para codar suas ideias</div>
+      </div>
+      
+      <div class="prize-card">
+        <div class="prize-rank">🥈</div>
+        <div class="prize-title">2º Lugar</div>
+        <div class="prize-description">Mentoria Microsoft Brasil<br>Conhecimento direto da fonte</div>
+      </div>
+      
+      <div class="prize-card">
+        <div class="prize-rank">🥉</div>
+        <div class="prize-title">3º Lugar</div>
+        <div class="prize-description">Smartphone Premium<br>Conectividade total</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>Organização: <a href="https://www.linkedin.com/in/jmaxbr/" target="_blank">Jamil Lopes</a></p>
+    <p style="margin-top: 10px; color: var(--text-secondary);">&copy; 2025 MVP Startups Challenge | Powered by MVPConf</p>
+  </div>
+</footer>
+
+</body>
+</html>
