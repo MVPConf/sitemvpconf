@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* MVP Startups Challenge Box */}
-              {/*}
+        {/*}
         <div className="mb-12 max-w-4xl mx-auto">
           <a 
             href="/mvp-startups-challenge.html" 
@@ -125,7 +125,7 @@ const Hero: React.FC = () => {
                     Transforme sua ideia em realidade com tecnologia Microsoft
                   </p>
                   <div className="flex items-center space-x-2 text-blue-200 group-hover:text-white transition-colors">
-                    <span className="font-semibold">Saiba mais</span>
+                    <span className="font-semibold">Participe</span>
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
