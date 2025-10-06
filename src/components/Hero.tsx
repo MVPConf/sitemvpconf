@@ -58,7 +58,6 @@ const Hero: React.FC = () => {
         </div>
 
         {/* MVP Startups Challenge Box */}
-        {/*}
         <div className="mb-12 max-w-4xl mx-auto">
           <a 
             href="/mvp-startups-challenge.html" 
@@ -133,7 +132,6 @@ const Hero: React.FC = () => {
             </div>
           </a>
         </div>
-        {*/}
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
