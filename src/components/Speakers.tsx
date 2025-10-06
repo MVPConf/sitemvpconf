@@ -5,17 +5,14 @@ import BuyTickets from './BuyTickets';
 const Speakers: React.FC = () => {
   const { speakers, coordinators, loading } = usePeople();
   
-  // Estados para palestrantes
   const [searchTerm, setSearchTerm] = useState('');
   const [showAll, setShowAll] = useState(false);
-  const INITIAL_DISPLAY_COUNT = 12;
+  const INITIAL_DISPLAY_COUNT = 8;
   
-  // Estados para coordenadores
   const [coordinatorSearchTerm, setCoordinatorSearchTerm] = useState('');
   const [showAllCoordinators, setShowAllCoordinators] = useState(false);
-  const INITIAL_COORDINATORS_COUNT = 12;
+  const INITIAL_COORDINATORS_COUNT = 8;
 
-  // Filtrar coordenadores pela busca
   const filteredCoordinators = useMemo(() => {
     if (!coordinatorSearchTerm.trim()) return coordinators;
     
@@ -28,13 +25,11 @@ const Speakers: React.FC = () => {
     );
   }, [coordinators, coordinatorSearchTerm]);
 
-  // Coordenadores a serem exibidos (limitados ou todos)
   const displayedCoordinators = useMemo(() => {
     if (showAllCoordinators || coordinatorSearchTerm.trim()) return filteredCoordinators;
     return filteredCoordinators.slice(0, INITIAL_COORDINATORS_COUNT);
   }, [filteredCoordinators, showAllCoordinators, coordinatorSearchTerm]);
 
-  // Filtrar palestrantes pela busca
   const filteredSpeakers = useMemo(() => {
     if (!searchTerm.trim()) return speakers;
     
@@ -46,7 +41,6 @@ const Speakers: React.FC = () => {
     );
   }, [speakers, searchTerm]);
 
-  // Palestrantes a serem exibidos (limitados ou todos)
   const displayedSpeakers = useMemo(() => {
     if (showAll || searchTerm.trim()) return filteredSpeakers;
     return filteredSpeakers.slice(0, INITIAL_DISPLAY_COUNT);
@@ -63,7 +57,6 @@ const Speakers: React.FC = () => {
             Conheça os especialistas Microsoft MVP que compartilharão seus conhecimentos e experiências
           </p>        
         </div>
-
         
         {loading ? (
           <p className="text-ms-blue-600 mt-8 text-lg font-medium">Carregando informações dos palestrantes...</p>

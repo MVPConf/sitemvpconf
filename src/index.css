@@ -30,6 +30,10 @@ body {
   .gradient-text {
     @apply bg-gradient-to-r from-ms-blue-600 to-ms-blue-800 bg-clip-text text-transparent;
   }
+  
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
 }
 
 /* Garantir que elementos fixos tenham z-index adequado */
