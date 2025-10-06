@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useRemoteData } from './useRemoteData';
 
 export interface Person {
@@ -43,15 +44,20 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 export const usePeople = () => {
   const { data, loading, error } = useRemoteData<Person[]>(API_URL);
   
-  const activeData = (data ?? []).filter(person => person.enabled !== false);
-  
-  const speakers = shuffleArray(
-    activeData.filter(person => !person.isTrackCoordinator)
+  const activeData = useMemo(
+    () => (data ?? []).filter(person => person.enabled !== false),
+    [data]
   );
   
-  const coordinators = shuffleArray(
-    activeData.filter(person => person.isTrackCoordinator === true)
-  ) as TrackCoordinator[];
+  const speakers = useMemo(
+    () => shuffleArray(activeData.filter(person => !person.isTrackCoordinator)),
+    [activeData]
+  );
+  
+  const coordinators = useMemo(
+    () => shuffleArray(activeData.filter(person => person.isTrackCoordinator === true)) as TrackCoordinator[],
+    [activeData]
+  );
   
   return {
     speakers,
