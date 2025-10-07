@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSponsors } from '../hooks/useSponsors';
 
 const Sponsors: React.FC = () => {
   const { sponsors } = useSponsors();
+  const [hiddenSponsors, setHiddenSponsors] = useState<Set<number>>(new Set());
 
   const tierConfig = {
     platinum: {
@@ -41,13 +42,13 @@ const Sponsors: React.FC = () => {
     return sponsors.filter(sponsor => sponsor.tier === tier);
   };
 
-  const getPlaceholderLogo = (name: string) => {
-    const colors = ['0078D4', '1e40af', '059669', 'dc2626', '7c3aed', 'ea580c'];
-    const colorIndex = name.length % colors.length;
-    const color = colors[colorIndex];
-    const initials = name.split(' ').map(word => word[0]).join('').substring(0, 2).toUpperCase();
-    
-    return `https://via.placeholder.com/200x100/${color}/FFFFFF?text=${encodeURIComponent(initials)}`;
+  // Quando a imagem não carregar, ocultamos apenas a imagem (mantemos o card)
+  const handleImageError = (id: number) => {
+    setHiddenSponsors(prev => {
+      const next = new Set(prev);
+      next.add(id);
+      return next;
+    });
   };
 
   const renderSponsorTier = (tier: 'platinum' | 'gold' | 'silver') => {
@@ -75,17 +76,22 @@ const Sponsors: React.FC = () => {
             >
               {/* Efeito de brilho no hover */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 group-hover:translate-x-full transition-all duration-700"></div>
-              
-              <img
-                src={sponsor.logo}
-                alt={`${sponsor.name} logo`}
-                className={`${config.logoSize} object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 max-w-full relative z-10`}
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = getPlaceholderLogo(sponsor.name);
-                }}
-                loading="lazy"
-              />
+
+              {sponsor.logo && !hiddenSponsors.has(sponsor.id) ? (
+                <img
+                  src={sponsor.logo}
+                  alt={`${sponsor.name} logo`}
+                  className={`${config.logoSize} object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 max-w-full relative z-10`}
+                  onError={() => handleImageError(sponsor.id)}
+                  loading="lazy"
+                />
+              ) : (
+                <div className={`${config.logoSize} w-full flex items-center justify-center relative z-10`}>
+                  <span className="text-lg md:text-xl font-semibold text-gray-700 group-hover:text-gray-900 text-center px-2 break-words">
+                    {sponsor.name}
+                  </span>
+                </div>
+              )}
             </a>
           ))}
         </div>
