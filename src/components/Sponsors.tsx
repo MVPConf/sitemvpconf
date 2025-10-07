@@ -60,7 +60,7 @@ const Sponsors: React.FC = () => {
     return (
       <div key={tier} className="mb-20">
         <div className="flex items-center justify-center gap-3 mb-10">
-          <div className={`${config.badgeColor} px-6 py-2 rounded-full text-sm font-bold shadow-lg`}>
+          <div className={`${config.badgeColor} px-8 py-3 rounded-full text-lg md:text-xl font-bold shadow-lg`}>
             {config.badge}
           </div>
         </div>
@@ -81,7 +81,7 @@ const Sponsors: React.FC = () => {
                 <img
                   src={sponsor.logo}
                   alt={`${sponsor.name} logo`}
-                  className={`${config.logoSize} object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 max-w-full relative z-10`}
+                  className={`${config.logoSize} object-contain transition-all duration-300 max-w-full relative z-10`}
                   onError={() => handleImageError(sponsor.id)}
                   loading="lazy"
                 />
