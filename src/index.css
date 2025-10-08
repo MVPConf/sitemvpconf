@@ -36,9 +36,13 @@ body {
   }
 }
 
-/* Garantir que elementos fixos tenham z-index adequado */
-.fixed {
-  z-index: 50;
+/* Removido z-index global de elementos fixos para evitar conflitos com utilitários Tailwind */
+
+/* Evitar que o header fixo cubra as âncoras ao usar scrollIntoView/links */
+section[id],
+div[id],
+main[id] {
+  scroll-margin-top: 6rem; /* ~96px para compensar o header */
 }
 
 /* Ajustes específicos para mobile */

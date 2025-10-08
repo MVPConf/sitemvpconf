@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MVP Startups Challenge 2025 | Transforme sua ideia em realidade</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --primary-blue: #0066ff;
+      --primary-purple: #6366f1;
+      --dark-bg: #0a0a0a;
+      --card-bg: #111111;
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --accent-cyan: #06b6d4;
+      --accent-green: #10b981;
+      --gradient-primary: linear-gradient(135deg, #0066ff 0%, #6366f1 50%, #8b5cf6 100%);
+      --gradient-card: linear-gradient(145deg, #111111 0%, #1a1a1a 100%);
+      --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.3);
+      --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Background Animation */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+      z-index: -1;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(1deg);
+      }
+    }
+
+    /* Hero Section with Image Placeholder */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      background: var(--gradient-primary);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    /* Grid tecnológico animado */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: gridMove 20s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes gridMove {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(50px, 50px);
+      }
+    }
+
+    /* Partículas tecnológicas flutuantes */
+    .tech-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .tech-particles::before,
+    .tech-particles::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #00d4ff;
+      border-radius: 50%;
+      animation: particleFloat1 8s ease-in-out infinite;
+      box-shadow:
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff,
+        0 0 30px #00d4ff;
+    }
+
+    .tech-particles::before {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .tech-particles::after {
+      top: 60%;
+      right: 15%;
+      animation-delay: 4s;
+      background: #0066ff;
+      box-shadow:
+        0 0 10px #0066ff,
+        0 0 20px #0066ff,
+        0 0 30px #0066ff;
+    }
+
+    @keyframes particleFloat1 {
+
+      0%,
+      100% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0.7;
+      }
+
+      25% {
+        transform: translateY(-30px) translateX(20px) scale(1.2);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateY(-60px) translateX(-10px) scale(0.8);
+        opacity: 0.8;
+      }
+
+      75% {
+        transform: translateY(-30px) translateX(-30px) scale(1.1);
+        opacity: 0.9;
+      }
+    }
+
+    /* Linhas de conexão animadas */
+    .tech-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .tech-lines::before,
+    .tech-lines::after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+      animation: lineMove 6s ease-in-out infinite;
+    }
+
+    .tech-lines::before {
+      top: 30%;
+      left: 0;
+      width: 100%;
+      animation-delay: 0s;
+    }
+
+    .tech-lines::after {
+      top: 70%;
+      left: 0;
+      width: 100%;
+      animation-delay: 3s;
+      background: linear-gradient(90deg, transparent, #6366f1, transparent);
+    }
+
+    @keyframes lineMove {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translateX(0%);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+    }
+
+    /* Círculos pulsantes */
+    .tech-circles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .tech-circles::before,
+    .tech-circles::after {
+      content: '';
+      position: absolute;
+      border: 2px solid rgba(0, 212, 255, 0.3);
+      border-radius: 50%;
+      animation: circlePulse 4s ease-in-out infinite;
+    }
+
+    .tech-circles::before {
+      top: 15%;
+      right: 20%;
+      width: 80px;
+      height: 80px;
+      animation-delay: 0s;
+    }
+
+    .tech-circles::after {
+      bottom: 20%;
+      left: 25%;
+      width: 120px;
+      height: 120px;
+      animation-delay: 2s;
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    @keyframes circlePulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.3;
+      }
+
+      50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+      }
+    }
+
+    /* Efeito Matrix discreto */
+    .matrix-rain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: rgba(0, 255, 0, 0.35);
+      overflow: hidden;
+    }
+
+    .matrix-rain::before,
+    .matrix-rain::after {
+      content: '01001001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010';
+      position: absolute;
+      white-space: pre-wrap;
+      word-break: break-all;
+      line-height: 1.2;
+      opacity: 0.8;
+      animation: matrixFall 15s linear infinite;
+    }
+
+    .matrix-rain::before {
+      left: 5%;
+      width: 20px;
+      animation-delay: 0s;
+      color: rgba(0, 255, 0, 0.35);
+    }
+
+    .matrix-rain::after {
+      right: 8%;
+      width: 20px;
+      animation-delay: 7s;
+      color: rgba(0, 212, 255, 0.30);
+    }
+
+    /* Colunas Matrix adicionais */
+    .matrix-rain-2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      overflow: hidden;
+    }
+
+    .matrix-rain-2::before,
+    .matrix-rain-2::after {
+      content: '10101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010';
+      position: absolute;
+      white-space: pre-wrap;
+      word-break: break-all;
+      line-height: 1.1;
+      animation: matrixFall 18s linear infinite;
+    }
+
+    .matrix-rain-2::before {
+      left: 15%;
+      width: 15px;
+      color: rgba(0, 255, 0, 0.25);
+      animation-delay: 4s;
+    }
+
+    .matrix-rain-2::after {
+      right: 25%;
+      width: 15px;
+      color: rgba(99, 102, 241, 0.22);
+      animation-delay: 11s;
+    }
+
+    .matrix-rain-3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      overflow: hidden;
+    }
+
+    .matrix-rain-3::before,
+    .matrix-rain-3::after {
+      content: '00110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011';
+      position: absolute;
+      white-space: pre-wrap;
+      word-break: break-all;
+      line-height: 1.0;
+      animation: matrixFall 22s linear infinite;
+    }
+
+    .matrix-rain-3::before {
+      left: 35%;
+      width: 12px;
+      color: rgba(0, 255, 0, 0.20);
+      animation-delay: 8s;
+    }
+
+    .matrix-rain-3::after {
+      right: 45%;
+      width: 12px;
+      color: rgba(6, 182, 212, 0.18);
+      animation-delay: 15s;
+    }
+
+    /* Colunas Matrix adicionais - 6 novas colunas espalhadas */
+    .matrix-rain-4 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      overflow: hidden;
+    }
+
+    .matrix-rain-4::before,
+    .matrix-rain-4::after {
+      content: '11001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011';
+      position: absolute;
+      white-space: pre-wrap;
+      word-break: break-all;
+      line-height: 1.1;
+      animation: matrixFall 16s linear infinite;
+    }
+
+    .matrix-rain-4::before {
+      left: 20%;
+      width: 14px;
+      color: rgba(0, 255, 0, 0.28);
+      animation-delay: 2s;
+    }
+
+    .matrix-rain-4::after {
+      left: 30%;
+      width: 14px;
+      color: rgba(0, 212, 255, 0.24);
+      animation-delay: 9s;
+    }
+
+    .matrix-rain-5 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      overflow: hidden;
+    }
+
+    .matrix-rain-5::before,
+    .matrix-rain-5::after {
+      content: '01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101';
+      position: absolute;
+      white-space: pre-wrap;
+      word-break: break-all;
+      line-height: 1.2;
+      animation: matrixFall 19s linear infinite;
+    }
+
+    .matrix-rain-5::before {
+      left: 50%;
+      width: 16px;
+      color: rgba(0, 255, 0, 0.32);
+      animation-delay: 5s;
+    }
+
+    .matrix-rain-5::after {
+      left: 60%;
+      width: 16px;
+      color: rgba(99, 102, 241, 0.26);
+      animation-delay: 12s;
+    }
+
+    .matrix-rain-6 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      overflow: hidden;
+    }
+
+    .matrix-rain-6::before,
+    .matrix-rain-6::after {
+      content: '10011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011';
+      position: absolute;
+      white-space: pre-wrap;
+      word-break: break-all;
+      line-height: 1.1;
+      animation: matrixFall 21s linear infinite;
+    }
+
+    .matrix-rain-6::before {
+      left: 70%;
+      width: 15px;
+      color: rgba(0, 255, 0, 0.23);
+      animation-delay: 6s;
+    }
+
+    .matrix-rain-6::after {
+      left: 80%;
+      width: 15px;
+      color: rgba(6, 182, 212, 0.27);
+      animation-delay: 13s;
+    }
+
+    @keyframes matrixFall {
+      0% {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.8;
+      }
+
+      90% {
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    /* Caracteres Matrix adicionais */
+    .matrix-chars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .matrix-chars::before,
+    .matrix-chars::after {
+      content: 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+      position: absolute;
+      font-size: 12px;
+      color: rgba(0, 255, 0, 0.08);
+      white-space: pre-wrap;
+      word-break: break-all;
+      line-height: 1.5;
+      animation: matrixFall2 20s linear infinite;
+    }
+
+    .matrix-chars::before {
+      left: 25%;
+      width: 15px;
+      animation-delay: 3s;
+      color: rgba(0, 255, 0, 0.25);
+    }
+
+    .matrix-chars::after {
+      right: 30%;
+      width: 15px;
+      animation-delay: 12s;
+      color: rgba(99, 102, 241, 0.21);
+    }
+
+    @keyframes matrixFall2 {
+      0% {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.6;
+      }
+
+      85% {
+        opacity: 0.6;
+      }
+
+      100% {
+        transform: translateY(120vh);
+        opacity: 0;
+      }
+    }
+
+    .hero-image-placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%),
+        url('./images/MVPStartupChallenge.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-family: 'Orbitron', 'JetBrains Mono', monospace;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffffff, #f8fafc, #e2e8f0, #ffffff);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.2),
+        0 0 40px rgba(255, 255, 255, 0.1);
+      animation:
+        titleGlow 4s ease-in-out infinite alternate,
+        gradientShift 6s ease-in-out infinite,
+        textPulse 3s ease-in-out infinite;
+      position: relative;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    @keyframes titleGlow {
+      from {
+        text-shadow:
+          0 0 10px rgba(255, 255, 255, 0.3),
+          0 0 20px rgba(255, 255, 255, 0.2),
+          0 0 40px rgba(255, 255, 255, 0.1);
+      }
+
+      to {
+        text-shadow:
+          0 0 15px rgba(255, 255, 255, 0.4),
+          0 0 30px rgba(255, 255, 255, 0.3),
+          0 0 50px rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes textPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.01);
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 30px;
+      font-weight: 500;
+      text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.7),
+        0 0 15px rgba(0, 0, 0, 0.5);
+      line-height: 1.6;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(6, 182, 212, 0.25);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 20px;
+      padding: 20px 30px;
+      box-shadow:
+        0 4px 20px rgba(6, 182, 212, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 16px 32px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .cta-button:hover::before {
+      left: 100%;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Section Styling */
+    .section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 60px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Card Grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--gradient-card);
+      border-radius: 20px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gradient-primary);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-card);
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--text-primary);
+    }
+
+    .card-content {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .card-content li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .card-content li::before {
+      content: '▶';
+      position: absolute;
+      left: 0;
+      color: var(--primary-blue);
+      font-size: 12px;
+    }
+
+    /* Prizes Section */
+    .prizes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .prize-card {
+      background: var(--gradient-card);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .prize-card::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      background: var(--gradient-primary);
+      border-radius: 20px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .prize-card:hover::before {
+      opacity: 0.1;
+    }
+
+    .prize-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(99, 102, 241, 0.5);
+    }
+
+    .prize-rank {
+      font-size: 3rem;
+      font-weight: 800;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .prize-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .prize-description {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Code Block Styling */
+    .code-block {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--accent-cyan);
+      margin: 20px 0;
+      position: relative;
+      overflow-x: auto;
+    }
+
+    .code-block::before {
+      content: '// Dados necessários';
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--card-bg);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--primary-blue);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--dark-bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gradient-primary);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-purple);
+    }
+
+    /* Efeito de partículas tecnológicas no título */
+    .hero h1::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+      transform: translate(-50%, -50%);
+      animation: scanLine 5s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes particleFloat {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: translateY(-8px) rotate(1deg);
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes scanLine {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scaleX(0);
+      }
+
+      50% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scaleX(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scaleX(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero Section with Image Placeholder -->
+  <section class="hero">
+    <div class="hero-image-placeholder"></div>
+    <div class="matrix-rain"></div>
+    <div class="matrix-rain-2"></div>
+    <div class="matrix-rain-3"></div>
+    <div class="matrix-rain-4"></div>
+    <div class="matrix-rain-5"></div>
+    <div class="matrix-rain-6"></div>
+    <div class="matrix-chars"></div>
+    <div class="tech-particles"></div>
+    <div class="tech-lines"></div>
+    <div class="tech-circles"></div>
+    <div class="hero-content">
+      <h1>MVP Startups Challenge</h1>
+      <p class="hero-subtitle">
+        Quer participar de um verdadeiro tanque de tubarões de ideias? Ganhar prêmios, conhecer a Microsoft e uma
+        mentoria com
+        profissionais do Mercado?
+      </p>
+      <a href="#formulario" class="cta-button">🚀 Participar Agora</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Sobre o Challenge</h2>
+      <p class="section-subtitle">Uma oportunidade única de apresentar sua ideia para uma banca de especialistas e
+        concorrer a prêmios incríveis</p>
+
+      <div class="card-grid">
+
+        <div class="card">
+          <div class="card-icon">🦈</div>
+          <h3>MVP Startups Challenge</h3>
+          <div class="card-content">
+            <ul>
+              <li>Não é necessário ter uma startup constituída, produto ou serviço, basta ter uma ideia inovadora.</li>
+              <li>Chame até 3 amigos e a mostre no maior evento de tecnologia do Brasil!</li>
+              <li>Leia o regulamento, preencha o formulário e participe! </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📋</div>
+          <h3>Regras</h3>
+          <div class="card-content">
+            <ul>
+              <li>Mínimo de 1 e máximo de 3 pessoas</li>
+              <li>É necessário apresentar a ideia em um PPT com no máximo 08 slides no total!</li>
+              <li>O tempo total da apresentação será de 8 minutos</li>
+              <li>Caso o seu PPT possua áudio e/ou vídeo o tempo total, incluindo a apresentação oral, não poderá
+                ultrapassar os 8 minutos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">👥</div>
+          <h3>Votação</h3>
+          <div class="card-content">
+            <ul>
+              <li>A banca fará a votação da melhor ideia</li>
+              <li>Teremos também o voto da plateia</li>
+              <li>Também teremos o voto online via Instagram do MVP Conf</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="section" id="formulario">
+    <div class="container">
+      <h2 class="section-title">Dados para Inscrição</h2>
+      <p class="section-subtitle">Prepare essas informações para sua inscrição no challenge</p>
+
+      <div class="card">
+        <div class="card-icon">📝</div>
+        <h3>Se inscreva! Vagas Limitadas!</h3>
+        <iframe width="100%" height="800px"
+          src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAYAAIGTNfNURTBNOU9RNVc1NjRTMzI4NUdFUDlGOUNXTy4u&embed=true"
+          frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh"
+          allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prizes Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Recompensas</h2>
+      <p class="section-subtitle">Prêmios que vão acelerar sua jornada empreendedora</p>
+
+      <div class="prizes-grid">
+        <div class="prize-card">
+          <div class="prize-rank">🥇</div>
+          <div class="prize-title">1º Lugar</div>
+          <div class="prize-description">1 Notebook</div>
+        </div>
+
+        <div class="prize-card">
+          <div class="prize-rank">🥈</div>
+          <div class="prize-title">2º Lugar</div>
+          <div class="prize-description">Visita e um dia de Mentoria para o grupo, na Microsoft Brasil</div>
+        </div>
+
+        <div class="prize-card">
+          <div class="prize-rank">🥉</div>
+          <div class="prize-title">3º Lugar</div>
+          <div class="prize-description">1 Smartphone</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Organização: <a href="https://www.linkedin.com/in/jmaxbr/" target="_blank">Jamil Lopes</a></p>
+      <p style="margin-top: 10px; color: var(--text-secondary);">&copy; 2025 MVP Startups Challenge | <a href="https://mvpconf.com.br" target="_blank">Powered by MVPConf</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

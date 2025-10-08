@@ -1,68 +1,6 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import React from 'react';
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    subject: '',
-    message: ''
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    
-    // Simular envio do formulário
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsLoading(false);
-    setIsSubmitted(true);
-    
-    // Reset após 3 segundos
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        subject: '',
-        message: ''
-      });
-    }, 3000);
-  };
-
-  if (isSubmitted) {
-    return (
-      <section id="contact\" className="py-20 bg-gradient-to-br from-green-50 to-emerald-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="bg-white rounded-2xl shadow-lg p-12">
-              <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Mensagem Enviada!
-              </h2>
-              <p className="text-xl text-gray-600">
-                Obrigado pelo seu contato. Nossa equipe responderá em até 24 horas.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-ms-light-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

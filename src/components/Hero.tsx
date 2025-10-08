@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-hero-pattern overflow-hidden pt-20 md:pt-0">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-hero-pattern overflow-hidden pt-24">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full animate-float"></div>
