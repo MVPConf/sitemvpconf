@@ -1,8 +1,8 @@
-﻿import { trackCoordinators, scheduleByDay } from '../data.js';
+﻿import { trackCoordinators, scheduleByDay } from './data.js';
 
 const STORAGE_KEY = 'mvpconf-agenda';
 let selections = loadSelections();
-let currentSchedule = scheduleByDay; // mutÃ¡vel para receber dados do backend
+let currentSchedule = scheduleByDay; // mutável para receber dados do backend
 let currentDay = Object.keys(currentSchedule)[0];
 let userEmail = null;
 let isAuthenticated = false;
@@ -14,7 +14,7 @@ const trackDropdown = document.querySelector('#trackDropdown');
 const trackDropdownToggle = document.querySelector('#trackDropdownToggle');
 const trackDropdownPanel = document.querySelector('#trackDropdownPanel');
 // garante painel fechado no load
-try { trackDropdownPanel?.setAttribute('hidden', ''); } catch {}
+try { trackDropdownPanel?.setAttribute('hidden', ''); } catch { }
 // toast removido
 const authEmailDialog = document.querySelector('#authEmailDialog');
 const authEmailForm = document.querySelector('#authEmailForm');
@@ -589,7 +589,7 @@ async function apiStartAuth(email) {
     clearTimeout(timeout);
     if (!res.ok) {
       if (res.status === 400) {
-        try { alert('Email invalido. Verifique e tente novamente.'); } catch {}
+        try { alert('Email invalido. Verifique e tente novamente.'); } catch { }
         return { ok: false, status: 400, message: 'Email invalido. Verifique e tente novamente.' };
       }
       return { ok: false, status: res.status, message: `Falha ao enviar email (HTTP ${res.status}).` };
@@ -646,7 +646,7 @@ function openDialog(el) {
     else if (el.show) el.show();
     else el.setAttribute('open', '');
   } catch (e) {
-    try { el.setAttribute('open', ''); } catch {}
+    try { el.setAttribute('open', ''); } catch { }
   }
 }
 
@@ -655,7 +655,7 @@ function closeDialog(el) {
     if (!el) return;
     if (el.close) el.close();
     else el.removeAttribute('open');
-  } catch {}
+  } catch { }
 }
 
 async function promptAuthFlow() {
@@ -690,7 +690,7 @@ authCodeForm?.addEventListener('submit', async (e) => {
     return;
   }
   isAuthenticated = true;
-  try { authCodeDialog.close(); } catch {}
+  try { authCodeDialog.close(); } catch { }
   await loadAgendaFromServer();
 });
 
@@ -730,7 +730,7 @@ async function loadAgendaFromServer() {
   const rawSelections = (data.Selections !== undefined) ? data.Selections : data.selections;
   let serverSelections = Array.isArray(rawSelections) ? rawSelections : [];
   if (typeof rawSelections === 'string') {
-    try { serverSelections = JSON.parse(rawSelections); } catch {}
+    try { serverSelections = JSON.parse(rawSelections); } catch { }
   }
   if (Array.isArray(serverSelections)) {
     applyServerSelections(serverSelections);
@@ -977,4 +977,4 @@ try {
     searchFilter.value = '';
     renderSchedule();
   });
-} catch {}
+} catch { }
