@@ -182,27 +182,29 @@ const Schedule = () => {
             <div className="max-w-3xl mx-auto mb-6">
               <label htmlFor="schedule-search" className="sr-only">Buscar palestras</label>
               <div className="flex items-stretch gap-2">
-                <input
-                  id="schedule-search"
-                  type="text"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Buscar por título, sala, palestrante, trilha..."
-                  className="flex-1 rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                />
-                {query ? (
-                  <button
-                    type="button"
-                    onClick={() => setQuery("")}
-                    className="px-4 py-2 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
-                    aria-label="Limpar busca"
-                  >
-                    Limpar
-                  </button>
-                ) : null}
+                <div className="relative flex-1">
+                  <input
+                    id="schedule-search"
+                    type="text"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Buscar por título, sala, palestrante, trilha..."
+                    className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 pr-10 text-gray-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                  />
+                  {query ? (
+                    <button
+                      type="button"
+                      onClick={() => setQuery("")}
+                      className="absolute inset-y-0 right-0 px-3 text-gray-400 hover:text-gray-600 focus:outline-none"
+                      aria-label="Limpar busca"
+                    >
+                      ×
+                    </button>
+                  ) : null}
+                </div>
 
                 {/* Filtro de Trilhas (popover simples) */}
-                <div className="relative">
+                <div className="relative flex-shrink-0">
                   <button
                     type="button"
                     onClick={() => setShowTrackFilter((s) => !s)}
@@ -401,7 +403,7 @@ const Schedule = () => {
         {/* Modal de descrição da palestra */}
         {openTalk && hasDescription(openTalk) && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center"
+            className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4"
             role="dialog"
             aria-modal="true"
             aria-labelledby="talk-modal-title"
@@ -413,8 +415,8 @@ const Schedule = () => {
               onClick={() => setOpenTalk(null)}
             />
             {/* Content */}
-            <div className="relative z-10 mx-4 w-full max-w-2xl rounded-lg bg-white shadow-xl border border-gray-200">
-              <div className="flex items-start justify-between p-4 border-b border-gray-200">
+            <div className="relative z-10 w-full sm:max-w-2xl rounded-t-lg sm:rounded-lg bg-white shadow-xl border border-gray-200 overflow-hidden flex flex-col max-h-[85vh]">
+              <div className="sticky top-0 bg-white flex items-start justify-between p-4 border-b border-gray-200 z-10">
                 <div>
                   <h3 id="talk-modal-title" className="text-lg font-semibold text-gray-900">
                     {openTalk.title}
@@ -434,7 +436,7 @@ const Schedule = () => {
                   Fechar
                 </button>
               </div>
-              <div id="talk-modal-description" className="p-4 text-gray-800 whitespace-pre-line">
+              <div id="talk-modal-description" className="p-4 text-gray-800 whitespace-pre-line overflow-y-auto overscroll-contain">
                 {openTalk.description}
               </div>
             </div>
