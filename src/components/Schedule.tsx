@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import  { useEffect, useMemo, useState } from "react";
 import { Day, Track, Talk, useSchedule } from "../hooks/useSchedule";
 import BuyTickets from "./BuyTickets";
 
@@ -36,6 +36,40 @@ const Schedule = () => {
 
   const hasDescription = (t?: Talk | null) => !!(t?.description && t.description.trim().length > 0);
 
+  // Paleta de cores inspirada nos produtos do Microsoft Office (sem repetição dentro do dia)
+  const OFFICE_PALETTE = [
+    '#2B579A', // Word (blue)
+    '#217346', // Excel (green)
+    '#ED6C47', // PowerPoint (orange)
+    '#0078D4', // Outlook / MS blue
+    '#7719AA', // OneNote (purple)
+    '#6264A7', // Teams (indigo)
+    '#008272', // SharePoint / Sway (teal)
+    '#0364B8', // OneDrive (azure)
+    '#A4373A', // Access (dark red)
+    '#00B294', // Publisher (teal green)
+    '#3955A3', // Visio (deep blue)
+    '#107C10', // Project (dark green)
+    '#F2C811', // Power BI (yellow)
+    '#742774', // Power Apps (purple)
+    '#CD1F3F', // Stream (crimson)
+    '#00B7C3', // Forms (cyan)
+    '#2564CF', // To Do (blue)
+    '#4F6BED', // Viva (blue-purple)
+    '#498205', // Planner (green)
+    '#B4009E', // PVA/Dataverse (magenta)
+  ] as const;
+
+  function hexToRgba(hex: string, alpha = 0.08): string {
+    const m = hex.replace('#','');
+    const r = parseInt(m.substring(0,2), 16);
+    const g = parseInt(m.substring(2,4), 16);
+    const b = parseInt(m.substring(4,6), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  }
+
+  // (removido: trackAccent em favor do mapa de cores por trilha)
+
   // Fechamento do modal via ESC
   useEffect(() => {
     if (!openTalk) return;
@@ -54,6 +88,43 @@ const Schedule = () => {
   const tracksFilteredBySelection: Track[] = selectedTracks.size
     ? tracksForActiveDay.filter((t) => selectedTracks.has(t.name))
     : tracksForActiveDay;
+
+  // Cores preferenciais por nomes de trilha (case-insensitive)
+  function getSpecialColorForTrack(name: string): string | null {
+    const n = name.toLowerCase();
+    if (n.includes('azure')) return '#0078D4'; // Microsoft Azure
+    if (n.includes('developer') || n.includes('desenvolvedor')) return '#ED6C47'; // Developer Technologies
+    if (n.includes('business') || n.includes('dynamics') || n.includes('power platform') || n.includes('aplica')) return '#B4009E'; // Business Applications
+    return null;
+  }
+
+  function buildTrackColorMap(tracks: Track[]): Map<string, string> {
+    const map = new Map<string, string>();
+    const used = new Set<string>();
+    // 1) aplicar cores especiais quando possível
+    tracks.forEach((t) => {
+      const special = getSpecialColorForTrack(t.name);
+      if (special && !used.has(special)) {
+        map.set(t.name, special);
+        used.add(special);
+      }
+    });
+    // 2) atribuir demais com a primeira cor livre da paleta
+    tracks.forEach((t, idx) => {
+      if (map.has(t.name)) return;
+      const next = OFFICE_PALETTE.find((c) => !used.has(c));
+      if (next) {
+        map.set(t.name, next);
+        used.add(next);
+      } else {
+        const hue = (idx * 37) % 360;
+        map.set(t.name, `hsl(${hue} 70% 45%)`);
+      }
+    });
+    return map;
+  }
+
+  const trackColorMap = useMemo(() => buildTrackColorMap(tracksFilteredBySelection), [tracksFilteredBySelection]);
 
   // Ações do filtro de trilhas
   const toggleTrack = (name: string) => {
@@ -222,8 +293,8 @@ const Schedule = () => {
               ))}
             </div>
 
-            {/* Tracks for selected day */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+            {/* Tracks for selected day - Masonry columns (3 colunas) */}
+            <div className="columns-1 md:columns-2 lg:columns-3" style={{ columnGap: '2rem' }}>
               {tracksFilteredBySelection.map((track: Track, idx: number) => {
                 const originalTalks = track.talks || [];
                 const filteredTalks = query.trim()
@@ -233,17 +304,33 @@ const Schedule = () => {
                 if (query.trim() && filteredTalks.length === 0) {
                   return null;
                 }
+                const accent = trackColorMap.get(track.name) ?? OFFICE_PALETTE[0];
+                const tint = hexToRgba(accent, 0.08);
                 const timeGroups = groupTalksByTime(filteredTalks);
                 const orderedSlots = Array.from(timeGroups.keys()).sort(
                   (a, b) => timeSortKey(a) - timeSortKey(b)
                 );
 
                 return (
-                  <div key={idx} className="bg-white rounded-lg shadow p-6 flex flex-col self-start">
-                    <h3 className="text-xl font-semibold mb-2 text-blue-700">{track.name}</h3>
-                    <p className="text-sm text-gray-500 mb-4">
-                      <span className="font-medium">Coordenadores:</span> {track.coordinators.join(", ")}
-                    </p>
+                  <div
+                    key={idx}
+                    className="bg-white rounded-lg shadow p-0 flex flex-col break-inside-avoid mb-8 w-full border border-gray-100"
+                    style={{ borderTop: `4px solid ${accent}` }}
+                  >
+                    <div className="px-6 pt-4 pb-3" style={{ background: tint }}>
+                      <div className="flex items-center gap-2">
+                        <span
+                          aria-hidden
+                          className="inline-block rounded-full"
+                          style={{ width: 10, height: 10, background: accent }}
+                        />
+                        <h3 className="text-xl font-semibold text-gray-900">{track.name}</h3>
+                      </div>
+                      <p className="text-sm text-gray-600 mt-1">
+                        <span className="font-medium">Coordenadores:</span> {track.coordinators.join(", ")}
+                      </p>
+                    </div>
+                    <div className="px-6 pb-6 pt-3">
 
                     {filteredTalks && filteredTalks.length > 0 ? (
                       <div className="flex-1 space-y-6">
@@ -300,6 +387,7 @@ const Schedule = () => {
                         </div>
                       </div>
                     )}
+                    </div>
                   </div>
                 );
               })}
