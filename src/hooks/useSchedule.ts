@@ -2,9 +2,10 @@ import { useRemoteData } from './useRemoteData';
 
 export type Talk = {
   title: string;
+  description: string;
   time: string;
+  room: string;
   speakers: string[];
-  room?: string;
 };
 
 export type Track = {
