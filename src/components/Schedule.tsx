@@ -42,19 +42,33 @@ const Schedule = () => {
                   <p className="text-sm text-gray-500 mb-4">
                     <span className="font-medium">Coordenadores:</span> {track.coordinators.join(", ")}
                   </p>
-                  {track.talks && track.talks.length > 0 ? (
+                  {track.talks && track.talks.length < 0 ? (
                     <ul className="flex-1 space-y-3">
-                      {track.talks.map((talk: Talk, i: number) => (
-                        <li key={i} className="border-l-4 border-blue-500 pl-3 py-2 bg-blue-50 rounded">
-                          <div className="flex justify-between items-center">
-                            <span className="font-medium">{talk.title}</span>
-                            <span className="text-xs text-gray-400">{talk.time}</span>
-                          </div>
-                          <div className="text-sm text-gray-600">{talk.speakers.join(", ")}</div>
-                        </li>
-                      ))}
+                      {track.talks.map((talk: Talk, i: number) => {
+                        const timeDisplay = (talk.time && talk.time.trim()) ? talk.time : 'a definir';
+                        const roomDisplay = (talk.room && talk.room.trim()) ? talk.room : 'a definir';
+                        return (
+                          <li key={i} className="border-l-4 border-blue-500 pl-3 py-2 bg-blue-50 rounded">
+                            <div className="flex justify-between items-start gap-3">
+                              <div className="flex-1">
+                                <span className="font-medium block">{talk.title}</span>
+                                <div className="text-xs text-gray-500 mt-0.5 flex flex-wrap gap-x-3 gap-y-1">
+                                  <span>
+                                    <span className="uppercase tracking-wide text-gray-400">Hora:</span> {timeDisplay}
+                                  </span>
+                                  <span>
+                                    <span className="uppercase tracking-wide text-gray-400">Sala:</span> {roomDisplay}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="text-sm text-gray-600 mt-1">{talk.speakers.join(", ")}</div>
+                          </li>
+                        );
+                      })}
                     </ul>
-                  ) : (
+                  ) : 
+                  (
                     <div className="flex-1 flex items-center justify-center">
                       <div className="w-full bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 p-4 rounded text-center text-sm">
                         Em breve anunciaremos as palestras dessa trilha! Fiquem ligados nas nossas redes sociais para mais informações.

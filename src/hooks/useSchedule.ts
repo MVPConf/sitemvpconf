@@ -4,6 +4,7 @@ export type Talk = {
   title: string;
   time: string;
   speakers: string[];
+  room?: string;
 };
 
 export type Track = {
