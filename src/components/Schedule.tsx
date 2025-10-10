@@ -308,6 +308,8 @@ const Schedule = () => {
                 }
                 const accent = trackColorMap.get(track.name) ?? OFFICE_PALETTE[0];
                 const tint = hexToRgba(accent, 0.08);
+                const softTint = hexToRgba(accent, 0.04);
+                const softBorder = hexToRgba(accent, 0.15);
                 const timeGroups = groupTalksByTime(filteredTalks);
                 const orderedSlots = Array.from(timeGroups.keys()).sort(
                   (a, b) => timeSortKey(a) - timeSortKey(b)
@@ -316,8 +318,8 @@ const Schedule = () => {
                 return (
                   <div
                     key={idx}
-                    className="bg-white rounded-lg shadow p-0 flex flex-col break-inside-avoid mb-8 w-full border border-gray-100"
-                    style={{ borderTop: `4px solid ${accent}` }}
+                    className="rounded-lg shadow p-0 flex flex-col break-inside-avoid mb-8 w-full border"
+                    style={{ borderTop: `4px solid ${accent}`, background: softTint, borderColor: softBorder }}
                   >
                     <div className="px-6 pt-4 pb-3" style={{ background: tint }}>
                       <div className="flex items-center gap-2">
