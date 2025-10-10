@@ -1,28 +1,10 @@
 import  { useState } from "react";
-import { useSchedule } from "../hooks/useSchedule";
+import { Day, Track, Talk, useSchedule } from "../hooks/useSchedule";
 import BuyTickets from "./BuyTickets";
-
-type Talk = {
-  title: string;
-  speaker: string;
-  time: string;
-};
-
-type Track = {
-  name: string;
-  coordinators: string[];
-  talks: Talk[];
-};
-
-type Day = {
-  name: string;
-  date: string;
-  tracks: Track[];
-};
 
 const Schedule = () => {
   const [activeDay, setActiveDay] = useState(0);
-  const { data: days, loading } = useSchedule() as { data: Day[]; loading: boolean };
+  const { data: days, loading } = useSchedule();
 
   return (
     <section className="py-16 bg-gray-50" id="schedule">
@@ -68,7 +50,7 @@ const Schedule = () => {
                             <span className="font-medium">{talk.title}</span>
                             <span className="text-xs text-gray-400">{talk.time}</span>
                           </div>
-                          <div className="text-sm text-gray-600">{talk.speaker}</div>
+                          <div className="text-sm text-gray-600">{talk.speakers.join(", ")}</div>
                         </li>
                       ))}
                     </ul>
