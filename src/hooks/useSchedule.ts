@@ -1,6 +1,5 @@
 import { useRemoteData } from './useRemoteData';
 
-// Normalized schedule types (post-processing)
 export type Talk = {
   title: string;
   time: string;
