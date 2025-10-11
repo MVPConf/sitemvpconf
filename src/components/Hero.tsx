@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-hero-pattern overflow-hidden pt-24">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-hero-pattern overflow-hidden pt-24 pb-20 sm:pb-24 md:pb-28">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full animate-float"></div>
@@ -134,7 +134,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 sm:mb-16 lg:mb-20">
           <button 
             onClick={scrollToTickets}
             className="btn-primary flex items-center space-x-2 text-lg w-full sm:w-auto"
