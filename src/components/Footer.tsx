@@ -1,11 +1,9 @@
 import React from 'react';
 import { Mail, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
-import { useLegalPages } from './LegalPages';
 import SiteCredits from './SiteCredits';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const { openPrivacyPolicy, openTermsOfUse, openCodeOfConduct, LegalPagesComponent } = useLegalPages();
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -136,24 +134,30 @@ const Footer: React.FC = () => {
                 © {currentYear} MVP Conf Brasil. Todos os direitos reservados.
               </div>
               <div className="flex space-x-6 text-sm">
-                <button 
-                  onClick={openPrivacyPolicy}
+                <a
+                  href="/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Política de Privacidade
-                </button>
-                <button 
-                  onClick={openTermsOfUse}
+                </a>
+                <a
+                  href="/terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Termos de Uso
-                </button>
-                <button 
-                  onClick={openCodeOfConduct}
+                </a>
+                <a
+                  href="/code-of-conduct"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Código de Conduta
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -162,9 +166,6 @@ const Footer: React.FC = () => {
         {/* Site Credits */}
         <SiteCredits />
       </footer>
-      
-      {/* Render Legal Pages */}
-      <LegalPagesComponent />
     </>
   );
 };
