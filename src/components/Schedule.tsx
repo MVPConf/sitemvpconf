@@ -215,7 +215,7 @@ const Schedule = () => {
                     Filtrar trilhas
                   </button>
                   {showTrackFilter && (
-                    <div className="absolute right-0 z-20 mt-2 w-72 rounded-md border border-gray-200 bg-white shadow-lg p-3">
+                    <div className="absolute right-0 z-20 mt-2 sm:w-96 w-[90vw] max-w-[95vw] rounded-md border border-gray-200 bg-white shadow-lg p-3">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-sm font-medium text-gray-800">Trilhas</span>
                         <button
@@ -243,7 +243,7 @@ const Schedule = () => {
                           Limpar
                         </button>
                       </div>
-                      <div className="max-h-60 overflow-auto pr-1">
+                      <div className="max-h-[65vh] overflow-auto pr-1">
                         {trackNamesForActiveDay.length === 0 ? (
                           <div className="text-sm text-gray-500">Sem trilhas neste dia.</div>
                         ) : (
