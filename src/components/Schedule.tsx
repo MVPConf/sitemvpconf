@@ -173,6 +173,27 @@ const Schedule = () => {
           Agenda de <span className="gradient-text">Palestras</span>
         </h2>
 
+        {/* Certificate callout: more attractive message with icon and emphasis */}
+        <div className="max-w-3xl mx-auto mb-8">
+          <div className="flex items-center gap-4 rounded-lg border border-green-100 bg-gradient-to-r from-green-50 to-white p-4 shadow-sm">
+            <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-white border border-green-200 text-green-600">
+              {/* Certificate / ribbon SVG */}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                <path d="M12 2a3 3 0 0 0-3 3v.26A5 5 0 0 0 5 10.9V15a3 3 0 0 0 2 2.83V22l3-1 3 1v-4.17A3 3 0 0 0 19 15v-4.1a5 5 0 0 0-4-5.64V5a3 3 0 0 0-3-3zM7 10.9A3 3 0 0 1 12 8a3 3 0 0 1 5 2.9V15a1 1 0 0 1-.63.93L12 18.08l-4.37-2.15A1 1 0 0 1 7 15V10.9z" />
+              </svg>
+            </div>
+
+            <div className="flex-1 text-sm text-gray-800">
+              <div className="font-semibold text-gray-900">Certificado de participação</div>
+              <div className="mt-1 text-sm text-gray-700">Todos os participantes receberão um certificado digital ao final do evento — uma ótima forma de comprovar sua presença e agregar ao seu portfólio.</div>
+            </div>
+
+            <div className="hidden sm:block">
+              <span className="inline-block px-3 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Gratuito</span>
+            </div>
+          </div>
+        </div>
+
         {loading || !days.length ? (
           <div className="text-center text-blue-700 py-16 text-lg">Loading schedule...</div>
         ) : (
