@@ -366,7 +366,7 @@ const Schedule = () => {
                               {/* Cabeçalho com o horário */}
                               <div className="bg-blue-100/70 px-4 py-2 flex items-center justify-between">
                                 <div className="text-sm font-semibold text-blue-800">
-                                  {slotKey}
+                                  {slotKey}hs
                                 </div>
                                 <div className="text-[11px] uppercase tracking-wide text-blue-700/70">
                                   {talksAtTime.length} {talksAtTime.length > 1 ? 'palestras em paralelo' : 'palestra'}

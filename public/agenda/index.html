@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
@@ -120,29 +120,29 @@
   <!-- Autenticação: e-mail -->
   <dialog id="authEmailDialog">
     <form id="authEmailForm" class="auth-form">
-      <h3>Entre com seu e-mail</h3>
-      <p>Enviaremos um código para validação.</p>
+      <h3>entre com seu e-mail</h3>
+      <p>enviaremos um código para validação.</p>
       <input type="email" id="authEmailInput" placeholder="seuemail@exemplo.com" required />
       <menu>
-        <button type="button" id="cancelEmail" class="secondary">Cancelar</button>
-        <button type="submit" class="primary">Continuar</button>
+        <button type="button" id="cancelEmail" class="secondary">cancelar</button>
+        <button type="submit" class="primary">continuar</button>
       </menu>
     </form>
   </dialog>
 
-  <!-- Autenticação: código -->
+  <!--; Autenticação: código -->
   <dialog id="authCodeDialog">
     <form id="authCodeForm" class="auth-form">
-      <h3>Digite o código</h3>
+      <h3>digite o código</h3>
       <p>
-        Enviamos um código para <strong id="authEmailDisplay"></strong>.
-        Verifique sua caixa de entrada e a pasta de spam/lixo eletrônico.
-        Se não recebeu, você pode reenviar abaixo.
+        enviamos um código para <strong id="authEmailDisplay"></strong>.
+        verifique sua caixa de entrada e a pasta de spam/lixo eletrônico.
+        se não recebeu, você pode reenviar abaixo.
       </p>
       <input type="text" id="authCodeInput" placeholder="Código" required />
       <menu>
-        <button type="button" id="resendCodeLink" class="link-button">Reenviar e-mail</button>
-        <button type="submit" class="primary">Validar</button>
+        <button type="button" id="resendCodeLink" class="link-button">reenviar e-mail</button>
+        <button type="submit" class="primary">validar</button>
       </menu>
     </form>
   </dialog>
