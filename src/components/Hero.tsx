@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, MapPin, Users, ArrowRight, Presentation, Rocket, Trophy, Award } from 'lucide-react';
+import { Calendar, MapPin, Users, ArrowRight, Presentation, Rocket, Trophy, Award, Shield, AlertTriangle } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const scrollToTickets = () => {
@@ -126,6 +126,53 @@ const Hero: React.FC = () => {
                   <div className="flex items-center space-x-2 text-blue-200 group-hover:text-white transition-colors">
                     <span className="font-semibold">Participe</span>
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        {/* Intensivão de Segurança Box */}
+        <div className="mb-12 max-w-4xl mx-auto">
+          <a
+            href="/intensivao-sc900.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block group"
+          >
+            <div className="relative bg-gradient-to-br from-slate-700/20 via-gray-700/15 to-indigo-700/10 backdrop-blur-md rounded-2xl p-6 border border-slate-400/20 hover:border-slate-300/40 transition-all duration-300 overflow-hidden">
+              <div className="relative z-10 text-left">
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex items-center space-x-3">
+                    <div className="bg-gradient-to-br from-sky-600 to-indigo-600 p-2 rounded-xl group-hover:scale-105 transition-transform duration-300">
+                      <Shield className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold bg-gradient-to-r from-blue-200 via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                        Intensivão de Segurança
+                      </h3>
+                      <p className="text-sm text-blue-200/80">Workshop intensivo SC900: fundamentos e hands-on</p>
+                    </div>
+                  </div>
+                  <div className="hidden sm:flex items-center space-x-2 bg-sky-500/10 px-3 py-1 rounded-full border border-sky-400/20">
+                    <span className="text-sm font-semibold text-blue-100">Vagas Limitadas</span>
+                  </div>
+                </div>
+
+                <p className="text-sm text-blue-100/90 mb-2">Sessão prática focada em segurança na nuvem, identidade e conformidade — ideal para quem busca preparar-se para a certificação SC-900.</p>
+
+                <div className="flex items-center justify-between pt-3 border-t border-slate-400/10">
+                  <div className="flex flex-col items-start">
+                    <p className="text-blue-100 text-sm">Aprenda com instrutores certificados e ganhe experiência prática</p>
+                    <div className="mt-2 inline-flex items-center space-x-2 text-yellow-200 px-3 py-1 rounded-md" role="status" aria-live="polite">
+                      <AlertTriangle className="h-4 w-4 text-yellow-300 flex-shrink-0" />
+                      <span className="text-sm">Evento exclusivo para quem já adquiriu o ingresso para o MVP Conf.</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2 text-blue-200 group-hover:text-white transition-colors">
+                    <span className="font-semibold">Se Inscreva</span>
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
               </div>
