@@ -18,7 +18,7 @@ const Header: React.FC = () => {
     { name: 'Sobre o Evento', href: '#sobre-evento' },
     { name: 'Galeria', href: '#Carousel' },
     { name: 'Palestrantes', href: '#speakers' },
-    { name: 'Agenda', href: '#schedule' },
+    { name: 'Agenda', href: 'https://mvpconf.com.br/agenda/index.html', external: true },
     { name: 'Patrocinadores', href: '#sponsors' },
     { name: 'Local', href: '#location' },
     { name: 'Ingressos', href: '#tickets' },
@@ -26,7 +26,12 @@ const Header: React.FC = () => {
     { name: 'Contato', href: '#contact' },
   ];
 
-  const scrollToSection = (href: string) => {
+  const scrollToSection = (href: string, external?: boolean) => {
+    if (external) {
+      window.location.href = href;
+      setIsOpen(false);
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -64,7 +69,7 @@ const Header: React.FC = () => {
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => scrollToSection(item.href, item.external)}
                 className={`font-medium transition-colors duration-300 hover:text-ms-blue-600 ${
                   isScrolled ? 'text-gray-700' : 'text-white hover:text-blue-200'
                 }`}
@@ -91,7 +96,7 @@ const Header: React.FC = () => {
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => scrollToSection(item.href, item.external)}
                 className="block w-full text-left px-6 py-3 text-gray-700 hover:bg-ms-blue-50 hover:text-ms-blue-600 font-medium transition-colors"
               >
                 {item.name}

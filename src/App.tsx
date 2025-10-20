@@ -4,7 +4,7 @@ import Carousel from './components/Carousel';
 import BoardOfDirectors from './components/BoardOfDirectors';
 import Hero from './components/Hero';
 import Speakers from './components/Speakers';
-import Schedule from './components/Schedule';
+// import Schedule from './components/Schedule';
 import Sponsors from './components/Sponsors';
 import Location from './components/Location';
 import Tickets from './components/Tickets';
@@ -41,7 +41,7 @@ function App() {
       <About />
       <Carousel />
       <Speakers />
-      <Schedule />
+      {/* <Schedule /> */}
       <Sponsors />
       <Location />
       <Tickets />
