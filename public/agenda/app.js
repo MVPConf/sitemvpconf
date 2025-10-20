@@ -1,5 +1,5 @@
 //20-10
-import { trackCoordinators, scheduleByDay } from '../data.js';
+import { trackCoordinators, scheduleByDay } from './data.js';
 
 const STORAGE_KEY = 'mvpconf-agenda';
 let selections = loadSelections();
