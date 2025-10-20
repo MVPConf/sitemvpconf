@@ -10,17 +10,6 @@ const Schedule = () => {
   const [openTalk, setOpenTalk] = useState<Talk | null>(null);
   const { data: days, loading } = useSchedule();
 
-  // Agrupa uma lista de palestras por horário (campo time)
-  function groupTalksByTime(talks: Talk[]) {
-    const map = new Map<string, Talk[]>();
-    (talks ?? []).forEach((t) => {
-      const key = (t.time && t.time.trim()) ? t.time.trim() : 'A definir';
-      if (!map.has(key)) map.set(key, []);
-      map.get(key)!.push(t);
-    });
-    return map;
-  }
-
   // Extrai horário de início HH:MM para ordenação; itens sem horário definido vão para o fim
   function timeSortKey(timeLabel: string): number {
     // tenta extrair primeiro HH:MM na string
@@ -331,9 +320,9 @@ const Schedule = () => {
                 const tint = hexToRgba(accent, 0.08);
                 const softTint = hexToRgba(accent, 0.04);
                 const softBorder = hexToRgba(accent, 0.15);
-                const timeGroups = groupTalksByTime(filteredTalks);
-                const orderedSlots = Array.from(timeGroups.keys()).sort(
-                  (a, b) => timeSortKey(a) - timeSortKey(b)
+                // Ordena as palestras por horário (quando existir)
+                const orderedTalks = [...filteredTalks].sort(
+                  (a, b) => timeSortKey(a.time ?? '') - timeSortKey(b.time ?? '')
                 );
 
                 return (
@@ -358,49 +347,32 @@ const Schedule = () => {
                     <div className="px-6 pb-6 pt-3">
 
                     {filteredTalks && filteredTalks.length > 0 ? (
-                      <div className="flex-1 space-y-6">
-                        {orderedSlots.map((slotKey) => {
-                          const talksAtTime = timeGroups.get(slotKey) ?? [];
+                      <div className="flex-1 space-y-4">
+                        {orderedTalks.map((talk, i) => {
+                          const roomDisplay = (talk.room && talk.room.trim()) ? talk.room : 'Sala a definir';
+                          const tooltip = talk.description && talk.description.trim() ? talk.description : undefined;
                           return (
-                            <div key={slotKey} className="rounded-lg border border-blue-100 overflow-hidden bg-blue-50">
-                              {/* Cabeçalho com o horário */}
-                              <div className="bg-blue-100/70 px-4 py-2 flex items-center justify-between">
-                                <div className="text-sm font-semibold text-blue-800">
-                                  {slotKey}hs
-                                </div>
-                                <div className="text-[11px] uppercase tracking-wide text-blue-700/70">
-                                  {talksAtTime.length} {talksAtTime.length > 1 ? 'palestras em paralelo' : 'palestra'}
-                                </div>
+                            <div
+                              key={`talk-${i}`}
+                              className={`rounded-md bg-white border p-3 shadow-sm ${hasDescription(talk) ? 'cursor-pointer hover:shadow' : ''}`}
+                              style={{ borderColor: softBorder }}
+                              onClick={() => { if (hasDescription(talk)) setOpenTalk(talk); }}
+                              title={tooltip}
+                              aria-label={tooltip ? `${talk.title} — ${tooltip}` : talk.title}
+                            >
+                              <div className="text-xs text-gray-600 flex flex-wrap gap-3 mb-1">
+                                {roomDisplay ? (
+                                  <span><span className="uppercase tracking-wide text-gray-400">Sala:</span> {roomDisplay}</span>
+                                ) : null}
                               </div>
-
-                              {/* Lista vertical de palestras simultâneas (por sala) */}
-                              <div className="flex flex-col gap-3 p-4">
-                                {talksAtTime.map((talk, i) => {
-                                  const roomDisplay = (talk.room && talk.room.trim()) ? talk.room : 'Sala a definir';
-                                  const tooltip = talk.description && talk.description.trim() ? talk.description : undefined;
-                                  return (
-                                    <div
-                                      key={`${slotKey}-${i}`}
-                                      className={`rounded-md bg-white border border-blue-200 p-3 shadow-sm ${hasDescription(talk) ? 'cursor-pointer hover:border-blue-300 hover:shadow' : ''}`}
-                                      onClick={() => { if (hasDescription(talk)) setOpenTalk(talk); }}
-                                      title={tooltip}
-                                      aria-label={tooltip ? `${talk.title} — ${tooltip}` : talk.title}
-                                    >
-                                      <div className="text-xs text-blue-700/80 font-medium mb-1">
-                                        {roomDisplay}
-                                      </div>
-                                      <div className="font-semibold text-gray-900">
-                                        {talk.title}
-                                      </div>
-                                      {talk.speakers?.length ? (
-                                        <div className="text-sm text-gray-600 mt-1">
-                                          {talk.speakers.join(", ")}
-                                        </div>
-                                      ) : null}
-                                    </div>
-                                  );
-                                })}
+                              <div className="font-semibold text-gray-900">
+                                {talk.title}
                               </div>
+                              {talk.speakers?.length ? (
+                                <div className="text-sm text-gray-600 mt-1">
+                                  {talk.speakers.join(", ")}
+                                </div>
+                              ) : null}
                             </div>
                           );
                         })}
@@ -445,7 +417,6 @@ const Schedule = () => {
                     {openTalk.title}
                   </h3>
                   <div className="mt-1 text-xs text-gray-600 flex flex-wrap gap-3">
-                    {openTalk.time ? <span><span className="uppercase tracking-wide text-gray-400">Hora:</span> {openTalk.time}</span> : null}
                     {openTalk.room ? <span><span className="uppercase tracking-wide text-gray-400">Sala:</span> {openTalk.room}</span> : null}
                     {openTalk.speakers?.length ? <span><span className="uppercase tracking-wide text-gray-400">Speakers:</span> {openTalk.speakers.join(', ')}</span> : null}
                   </div>
