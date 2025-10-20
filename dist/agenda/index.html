@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MVPConf Agenda</title>
   <link rel="manifest" href="./manifest.webmanifest">
@@ -120,33 +121,34 @@
   <!-- Autenticação: e-mail -->
   <dialog id="authEmailDialog">
     <form id="authEmailForm" class="auth-form">
-      <h3>entre com seu e-mail</h3>
-      <p>enviaremos um código para validação.</p>
+      <h3>Entre com seu e-mail para carregar/salvar a Agenda</h3>
+      <!-- <p>Enviaremos um código para validação.</p> -->
       <input type="email" id="authEmailInput" placeholder="seuemail@exemplo.com" required />
       <menu>
-        <button type="button" id="cancelEmail" class="secondary">cancelar</button>
-        <button type="submit" class="primary">continuar</button>
+        <button type="button" id="cancelEmail" class="secondary">Cancelar</button>
+        <button type="submit" class="primary">Continuar</button>
       </menu>
     </form>
   </dialog>
 
-  <!--; Autenticação: código -->
+  <!-- Autenticação: código -->
   <dialog id="authCodeDialog">
     <form id="authCodeForm" class="auth-form">
-      <h3>digite o código</h3>
+      <h3>Digite o código</h3>
       <p>
-        enviamos um código para <strong id="authEmailDisplay"></strong>.
-        verifique sua caixa de entrada e a pasta de spam/lixo eletrônico.
-        se não recebeu, você pode reenviar abaixo.
+        Enviamos um código para <strong id="authEmailDisplay"></strong>.
+        Verifique sua caixa de entrada e a pasta de spam/lixo eletrônico.
+        Se não recebeu, você pode reenviar abaixo.
       </p>
       <input type="text" id="authCodeInput" placeholder="Código" required />
       <menu>
-        <button type="button" id="resendCodeLink" class="link-button">reenviar e-mail</button>
-        <button type="submit" class="primary">validar</button>
+        <button type="button" id="resendCodeLink" class="link-button">Reenviar e-mail</button>
+        <button type="submit" class="primary">Validar</button>
       </menu>
     </form>
   </dialog>
-
-  <script type="module" src="./app.js"></script>
+  <script type="module" src="./app.js" charset="utf-8"></script>
 </body>
 </html>
+
+

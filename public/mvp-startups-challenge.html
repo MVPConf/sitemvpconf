@@ -731,6 +731,38 @@
       border-color: rgb(255 255 255 / 40%);
     }
 
+    /* Info badges (date/time and arrival) */
+    .info-badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 16px 0 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 9999px;
+      border: 1px solid rgb(99 102 241 / 30%);
+      background: rgb(99 102 241 / 15%);
+      color: #eef2ff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+      text-shadow: 0 1px 2px rgb(0 0 0 / 40%);
+    }
+
+    .badge-warning {
+      border-color: rgb(234 179 8 / 35%);
+      background: rgb(234 179 8 / 14%);
+      color: #fff7ed;
+    }
+
     /* Container */
     .container {
       max-width: 1200px;
@@ -1053,6 +1085,14 @@
         mentoria com
         profissionais do Mercado?
       </p>
+      <div class="info-badges" role="group" aria-label="Informações importantes sobre data e chegada">
+        <span class="badge" aria-label="Data da avaliação vinte e cinco de outubro, das nove às dez horas">
+          📅 Data da avaliação: 25 de Outubro, das 09:00 às 10:00
+        </span>
+        <span class="badge badge-warning" role="note" aria-live="polite">
+          ⚠️ Inscritos devem chegar às 8h30
+        </span>
+      </div>
       <a href="#formulario" class="cta-button">🚀 Participar Agora</a>
     </div>
   </section>

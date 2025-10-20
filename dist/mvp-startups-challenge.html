@@ -731,6 +731,38 @@
       border-color: rgb(255 255 255 / 40%);
     }
 
+    /* Info badges (date/time and arrival) */
+    .info-badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 16px 0 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 9999px;
+      border: 1px solid rgb(99 102 241 / 30%);
+      background: rgb(99 102 241 / 15%);
+      color: #eef2ff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+      text-shadow: 0 1px 2px rgb(0 0 0 / 40%);
+    }
+
+    .badge-warning {
+      border-color: rgb(234 179 8 / 35%);
+      background: rgb(234 179 8 / 14%);
+      color: #fff7ed;
+    }
+
     /* Container */
     .container {
       max-width: 1200px;
@@ -1053,6 +1085,14 @@
         mentoria com
         profissionais do Mercado?
       </p>
+      <div class="info-badges" role="group" aria-label="Informações importantes sobre data e chegada">
+        <span class="badge" aria-label="Data da avaliação vinte e cinco de outubro, das nove às dez horas">
+          📅 Data da avaliação: 25 de Outubro, das 09:00 às 10:00
+        </span>
+        <span class="badge badge-warning" role="note" aria-live="polite">
+          ⚠️ Inscritos devem chegar às 8h30
+        </span>
+      </div>
       <a href="#formulario" class="cta-button">🚀 Participar Agora</a>
     </div>
   </section>
@@ -1156,9 +1196,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>Organização: <a href="https://www.linkedin.com/in/jmaxbr/" target="_blank">jamil lopes</a></p>
-      <p style="margin-top: 10px; color: var(--text-secondary);">&copy;</head><body>HeroSectionwithImagePlaceholder<sectionclass=<divclass=></div><divclass=></div><divclass=></div><divclass=></div><divclass=></div><divclass=></div><divclass=></div><divclass=></div><divclass=></div><divclass=></div><divclass=></div><divclass=<h1>MVPStartupsChallenge</h1><pclass=Querparticipardeumverdadeirotanquedetubarõesdeideias?Ganharprêmios,conheceraMicrosofteumamentoriacomprofissionaisdoMercado?</p><ahref=class=ParticiparAgora</a></div></section>AboutSection<sectionclass=<divclass=<h2class=>SobreoChallenge</h2><pclass=>Umaoportunidadeúnicadeapresentarsuaideiaparaumabancadeespecialistaseconcorreraprêmiosincríveis</p><divclass=<divclass=<divclass=>🦈</div><h3>MVPStartupsChallenge</h3><divclass=<ul><li>Nãonecessárioterumastartupconstituída,produtoouserviço,bastaterumaideiainovadora.</li><li>Chameaté3amigoseamostrenomaioreventodetecnologiadoBrasil!</li><li>Leiaoregulamento,preenchaoformulárioeparticipe</li></ul></div></div><divclass=<divclass=>📋</div><h3>Regras</h3><divclass=<ul><li>Mínimode1emáximode3pessoas</li><li>ÉnecessárioapresentaraideiaemumPPTcomnomáximo08slidesnototal!</li><li>Otempototaldaapresentaçãoseráde8minutos</li><li>CasooseuPPTpossuaáudioe/ouvídeootempototal,incluindoaapresentaçãooral,nãopoderáultrapassaros8minutos</li></ul></div></div><divclass=<divclass=>👥</div><h3>Votação</h3><divclass=<ul><li>Abancafaráavotaçãodamelhorideia</li><li>Teremostambémovotodaplateia</li><li>TambémteremosovotoonlineviaInstagramdoMVPConf</li></ul></div></div></div></div></section>FormSection<sectionclass=id=<divclass=<h2class=>DadosparaInscrição</h2><pclass=>Prepareessasinformaçõesparasuainscriçãonochallenge</p><divclass=<divclass=>📝</div><h3>SeinscrevaVagasLimitadas!</h3><iframewidth=height=src=frameborder=marginwidth=marginheight=style=allowfullscreenwebkitallowfullscreenmozallowfullscreenmsallowfullscreen></iframe></div></div></section>PrizesSection<sectionclass=<divclass=<h2class=>Recompensas</h2><pclass=>Prêmiosquevãoacelerarsuajornadaempreendedora</p><divclass=<divclass=<divclass=>🥇</div><divclass=>1ºLugar</div><divclass=>1Notebook</div></div><divclass=<divclass=>🥈</div><divclass=>2ºLugar</div><divclass=>VisitaeumdiadeMentoriaparaogrupo,naMicrosoftBrasil</div></div><divclass=<divclass=>🥉</div><divclass=>3ºLugar</div><divclass=>1Smartphone</div></div></div></div></section>Footer<footerclass=<divclass=<p>Organização 2025 MVP Startups Challenge | <a href="https://mvpconf.com.br" target="_blank">Powered by MVPConf</a>
-      </p>
+      <p>Organização: <a href="https://www.linkedin.com/in/jmaxbr/" target="_blank">Jamil Lopes</a></p>
     </div>
   </footer>
 

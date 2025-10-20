@@ -119,6 +119,18 @@ const Hero: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Avisos de Data e Chegada */}
+                <div className="mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-3">
+                  <div className="inline-flex items-center space-x-2 bg-blue-500/20 px-3 py-1 rounded-full border border-blue-400/30 text-blue-100 text-sm">
+                    <Calendar className="h-4 w-4 text-blue-200" />
+                    <span>Data da avaliação: 25 de Outubro, das 09:00 às 10:00</span>
+                  </div>
+                  <div className="inline-flex items-center space-x-2 bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-400/20 text-yellow-200 text-sm">
+                    <AlertTriangle className="h-4 w-4 text-yellow-300" />
+                    <span>Inscritos devem chegar às 8h30</span>
+                  </div>
+                </div>
+
                 <div className="flex flex-col sm:flex-row items-center justify-between pt-4 border-t border-blue-400/20">
                   <p className="text-blue-100 text-sm mb-3 sm:mb-0">
                     Transforme sua ideia em realidade com tecnologia Microsoft
