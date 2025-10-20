@@ -1,11 +1,14 @@
-﻿import { trackCoordinators, scheduleByDay } from './data.js';
+import { trackCoordinators, scheduleByDay } from '../data.js';
 
 const STORAGE_KEY = 'mvpconf-agenda';
 let selections = loadSelections();
 let currentSchedule = scheduleByDay; // mutável para receber dados do backend
 let currentDay = Object.keys(currentSchedule)[0];
 let userEmail = null;
+let userCode = null; // guarda o código de validação digitado
 let isAuthenticated = false;
+const COLLAPSE_KEY = 'mvpconf-collapsed';
+let collapsedSlots = loadCollapsed();
 
 const scheduleContainer = document.querySelector('#schedule');
 const trackFilter = document.querySelector('#trackFilter');
@@ -14,7 +17,7 @@ const trackDropdown = document.querySelector('#trackDropdown');
 const trackDropdownToggle = document.querySelector('#trackDropdownToggle');
 const trackDropdownPanel = document.querySelector('#trackDropdownPanel');
 // garante painel fechado no load
-try { trackDropdownPanel?.setAttribute('hidden', ''); } catch { }
+try { trackDropdownPanel?.setAttribute('hidden', ''); } catch {}
 // toast removido
 const authEmailDialog = document.querySelector('#authEmailDialog');
 const authEmailForm = document.querySelector('#authEmailForm');
@@ -36,13 +39,27 @@ function loadSelections() {
     const raw = localStorage.getItem(STORAGE_KEY);
     return raw ? JSON.parse(raw) : {};
   } catch (error) {
-    console.warn('Falha ao carregar seleÃ§Ãµes salvas', error);
+    console.warn('Falha ao carregar seleções salvas', error);
     return {};
   }
 }
 
 function saveSelections() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(selections));
+}
+
+function loadCollapsed() {
+  try {
+    const raw = localStorage.getItem(COLLAPSE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (error) {
+    console.warn('Falha ao carregar colapsos salvos', error);
+    return {};
+  }
+}
+
+function saveCollapsed() {
+  try { localStorage.setItem(COLLAPSE_KEY, JSON.stringify(collapsedSlots)); } catch {}
 }
 
 function ensureDefaultSelections() {
@@ -62,8 +79,6 @@ function createVacantSelection(slot, day) {
   return {
     day,
     slotId: slot.id,
-    slotStart: slot.start,
-    slotEnd: slot.end,
     talkId: `${slot.id}-vacant`,
     talkTitle: 'Slot vago',
     track: 'Horario livre',
@@ -87,7 +102,27 @@ function createVacantTalk(slot) {
 }
 
 function getDayFromSlot(slot) {
-  return slot.start.split('T')[0];
+  // Extrai o dia a partir do slotId (YYYY-MM-DD-HHmm)
+  try { return String(slot.id).slice(0, 10); } catch { return ''; }
+}
+
+function dateFromSlotId(slotId) {
+  const m = /^([0-9]{4})-([0-9]{2})-([0-9]{2})-([0-9]{2})([0-9]{2})$/.exec(String(slotId || ''));
+  if (!m) return new Date(NaN);
+  const [, y, mo, d, hh, mm] = m;
+  return new Date(`${y}-${mo}-${d}T${hh}:${mm}:00`);
+}
+
+function formatTimeFromSlotId(slotId) {
+  const dt = dateFromSlotId(slotId);
+  const formatter = new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-digit' });
+  return `${formatter.format(dt)}`;
+}
+
+function formatDayFromSlotId(slotId) {
+  const dt = dateFromSlotId(slotId);
+  const formatted = new Intl.DateTimeFormat('pt-BR', { weekday: 'short', day: '2-digit', month: '2-digit' }).format(dt);
+  return formatted.replace(', ', ' - ');
 }
 
 function formatTime(start) {
@@ -130,7 +165,7 @@ function buildFilters() {
     });
   // Atualiza dropdown custom
   renderTrackDropdown();
-  // garante fechado após render
+  // garante fechado ap�s render
   trackDropdownPanel?.setAttribute('hidden', '');
 }
 
@@ -177,13 +212,30 @@ function renderSchedule() {
 
   slots.forEach((slot) => {
     const slotNode = slotTemplate.content.firstElementChild.cloneNode(true);
+    // Identificador para buscas posteriores
+    try { slotNode.dataset.slotId = slot.id; } catch {}
     const slotTime = slotNode.querySelector('.slot-time');
     const slotInfo = slotNode.querySelector('.slot-info');
     const slotDayLabel = slotNode.querySelector('.slot-day');
     const talksContainer = slotNode.querySelector('.talks');
+    // id �nico para aria-controls
+    const talksId = `talks-${slot.id}`;
+    talksContainer.id = talksId;
+    // BoT�o de colapso e label com seleção
+    const headerEl = slotNode.querySelector('header');
+    const toggleBtn = document.createElement('button');
+    toggleBtn.type = 'button';
+    toggleBtn.className = 'slot-toggle secondary';
+    toggleBtn.setAttribute('aria-controls', talksId);
+    // �cone chevron
+    toggleBtn.innerHTML = '<svg class="chev" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    const selectedLabel = document.createElement('div');
+    selectedLabel.className = 'slot-selected';
+    headerEl.appendChild(toggleBtn);
+    slotNode.insertBefore(selectedLabel, talksContainer);
 
-    slotTime.textContent = `${formatTime(slot.start)}`;
-    slotDayLabel.textContent = formatDay(slot.start);
+    slotTime.textContent = `${formatTimeFromSlotId(slot.id)}`;
+    slotDayLabel.textContent = formatDayFromSlotId(slot.id);
 
     const talksWithVacant = [createVacantTalk(slot), ...slot.talks];
 
@@ -228,7 +280,7 @@ function renderSchedule() {
         desc.textContent = talk.description;
         const levelText = (talk.level || '').toString().trim();
         if (levelText) {
-          badge.textContent = `NÃ­vel: ${levelText}`;
+          badge.textContent = `Nível: ${levelText}`;
           badge.style.display = '';
         } else {
           badge.textContent = '';
@@ -256,6 +308,30 @@ function renderSchedule() {
       talksContainer.appendChild(talkNode);
     });
 
+    // Estado de colapso inicial
+    const isCollapsed = Boolean(collapsedSlots[slot.id]);
+    const selection = selections[slot.id];
+    const selTitle = selection?.isVacant ? 'Slot vago' : (selection?.talkTitle || 'Nenhuma palestra selecionada');
+    selectedLabel.textContent = selTitle;
+    slotNode.classList.toggle('collapsed', isCollapsed);
+    toggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
+    toggleBtn.setAttribute('aria-label', isCollapsed ? 'Expandir slot' : 'Recolher slot');
+    toggleBtn.title = isCollapsed ? 'Expandir' : 'Recolher';
+    toggleBtn.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      const nowCollapsed = !slotNode.classList.contains('collapsed');
+      slotNode.classList.toggle('collapsed', nowCollapsed);
+      collapsedSlots[slot.id] = nowCollapsed;
+      saveCollapsed();
+      toggleBtn.setAttribute('aria-expanded', String(!nowCollapsed));
+      toggleBtn.setAttribute('aria-label', nowCollapsed ? 'Expandir slot' : 'Recolher slot');
+      toggleBtn.title = nowCollapsed ? 'Expandir' : 'Recolher';
+      try {
+        const currentSel = selections[slot.id];
+        selectedLabel.textContent = currentSel?.isVacant ? 'Slot vago' : (currentSel?.talkTitle || 'Nenhuma palestra selecionada');
+      } catch {}
+    });
+
     scheduleContainer.appendChild(slotNode);
   });
 }
@@ -265,8 +341,6 @@ function handleSelection(slot, talk, event) {
   selections[slot.id] = {
     day,
     slotId: slot.id,
-    slotStart: slot.start,
-    slotEnd: slot.end,
     talkId: talk.id,
     talkTitle: talk.title,
     track: talk.isVacant ? 'Horario livre' : talk.track,
@@ -276,6 +350,24 @@ function handleSelection(slot, talk, event) {
   };
   saveSelections();
   updateSummary();
+  // Atualiza label e colapsa o slot atual, enT�o foca no próximo
+  try {
+    const card = scheduleContainer.querySelector(`.slot[data-slot-id="${slot.id}"]`);
+    const label = card?.querySelector('.slot-selected');
+    if (label) label.textContent = selections[slot.id]?.isVacant ? 'Slot vago' : (selections[slot.id]?.talkTitle || 'Nenhuma palestra selecionada');
+    if (card && !card.classList.contains('collapsed')) {
+      card.classList.add('collapsed');
+      try {
+        collapsedSlots[slot.id] = true; saveCollapsed();
+        const btn = card.querySelector('.slot-toggle');
+        btn?.setAttribute('aria-expanded', 'false');
+        btn?.setAttribute('aria-label', 'Expandir slot');
+        if (btn) btn.title = 'Expandir';
+      } catch {}
+    }
+  } catch {}
+  // Após isso, foca no primeiro item do próximo slot
+  focusNextSlot(slot);
 }
 
 function updateSummary() {
@@ -286,7 +378,7 @@ function updateSummary() {
 
     const selectionEntries = Object.values(selections)
       .filter((selection) => selection.day === day)
-      .sort((a, b) => new Date(a.slotStart) - new Date(b.slotStart));
+      .sort((a, b) => dateFromSlotId(a.slotId) - dateFromSlotId(b.slotId));
 
     if (selectionEntries.length === 0) {
       const tr = document.createElement('tr');
@@ -302,7 +394,7 @@ function updateSummary() {
       const tr = document.createElement('tr');
       if (selection.isVacant) tr.classList.add('vacant-row');
 
-      const timeRange = formatTime(selection.slotStart);
+      const timeRange = formatTimeFromSlotId(selection.slotId);
 
       const tdTime = document.createElement('td');
       tdTime.className = 'time-cell';
@@ -337,7 +429,6 @@ function clearSelections() {
   saveSelections();
   updateSummary();
   renderSchedule();
-  focusNextSlot(slot);
 }
 
 function focusNextSlot(currentSlot) {
@@ -346,7 +437,20 @@ function focusNextSlot(currentSlot) {
     const idx = slots.findIndex((s) => s.id === currentSlot.id);
     for (let i = idx + 1; i < slots.length; i++) {
       const nextId = slots[i].id;
-      const nextInput = scheduleContainer.querySelector(`input[name="slot-${nextId}"]`);
+      const card = scheduleContainer.querySelector(`.slot[data-slot-id="${nextId}"]`);
+      // Se estiver colapsado, expande automaticamente
+      if (card && card.classList.contains('collapsed')) {
+        card.classList.remove('collapsed');
+        try {
+          collapsedSlots[nextId] = false; saveCollapsed();
+          const btn = card.querySelector('.slot-toggle');
+          btn?.setAttribute('aria-expanded', 'true');
+          btn?.setAttribute('aria-label', 'Recolher slot');
+          if (btn) btn.title = 'Recolher';
+        } catch {}
+      }
+      const nextInput = card?.querySelector('input[type="radio"]')
+        || scheduleContainer.querySelector(`input[name="slot-${nextId}"]`);
       if (nextInput) { nextInput.focus(); return; }
     }
   } catch (_) { /* no-op */ }
@@ -354,12 +458,10 @@ function focusNextSlot(currentSlot) {
 
 function toCsv(selectionsMap) {
   const rows = [
-    ['day', 'slotId', 'slotStart', 'slotEnd', 'talkId', 'talkTitle', 'track', 'room', 'isVacant'],
+    ['day', 'slotId', 'talkId', 'talkTitle', 'track', 'room', 'isVacant'],
     ...Object.values(selectionsMap).map((sel) => [
       sel.day,
       sel.slotId,
-      sel.slotStart,
-      sel.slotEnd,
       sel.talkId,
       sel.talkTitle,
       sel.track,
@@ -405,6 +507,23 @@ function setDay(day) {
     tab.classList.toggle('active', tab.dataset.day === day);
   });
   renderSchedule();
+  // Após trocar de aba, foca no primeiro slot da nova aba
+  try {
+    requestAnimationFrame(() => {
+      const firstCard = scheduleContainer.querySelector('.slot');
+      if (firstCard && firstCard.classList.contains('collapsed')) {
+        firstCard.classList.remove('collapsed');
+        const id = firstCard?.dataset?.slotId;
+        if (id) { try { collapsedSlots[id] = false; saveCollapsed(); } catch {} }
+        const btn = firstCard.querySelector('.slot-toggle');
+        btn?.setAttribute('aria-expanded', 'true');
+        btn?.setAttribute('aria-label', 'Recolher slot');
+        if (btn) btn.title = 'Recolher';
+      }
+      const firstInput = scheduleContainer.querySelector('.slot input[type="radio"]');
+      if (firstInput) firstInput.focus();
+    });
+  } catch (_) { /* no-op */ }
 }
 
 function registerServiceWorker() {
@@ -494,7 +613,7 @@ function onTrackCheckboxChange(value, checked) {
       Array.from(trackFilter.options).forEach((o) => (o.selected = o.value === 'all'));
     }
   }
-  // Sincroniza checkboxes visuais (caso haja interdependências)
+  // Sincroniza checkboxes visuais (caso haja interdepend�ncias)
   Array.from(trackDropdownPanel.querySelectorAll('input[type=checkbox]')).forEach((cb) => {
     const opt = Array.from(trackFilter.options).find((o) => o.value === cb.value);
     cb.checked = Boolean(opt?.selected);
@@ -544,7 +663,7 @@ document.addEventListener('click', (e) => {
   if (!trackDropdown.contains(e.target)) closeTrackDropdown();
 });
 
-// Utilitários para sincronizar estado do dropdown e do select oculto
+// Utilit�rios para sincronizar estado do dropdown e do select oculto
 function setTrackFilterToAll() {
   if (!trackFilter) return;
   Array.from(trackFilter.options).forEach((o) => (o.selected = o.value === 'all'));
@@ -571,7 +690,6 @@ window.addEventListener('resize', closeTrackDropdown);
 
 // ====== API placeholders ======
 async function apiStartAuth(email) {
-  return { ok: true };
 
   const url = 'https://default5745ebc3a9564b3ca71051f857949e.4d.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/bcd6d33c798449a09f7a566c801a53b3/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=GDzT_KBvrhV6e2c_bJ4UUeKfKol1oYKLOM1dBOfGx9k';
   const controller = new AbortController();
@@ -589,7 +707,7 @@ async function apiStartAuth(email) {
     clearTimeout(timeout);
     if (!res.ok) {
       if (res.status === 400) {
-        try { alert('Email invalido. Verifique e tente novamente.'); } catch { }
+        try { alert('Email invalido. Verifique e tente novamente.'); } catch {}
         return { ok: false, status: 400, message: 'Email invalido. Verifique e tente novamente.' };
       }
       return { ok: false, status: res.status, message: `Falha ao enviar email (HTTP ${res.status}).` };
@@ -599,31 +717,28 @@ async function apiStartAuth(email) {
     clearTimeout(timeout);
     console.warn('apiStartAuth error', err);
     const aborted = err && (err.name === 'AbortError');
-    return { ok: false, message: aborted ? 'Tempo esgotado ao enviar e-mail.' : 'NÃ£o foi possÃ­vel iniciar o login.' };
+    return { ok: false, message: aborted ? 'Tempo esgotado ao enviar e-mail.' : 'Não foi possível iniciar o login.' };
   }
 }
 
 async function apiVerifyCode(email, code) {
   try {
     // const res = await fetch('/api/auth/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, code }) });
-    // if (!res.ok) throw new Error('CÃ³digo invÃ¡lido');
+    // if (!res.ok) throw new Error('Código inválido');
     // const data = await res.json();
     return { ok: true /*, data */ };
   } catch (err) {
     console.warn('apiVerifyCode error', err);
-    return { ok: false, message: 'CÃ³digo invÃ¡lido ou expirado.' };
+    return { ok: false, message: 'Código inválido ou expirado.' };
   }
 }
 
 async function apiLoadAgenda(email) {
   try {
-    // const res = await fetch(`/api/agenda?email=${encodeURIComponent(email)}`);
-    // if (!res.ok) throw new Error('Falha carregar agenda');
-    // const data = await res.json(); // { scheduleByDay: {...}, selections: [{ slotId, talkId }] }
     return await apiLoadAgendaRemote(email);
   } catch (err) {
     console.warn('apiLoadAgenda error', err);
-    return { ok: false, message: 'NÃ£o foi possÃ­vel carregar sua agenda.' };
+    return { ok: false, message: 'Não foi possível carregar sua agenda.' };
   }
 }
 
@@ -634,7 +749,7 @@ async function apiSaveAgenda(email, selectionsArray) {
     return { ok: true };
   } catch (err) {
     console.warn('apiSaveAgenda error', err);
-    return { ok: false, message: 'NÃ£o foi possÃ­vel salvar sua agenda.' };
+    return { ok: false, message: 'Não foi possível salvar sua agenda.' };
   }
 }
 
@@ -646,7 +761,7 @@ function openDialog(el) {
     else if (el.show) el.show();
     else el.setAttribute('open', '');
   } catch (e) {
-    try { el.setAttribute('open', ''); } catch { }
+    try { el.setAttribute('open', ''); } catch {}
   }
 }
 
@@ -655,7 +770,7 @@ function closeDialog(el) {
     if (!el) return;
     if (el.close) el.close();
     else el.removeAttribute('open');
-  } catch { }
+  } catch {}
 }
 
 async function promptAuthFlow() {
@@ -667,17 +782,34 @@ authEmailForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = authEmailInput.value.trim();
   if (!email) return;
-  const res = await apiStartAuth(email);
-  if (!res.ok) {
+  const submitBtn = authEmailForm.querySelector('button[type="submit"]');
+  const originalText = submitBtn?.textContent || '';
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+  }
+  // Temporariamente não enviar e-mail; carregar agenda diretamente
+  userEmail = email;
+  if (typeof userCode === 'undefined' || userCode === null) userCode = '';
+  await loadAgendaFromServer();
+  if (false) {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText || 'Continuar';
+    }
     displayToast(res.message || 'Erro ao iniciar login.');
     return;
+  }
+  if (submitBtn) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalText || 'Continuar';
   }
   userEmail = email;
   const emailDisplay = document.querySelector('#authEmailDisplay');
   if (emailDisplay) emailDisplay.textContent = userEmail;
   closeDialog(authEmailDialog);
-  displayToast('Enviamos um cÃ³digo para seu e-mail.');
-  openDialog(authCodeDialog);
+  // displayToast desativado no fluxo tempor�rio
+  // openDialog(authCodeDialog); // desativado no fluxo tempor�rio
 });
 
 authCodeForm?.addEventListener('submit', async (e) => {
@@ -686,11 +818,12 @@ authCodeForm?.addEventListener('submit', async (e) => {
   if (!code || !userEmail) return;
   const res = await apiVerifyCode(userEmail, code);
   if (!res.ok) {
-    displayToast(res.message || 'CÃ³digo invÃ¡lido.');
+    displayToast(res.message || 'Código inválido.');
     return;
   }
   isAuthenticated = true;
-  try { authCodeDialog.close(); } catch { }
+  userCode = code; // armazena o código para usar nas chamadas da API
+  try { authCodeDialog.close(); } catch {}
   await loadAgendaFromServer();
 });
 
@@ -700,12 +833,27 @@ resendCodeLink?.addEventListener('click', async () => {
     openDialog(authEmailDialog);
     return;
   }
-  const res = await apiStartAuth(userEmail);
-  if (!res.ok) {
-    displayToast(res.message || 'Erro ao reenviar e-mail.');
+  if (resendCodeLink.disabled) return;
+  const originalText = resendCodeLink.textContent || '';
+  resendCodeLink.disabled = true;
+  resendCodeLink.textContent = 'enviando';
+  let res;
+  try { res = await apiStartAuth(userEmail); } catch (err) { res = { ok: false, message: 'Falha ao reenviar e-mail.' }; }
+  if (false) {
+    resendCodeLink.disabled = false;
+    resendCodeLink.textContent = originalText || 'Reenviar e-mail';
+    alert(res.message || 'Falha ao reenviar e-mail.');
     return;
   }
-  // Mensagem silenciosa: cÃ³digo reenviado, sem modal/toast
+  resendCodeLink.textContent = 'reenviado';
+  alert('Reenviamos o email com o codigo.');
+  return;
+  const res1 = await apiStartAuth(userEmail);
+  if (!res1.ok) {
+    displayToast(res1.message || 'Erro ao reenviar e-mail.');
+    return;
+  }
+  // Mensagem silenciosa: código reenviado, sem modal/toast
 });
 
 cancelEmailBtn?.addEventListener('click', () => closeDialog(authEmailDialog));
@@ -714,7 +862,7 @@ async function loadAgendaFromServer() {
   if (!userEmail) return;
   const res = await apiLoadAgenda(userEmail);
   if (!res.ok) {
-    alert(res.message || 'Falha ao carregar agenda.');
+    alert('Falha ao carregar agenda.');
     return;
   }
   const data = res.data || {};
@@ -730,7 +878,7 @@ async function loadAgendaFromServer() {
   const rawSelections = (data.Selections !== undefined) ? data.Selections : data.selections;
   let serverSelections = Array.isArray(rawSelections) ? rawSelections : [];
   if (typeof rawSelections === 'string') {
-    try { serverSelections = JSON.parse(rawSelections); } catch { }
+    try { serverSelections = JSON.parse(rawSelections); } catch {}
   }
   if (Array.isArray(serverSelections)) {
     applyServerSelections(serverSelections);
@@ -799,8 +947,6 @@ function applyServerSelections(serverSelections) {
     selections[slot.id] = {
       day,
       slotId: slot.id,
-      slotStart: slot.start,
-      slotEnd: slot.end,
       talkId: talk.id,
       talkTitle: talk.title,
       track: talk.track,
@@ -829,11 +975,12 @@ async function saveAgenda() {
   // downloadCsv();
 }
 
-// ImplementaÃ§Ã£o real para salvar agenda via Power Automate
-// Real backend: carregar agenda do usuÃ¡rio
+// Implementação real para salvar agenda via Power Automate
+// Real backend: carregar agenda do usu�rio
 async function apiLoadAgendaRemote(email) {
   const base = 'https://default5745ebc3a9564b3ca71051f857949e.4d.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/773c6bbd1d6b4c8596a9afe8461968d3/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=SvUfOtq9WIa1YPOt8OjP1Yw4mDc0Cu9YqkGd6a9S580';
-  const url = email ? `${base}&Email=${encodeURIComponent(email)}` : base;
+  let url = email ? `${base}&Email=${encodeURIComponent(email)}` : base;
+  url += `&Code=${encodeURIComponent(userCode ?? '')}`; // envia o código, mesmo vazio
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 12000);
   try {
@@ -854,7 +1001,7 @@ async function apiLoadAgendaRemote(email) {
     clearTimeout(timeout);
     console.warn('apiLoadAgendaRemote error', err);
     const aborted = err && (err.name === 'AbortError');
-    return { ok: false, message: aborted ? 'Tempo esgotado ao carregar agenda.' : 'NÃ£o foi possÃ­vel carregar sua agenda.' };
+    return { ok: false, message: aborted ? 'Tempo esgotado ao carregar agenda.' : 'Não foi possível carregar sua agenda.' };
   }
 }
 
@@ -883,24 +1030,25 @@ async function apiSaveAgendaRemote(email, selectionsArray) {
     clearTimeout(timeout);
     console.warn('apiSaveAgendaRemote error', err);
     const aborted = err && (err.name === 'AbortError');
-    return { ok: false, message: aborted ? 'Tempo esgotado ao salvar.' : 'NÃ£o foi possÃ­vel salvar sua agenda.' };
+    return { ok: false, message: aborted ? 'Tempo esgotado ao salvar.' : 'Não foi possível salvar sua agenda.' };
   }
 }
 
 ensureDefaultSelections();
 buildFilters();
-// garante seleÃ§Ã£o padrÃ£o no filtro mÃºltiplo
+// garante seleção padrão no filtro múltiplo
 ensureTrackFilterDefault();
 setupEvents();
+// Carrega palestras (grade) a partir da API dedicada
+loadTalksFromServer();
 updateSummary();
 renderSchedule();
 registerServiceWorker();
 
-// inicia fluxo de autenticaÃ§Ã£o
+// inicia fluxo de autenticação
 promptAuthFlow();
 
-// Carrega palestras (grade) a partir da API dedicada
-loadTalksFromServer();
+
 
 async function apiLoadTalksRemote() {
   const url = 'https://default5745ebc3a9564b3ca71051f857949e.4d.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/a63d4891b08e4216a181f7c1c1d056e8/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=T3Ln5vzPxmiTOEZ4mxQ5JimBEyUoAJ-mfDzpcxHpepc';
@@ -921,7 +1069,7 @@ async function apiLoadTalksRemote() {
     clearTimeout(timeout);
     console.warn('apiLoadTalksRemote error', err);
     const aborted = err && (err.name === 'AbortError');
-    return { ok: false, message: aborted ? 'Tempo esgotado ao carregar palestras.' : 'NÃ£o foi possÃ­vel carregar as palestras.' };
+    return { ok: false, message: aborted ? 'Tempo esgotado ao carregar palestras.' : 'Não foi possível carregar as palestras.' };
   }
 }
 
@@ -944,7 +1092,7 @@ async function loadTalksFromServer() {
   renderSchedule();
 }
 
-// Helper: seleciona 'Todas' por padrÃ£o no multi-select
+// Helper: seleciona 'Todas' por padrão no multi-select
 function ensureTrackFilterDefault() {
   if (!trackFilter) return;
   const anySelected = Array.from(trackFilter.options).some((o) => o.selected);
@@ -961,7 +1109,7 @@ function getSelectedTracks() {
   return values;
 }
 
-// Ajusta eventos para multi-seleÃ§Ã£o
+// Ajusta eventos para multi-seleção
 try {
   trackFilter.addEventListener('change', () => {
     const selected = Array.from(trackFilter.selectedOptions).map((o) => o.value);
@@ -977,4 +1125,5 @@ try {
     searchFilter.value = '';
     renderSchedule();
   });
-} catch { }
+} catch {}
+

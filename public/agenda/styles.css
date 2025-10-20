@@ -1,8 +1,7 @@
-:root {
+﻿:root {
   color-scheme: light;
-
   --bg-page: #f5f7fb;
-  --bg-surface: #fff;
+  --bg-surface: #ffffff;
   --bg-surface-soft: #f8fafc;
   --border: #d9e1f2;
   --border-strong: #b9c6dd;
@@ -10,13 +9,12 @@
   --text-base: #374151;
   --text-soft: #6b7280;
   --accent: #2563eb;
-  --accent-soft: rgb(37 99 235 / 8%);
-  --accent-border: rgb(37 99 235 / 35%);
+  --accent-soft: rgba(37, 99, 235, 0.08);
+  --accent-border: rgba(37, 99, 235, 0.35);
   --slot-vago-bg: #fef3c7;
   --slot-vago-border: #fbbf24;
   --slot-vago-text: #92400e;
-
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * {
@@ -55,6 +53,12 @@ input[type="text"] {
   background-repeat: no-repeat;
 }
 
+/* Override: retirar seta e diminuir o input de busca */
+.filters input[type="text"] {
+  background-image: none;
+  padding-right: 0.9rem;
+}
+
 /* Ajustes para select múltiplo (trilha) */
 .filters select[multiple] {
   display: none; /* escondemos o select nativo e usamos dropdown custom */
@@ -71,7 +75,6 @@ input[type="text"] {
 /* Dropdown multi-select */
 .multi-dropdown { position: relative; display: inline-block; }
 .multi-dropdown .secondary { min-width: 200px; justify-content: space-between; display: inline-flex; align-items: center; }
-
 .multi-dropdown__panel {
   position: absolute;
   top: calc(100% + 6px);
@@ -80,8 +83,8 @@ input[type="text"] {
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: 12px;
-  box-shadow: 0 14px 32px rgb(15 23 42 / 16%);
-  padding: 0.6rem;
+  box-shadow: 0 14px 32px rgba(15,23,42,0.16);
+  padding: 0.6rem 0.6rem;
   display: grid;
   gap: 0.4rem;
   z-index: 20;
@@ -92,7 +95,7 @@ input[type="text"] {
 
 select:focus,
 input[type="text"]:focus {
-  outline: 2px solid rgb(37 99 235 / 35%);
+  outline: 2px solid rgba(37, 99, 235, 0.35);
 }
 
 a {
@@ -116,7 +119,7 @@ a {
   align-items: center;
   gap: 1.5rem;
   border: 1px solid var(--border);
-  box-shadow: 0 18px 40px rgb(15 23 42 / 8%);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
 }
 
 .app-header__text {
@@ -143,12 +146,12 @@ a {
 .primary {
   background: var(--accent);
   color: white;
-  box-shadow: 0 10px 24px rgb(37 99 235 / 25%);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
 }
 
 .primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 14px 28px rgb(37 99 235 / 28%);
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.28);
 }
 
 .secondary {
@@ -162,18 +165,36 @@ a {
   border-color: var(--border-strong);
 }
 
+/* Estado desabilitado para botões */
+.primary:disabled,
+.secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  filter: grayscale(20%);
+}
+
 .layout {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr); /* reduz schedule, aumenta Minha agenda */
+  grid-template-areas:
+    "controls controls"
+    "schedule summary";
   gap: 1.5rem;
   align-items: start;
 }
+
+/* Define grid areas for primary sections */
+.controls-wrapper { grid-area: controls; }
+.schedule { grid-area: schedule; }
+.summary { grid-area: summary; }
 
 .panel {
   background: var(--bg-surface);
   border-radius: 18px;
   border: 1px solid var(--border);
-  box-shadow: 0 12px 26px rgb(15 23 42 / 6%);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.06);
 }
 
 .filters {
@@ -186,21 +207,21 @@ a {
   position: sticky;
   top: 1.5rem;
   z-index: 10;
-  margin-bottom: 0.375rem; /* metade do espaÃ§amento */
+  margin-bottom: 0.375rem; /* metade do espaçamento */
 }
 
-/* Alinhar botÃ£o Limpar filtros com os inputs */
+/* Alinhar boTío Limpar filtros com os inputs */
 #clearFilters {
   align-self: end;
 }
 
-/* AÃ§Ãµes da barra lateral */
+/* Ações da barra lateral */
 .summary-actions {
   display: flex;
   gap: 0.8rem;
   align-items: center;
   justify-content: center; /* centraliza no container */
-  flex-wrap: wrap; /* evita corte se faltar espaÃ§o */
+  flex-wrap: wrap; /* evita corte se faltar espaço */
   width: 100%;
   padding: 0.25rem 0 0.1rem;
   overflow: visible;
@@ -219,10 +240,10 @@ a {
   border-radius: 999px;
   padding: 0.4rem;
   border: 1px solid var(--border);
-  box-shadow: 0 12px 26px rgb(15 23 42 / 6%);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.06);
   gap: 0.4rem;
   position: sticky;
-  top: 9.5rem; /* afastar das filtros quando ambos estÃ£o sticky */
+  top: 9.5rem; /* afastar das filtros quando ambos esTío sticky */
   z-index: 9;
 }
 
@@ -245,7 +266,7 @@ a {
 .tab.active {
   background: var(--accent);
   color: white;
-  box-shadow: 0 10px 24px rgb(37 99 235 / 25%);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
 }
 
 .field {
@@ -279,12 +300,13 @@ input[type="text"] {
   background-size: 8px 8px, 8px 8px;
   background-repeat: no-repeat;
 }
+/* Força remoção da seta em inputs de texto após regras genéricas (segunda definição) */
+.filters input[type="text"] { background-image: none !important; padding-right: 0.9rem; }
 
 select:focus,
 input[type="text"]:focus {
-  outline: 2px solid rgb(37 99 235 / 35%);
+  outline: 2px solid rgba(37, 99, 235, 0.35);
 }
-
 .schedule {
   display: grid;
   gap: 1.2rem;
@@ -294,7 +316,7 @@ input[type="text"]:focus {
   border-radius: 16px;
   border: 1px solid var(--border);
   background: var(--bg-surface);
-  box-shadow: 0 10px 24px rgb(15 23 42 / 5%);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
   transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.12s ease;
 }
 
@@ -308,7 +330,35 @@ input[type="text"]:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.5rem;
 }
+
+/* Colapso de slot */
+.slot { position: relative; }
+.slot-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+}
+.slot-selected {
+  display: none;
+  padding: 0.55rem 0.75rem;
+  border-radius: 12px;
+  background: var(--bg-surface-soft);
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+}
+.slot-toggle svg { transition: transform 0.15s ease; }
+.slot.collapsed .slot-toggle svg { transform: rotate(-90deg); }
+.slot.collapsed .talks { display: none; }
+.slot.collapsed .slot-selected { display: block; }
+.slot.collapsed .slot-info { display: none; }
 
 .slot-time {
   font-size: 1.05rem;
@@ -343,7 +393,7 @@ input[type="text"]:focus {
   font-size: 0.78rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  box-shadow: 0 6px 16px rgb(37 99 235 / 25%);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
 }
 
 .talk {
@@ -357,7 +407,7 @@ input[type="text"]:focus {
 
 .talk:hover {
   border-color: var(--accent-border);
-  box-shadow: 0 12px 22px rgb(37 99 235 / 12%);
+  box-shadow: 0 12px 22px rgba(37, 99, 235, 0.12);
 }
 
 .talk input[type="radio"] {
@@ -525,7 +575,7 @@ input[type="text"]:focus {
   font-weight: 500; /* remover negrito forte */
 }
 
-/* TÃ­tulo da palestra na tabela (sem negrito e menor) */
+/* Tí­tulo da palestra na tabela (sem negrito e menor) */
 .summary-list .talk-title {
   font-size: 0.9rem;
   font-weight: 500;
@@ -553,20 +603,23 @@ input[type="text"]:focus {
   white-space: nowrap;
 }
 
-/* Evita que o conteÃºdo quebre o container */
+/* Evita que o conteúdo quebre o container */
 .summary {
   overflow-x: auto;
 }
 
 /* toast removido */
 
-@media (width <= 960px) {
+@media (max-width: 960px) {
   .layout {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "controls"
+      "summary"
+      "schedule"; /* ordem: busca/filtros, Minha agenda, Seleção */
   }
 
   .summary {
-    order: -1;
     position: static;   /* desativa sticky no mobile para evitar sobreposição */
     max-height: none;    /* remove limite de altura no mobile */
     overflow: visible;   /* sem scroll interno no mobile */
@@ -582,11 +635,48 @@ input[type="text"]:focus {
   }
 }
 
-@media (width <= 640px) {
+@media (max-width: 640px) {
+  dialog {
+    width: 92vw;
+    padding: 0.9rem;
+  }
+  .controls-wrapper {
+    /* mantém fundo e sombra do painel no mobile */
+  }
+  /* BoTío de colapso menor no mobile */
+  .slot-toggle {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    padding: 0 !important;        /* remove padding herdado */
+    flex: 0 0 auto !important;    /* impede esticar no flex */
+    box-sizing: border-box;
+    margin-left: 0.25rem;
+  }
+  .slot-toggle svg { width: 12px; height: 12px; }
   .filters {
     flex-direction: column;
     align-items: stretch;
+    padding: 0.75rem 0.9rem;   /* reduz espaço do container */
+    gap: 0.6rem;               /* menos espaço entre campos */
   }
+
+  /* No mobile, remover expansão do .field--wide e ocupar largura disponível sem min-width fixa */
+  .filters .field--wide {
+    flex: 0 0 auto;
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Input de busca mais compacto no mobile */
+  .filters .field--wide input[type="text"],
+  .filters input[type="text"] {
+    padding: 0.45rem 0.6rem;
+    font-size: 0.94rem;
+    min-height: 36px;
+  }
+
+  /* Campo de busca com altura máxima menor */
+  #searchFilter { max-height: 40px; height: 40px; }
 
   .tabs {
     width: 100%;
@@ -617,7 +707,6 @@ input[type="text"]:focus {
     justify-content: center;
     flex-wrap: wrap;
   }
-
   .summary-actions .secondary,
   .summary-actions .primary {
     width: auto;
@@ -625,20 +714,27 @@ input[type="text"]:focus {
   }
 }
 
-/* AutenticaÃ§Ã£o dialogs */
+/* Autenticação dialogs */
 dialog {
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1rem 1.1rem;
   background: var(--bg-surface);
   color: var(--text-base);
-  box-shadow: 0 24px 48px rgb(15 23 42 / 22%);
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.22);
   width: min(92vw, 420px);
+  /* Centralização estável, principalmente em mobile */
+  position: fixed;
+  inset: 0;            /* top/right/bottom/left: 0 */
+  margin: auto;        /* centra horizontal e vertical */
+  transform: none;     /* evita deslocamento extra do UA */
+  max-height: 90vh;    /* evita corte */
+  overflow: auto;      /* scroll interno se precisar */
 }
 
 dialog::backdrop {
-  /* escurece e desfoca o fundo enquanto o modal estÃ¡ aberto */
-  background: rgb(15 23 42 / 35%);
+  /* escurece e desfoca o fundo enquanto o modal está aberto */
+  background: rgba(15, 23, 42, 0.35);
   backdrop-filter: blur(6px);
 }
 
@@ -647,19 +743,16 @@ dialog::backdrop {
   gap: 0.8rem;
   min-width: 300px;
 }
-
 .auth-form h3 {
   margin: 0;
   font-size: 1.1rem;
   color: var(--text-strong);
 }
-
 .auth-form p {
   margin: 0;
   color: var(--text-soft);
   font-size: 0.9rem;
 }
-
 .auth-form input[type="email"],
 .auth-form input[type="text"] {
   padding: 0.65rem 0.8rem;
@@ -668,13 +761,12 @@ dialog::backdrop {
   border-radius: 12px;
   font-size: 0.95rem;
 }
-
 .auth-form menu {
   display: flex;
   gap: 0.6rem;
   justify-content: flex-end;
   margin: 0;
-  padding: 0.3rem 0 0;
+  padding: 0.3rem 0 0 0;
 }
 
 .link-button {
@@ -688,7 +780,13 @@ dialog::backdrop {
   cursor: pointer;
 }
 
-/* Centraliza a navegaÃ§Ã£o de dias */
+.link-button:disabled {
+  color: var(--text-soft);
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
+/* Centraliza a navegação de dias */
 .tabs {
   justify-content: center;
   margin-left: auto;
@@ -696,7 +794,7 @@ dialog::backdrop {
 }
 
 
-/* Controls wrapper: mantÃ©m filtros e abas juntos e fixos */
+/* Controls wrapper: manTí©m filtros e abas juntos e fixos */
 .controls-wrapper {
   position: sticky;
   top: 1.5rem;
@@ -704,12 +802,10 @@ dialog::backdrop {
   grid-column: 1 / -1; /* ocupa a largura total da grade */
   border: none; /* remover borda do wrapper */
 }
-
 .controls-wrapper .filters {
   position: static;
   margin-bottom: 0.375rem;
 }
-
 .controls-wrapper .tabs {
   position: static;
   margin-top: 0.25rem;
