@@ -1,30 +1,17 @@
-const CACHE_NAME = "mvpconf-agenda-cache-v1";
-const ASSETS = [
-  "./",
-  "./index.html",
-  "./styles.css",
-  "./app.js",
-  "./manifest.webmanifest",
-  "./icons/icon-192.png",
-  "./icons/icon-512.png"
-];
+const CACHE_NAME = "mvpconf-agenda-cache-disabled"; // bump para forçar update
 
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
-  );
+self.addEventListener("install", () => {
+  // Não faz pre-cache; força ativação imediata
+  self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(
-        keys
-          .filter((key) => key !== CACHE_NAME)
-          .map((key) => caches.delete(key))
-      )
-    )
-  );
+  event.waitUntil((async () => {
+    // Remove TODOS os caches existentes, inclusive o atual
+    const keys = await caches.keys();
+    await Promise.all(keys.map((key) => caches.delete(key)));
+    await self.clients.claim();
+  })());
 });
 
 self.addEventListener("fetch", (event) => {
@@ -33,23 +20,8 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
   if (url.protocol !== "http:" && url.protocol !== "https:") return;
 
+  // Estratégia: network-first, sem popular o cache
   event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) return cached;
-      return fetch(event.request).then((response) => {
-        // Evita tentar cachear respostas opacas/externas ou de outros esquemas
-        const isCacheable =
-          response && response.ok &&
-          (response.type === "basic" || (response.type === "default" && url.origin === self.location.origin));
-        if (isCacheable) {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            // Best-effort; ignora falhas de put
-            cache.put(event.request, clone).catch(() => {});
-          });
-        }
-        return response;
-      }).catch(() => cached);
-    })
+    fetch(event.request).catch(() => caches.match(event.request))
   );
 });
