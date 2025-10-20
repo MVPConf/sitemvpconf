@@ -36,17 +36,14 @@ const summaryLists = Array.from(document.querySelectorAll('.summary-list')).redu
 }, {});
 
 function loadSelections() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch (error) {
-    console.warn('Falha ao carregar seleções salvas', error);
-    return {};
-  }
+  // Não persistir seleções em cache/localStorage
+  try { localStorage.removeItem(STORAGE_KEY); } catch {}
+  return {};
 }
 
 function saveSelections() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(selections));
+  // Intencionalmente não persiste para evitar confusão do usuário
+  try { localStorage.removeItem(STORAGE_KEY); } catch {}
 }
 
 function loadCollapsed() {
