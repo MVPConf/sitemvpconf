@@ -28,14 +28,28 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+  // Apenas manipula requisições GET HTTP/HTTPS
   if (event.request.method !== "GET") return;
+  const url = new URL(event.request.url);
+  if (url.protocol !== "http:" && url.protocol !== "https:") return;
+
   event.respondWith(
-    caches.match(event.request).then((cached) =>
-      cached || fetch(event.request).then((response) => {
-        const clone = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+    caches.match(event.request).then((cached) => {
+      if (cached) return cached;
+      return fetch(event.request).then((response) => {
+        // Evita tentar cachear respostas opacas/externas ou de outros esquemas
+        const isCacheable =
+          response && response.ok &&
+          (response.type === "basic" || (response.type === "default" && url.origin === self.location.origin));
+        if (isCacheable) {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            // Best-effort; ignora falhas de put
+            cache.put(event.request, clone).catch(() => {});
+          });
+        }
         return response;
-      })
-    )
+      }).catch(() => cached);
+    })
   );
 });
