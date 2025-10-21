@@ -168,7 +168,7 @@ function buildFilters() {
 }
 
 // displayToast desativado
-function displayToast(_) { /* noop */ }
+function displayToast(_) { alert(_); }
 
 function getCurrentSlots() {
   return currentSchedule[currentDay] ?? [];
@@ -957,7 +957,7 @@ function applyServerSelections(serverSelections) {
 }
 
 async function saveAgenda() {
-  if (!isAuthenticated || !userEmail) {
+  if (!userEmail) {
     await promptAuthFlow();
     return;
   }
