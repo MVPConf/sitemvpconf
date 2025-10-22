@@ -158,7 +158,27 @@
       };
 
       const html5QrCode = new Html5Qrcode('reader');
-      const scanConfig = { fps: 10, qrbox: qrdims(readerEl) };
+      const scanConfig = { fps: 15, qrbox: qrdims(readerEl) };
+      let torchOn = false;
+
+      async function applyFocusAndHd() {
+        try { await html5QrCode.applyVideoConstraints({ focusMode: 'continuous' }); } catch {}
+        try { await html5QrCode.applyVideoConstraints({ advanced: [{ focusMode: 'continuous' }] }); } catch {}
+        try { await html5QrCode.applyVideoConstraints({ width: { ideal: 1920 }, height: { ideal: 1080 }, aspectRatio: { ideal: 1.7777 } }); } catch {}
+      }
+
+      async function toggleTorch() {
+        try {
+          const video = document.querySelector('#reader video');
+          const track = video && video.srcObject && video.srcObject.getVideoTracks ? video.srcObject.getVideoTracks()[0] : null;
+          const caps = track && track.getCapabilities ? track.getCapabilities() : null;
+          if (!track || !caps || !('torch' in caps)) { alert('Lanterna não suportada neste dispositivo.'); return; }
+          torchOn = !torchOn;
+          await track.applyConstraints({ advanced: [{ torch: torchOn }] });
+        } catch {
+          alert('Não foi possível alternar a lanterna.');
+        }
+      }
 
       const onScanSuccess = async (decodedText) => {
         const email = normalizeEmail(decodedText);
@@ -207,12 +227,14 @@
                 await html5QrCode.start({ facingMode: 'user' }, scanConfig, onScanSuccess, onScanFailure);
               }
             }
+            await applyFocusAndHd();
             statusEl.textContent = 'Aponte a câmera para o QR';
           } catch (e) {
             // Queda por OverconstrainedError ou similares: tenta user como último recurso
             console.warn('Retry with user facingMode due to error:', e);
             try {
               await html5QrCode.start({ facingMode: 'user' }, scanConfig, onScanSuccess, onScanFailure);
+              await applyFocusAndHd();
               statusEl.textContent = 'Aponte a câmera (frontal) para o QR';
             } catch (e2) {
               console.error('Failed to start camera', e2);
@@ -236,6 +258,14 @@
       document.getElementById('btnStop').addEventListener('click', async () => {
         try { await html5QrCode.stop(); } catch (_) {}
         statusEl.textContent = 'Scanner parado';
+      });
+      document.getElementById('btnRefocus').addEventListener('click', async () => {
+        await applyFocusAndHd();
+        statusEl.textContent = 'Tentando refocar...';
+        setTimeout(() => { statusEl.textContent = 'Aponte a câmera para o QR'; }, 600);
+      });
+      document.getElementById('btnTorch').addEventListener('click', async () => {
+        await toggleTorch();
       });
 
       // Toque para ocultar o banner e continuar vendo a câmera
@@ -340,6 +370,8 @@
       <div class="controls" style="margin-bottom: 0.75rem; gap: 0.6rem; flex-wrap: wrap;">
         <button id="btnStart" class="primary">Iniciar</button>
         <button id="btnStop" class="secondary">Parar</button>
+        <button id="btnRefocus" class="secondary">Refocar</button>
+        <button id="btnTorch" class="secondary">Lanterna</button>
         <label class="inline small muted" for="roomSelect">Sala</label>
         <select id="roomSelect" class="secondary" style="padding: 0.5rem 0.8rem; border-radius: 12px; border: 1px solid var(--border);"></select>
         <label class="inline small muted" for="slotSelect">Slot</label>
