@@ -19,6 +19,7 @@ export interface Person {
   enabled?: boolean;
   isTrackCoordinator?: boolean;
   trackName?: string;
+  isSpeaker?: boolean;
 }
 
 export interface Speaker extends Person {
@@ -43,22 +44,25 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 
 export const usePeople = () => {
   const { data, loading, error } = useRemoteData<Person[]>(API_URL);
-  
-  const activeData = useMemo(
-    () => (data ?? []).filter(person => person.enabled !== false),
+
+  const activeData: Person[] = useMemo(
+    () => (data ?? []).filter((person: Person) => person.enabled !== false),
     [data]
   );
-  
+
+  // Palestrantes: somente registros com isSpeaker === true
   const speakers = useMemo(
-    () => shuffleArray(activeData.filter(person => !person.isTrackCoordinator)),
+    () => shuffleArray(
+      activeData.filter((person: Person) => person.isSpeaker === true)
+    ),
     [activeData]
   );
-  
+
   const coordinators = useMemo(
-    () => shuffleArray(activeData.filter(person => person.isTrackCoordinator === true)) as TrackCoordinator[],
+    () => shuffleArray(activeData.filter((person: Person) => person.isTrackCoordinator === true)) as TrackCoordinator[],
     [activeData]
   );
-  
+
   return {
     speakers,
     coordinators,

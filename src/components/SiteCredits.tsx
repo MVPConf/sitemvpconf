@@ -1,4 +1,5 @@
 import React from 'react';
+import pkg from '../../package.json';
 import { Code, Heart, Linkedin } from 'lucide-react';
 
 interface Creator {
@@ -9,7 +10,8 @@ interface Creator {
 const SiteCredits: React.FC = () => {
   const creators: Creator[] = [
     { name: 'Angelo Belchior', linkedinUrl: 'https://www.linkedin.com/in/angelobelchior/' },
-    { name: 'Rafael Almeida',  linkedinUrl: 'https://www.linkedin.com/in/ralmsdeveloper/' }
+    { name: 'Rafael Almeida',  linkedinUrl: 'https://www.linkedin.com/in/ralmsdeveloper/' },
+    { name: 'Felipe Augusto',  linkedinUrl: 'https://www.linkedin.com/in/felipementel/' }
   ];
 
   return (
@@ -26,7 +28,7 @@ const SiteCredits: React.FC = () => {
             {creators.map((creator, index) => (
               <React.Fragment key={creator.name}>
                 {index > 0 && <span className="text-gray-600">•</span>}
-                <a 
+                <a
                   href={creator.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -37,6 +39,8 @@ const SiteCredits: React.FC = () => {
                 </a>
               </React.Fragment>
             ))}
+            <span className="hidden md:inline text-gray-600">•</span>
+            <span className="text-gray-500">v{pkg.version}</span>
           </div>
         </div>
       </div>
