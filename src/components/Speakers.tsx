@@ -1,23 +1,23 @@
 import React, { useState, useMemo } from 'react';
-import { usePeople } from '../hooks/usePeople';
+import { usePeople, Person } from '../hooks/usePeople';
 import BuyTickets from './BuyTickets';
 
 const Speakers: React.FC = () => {
   const { speakers, coordinators, loading } = usePeople();
-  
+
   const [searchTerm, setSearchTerm] = useState('');
   const [showAll, setShowAll] = useState(false);
   const INITIAL_DISPLAY_COUNT = 8;
-  
+
   const [coordinatorSearchTerm, setCoordinatorSearchTerm] = useState('');
   const [showAllCoordinators, setShowAllCoordinators] = useState(false);
   const INITIAL_COORDINATORS_COUNT = 8;
 
   const filteredCoordinators = useMemo(() => {
     if (!coordinatorSearchTerm.trim()) return coordinators;
-    
+
     const term = coordinatorSearchTerm.toLowerCase();
-    return coordinators.filter(coordinator => 
+    return coordinators.filter(coordinator =>
       coordinator.name.toLowerCase().includes(term) ||
       coordinator.title?.toLowerCase().includes(term) ||
       coordinator.company?.toLowerCase().includes(term) ||
@@ -32,9 +32,8 @@ const Speakers: React.FC = () => {
 
   const filteredSpeakers = useMemo(() => {
     if (!searchTerm.trim()) return speakers;
-    
     const term = searchTerm.toLowerCase();
-    return speakers.filter(speaker => 
+    return speakers.filter((speaker: Person) =>
       speaker.name.toLowerCase().includes(term) ||
       speaker.title?.toLowerCase().includes(term) ||
       speaker.company?.toLowerCase().includes(term)
@@ -55,9 +54,9 @@ const Speakers: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Conheça os especialistas Microsoft MVP que compartilharão seus conhecimentos e experiências
-          </p>        
+          </p>
         </div>
-        
+
         {loading ? (
           <p className="text-ms-blue-600 mt-8 text-lg font-medium">Carregando informações dos palestrantes...</p>
         ) : (
@@ -72,7 +71,7 @@ const Speakers: React.FC = () => {
                       <span className="text-lg text-gray-600 ml-3">({coordinators.length})</span>
                     )}
                   </h3>
-                  
+
                   {/* Barra de Busca para Coordenadores */}
                   <div className="relative w-full md:w-96">
                     <input
@@ -101,8 +100,8 @@ const Speakers: React.FC = () => {
                 {/* Resultado da busca de coordenadores */}
                 {coordinatorSearchTerm && (
                   <p className="text-center text-gray-600 mb-6">
-                    {filteredCoordinators.length === 0 
-                      ? 'Nenhum coordenador encontrado' 
+                    {filteredCoordinators.length === 0
+                      ? 'Nenhum coordenador encontrado'
                       : `${filteredCoordinators.length} coordenador${filteredCoordinators.length !== 1 ? 'es' : ''} encontrado${filteredCoordinators.length !== 1 ? 's' : ''}`
                     }
                   </p>
@@ -112,8 +111,8 @@ const Speakers: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   {displayedCoordinators.map((coordinator) => (
                     <div key={coordinator.id} className="bg-gradient-to-br from-ms-blue-50 to-white rounded-2xl shadow-lg overflow-hidden card-hover group flex flex-col items-center py-6 px-4 border-2 border-ms-blue-200">
-                      <img 
-                        src={coordinator.image} 
+                      <img
+                        src={coordinator.image}
                         alt={coordinator.name}
                         className="w-20 h-20 object-cover rounded-full mb-3 border-4 border-ms-blue-300 shadow-md"
                         onError={(e) => {
@@ -152,8 +151,8 @@ const Speakers: React.FC = () => {
                       onClick={() => setShowAllCoordinators(!showAllCoordinators)}
                       className="px-8 py-4 bg-gradient-to-r from-ms-blue-600 to-ms-blue-700 text-white font-semibold rounded-lg shadow-lg hover:from-ms-blue-700 hover:to-ms-blue-800 transition-all duration-300 transform hover:scale-105"
                     >
-                      {showAllCoordinators 
-                        ? 'Ver Menos' 
+                      {showAllCoordinators
+                        ? 'Ver Menos'
                         : `Ver Todos os ${coordinators.length} Coordenadores`
                       }
                     </button>
@@ -172,7 +171,7 @@ const Speakers: React.FC = () => {
                     <span className="text-lg text-gray-600 ml-3">({speakers.length})</span>
                   )}
                 </h3>
-                
+
                 {/* Barra de Busca */}
                 <div className="relative w-full md:w-96">
                   <input
@@ -201,8 +200,8 @@ const Speakers: React.FC = () => {
               {/* Resultado da busca */}
               {searchTerm && (
                 <p className="text-center text-gray-600 mb-6">
-                  {filteredSpeakers.length === 0 
-                    ? 'Nenhum palestrante encontrado' 
+                  {filteredSpeakers.length === 0
+                    ? 'Nenhum palestrante encontrado'
                     : `${filteredSpeakers.length} palestrante${filteredSpeakers.length !== 1 ? 's' : ''} encontrado${filteredSpeakers.length !== 1 ? 's' : ''}`
                   }
                 </p>
@@ -212,8 +211,8 @@ const Speakers: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {displayedSpeakers.map((speaker) => (
                   <div key={speaker.id} className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover group flex flex-col items-center py-6 px-4">
-                    <img 
-                      src={speaker.image} 
+                    <img
+                      src={speaker.image}
                       alt={speaker.name}
                       className="w-20 h-20 object-cover rounded-full mb-3 border-4 border-ms-blue-100 shadow"
                       onError={(e) => {
@@ -246,8 +245,8 @@ const Speakers: React.FC = () => {
                     onClick={() => setShowAll(!showAll)}
                     className="px-8 py-4 bg-gradient-to-r from-ms-blue-600 to-ms-blue-700 text-white font-semibold rounded-lg shadow-lg hover:from-ms-blue-700 hover:to-ms-blue-800 transition-all duration-300 transform hover:scale-105"
                   >
-                    {showAll 
-                      ? 'Ver Menos' 
+                    {showAll
+                      ? 'Ver Menos'
                       : `Ver Todos os ${speakers.length} Palestrantes`
                     }
                   </button>
@@ -255,7 +254,7 @@ const Speakers: React.FC = () => {
               )}
             </div>
           </>
-        )}  
+        )}
       </div>
 
       <BuyTickets title="Garanta agora seu Ingresso" />
