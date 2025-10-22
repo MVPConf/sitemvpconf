@@ -19,7 +19,6 @@ export interface Person {
   enabled?: boolean;
   isTrackCoordinator?: boolean;
   trackName?: string;
-  isSpeaker?: boolean;
 }
 
 export interface Speaker extends Person {
@@ -61,12 +60,10 @@ export const usePeople = () => {
     [data]
   );
 
-  // Palestrantes: somente registros com isSpeaker === true e que NÃO são coordenadores
+  // Palestrantes: todos os registros ativos (inclui também coordenadores para aparecerem nas duas seções)
   const speakers = useMemo(
     () => shuffleArray(
-      uniqueByName(
-        activeData.filter((person: Person) => person.isSpeaker === true && !person.isTrackCoordinator)
-      )
+      uniqueByName(activeData)
     ),
     [activeData]
   );

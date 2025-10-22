@@ -2,6 +2,51 @@ import  { useEffect, useMemo, useState } from "react";
 import { Day, Track, Talk, useSchedule } from "../hooks/useSchedule";
 import BuyTickets from "./BuyTickets";
 
+// Paleta e helpers movidos para fora do componente para estabilizar referências e evitar warnings do React Compiler
+const OFFICE_PALETTE = [
+  '#2B579A', '#217346', '#ED6C47', '#0078D4', '#7719AA', '#6264A7', '#008272', '#0364B8', '#A4373A', '#00B294', '#3955A3', '#107C10', '#F2C811', '#742774', '#CD1F3F', '#00B7C3', '#2564CF', '#4F6BED', '#498205', '#B4009E',
+] as const;
+
+function hexToRgba(hex: string, alpha = 0.08): string {
+  const m = hex.replace('#','');
+  const r = parseInt(m.substring(0,2), 16);
+  const g = parseInt(m.substring(2,4), 16);
+  const b = parseInt(m.substring(4,6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function getSpecialColorForTrack(name: string): string | null {
+  const n = name.toLowerCase();
+  if (n.includes('azure')) return '#0078D4';
+  if (n.includes('developer') || n.includes('desenvolvedor')) return '#ED6C47';
+  if (n.includes('business') || n.includes('dynamics') || n.includes('power platform') || n.includes('aplica')) return '#B4009E';
+  return null;
+}
+
+function buildTrackColorMap(tracks: Track[]): Map<string, string> {
+  const map = new Map<string, string>();
+  const used = new Set<string>();
+  tracks.forEach((t) => {
+    const special = getSpecialColorForTrack(t.name);
+    if (special && !used.has(special)) {
+      map.set(t.name, special);
+      used.add(special);
+    }
+  });
+  tracks.forEach((t, idx) => {
+    if (map.has(t.name)) return;
+    const next = OFFICE_PALETTE.find((c) => !used.has(c));
+    if (next) {
+      map.set(t.name, next);
+      used.add(next);
+    } else {
+      const hue = (idx * 37) % 360;
+      map.set(t.name, `hsl(${hue} 70% 45%)`);
+    }
+  });
+  return map;
+}
+
 const Schedule = () => {
   const [activeDay, setActiveDay] = useState(0);
   const [query, setQuery] = useState("");
@@ -25,37 +70,6 @@ const Schedule = () => {
 
   const hasDescription = (t?: Talk | null) => !!(t?.description && t.description.trim().length > 0);
 
-  // Paleta de cores inspirada nos produtos do Microsoft Office (sem repetição dentro do dia)
-  const OFFICE_PALETTE = [
-    '#2B579A', // Word (blue)
-    '#217346', // Excel (green)
-    '#ED6C47', // PowerPoint (orange)
-    '#0078D4', // Outlook / MS blue
-    '#7719AA', // OneNote (purple)
-    '#6264A7', // Teams (indigo)
-    '#008272', // SharePoint / Sway (teal)
-    '#0364B8', // OneDrive (azure)
-    '#A4373A', // Access (dark red)
-    '#00B294', // Publisher (teal green)
-    '#3955A3', // Visio (deep blue)
-    '#107C10', // Project (dark green)
-    '#F2C811', // Power BI (yellow)
-    '#742774', // Power Apps (purple)
-    '#CD1F3F', // Stream (crimson)
-    '#00B7C3', // Forms (cyan)
-    '#2564CF', // To Do (blue)
-    '#4F6BED', // Viva (blue-purple)
-    '#498205', // Planner (green)
-    '#B4009E', // PVA/Dataverse (magenta)
-  ] as const;
-
-  function hexToRgba(hex: string, alpha = 0.08): string {
-    const m = hex.replace('#','');
-    const r = parseInt(m.substring(0,2), 16);
-    const g = parseInt(m.substring(2,4), 16);
-    const b = parseInt(m.substring(4,6), 16);
-    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-  }
 
   // (removido: trackAccent em favor do mapa de cores por trilha)
 
@@ -79,40 +93,6 @@ const Schedule = () => {
     : tracksForActiveDay;
 
   // Cores preferenciais por nomes de trilha (case-insensitive)
-  function getSpecialColorForTrack(name: string): string | null {
-    const n = name.toLowerCase();
-    if (n.includes('azure')) return '#0078D4'; // Microsoft Azure
-    if (n.includes('developer') || n.includes('desenvolvedor')) return '#ED6C47'; // Developer Technologies
-    if (n.includes('business') || n.includes('dynamics') || n.includes('power platform') || n.includes('aplica')) return '#B4009E'; // Business Applications
-    return null;
-  }
-
-  function buildTrackColorMap(tracks: Track[]): Map<string, string> {
-    const map = new Map<string, string>();
-    const used = new Set<string>();
-    // 1) aplicar cores especiais quando possível
-    tracks.forEach((t) => {
-      const special = getSpecialColorForTrack(t.name);
-      if (special && !used.has(special)) {
-        map.set(t.name, special);
-        used.add(special);
-      }
-    });
-    // 2) atribuir demais com a primeira cor livre da paleta
-    tracks.forEach((t, idx) => {
-      if (map.has(t.name)) return;
-      const next = OFFICE_PALETTE.find((c) => !used.has(c));
-      if (next) {
-        map.set(t.name, next);
-        used.add(next);
-      } else {
-        const hue = (idx * 37) % 360;
-        map.set(t.name, `hsl(${hue} 70% 45%)`);
-      }
-    });
-    return map;
-  }
-
   const trackColorMap = useMemo(() => buildTrackColorMap(tracksFilteredBySelection), [tracksFilteredBySelection]);
 
   // Ações do filtro de trilhas
