@@ -1,0 +1,395 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verificação QR - MVPConf</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="https://mvpconf.com.br/logo_blue.png" type="image/png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    /* Estilos específicos desta página */
+    body, html { height: 100%; }
+    .qr-app {
+      width: min(900px, 94%);
+      margin: 2rem auto;
+      display: grid;
+      gap: 1rem;
+    }
+    .qr-header {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.25rem 1.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .qr-actions { display: inline-flex; gap: 0.5rem; align-items: center; }
+    .qr-panel { padding: 1rem; }
+    #reader { width: 100%; min-height: 320px; }
+    .result-banner {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 2rem;
+      font-weight: 700;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .result-banner.active { display: flex; }
+    .result-ok { background: linear-gradient(180deg, #10b981 0%, #059669 100%); }
+    .result-nok { background: linear-gradient(180deg, #ef4444 0%, #b91c1c 100%); }
+    .result-warn { background: linear-gradient(180deg, #f59e0b 0%, #b45309 100%); }
+    .result-banner h2 { font-size: 12vw; line-height: 1; margin: 0; text-shadow: 0 6px 18px rgba(0,0,0,.35); }
+    .result-banner p { margin-top: 0.5rem; font-weight: 600; opacity: 0.98; font-size: 5vw; word-break: break-all; }
+    .big-icon { width: 22vw; height: 22vw; min-width: 120px; min-height: 120px; color: #fff; filter: drop-shadow(0 10px 24px rgba(0,0,0,.35)); }
+    .tap-dismiss { margin-top: 1rem; font-size: 3.8vw; opacity: .9; }
+    .muted { color: var(--text-soft); font-size: 0.9rem; }
+    .small { font-size: 0.85rem; }
+    .controls { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+    .inline { display: inline-flex; gap: 0.5rem; align-items: center; }
+    .email-text { font-weight: 700; }
+  </style>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script>
+    const ROOMS = [
+      'Sala 1', 'Sala 2', 'Sala 3', 'Auditório'
+    ];
+    const SLOTS = [
+      { id: '2025-10-24-0900', label: '24/10 - 09:00' },
+      { id: '2025-10-24-1100', label: '24/10 - 11:00' },
+      { id: '2025-10-24-1400', label: '24/10 - 14:00' },
+      { id: '2025-10-25-0900', label: '25/10 - 09:00' },
+      { id: '2025-10-25-1100', label: '25/10 - 11:00' },
+      { id: '2025-10-25-1400', label: '25/10 - 14:00' }
+    ];
+    // Mock da API: troque por chamada real quando pronta
+    async function verifyEmail(email, room, slot) { return localVerify(email, room, slot); }
+
+    function normalizeEmail(text) {
+      const raw = String(text || '').trim();
+      if (!raw) return '';
+      const mailtoPrefix = 'mailto:';
+      const value = raw.toLowerCase().startsWith(mailtoPrefix) ? raw.slice(mailtoPrefix.length) : raw;
+      // Remove parâmetros em QR do tipo mailto:email?subject=...
+      const clean = value.split('?')[0];
+      return clean.trim();
+    }
+
+    function isValidEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(String(email || '').toLowerCase());
+    }
+
+    async function startScanner() {
+      const readerEl = document.getElementById('reader');
+      const statusEl = document.getElementById('status');
+      const lastEmailOkEl = document.getElementById('lastEmailOk');
+      const lastEmailNokEl = document.getElementById('lastEmailNok');
+      const okBanner = document.getElementById('okBanner');
+      const nokBanner = document.getElementById('nokBanner');
+      const warnBanner = document.getElementById('warnBanner');
+      const roomSelect = document.getElementById('roomSelect');
+      const slotSelect = document.getElementById('slotSelect');
+
+      // Popular dropdowns
+      function populateSelects() {
+        try {
+          roomSelect.innerHTML = '';
+          const optRoomPh = document.createElement('option');
+          optRoomPh.value = '';
+          optRoomPh.textContent = 'Selecione a sala';
+          roomSelect.appendChild(optRoomPh);
+          ROOMS.forEach(r => { const o = document.createElement('option'); o.value = r; o.textContent = r; roomSelect.appendChild(o); });
+
+          slotSelect.innerHTML = '';
+          const optSlotPh = document.createElement('option');
+          optSlotPh.value = '';
+          optSlotPh.textContent = 'Selecione o slot';
+          slotSelect.appendChild(optSlotPh);
+          SLOTS.forEach(s => { const o = document.createElement('option'); o.value = s.id; o.textContent = s.label; slotSelect.appendChild(o); });
+        } catch(_) {}
+      }
+      populateSelects();
+
+      function vibrate(pattern) {
+        try { if (navigator.vibrate) navigator.vibrate(pattern); } catch(_) {}
+      }
+
+      function beep(freq = 800, duration = 120, type = 'sine', times = 1) {
+        try {
+          const ctx = new (window.AudioContext || window.webkitAudioContext)();
+          for (let i = 0; i < times; i++) {
+            const o = ctx.createOscillator();
+            const g = ctx.createGain();
+            o.type = type; o.frequency.value = freq;
+            o.connect(g); g.connect(ctx.destination);
+            const t = ctx.currentTime + i * (duration/1000 + 0.06);
+            g.gain.setValueAtTime(0.0001, t);
+            g.gain.exponentialRampToValueAtTime(0.5, t + 0.02);
+            g.gain.exponentialRampToValueAtTime(0.0001, t + duration/1000);
+            o.start(t); o.stop(t + duration/1000 + 0.02);
+          }
+          setTimeout(() => ctx.close(), (duration + 120) * times);
+        } catch(_) {}
+      }
+
+      const showResult = (allowed, email) => {
+        okBanner.classList.toggle('active', allowed);
+        nokBanner.classList.toggle('active', !allowed);
+        const room = roomSelect?.value || '';
+        const slot = slotSelect?.value || '';
+        lastEmailOkEl.textContent = email || '—';
+        lastEmailNokEl.textContent = email || '—';
+        const okInfo = document.getElementById('okInfo');
+        const nokInfo = document.getElementById('nokInfo');
+        if (okInfo) okInfo.textContent = `${room ? 'Sala: ' + room : ''}${room && slot ? ' • ' : ''}${slot ? 'Slot: ' + slot : ''}`;
+        if (nokInfo) nokInfo.textContent = `${room ? 'Sala: ' + room : ''}${room && slot ? ' • ' : ''}${slot ? 'Slot: ' + slot : ''}`;
+        statusEl.textContent = allowed ? 'Email autorizado' : 'Email NÃO autorizado';
+        document.title = allowed ? 'AUTORIZADO - MVPConf' : 'NÃO AUTORIZADO - MVPConf';
+        if (allowed) { vibrate(80); beep(900, 120, 'square', 1); }
+        else { vibrate([180,60,180]); beep(420, 160, 'sawtooth', 2); }
+      };
+
+      const html5QrCode = new Html5Qrcode('reader');
+      const scanConfig = { fps: 10, qrbox: qrdims(readerEl) };
+
+      const onScanSuccess = async (decodedText) => {
+        const email = normalizeEmail(decodedText);
+        if (!isValidEmail(email)) {
+          statusEl.textContent = 'QR lido, mas não é um email válido';
+          showResult(false, email);
+          return;
+        }
+        const room = roomSelect?.value || '';
+        const slot = slotSelect?.value || '';
+        if (!room || !slot) {
+          statusEl.textContent = 'Selecione sala e slot antes de escanear';
+          try { warnBanner.classList.add('active'); } catch {}
+          try { vibrate([160,60,160]); } catch {}
+          try { beep(600, 140, 'triangle', 1); } catch {}
+          return;
+        }
+        statusEl.textContent = 'Verificando...';
+        const res = await localVerify(email, room, slot);
+        if (!res.ok) {
+          statusEl.textContent = 'Falha na verificação';
+          return;
+        }
+        showResult(res.allowed, email);
+      };
+
+      const onScanFailure = (_) => { /* silencioso */ };
+
+      async function startWithBestCamera() {
+        try {
+          statusEl.textContent = 'Solicitando acesso à câmera...';
+          const devices = await Html5Qrcode.getCameras().catch(() => []);
+          let cameraId = null;
+          if (Array.isArray(devices) && devices.length) {
+            const back = devices.find(d => /back|rear|environment/i.test(d.label || ''));
+            cameraId = (back || devices[devices.length - 1]).id;
+          }
+          try {
+            if (cameraId) {
+              await html5QrCode.start({ deviceId: { exact: cameraId } }, scanConfig, onScanSuccess, onScanFailure);
+            } else {
+              // Sem lista de câmeras (ou vazio): tenta environment, depois user
+              try {
+                await html5QrCode.start({ facingMode: 'environment' }, scanConfig, onScanSuccess, onScanFailure);
+              } catch (e1) {
+                await html5QrCode.start({ facingMode: 'user' }, scanConfig, onScanSuccess, onScanFailure);
+              }
+            }
+            statusEl.textContent = 'Aponte a câmera para o QR';
+          } catch (e) {
+            // Queda por OverconstrainedError ou similares: tenta user como último recurso
+            console.warn('Retry with user facingMode due to error:', e);
+            try {
+              await html5QrCode.start({ facingMode: 'user' }, scanConfig, onScanSuccess, onScanFailure);
+              statusEl.textContent = 'Aponte a câmera (frontal) para o QR';
+            } catch (e2) {
+              console.error('Failed to start camera', e2);
+              statusEl.textContent = 'Não foi possível iniciar o scanner';
+            }
+          }
+        } catch (err) {
+          console.warn(err);
+          statusEl.textContent = 'Não foi possível acessar a câmera';
+        }
+      }
+
+      // Inicia automaticamente
+      await startWithBestCamera();
+
+      // Ajusta o qrbox em resize (best-effort)
+      window.addEventListener('resize', () => {
+        try { html5QrCode.applyVideoConstraints({}); } catch (_) {}
+      });
+
+      document.getElementById('btnStop').addEventListener('click', async () => {
+        try { await html5QrCode.stop(); } catch (_) {}
+        statusEl.textContent = 'Scanner parado';
+      });
+
+      // Toque para ocultar o banner e continuar vendo a câmera
+      okBanner.addEventListener('click', () => {
+        okBanner.classList.remove('active');
+        statusEl.textContent = 'Aponte a câmera para o QR';
+      });
+      nokBanner.addEventListener('click', () => {
+        nokBanner.classList.remove('active');
+        statusEl.textContent = 'Aponte a câmera para o QR';
+      });
+      document.getElementById('btnStart').addEventListener('click', async () => {
+        try { await html5QrCode.stop(); } catch (_) {}
+        statusEl.textContent = 'Iniciando...';
+        await startWithBestCamera();
+      });
+      }
+
+    function qrdims(container) {
+      try {
+        const w = container.clientWidth;
+        const size = Math.max(200, Math.min(380, Math.floor(w * 0.8)));
+        return { width: size, height: size };
+      } catch (_) { return { width: 280, height: 280 }; }
+    }
+
+    // Dados locais para verificação
+    let AUTHORIZED_DATA = [];
+    async function loadAuthorizedData() {
+      try {
+        const res = await fetch('./authorized.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const json = await res.json();
+        AUTHORIZED_DATA = Array.isArray(json) ? json.map(x => ({
+          sala: String(x.sala || x.Sala || '').trim(),
+          slot: String(x.slot || x.Slot || '').trim(),
+          email: String(x.email || x.Email || '').trim().toLowerCase()
+        })) : [];
+      } catch (err) {
+        console.warn('Falha ao carregar authorized.json', err);
+        AUTHORIZED_DATA = [];
+      }
+    }
+    function formatSlotLabel(slotId) {
+      try {
+        const m = /^([0-9]{4})-([0-9]{2})-([0-9]{2})-([0-9]{2})([0-9]{2})$/.exec(String(slotId || ''));
+        if (!m) return String(slotId || '');
+        const [, y, mo, d, hh, mm] = m;
+        return `${d}/${mo} - ${hh}:${mm}`;
+      } catch(_) { return String(slotId || ''); }
+    }
+    function populateSelectsFromAuthorized() {
+      try {
+        const roomSelect = document.getElementById('roomSelect');
+        const slotSelect = document.getElementById('slotSelect');
+        if (!roomSelect || !slotSelect) return;
+        // rooms
+        roomSelect.innerHTML = '';
+        const optRoomPh = document.createElement('option');
+        optRoomPh.value = '';
+        optRoomPh.textContent = 'Selecione a sala';
+        roomSelect.appendChild(optRoomPh);
+        Array.from(new Set(AUTHORIZED_DATA.map(x => x.sala))).filter(Boolean).sort((a,b)=>a.localeCompare(b))
+          .forEach(r => { const o = document.createElement('option'); o.value = r; o.textContent = r; roomSelect.appendChild(o); });
+        // slots
+        slotSelect.innerHTML = '';
+        const optSlotPh = document.createElement('option');
+        optSlotPh.value = '';
+        optSlotPh.textContent = 'Selecione o slot';
+        slotSelect.appendChild(optSlotPh);
+        Array.from(new Set(AUTHORIZED_DATA.map(x => x.slot))).filter(Boolean).sort()
+          .forEach(sid => { const o = document.createElement('option'); o.value = sid; o.textContent = formatSlotLabel(sid); slotSelect.appendChild(o); });
+      } catch(_) {}
+    }
+    async function localVerify(email, room, slot) {
+      const e = String(email || '').toLowerCase();
+      const r = String(room || '').trim();
+      const s = String(slot || '').trim();
+      const allowed = Array.isArray(AUTHORIZED_DATA) && AUTHORIZED_DATA.some(x => x.email === e && x.sala === r && x.slot === s);
+      return { ok: true, allowed };
+    }
+    window.addEventListener('DOMContentLoaded', async () => {
+      await loadAuthorizedData();
+      await startScanner();
+      populateSelectsFromAuthorized();
+    });
+  </script>
+</head>
+<body>
+  <div class="qr-app">
+    <header class="qr-header">
+      <div>
+        <h1>Verificar Check-in por QR</h1>
+        <p class="muted">Aponte a câmera para um QR contendo o e-mail.</p>
+      </div>
+      <div class="qr-actions">
+        <a href="./index.html" class="secondary">Voltar para a Agenda</a>
+      </div>
+    </header>
+
+    <section class="panel qr-panel">
+      <div class="controls" style="margin-bottom: 0.75rem; gap: 0.6rem; flex-wrap: wrap;">
+        <button id="btnStart" class="primary">Iniciar</button>
+        <button id="btnStop" class="secondary">Parar</button>
+        <label class="inline small muted" for="roomSelect">Sala</label>
+        <select id="roomSelect" class="secondary" style="padding: 0.5rem 0.8rem; border-radius: 12px; border: 1px solid var(--border);"></select>
+        <label class="inline small muted" for="slotSelect">Slot</label>
+        <select id="slotSelect" class="secondary" style="padding: 0.5rem 0.8rem; border-radius: 12px; border: 1px solid var(--border);"></select>
+        <span id="status" class="small muted" style="margin-left: auto;">Preparando câmera...</span>
+      </div>
+      <div id="reader" class="card"></div>
+    </section>
+
+    <section class="panel" aria-live="polite">
+      <div id="okBanner" class="result-banner result-ok" role="alert" aria-label="Autorizado">
+        <svg class="big-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h2>AUTORIZADO</h2>
+        <p><span class="email-text" id="lastEmailOk"></span></p>
+        <p class="small" id="okInfo"></p>
+        <div class="tap-dismiss">Toque para ocultar</div>
+      </div>
+      <div id="nokBanner" class="result-banner result-nok" role="alert" aria-label="Não autorizado">
+        <svg class="big-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6 6L18 18M6 18L18 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h2>NÃO AUTORIZADO</h2>
+        <p><span class="email-text" id="lastEmailNok"></span></p>
+        <p class="small" id="nokInfo"></p>
+        <div class="tap-dismiss">Toque para ocultar</div>
+      </div>
+      <div id="warnBanner" class="result-banner result-warn" role="alert" aria-label="Atenção">
+        <svg class="big-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2L2 20h20L12 2z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+          <path d="M12 8v6M12 18h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <h2>ATENÇÃO</h2>
+        <p class="email-text">Selecione Sala e Slot</p>
+        <div class="tap-dismiss">Toque para ocultar</div>
+      </div>
+    </section>
+  </div>
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    try {
+      const warn = document.getElementById('warnBanner');
+      const statusEl = document.getElementById('status');
+      if (warn) warn.addEventListener('click', () => {
+        warn.classList.remove('active');
+        if (statusEl) statusEl.textContent = 'Aponte a câmera para o QR';
+      });
+    } catch {}
+  });
+</script>
+</html>

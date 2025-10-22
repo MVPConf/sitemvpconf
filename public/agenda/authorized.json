@@ -1,0 +1,18 @@
+[
+  { "sala": "Sala 1", "slot": "2025-10-24-0900", "email": "alice@example.com" },
+  { "sala": "Sala 1", "slot": "2025-10-24-1100", "email": "bob@example.com" },
+  { "sala": "Sala 1", "slot": "2025-10-24-1100", "email": "alice@example.com" },
+  { "sala": "Sala 1", "slot": "2025-10-24-1400", "email": "carol@example.com" },
+
+  { "sala": "Sala 2", "slot": "2025-10-24-0900", "email": "dave@example.com" },
+  { "sala": "Sala 2", "slot": "2025-10-24-1100", "email": "erin@example.com" },
+  { "sala": "Sala 2", "slot": "2025-10-24-1400", "email": "frank@example.com" },
+
+  { "sala": "Sala 3", "slot": "2025-10-25-0900", "email": "grace@example.com" },
+  { "sala": "Sala 3", "slot": "2025-10-25-1100", "email": "heidi@example.com" },
+  { "sala": "Sala 3", "slot": "2025-10-25-1400", "email": "ivan@example.com" },
+
+  { "sala": "Auditório", "slot": "2025-10-25-0900", "email": "judy@example.com" },
+  { "sala": "Auditório", "slot": "2025-10-25-1100", "email": "mallory@example.com" },
+  { "sala": "Auditório", "slot": "2025-10-25-1400", "email": "oscar@example.com" }
+]
