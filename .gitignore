@@ -1,1 +1,63 @@
-node_modules
+#env files
+.env.development
+.env.production
+.env.staging
+
+# node_modules - dependências do projeto
+node_modules/
+
+# build/ e dist/ - arquivos de produção
+build/
+# dist/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# arquivos temporários de sistema
+.DS_Store
+Thumbs.db
+
+# arquivos do ambiente de desenvolvimento
+.env
+.env.*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# arquivos de cache
+.cache/
+.vite/
+.next/
+out/
+coverage/
+
+# arquivos do editor
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# arquivos gerados por test runners
+jest-test-results.json
+
+# arquivos do sistema operacional
+*.swp
+*.tmp
+
+# lockfiles de outros gerenciadores que não usamos
+package-lock.json
+yarn.lock
+
+# storybook output (se estiver usando)
+storybook-static/
+
+# outros possíveis
+*.log
+
+.history/

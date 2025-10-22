@@ -42,6 +42,17 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return shuffled;
 };
 
+// Remove duplicidades pelo nome (case-insensitive, trimming)
+const uniqueByName = <T extends { name: string }>(items: T[]): T[] => {
+  const seen = new Set<string>();
+  return items.filter(item => {
+    const key = item.name.trim().toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+};
+
 export const usePeople = () => {
   const { data, loading, error } = useRemoteData<Person[]>(API_URL);
 
@@ -50,16 +61,20 @@ export const usePeople = () => {
     [data]
   );
 
-  // Palestrantes: somente registros com isSpeaker === true
+  // Palestrantes: somente registros com isSpeaker === true e que NÃO são coordenadores
   const speakers = useMemo(
     () => shuffleArray(
-      activeData.filter((person: Person) => person.isSpeaker === true)
+      uniqueByName(
+        activeData.filter((person: Person) => person.isSpeaker === true && !person.isTrackCoordinator)
+      )
     ),
     [activeData]
   );
 
   const coordinators = useMemo(
-    () => shuffleArray(activeData.filter((person: Person) => person.isTrackCoordinator === true)) as TrackCoordinator[],
+    () => shuffleArray(
+      uniqueByName(activeData.filter((person: Person) => person.isTrackCoordinator === true))
+    ) as TrackCoordinator[],
     [activeData]
   );
 
