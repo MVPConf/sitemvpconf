@@ -41,13 +41,21 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return shuffled;
 };
 
-// Remove duplicidades pelo nome (case-insensitive, trimming)
-const uniqueByName = <T extends { name: string }>(items: T[]): T[] => {
-  const seen = new Set<string>();
+// Remove duplicidades pelo ID primeiro, depois pelo nome (case-insensitive, trimming)
+const uniqueById = <T extends { id: number; name: string }>(items: T[]): T[] => {
+  const seenIds = new Set<number>();
+  const seenNames = new Set<string>();
+
   return items.filter(item => {
-    const key = item.name.trim().toLowerCase();
-    if (seen.has(key)) return false;
-    seen.add(key);
+    // Verifica por ID primeiro
+    if (seenIds.has(item.id)) return false;
+
+    // Verifica por nome (case-insensitive)
+    const nameKey = item.name.trim().toLowerCase();
+    if (seenNames.has(nameKey)) return false;
+
+    seenIds.add(item.id);
+    seenNames.add(nameKey);
     return true;
   });
 };
@@ -63,14 +71,14 @@ export const usePeople = () => {
   // Palestrantes: todos os registros ativos (inclui também coordenadores para aparecerem nas duas seções)
   const speakers = useMemo(
     () => shuffleArray(
-      uniqueByName(activeData)
+      uniqueById(activeData)
     ),
     [activeData]
   );
 
   const coordinators = useMemo(
     () => shuffleArray(
-      uniqueByName(activeData.filter((person: Person) => person.isTrackCoordinator === true))
+      uniqueById(activeData.filter((person: Person) => person.isTrackCoordinator === true))
     ) as TrackCoordinator[],
     [activeData]
   );

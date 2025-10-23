@@ -16,13 +16,24 @@ const Speakers: React.FC = () => {
   const filteredCoordinators = useMemo(() => {
     if (!coordinatorSearchTerm.trim()) return coordinators;
 
-    const term = coordinatorSearchTerm.toLowerCase();
-    return coordinators.filter(coordinator =>
-      coordinator.name.toLowerCase().includes(term) ||
-      coordinator.title?.toLowerCase().includes(term) ||
-      coordinator.company?.toLowerCase().includes(term) ||
-      coordinator.trackName?.toLowerCase().includes(term)
-    );
+    const term = coordinatorSearchTerm.toLowerCase().trim();
+    
+    return coordinators.filter(coordinator => {
+      const name = coordinator.name.toLowerCase();
+      const title = (coordinator.title || '').toLowerCase();
+      const company = (coordinator.company || '').toLowerCase();
+      const trackName = (coordinator.trackName || '').toLowerCase();
+      
+      // Busca por palavras completas ou início de palavras
+      const searchWords = term.split(/\s+/);
+      
+      return searchWords.every(word =>
+        name.includes(word) ||
+        title.includes(word) ||
+        company.includes(word) ||
+        trackName.includes(word)
+      );
+    });
   }, [coordinators, coordinatorSearchTerm]);
 
   const displayedCoordinators = useMemo(() => {
@@ -32,12 +43,23 @@ const Speakers: React.FC = () => {
 
   const filteredSpeakers = useMemo(() => {
     if (!searchTerm.trim()) return speakers;
-    const term = searchTerm.toLowerCase();
-    return speakers.filter((speaker: Person) =>
-      speaker.name.toLowerCase().includes(term) ||
-      speaker.title?.toLowerCase().includes(term) ||
-      speaker.company?.toLowerCase().includes(term)
-    );
+    
+    const term = searchTerm.toLowerCase().trim();
+    
+    return speakers.filter((speaker: Person) => {
+      const name = speaker.name.toLowerCase();
+      const title = (speaker.title || '').toLowerCase();
+      const company = (speaker.company || '').toLowerCase();
+      
+      // Busca por palavras completas ou início de palavras
+      const searchWords = term.split(/\s+/);
+      
+      return searchWords.every(word => 
+        name.includes(word) ||
+        title.includes(word) ||
+        company.includes(word)
+      );
+    });
   }, [speakers, searchTerm]);
 
   const displayedSpeakers = useMemo(() => {
