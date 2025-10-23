@@ -611,8 +611,20 @@ function renderTrackDropdown() {
     const opt = Array.from(trackFilter.options).find((o) => o.value === value);
     cb.checked = Boolean(opt?.selected);
     cb.addEventListener('change', () => onTrackCheckboxChange(value, cb.checked));
+
     const span = document.createElement('span');
     span.textContent = label;
+
+    // Adiciona badge colorido para trilhas (exceto 'Todas')
+    if (value !== 'all') {
+      const trackSlug = value.toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // remove acentos
+        .replace(/&/g, 'e') // substitui & por e
+        .replace(/\s+/g, '-'); // substitui espaços por hífen
+
+      span.className = 'track-badge ' + trackSlug;
+    }
+
     wrap.appendChild(cb);
     wrap.appendChild(span);
     return wrap;

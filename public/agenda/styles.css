@@ -92,6 +92,12 @@ input[type="text"] {
 .multi-dropdown__panel[hidden] { display: none !important; visibility: hidden; }
 .multi-dropdown__item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.92rem; }
 .multi-dropdown__item input { accent-color: var(--accent); }
+.multi-dropdown__item span.track-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
 
 select:focus,
 input[type="text"]:focus {

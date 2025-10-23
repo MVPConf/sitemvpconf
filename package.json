@@ -1,7 +1,7 @@
 {
   "name": "mvp-event-website",
   "private": true,
-  "version": "1.0.4",
+  "version": "1.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
