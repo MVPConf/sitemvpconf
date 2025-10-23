@@ -274,15 +274,52 @@ function renderSchedule() {
       } else {
         talkNode.classList.remove('slot-vago');
         title.textContent = talk.title;
-        meta.textContent = `${talk.speaker} - ${talk.track} - ${talk.room}`;
+        meta.textContent = `${talk.speaker} - ${talk.room}`;
         desc.textContent = talk.description;
+
+        // Remove o badge padrão do template (vamos recriar dentro do talk-content)
+        if (badge) badge.remove();
+
+        // Container para os badges (trilha + nível)
+        const badgesContainer = document.createElement('div');
+        badgesContainer.className = 'talk-badges';
+        badgesContainer.style.marginTop = '0.5rem';
+        badgesContainer.style.marginBottom = '0.3rem';
+        badgesContainer.style.display = 'flex';
+        badgesContainer.style.gap = '0.4rem';
+        badgesContainer.style.flexWrap = 'wrap';
+
+        // Adiciona badge de trilha
+        const trackText = (talk.track || '').toString().trim();
+        if (trackText) {
+          const trackBadge = document.createElement('span');
+          trackBadge.className = 'track-badge';
+          trackBadge.textContent = trackText;
+
+          // Adiciona classe específica por trilha
+          const trackSlug = trackText.toLowerCase()
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // remove acentos
+            .replace(/&/g, 'e') // substitui & por e
+            .replace(/\s+/g, '-'); // substitui espaços por hífen
+          trackBadge.classList.add(trackSlug);
+
+          badgesContainer.appendChild(trackBadge);
+        }
+
+        // Adiciona badge de nível
         const levelText = (talk.level || '').toString().trim();
         if (levelText) {
-          badge.textContent = `Nível: ${levelText}`;
-          badge.style.display = '';
+          const levelBadge = document.createElement('span');
+          levelBadge.className = 'badge';
+          levelBadge.textContent = `Nível: ${levelText}`;
+          badgesContainer.appendChild(levelBadge);
+        }
+
+        // Insere os badges ANTES da descrição, dentro do talk-content
+        if (desc && desc.parentElement === talkContent) {
+          talkContent.insertBefore(badgesContainer, desc);
         } else {
-          badge.textContent = '';
-          badge.style.display = 'none';
+          talkContent.appendChild(badgesContainer);
         }
 
         // const roomPill = document.createElement('span');
@@ -1124,4 +1161,3 @@ try {
     renderSchedule();
   });
 } catch {}
-

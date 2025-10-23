@@ -398,7 +398,7 @@ input[type="text"]:focus {
 
 .talk {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   gap: 1rem;
   align-items: center;
   padding: 0.9rem 1rem;
@@ -431,7 +431,14 @@ input[type="text"]:focus {
   color: #4b5563;
 }
 
-
+.talk-badges {
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
 .badge {
   font-size: 0.72rem;
@@ -441,6 +448,89 @@ input[type="text"]:focus {
   color: var(--accent);
   border: 1px solid var(--accent-border);
   font-weight: 600;
+  margin-left: 0;
+}
+
+/* Badge de trilha */
+.track-badge {
+  font-size: 0.72rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Trilhas específicas */
+.track-badge.auditorio {
+  background: rgba(239, 68, 68, 0.1);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.track-badge.business-application {
+  background: rgba(236, 72, 153, 0.1);
+  color: #be185d;
+  border: 1px solid rgba(236, 72, 153, 0.35);
+}
+
+.track-badge.cloud-datacenter-management,
+.track-badge.cloud-e-datacenter-management {
+  background: rgba(14, 165, 233, 0.1);
+  color: #0369a1;
+  border: 1px solid rgba(14, 165, 233, 0.35);
+}
+
+.track-badge.data-platform {
+  background: rgba(168, 85, 247, 0.1);
+  color: #7c3aed;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+}
+
+.track-badge.developer-technologies,
+.track-badge.developer {
+  background: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+}
+
+.track-badge.gestao-de-negocios-e-empreendedorismo {
+  background: rgba(245, 158, 11, 0.1);
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.track-badge.inteligencia-artificial {
+  background: rgba(20, 184, 166, 0.1);
+  color: #0f766e;
+  border: 1px solid rgba(20, 184, 166, 0.35);
+}
+
+.track-badge.microsoft-365,
+.track-badge.m365 {
+  background: rgba(234, 88, 12, 0.1);
+  color: #c2410c;
+  border: 1px solid rgba(234, 88, 12, 0.35);
+}
+
+.track-badge.microsoft-azure,
+.track-badge.azure {
+  background: rgba(6, 182, 212, 0.1);
+  color: #0e7490;
+  border: 1px solid rgba(6, 182, 212, 0.35);
+}
+
+.track-badge.quantum-computing {
+  background: rgba(139, 92, 246, 0.1);
+  color: #6d28d9;
+  border: 1px solid rgba(139, 92, 246, 0.35);
+}
+
+.track-badge.security {
+  background: rgba(220, 38, 38, 0.1);
+  color: #991b1b;
+  border: 1px solid rgba(220, 38, 38, 0.35);
 }
 
 .talk.slot-vago {
@@ -735,6 +825,7 @@ dialog {
 dialog::backdrop {
   /* escurece e desfoca o fundo enquanto o modal está aberto */
   background: rgba(15, 23, 42, 0.35);
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
 
@@ -815,4 +906,3 @@ dialog::backdrop {
 
 /* Remover borda do nav de seleção de dias */
 .tabs { border: none; }
-
