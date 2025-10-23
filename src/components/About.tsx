@@ -88,13 +88,13 @@ const SobreEvento: React.FC = () => {
       <div className="bg-gradient-to-r from-ms-blue-600 to-ms-blue-800 rounded-3xl shadow-2xl p-8 md:p-12 mb-16">
         <h3 className="text-3xl font-bold text-white text-center mb-10">Nosso Impacto</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="text-center p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-sm">
+          <div className="text-center p-6 bg-blue-400/20 rounded-xl backdrop-blur-sm">
             <div className="text-5xl md:text-6xl font-bold text-white mb-2">+10.000</div>
-            <div className="text-xl text-blue-100">Pessoas Impactadas</div>
+            <div className="text-xl text-blue-50">Pessoas Impactadas</div>
           </div>
-          <div className="text-center p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-sm">
+          <div className="text-center p-6 bg-blue-400/20 rounded-xl backdrop-blur-sm">
             <div className="text-5xl md:text-6xl font-bold text-white mb-2">+R$ 500K</div>
-            <div className="text-xl text-blue-100">Doados para Instituições</div>
+            <div className="text-xl text-blue-50">Doados para Instituições</div>
           </div>
         </div>
       </div>

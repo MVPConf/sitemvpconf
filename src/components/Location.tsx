@@ -25,7 +25,7 @@ const Location: React.FC = () => {
             {/* Informações principais */}
             <div className="p-8 md:p-12 text-white">
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl">
+                <div className="p-3 bg-white/20 backdrop-blur-sm rounded-xl">
                   <Building2 className="h-7 w-7" />
                 </div>
                 <div>

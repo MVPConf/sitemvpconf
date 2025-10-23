@@ -1,11 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --font-inter: Inter, system-ui, sans-serif;
+
+  /* MS Blue color palette */
+  --color-ms-blue-50: #eff6ff;
+  --color-ms-blue-100: #dbeafe;
+  --color-ms-blue-200: #bfdbfe;
+  --color-ms-blue-300: #93c5fd;
+  --color-ms-blue-400: #60a5fa;
+  --color-ms-blue-500: #3b82f6;
+  --color-ms-blue-600: #0078D4;
+  --color-ms-blue-700: #1d4ed8;
+  --color-ms-blue-800: #1e40af;
+  --color-ms-blue-900: #1e3a8a;
+  --color-ms-blue-950: #172554;
+
+  /* MS Light color palette */
+  --color-ms-light-50: #f8fafc;
+  --color-ms-light-100: #f1f5f9;
+  --color-ms-light-200: #e2e8f0;
+  --color-ms-light-300: #cbd5e1;
+  --color-ms-light-400: #94a3b8;
+  --color-ms-light-500: #64748b;
+
+  /* Custom animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin 3s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
 
 * {
   scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -15,26 +53,61 @@ body {
   font-style: normal;
 }
 
-@layer components {
-  .btn-primary {
-    @apply bg-ms-blue-600 hover:bg-ms-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
-  }
-  
-  .btn-secondary {
-    @apply bg-white hover:bg-ms-light-50 text-ms-blue-600 font-semibold py-3 px-8 rounded-lg border-2 border-ms-blue-600 transition-all duration-300 transform hover:scale-105;
-  }
-  
-  .card-hover {
-    @apply transition-all duration-300 transform hover:scale-105 hover:shadow-xl;
-  }
-  
-  .gradient-text {
-    @apply bg-gradient-to-r from-ms-blue-600 to-ms-blue-800 bg-clip-text text-transparent;
-  }
-  
-  .animate-spin-slow {
-    animation: spin 3s linear infinite;
-  }
+/* Custom utility: hero pattern background */
+@utility bg-hero-pattern {
+  background-image: linear-gradient(135deg, #0078D4 0%, #1e40af 100%);
+}
+
+/* Classes custom sem uso de @apply para evitar conflito com Tailwind 4 durante build */
+.btn-primary {
+  background-color: #0078D4; /* ms-blue-600 */
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 2rem; /* py-3 px-8 */
+  border-radius: 0.5rem; /* rounded-lg */
+  transition: all 300ms;
+  transform: translateZ(0);
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+.btn-primary:hover {
+  background-color: #1d4ed8; /* ms-blue-700 */
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #0078D4; /* text-ms-blue-600 */
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  border: 2px solid #0078D4; /* border-ms-blue-600 */
+  transition: all 300ms;
+  transform: translateZ(0);
+}
+.btn-secondary:hover {
+  background-color: #f8fafc; /* ms-light-50 */
+  transform: scale(1.05);
+}
+
+.card-hover {
+  transition: all 300ms;
+  transform: translateZ(0);
+}
+.card-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1);
+}
+
+.gradient-text {
+  background-image: linear-gradient(to right,#0078D4,#1e40af);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
 }
 
 /* Removido z-index global de elementos fixos para evitar conflitos com utilitários Tailwind */
@@ -50,11 +123,25 @@ main[id] {
 @media (width <= 768px) {
   .btn-primary,
   .btn-secondary {
-    @apply text-base py-4 px-6;
+    font-size: 1rem; /* text-base */
+    padding: 1rem 1.5rem; /* py-4 px-6 */
   }
-  
+
   /* Garantir que o header tenha prioridade máxima */
   header.fixed {
     z-index: 100;
   }
+}
+
+/* Prevenir overflow horizontal em todos os breakpoints */
+* {
+  box-sizing: border-box;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
 }

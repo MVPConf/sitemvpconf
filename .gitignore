@@ -8,7 +8,7 @@ node_modules/
 
 # build/ e dist/ - arquivos de produção
 build/
-# dist/
+dist/
 
 # logs
 npm-debug.log*

@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,css}'],
+  safelist: [
+    'bg-ms-blue-50','bg-ms-blue-100','bg-ms-blue-200','bg-ms-blue-300','bg-ms-blue-400','bg-ms-blue-500','bg-ms-blue-600','bg-ms-blue-700','bg-ms-blue-800','bg-ms-blue-900','bg-ms-blue-950',
+    'text-ms-blue-600','border-ms-blue-600','from-ms-blue-600','to-ms-blue-800','bg-ms-blue-100',
+    'text-blue-900','text-blue-800','text-blue-700','text-gray-700','text-gray-800','text-gray-900'
+  ],
   theme: {
     extend: {
       fontFamily: {

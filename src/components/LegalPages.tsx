@@ -47,24 +47,3 @@ const LegalPages: React.FC<LegalPagesProps> = ({ initialPage = null, onClose }) 
 };
 
 export default LegalPages;
-
-// Hook para usar as páginas legais
-export const useLegalPages = () => {
-  const [currentPage, setCurrentPage] = useState<LegalPageType>(null);
-
-  const openPrivacyPolicy = () => setCurrentPage('privacy');
-  const openTermsOfUse = () => setCurrentPage('terms');
-  const openCodeOfConduct = () => setCurrentPage('conduct');
-  const closePage = () => setCurrentPage(null);
-
-  return {
-    currentPage,
-    openPrivacyPolicy,
-    openTermsOfUse,
-    openCodeOfConduct,
-    closePage,
-    LegalPagesComponent: () => (
-      <LegalPages initialPage={currentPage} onClose={closePage} />
-    )
-  };
-};

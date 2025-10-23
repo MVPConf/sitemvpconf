@@ -58,7 +58,7 @@ const Carousel: React.FC = () => {
               {/* Botões de navegação modernos */}
               <button
                 onClick={prev}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 backdrop-blur-md hover:bg-opacity-30 text-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 group/btn"
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 group/btn"
                 aria-label="Anterior"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,7 +67,7 @@ const Carousel: React.FC = () => {
               </button>
               <button
                 onClick={next}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 backdrop-blur-md hover:bg-opacity-30 text-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 group/btn"
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 group/btn"
                 aria-label="Próxima"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,7 +78,7 @@ const Carousel: React.FC = () => {
               {/* Botão fullscreen */}
               <button
                 onClick={() => setIsFullscreen(true)}
-                className="absolute top-4 right-4 bg-white bg-opacity-20 backdrop-blur-md hover:bg-opacity-30 text-white rounded-lg p-2 shadow-lg transition-all duration-300 hover:scale-110"
+                className="absolute top-4 right-4 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white rounded-lg p-2 shadow-lg transition-all duration-300 hover:scale-110"
                 aria-label="Tela cheia"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,8 +107,8 @@ const Carousel: React.FC = () => {
                 />
                 <div className={`absolute inset-0 transition-opacity duration-300 ${
                   current === idx 
-                    ? 'bg-cyan-500 bg-opacity-20' 
-                    : 'bg-black bg-opacity-40 group-hover:bg-opacity-20'
+                    ? 'bg-cyan-500/20' 
+                    : 'bg-black/40 group-hover:bg-black/20'
                 }`}></div>
                 
                 {current === idx && (
@@ -124,7 +124,7 @@ const Carousel: React.FC = () => {
 
       {/* Modal Fullscreen */}
       {isFullscreen && (
-        <div className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4" onClick={() => setIsFullscreen(false)}>
+        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4" onClick={() => setIsFullscreen(false)}>
           <button
             onClick={() => setIsFullscreen(false)}
             className="absolute top-4 right-4 text-white hover:text-cyan-400 transition-colors z-10"
@@ -144,7 +144,7 @@ const Carousel: React.FC = () => {
 
           <button
             onClick={(e) => { e.stopPropagation(); prev(); }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 backdrop-blur-md hover:bg-opacity-30 text-white rounded-full p-4 shadow-lg transition-all"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white rounded-full p-4 shadow-lg transition-all"
             aria-label="Anterior"
           >
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -153,7 +153,7 @@ const Carousel: React.FC = () => {
           </button>
           <button
             onClick={(e) => { e.stopPropagation(); next(); }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 backdrop-blur-md hover:bg-opacity-30 text-white rounded-full p-4 shadow-lg transition-all"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white rounded-full p-4 shadow-lg transition-all"
             aria-label="Próxima"
           >
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
