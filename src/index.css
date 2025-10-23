@@ -40,6 +40,12 @@
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 body {
   font-family: Inter, system-ui, -apple-system, sans-serif;
   font-optical-sizing: auto;
@@ -125,4 +131,17 @@ main[id] {
   header.fixed {
     z-index: 100;
   }
+}
+
+/* Prevenir overflow horizontal em todos os breakpoints */
+* {
+  box-sizing: border-box;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
 }

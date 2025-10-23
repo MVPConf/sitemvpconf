@@ -200,12 +200,12 @@ const Schedule = () => {
                     onClick={() => setShowTrackFilter((s) => !s)}
                     className="px-4 py-2 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
                     aria-haspopup="true"
-                    aria-expanded={showTrackFilter}
+                    {...(showTrackFilter && { 'aria-expanded': true })}
                   >
                     Filtrar trilhas
                   </button>
                   {showTrackFilter && (
-                    <div className="absolute right-0 z-20 mt-2 sm:w-96 w-[90vw] max-w-[95vw] rounded-md border border-gray-200 bg-white shadow-lg p-3">
+                    <div className="absolute right-0 z-20 mt-2 sm:w-96 w-[calc(100vw-2rem)] max-w-sm rounded-md border border-gray-200 bg-white shadow-lg p-3">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-sm font-medium text-gray-800">Trilhas</span>
                         <button
