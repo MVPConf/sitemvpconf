@@ -937,3 +937,19 @@ dialog::backdrop {
 
 /* Remover borda do nav de seleção de dias */
 .tabs { border: none; }
+
+/* Footer com versão */
+.app-footer {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg-surface);
+}
+
+.app-footer p {
+  margin: 0;
+  opacity: 0.8;
+}
