@@ -2,10 +2,16 @@
 import { trackCoordinators, scheduleByDay } from './data.js';
 
 // ========================================
-// CONFIGURAÇÃO DE FONTE DE DADOS
+// ⚙️ CONFIGURAÇÃO DE FONTE DE DADOS
 // ========================================
-// true = carrega do JSON local (Palestras.json)
-// false = carrega da API do Power Automate (Excel)
+// 📌 ALTERE AQUI PARA MUDAR A FONTE DE DADOS:
+//
+// true  = 📄 Carrega do JSON LOCAL (Palestras.json)
+//         Use para: desenvolvimento, testes, trabalho offline
+//
+// false = 🌐 Carrega da API POWER AUTOMATE (Excel online)
+//         Use para: produção, dados em tempo real
+//
 const USE_LOCAL_JSON = true;
 // ========================================
 

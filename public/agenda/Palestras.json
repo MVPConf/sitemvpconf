@@ -3147,7 +3147,7 @@
             "title": "Agente de IA no Excel via Suplemento (Add-In)",
             "speaker": "Thomas Marcelo e Silva",
             "room": "Sala 207",
-            "description": "Do Excel ao Power BI: como organizar processos e aumentar a produtividade na GTF (case real)",
+            "description": "O Excel nunca foi apenas uma planilha; é o ambiente de trabalho mais usado do mundo para análise de dados. Agora, imagine combinar esse poder com as melhores inteligências artificiais disponíveis, diretamente dentro do Excel. Nesta palestra, vou apresentar como construí um add-in agente de IA para Excel utilizando Office.js, explorando casos reais em que a IA resolve problemas complexos em segundos. É IA integrada ao Excel com ferramentas para atuar por conta própria.",
             "level": "Intermediário",
             "limite": "100",
             "atual": "",
