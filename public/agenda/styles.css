@@ -457,6 +457,14 @@ input[type="text"]:focus {
   margin-left: 0;
 }
 
+/* Badge de "Sala Lotada" */
+.badge-full {
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #991b1b !important;
+  border: 1px solid rgba(239, 68, 68, 0.4) !important;
+  font-weight: 700;
+}
+
 /* Badge de trilha */
 .track-badge {
   font-size: 0.72rem;
@@ -537,6 +545,23 @@ input[type="text"]:focus {
   background: rgba(220, 38, 38, 0.1);
   color: #991b1b;
   border: 1px solid rgba(220, 38, 38, 0.35);
+}
+
+/* Sala Lotada */
+.talk.sala-lotada {
+  background: rgba(239, 68, 68, 0.02);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.talk.sala-lotada:hover {
+  border-color: rgba(239, 68, 68, 0.3);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);
+  cursor: not-allowed;
+}
+
+.talk.sala-lotada input[type='radio']:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .talk.slot-vago {

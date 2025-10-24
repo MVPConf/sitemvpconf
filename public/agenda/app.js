@@ -277,6 +277,11 @@ function renderSchedule() {
         meta.textContent = `${talk.speaker} - ${talk.room}`;
         desc.textContent = talk.description;
 
+        // Verifica se a sala está lotada
+        if (talk.isFull) {
+          talkNode.classList.add('sala-lotada');
+        }
+
         // Remove o badge padrão do template (vamos recriar dentro do talk-content)
         if (badge) badge.remove();
 
@@ -288,6 +293,14 @@ function renderSchedule() {
         badgesContainer.style.display = 'flex';
         badgesContainer.style.gap = '0.4rem';
         badgesContainer.style.flexWrap = 'wrap';
+
+        // Adiciona badge "Sala Lotada" se isFull for true
+        if (talk.isFull) {
+          const fullBadge = document.createElement('span');
+          fullBadge.className = 'badge badge-full';
+          fullBadge.textContent = 'Sala Lotada';
+          badgesContainer.appendChild(fullBadge);
+        }
 
         // Adiciona badge de trilha
         const trackText = (talk.track || '').toString().trim();
@@ -338,7 +351,22 @@ function renderSchedule() {
       input.name = `slot-${slot.id}`;
       input.value = talk.id;
       input.checked = selections[slot.id]?.talkId === talk.id;
-      input.addEventListener('change', (e) => handleSelection(slot, talk, e));
+
+      // Desabilita a seleção se a sala estiver lotada (exceto para slots vagos)
+      if (talk.isFull && !talk.isVacant) {
+        input.disabled = true;
+        talkNode.style.opacity = '0.6';
+        talkNode.style.cursor = 'not-allowed';
+        
+        // Adiciona evento de clique para mostrar alerta
+        talkNode.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          alert('❌ Sala Lotada!\n\nEsta palestra atingiu a capacidade máxima e não está mais disponível para seleção.');
+        });
+      } else {
+        input.addEventListener('change', (e) => handleSelection(slot, talk, e));
+      }
 
       talksContainer.appendChild(talkNode);
     });
@@ -937,6 +965,13 @@ async function loadAgendaFromServer() {
 // Converte lista "flat" de palestras (cada item com campos do talk + dia/slot) no formato scheduleByDay
 function normalizeScheduleFromFlatTalks(items) {
   const byDay = {};
+  
+  // Debug: mostra o primeiro item para ver todos os campos disponíveis
+  if (items && items.length > 0) {
+    console.log('📊 Exemplo de dados recebidos da API:', items[0]);
+    console.log('📋 Todos os campos disponíveis:', Object.keys(items[0]));
+  }
+  
   items.forEach((it) => {
     const start = it.start || it.Start || '';
     const end = it.end || it.End || '';
@@ -962,8 +997,22 @@ function normalizeScheduleFromFlatTalks(items) {
       track: it.track || it.trilha || '',
       room: it.room || it.sala || '',
       description: it.description || it.descricao || '',
-      level: it.level || it.nivel || ''
+      level: it.level || it.nivel || '',
+      isFull: it.lotado === true || it.Lotado === true || 
+              String(it.lotado).toLowerCase() === 'true' ||
+              it.isFull === true || it.IsFull === true || it.is_full === true || 
+              it.isfull === true || it.ISFULL === true ||
+              String(it.isFull).toLowerCase() === 'true' || 
+              String(it.IsFull).toLowerCase() === 'true' ||
+              String(it.is_full).toLowerCase() === 'true' ||
+              String(it.isfull).toLowerCase() === 'true'
     };
+    
+    // Debug: mostra no console quando uma palestra está lotada
+    if (talk.isFull) {
+      console.log('🔴 Sala Lotada:', talk.title, '- Sala:', talk.room, '- lotado:', it.lotado);
+    }
+    
     dayMap.get(slotId).talks.push(talk);
   });
 
