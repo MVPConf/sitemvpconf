@@ -34,6 +34,21 @@ A agenda estará disponível em: `http://localhost:8080`
 
 > **Nota:** O comando `npx http-server -p 8080 -o` inicia um servidor HTTP na porta 8080 e abre automaticamente o navegador.
 
+#### ⚙️ Configuração de Fonte de Dados
+
+O app de agenda pode carregar dados de duas fontes diferentes. Para alternar entre elas, edite o arquivo `public/agenda/app.js`:
+
+```javascript
+// No início do arquivo app.js (linha ~10)
+const USE_LOCAL_JSON = true;  // true = JSON local | false = API Excel
+```
+
+**Opções:**
+- `true` - Carrega do arquivo `Palestras.json` (desenvolvimento/testes)
+- `false` - Carrega da API Power Automate conectada ao Excel (produção)
+
+Essa configuração permite trabalhar offline ou testar com dados locais sem depender da API externa.
+
 ## 🛠️ Scripts disponíveis
 
 - `npm run dev` - Inicia o servidor de desenvolvimento

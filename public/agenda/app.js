@@ -1,6 +1,14 @@
 //20-10
 import { trackCoordinators, scheduleByDay } from './data.js';
 
+// ========================================
+// CONFIGURAÇÃO DE FONTE DE DADOS
+// ========================================
+// true = carrega do JSON local (Palestras.json)
+// false = carrega da API do Power Automate (Excel)
+const USE_LOCAL_JSON = true;
+// ========================================
+
 const STORAGE_KEY = 'mvpconf-agenda';
 let selections = loadSelections();
 let currentSchedule = scheduleByDay; // mutável para receber dados do backend
@@ -357,7 +365,7 @@ function renderSchedule() {
         input.disabled = true;
         talkNode.style.opacity = '0.6';
         talkNode.style.cursor = 'not-allowed';
-        
+
         // Adiciona evento de clique para mostrar alerta
         talkNode.addEventListener('click', (e) => {
           e.preventDefault();
@@ -965,13 +973,13 @@ async function loadAgendaFromServer() {
 // Converte lista "flat" de palestras (cada item com campos do talk + dia/slot) no formato scheduleByDay
 function normalizeScheduleFromFlatTalks(items) {
   const byDay = {};
-  
+
   // Debug: mostra o primeiro item para ver todos os campos disponíveis
   if (items && items.length > 0) {
     console.log('📊 Exemplo de dados recebidos da API:', items[0]);
     console.log('📋 Todos os campos disponíveis:', Object.keys(items[0]));
   }
-  
+
   items.forEach((it) => {
     const start = it.start || it.Start || '';
     const end = it.end || it.End || '';
@@ -998,21 +1006,21 @@ function normalizeScheduleFromFlatTalks(items) {
       room: it.room || it.sala || '',
       description: it.description || it.descricao || '',
       level: it.level || it.nivel || '',
-      isFull: it.lotado === true || it.Lotado === true || 
+      isFull: it.lotado === true || it.Lotado === true ||
               String(it.lotado).toLowerCase() === 'true' ||
-              it.isFull === true || it.IsFull === true || it.is_full === true || 
+              it.isFull === true || it.IsFull === true || it.is_full === true ||
               it.isfull === true || it.ISFULL === true ||
-              String(it.isFull).toLowerCase() === 'true' || 
+              String(it.isFull).toLowerCase() === 'true' ||
               String(it.IsFull).toLowerCase() === 'true' ||
               String(it.is_full).toLowerCase() === 'true' ||
               String(it.isfull).toLowerCase() === 'true'
     };
-    
+
     // Debug: mostra no console quando uma palestra está lotada
     if (talk.isFull) {
       console.log('🔴 Sala Lotada:', talk.title, '- Sala:', talk.room, '- lotado:', it.lotado);
     }
-    
+
     dayMap.get(slotId).talks.push(talk);
   });
 
@@ -1169,14 +1177,32 @@ async function apiLoadTalksRemote() {
   }
 }
 
+// Carrega palestras do JSON local (Palestras.json)
+async function apiLoadTalksLocal() {
+  try {
+    const res = await fetch('./Palestras.json');
+    if (!res.ok) {
+      return { ok: false, status: res.status, message: `Falha ao carregar Palestras.json (HTTP ${res.status}).` };
+    }
+    const data = await res.json();
+    return { ok: true, data: data || {} };
+  } catch (err) {
+    console.warn('apiLoadTalksLocal error', err);
+    return { ok: false, message: 'Não foi possível carregar o arquivo Palestras.json.' };
+  }
+}
+
 async function loadTalksFromServer() {
-  const res = await apiLoadTalksRemote();
+  // Usa configuração para decidir a fonte de dados
+  console.log(`📚 Carregando palestras de: ${USE_LOCAL_JSON ? 'JSON LOCAL (Palestras.json)' : 'API POWER AUTOMATE (Excel)'}`);
+  const res = USE_LOCAL_JSON ? await apiLoadTalksLocal() : await apiLoadTalksRemote();
+  
   if (!res.ok) {
     console.warn(res.message || 'Falha ao carregar palestras.');
     return;
   }
   const payload = res.data || {};
-  const items = Array.isArray(payload) ? payload : (payload.Talks || payload.talks || payload.items || []);
+  const items = Array.isArray(payload) ? payload : (payload.body || payload.Talks || payload.talks || payload.items || []);
   if (!Array.isArray(items) || items.length === 0) return;
 
   currentSchedule = normalizeScheduleFromFlatTalks(items);
