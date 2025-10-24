@@ -12,7 +12,7 @@ import { trackCoordinators, scheduleByDay } from './data.js';
 // false = 🌐 Carrega da API POWER AUTOMATE (Excel online)
 //         Use para: produção, dados em tempo real
 //
-const USE_LOCAL_JSON = true;
+const USE_LOCAL_JSON = false;
 // ========================================
 
 const STORAGE_KEY = 'mvpconf-agenda';
@@ -1202,7 +1202,7 @@ async function loadTalksFromServer() {
   // Usa configuração para decidir a fonte de dados
   console.log(`📚 Carregando palestras de: ${USE_LOCAL_JSON ? 'JSON LOCAL (Palestras.json)' : 'API POWER AUTOMATE (Excel)'}`);
   const res = USE_LOCAL_JSON ? await apiLoadTalksLocal() : await apiLoadTalksRemote();
-  
+
   if (!res.ok) {
     console.warn(res.message || 'Falha ao carregar palestras.');
     return;
