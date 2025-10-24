@@ -1162,22 +1162,31 @@ promptAuthFlow();
 
 async function apiLoadTalksRemote() {
   const url = 'https://default5745ebc3a9564b3ca71051f857949e.4d.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/a63d4891b08e4216a181f7c1c1d056e8/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=T3Ln5vzPxmiTOEZ4mxQ5JimBEyUoAJ-mfDzpcxHpepc';
+  console.log('🌐 Chamando API Power Automate...');
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 12000);
   try {
     const res = await fetch(url, { method: 'GET', signal: controller.signal, mode: 'cors' });
     clearTimeout(timeout);
+    console.log('🌐 Resposta HTTP:', res.status, res.statusText);
     if (!res.ok) {
       return { ok: false, status: res.status, message: `Falha ao carregar palestras (HTTP ${res.status}).` };
     }
     const ct = res.headers.get('content-type') || '';
+    console.log('🌐 Content-Type:', ct);
     let data = null;
-    if (ct.includes('application/json')) data = await res.json();
-    else { try { data = JSON.parse(await res.text()); } catch { data = {}; } }
+    if (ct.includes('application/json')) {
+      data = await res.json();
+    } else {
+      const text = await res.text();
+      console.log('🌐 Texto da resposta:', text.substring(0, 500));
+      try { data = JSON.parse(text); } catch { data = {}; }
+    }
+    console.log('🌐 Dados parseados:', data);
     return { ok: true, data: data || {} };
   } catch (err) {
     clearTimeout(timeout);
-    console.warn('apiLoadTalksRemote error', err);
+    console.error('❌ Erro ao chamar API:', err);
     const aborted = err && (err.name === 'AbortError');
     return { ok: false, message: aborted ? 'Tempo esgotado ao carregar palestras.' : 'Não foi possível carregar as palestras.' };
   }
@@ -1203,21 +1212,38 @@ async function loadTalksFromServer() {
   console.log(`📚 Carregando palestras de: ${USE_LOCAL_JSON ? 'JSON LOCAL (Palestras.json)' : 'API POWER AUTOMATE (Excel)'}`);
   const res = USE_LOCAL_JSON ? await apiLoadTalksLocal() : await apiLoadTalksRemote();
 
+  console.log('🔍 Resposta da API:', res);
+
   if (!res.ok) {
-    console.warn(res.message || 'Falha ao carregar palestras.');
+    console.error('❌ Erro ao carregar palestras:', res.message || 'Falha ao carregar palestras.');
+    alert(`Erro ao carregar palestras:\n${res.message || 'Falha desconhecida'}`);
     return;
   }
-  const payload = res.data || {};
-  const items = Array.isArray(payload) ? payload : (payload.body || payload.Talks || payload.talks || payload.items || []);
-  if (!Array.isArray(items) || items.length === 0) return;
 
+  const payload = res.data || {};
+  console.log('📦 Payload recebido:', payload);
+  console.log('📦 Tipo de payload:', Array.isArray(payload) ? 'Array' : typeof payload);
+
+  const items = Array.isArray(payload) ? payload : (payload.body || payload.Talks || payload.talks || payload.items || []);
+  console.log('📋 Items extraídos:', items);
+  console.log('📋 Quantidade de items:', Array.isArray(items) ? items.length : 'não é array');
+
+  if (!Array.isArray(items) || items.length === 0) {
+    console.warn('⚠️ Nenhum item encontrado para processar!');
+    alert('Nenhuma palestra foi carregada. Verifique o console para detalhes.');
+    return;
+  }
+
+  console.log('✅ Processando', items.length, 'palestras...');
   currentSchedule = normalizeScheduleFromFlatTalks(items);
+  console.log('✅ Schedule normalizado:', currentSchedule);
   currentDay = Object.keys(currentSchedule)[0] || currentDay;
   buildFilters();
   ensureTrackFilterDefault();
   ensureDefaultSelections();
   updateSummary();
   renderSchedule();
+  console.log('✅ Palestras carregadas com sucesso!');
 }
 
 // Helper: seleciona 'Todas' por padrão no multi-select
