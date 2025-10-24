@@ -2154,7 +2154,7 @@
             "track": "Inteligencia Artificial",
             "title": "IA Back to Basics - Primeiros passo com Computer Vision",
             "speaker": "Claudenir Andrade",
-            "room": "",
+            "room": "Auditório",
             "description": "\"Imagine uma organização acordando com seus servidores criptografados e milhões de dólares em risco. Do outro lado do mundo, um grupo de hackers APT está comemorando. Mas essa não é uma cena de filme. É a realidade.\"\nVamos mergulhar nos grupos avançados e entender como eles realizam ataques avançados que parecem cenas de filme, explorando técnicas furtivas como spear phishing, LOLBins e C2. Aprenda a identificá-los e caçá-los usando o Microsoft Sentinel e outras ferramentas de Threat Hunting. Conheça casos reais e domine estratégias práticas para proteger sua rede. ",
             "level": "Intermediário",
             "limite": "",
