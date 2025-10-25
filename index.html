@@ -37,4 +37,17 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+
+  <script>
+  (function() { 
+    var host = window.location.host;
+    var protocolo = window.location.protocol;
+    var caminho = window.location.pathname + window.location.search + window.location.hash; 
+    if (!host.startsWith('www.') && host !== 'localhost') {
+      var novoHost = 'www.' + host;
+      var novaUrl = protocolo + '//' + novoHost + caminho;
+      window.location.replace(novaUrl);
+    }
+  })();
+  </script>
 </html>
