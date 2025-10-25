@@ -2159,7 +2159,7 @@
             "level": "Intermediário",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3759,7 +3759,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3775,7 +3775,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3791,7 +3791,7 @@
             "level": "Intermediário",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3807,7 +3807,7 @@
             "level": "Intermediário",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3823,7 +3823,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3839,7 +3839,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3855,7 +3855,7 @@
             "level": "Avançado",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3871,7 +3871,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3887,7 +3887,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3903,7 +3903,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3919,7 +3919,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3935,7 +3935,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3951,7 +3951,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3967,7 +3967,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3983,7 +3983,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3999,7 +3999,7 @@
             "level": "Expert",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -4015,7 +4015,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         }
     ]
 }
