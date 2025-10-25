@@ -11,52 +11,52 @@ const BoardOfDirectors: React.FC = () => {
     {
       nome: "Rosani Coutinho",
       funcao: "Diretora Presidente",
-      image: "https://raw.githubusercontent.com/MVPConf/2025/refs/heads/main/speakers/Rosani Coutinho.jpeg",
+      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Rosani Coutinho.jpeg",
     },
     {
       nome: "Johnson Cruz",
       funcao: "Diretor Executivo",
-      image: "https://raw.githubusercontent.com/MVPConf/2025/refs/heads/main/speakers/Johnson de Souza Cruz.jpeg",
+      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Johnson de Souza Cruz.jpeg",
     },
     {
       nome: "Mayumi Shingaki",
       funcao: "Conselho Administração",
-      image: "https://raw.githubusercontent.com/MVPConf/2025/refs/heads/main/speakers/Mayumi Shingaki.png",
+      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Mayumi Shingaki.png",
     },
     {
       nome: "Gustavo Moraes",
       funcao: "Conselho Administração",
-      image: "https://raw.githubusercontent.com/MVPConf/2025/refs/heads/main/speakers/Gustavo Moraes.jpeg",
+      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Gustavo Moraes.jpeg",
     },
     {
       nome: "Sulamita Dantas",
       funcao: "Conselho Administração",
-      image: "https://raw.githubusercontent.com/MVPConf/2025/refs/heads/main/speakers/Sulamita Dantas.jpeg",
+      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Sulamita Dantas.jpeg",
     },
     {
       nome: "Heber Lopes",
       funcao: "Conselho Administração",
-      image: "https://raw.githubusercontent.com/MVPConf/2025/refs/heads/main/speakers/Heber Lopes.jpeg",
+      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Heber Lopes.jpeg",
     },
     {
       nome: "Thaise Medeiros",
       funcao: "Conselho Fiscal",
-      image: "https://raw.githubusercontent.com/MVPConf/2025/refs/heads/main/speakers/Thaise Medeiros.jpeg",
+      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Thaise Medeiros.jpeg",
     },
     {
       nome: "Claudio Raposo",
       funcao: "Conselho Fiscal",
-      image: "https://raw.githubusercontent.com/MVPConf/2025/refs/heads/main/speakers/Claudio Filipe Lima Raposo.jpeg",
+      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Claudio Filipe Lima Raposo.jpeg",
     },
     {
       nome: "Vanessa Valle",
       funcao: "Conselho Fiscal",
-      image: "https://raw.githubusercontent.com/MVPConf/2025/refs/heads/main/speakers/Vanessa Valle.jpeg",
+      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Vanessa Valle.jpeg",
     },
     {
       nome: "Jamil Lopes",
       funcao: "Conselho Consultivo",
-      image: "https://raw.githubusercontent.com/MVPConf/2025/refs/heads/main/speakers/Jamil Lopes.png",
+      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Jamil Lopes.png",
     },
   ];
 

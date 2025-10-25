@@ -7,7 +7,7 @@ export interface ONG {
   current: boolean;
 }
 
-const API_URL = 'https://raw.githubusercontent.com/MVPConf/2025/refs/heads/main/ongs.json';
+const API_URL = 'https://stmvpconf2025.blob.core.windows.net/data/ongs.json';
 
 export const useOngs = () => {
   const { data, loading, error } = useRemoteData<ONG[]>(API_URL);

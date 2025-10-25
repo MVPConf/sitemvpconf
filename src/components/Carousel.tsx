@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 const images = [
-  "https://raw.githubusercontent.com/MVPConf/picture/refs/heads/master/foto000.jpeg",
-  "https://raw.githubusercontent.com/MVPConf/picture/refs/heads/master/foto111.jpg",
-  "https://raw.githubusercontent.com/MVPConf/picture/refs/heads/master/foto47.jpg",
-  "https://raw.githubusercontent.com/MVPConf/picture/refs/heads/master/foto77.jpg",
+  "https://stmvpconf2025.blob.core.windows.net/data/pictures/foto000.jpeg",
+  "https://stmvpconf2025.blob.core.windows.net/data/pictures/foto111.jpg",
+  "https://stmvpconf2025.blob.core.windows.net/data/pictures/foto47.jpg",
+  "https://stmvpconf2025.blob.core.windows.net/data/pictures/foto77.jpg",
 ];
 
 const Carousel: React.FC = () => {
@@ -43,7 +43,7 @@ const Carousel: React.FC = () => {
                 className="w-full h-[500px] object-cover cursor-pointer transition-transform duration-300 group-hover:scale-105"
                 onClick={() => setIsFullscreen(true)}
               />
-              
+
               {/* Overlay com informações */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
                 <div className="flex items-center justify-between text-white">
@@ -95,8 +95,8 @@ const Carousel: React.FC = () => {
                 key={idx}
                 onClick={() => setCurrent(idx)}
                 className={`relative cursor-pointer rounded-xl overflow-hidden group transition-all duration-300 ${
-                  current === idx 
-                    ? 'ring-4 ring-cyan-400 scale-105' 
+                  current === idx
+                    ? 'ring-4 ring-cyan-400 scale-105'
                     : 'ring-2 ring-gray-700 hover:ring-cyan-500'
                 }`}
               >
@@ -106,11 +106,11 @@ const Carousel: React.FC = () => {
                   className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className={`absolute inset-0 transition-opacity duration-300 ${
-                  current === idx 
-                    ? 'bg-cyan-500/20' 
+                  current === idx
+                    ? 'bg-cyan-500/20'
                     : 'bg-black/40 group-hover:bg-black/20'
                 }`}></div>
-                
+
                 {current === idx && (
                   <div className="absolute top-2 right-2">
                     <div className="w-3 h-3 bg-cyan-400 rounded-full shadow-lg"></div>
@@ -134,7 +134,7 @@ const Carousel: React.FC = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-          
+
           <img
             src={images[current]}
             alt={`Foto ${current + 1}`}

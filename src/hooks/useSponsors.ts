@@ -8,11 +8,11 @@ export interface Sponsor {
   website: string;
 }
 
-const API_URL = 'https://raw.githubusercontent.com/MVPConf/2025/refs/heads/main/sponsors.json';
+const API_URL = 'https://stmvpconf2025.blob.core.windows.net/data/sponsors.json';
 
 export const useSponsors = () => {
   const { data, loading, error } = useRemoteData<Sponsor[]>(API_URL);
-  
+
   // Remove duplicatas por ID (mantém apenas a primeira ocorrência)
   const uniqueSponsors = (data ?? []).reduce((acc, sponsor) => {
     if (!acc.some(s => s.id === sponsor.id)) {
@@ -20,9 +20,9 @@ export const useSponsors = () => {
     }
     return acc;
   }, [] as Sponsor[]);
-  
+
   const sorted = uniqueSponsors.slice().sort((a, b) => a.name.localeCompare(b.name));
-  
+
   return {
     sponsors: sorted,
     loading,

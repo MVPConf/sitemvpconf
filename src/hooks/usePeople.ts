@@ -30,7 +30,7 @@ export interface TrackCoordinator extends Person {
   trackName: string;
 }
 
-const API_URL = 'https://raw.githubusercontent.com/MVPConf/2025/refs/heads/main/speakers.json';
+const API_URL = 'https://stmvpconf2025.blob.core.windows.net/data/speakers.json';
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   const shuffled = [...array];
