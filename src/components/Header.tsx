@@ -18,7 +18,7 @@ const Header: React.FC = () => {
     { name: 'Sobre o Evento', href: '#sobre-evento' },
     { name: 'Galeria', href: '#Carousel' },
     { name: 'Palestrantes', href: '#speakers' },
-    { name: 'Agenda', href: 'https://mvpconf.com.br/agenda/index.html', external: true },
+    { name: 'Agenda', href: 'https://www.mvpconf.com.br/agenda/index.html', external: true },
     { name: 'Patrocinadores', href: '#sponsors' },
     { name: 'Local', href: '#location' },
     { name: 'Ingressos', href: '#tickets' },
