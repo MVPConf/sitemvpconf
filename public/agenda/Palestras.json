@@ -1,7 +1,7 @@
 [
     {
         "@odata.etag": "",
-        "ItemInternalId": "c97937cf-cbab-40b8-874a-d3ec3ae910c4",
+        "ItemInternalId": "fbe11215-223b-4b8e-93c6-4ec9cd2fe25e",
         "talkId": "152",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -17,7 +17,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "e2ca7299-d522-4778-9386-40153fa34c00",
+        "ItemInternalId": "58cca007-f6cc-475f-947b-443e3127a0a9",
         "talkId": "84",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -33,7 +33,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "82cb1107-1ba0-4295-ad4f-d97881d78c8c",
+        "ItemInternalId": "bea51d03-0a64-487e-9543-abce09c2cf73",
         "talkId": "81",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -49,7 +49,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "92133cc2-d53c-4b32-af90-3cb63f6d28c4",
+        "ItemInternalId": "225d4bc1-81c0-4547-b87c-661d266021e4",
         "talkId": "114",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -65,7 +65,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "9e0ff372-8294-4283-99fd-8545eb5a2457",
+        "ItemInternalId": "05c5f4ef-fa99-4ead-9a10-6e9258c4ee42",
         "talkId": "97",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -81,7 +81,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "f6ea4b4b-a0ff-4fcb-9308-638ef43a22bc",
+        "ItemInternalId": "bb9aea13-4d4d-46c0-bce7-d41913aa0712",
         "talkId": "132",
         "slotId": "2025-10-24-1700",
         "start": "2025-10-24T17:00:00",
@@ -97,7 +97,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "38c0459a-a066-42fd-804b-2e8daba0e149",
+        "ItemInternalId": "bb5849b7-dd95-455f-8e4a-436154b53d02",
         "talkId": "240",
         "slotId": "2025-10-24-1700",
         "start": "2025-10-24T17:00:00",
@@ -113,7 +113,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "cc1aa24f-7f06-4dd4-94f3-7e83d3beb869",
+        "ItemInternalId": "3c3f643d-23f2-4d22-aa38-de7ca4537490",
         "talkId": "2",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -129,7 +129,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "5ea18d18-25cd-4b68-afa6-eb4c97f1010a",
+        "ItemInternalId": "a16ccfee-5d57-4d40-91e6-6889b9ad9e3c",
         "talkId": "11",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -145,7 +145,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "fbf0088b-94ad-4fe3-9e05-d1a6a22299da",
+        "ItemInternalId": "a2ebfdb6-242a-4eed-8238-ee0242286b0b",
         "talkId": "36",
         "slotId": "2025-10-25-1600",
         "start": "2025-10-25T16:00:00",
@@ -161,7 +161,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "97e7a33e-c446-49e2-b572-8a81ee687906",
+        "ItemInternalId": "37fd574c-d375-4b48-97a9-4329e8e5e7b4",
         "talkId": "58",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -177,7 +177,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "14c8df1b-c02c-443d-9914-7fe3f6f28739",
+        "ItemInternalId": "41f8c846-9c7e-4e73-bc84-61634e6b8bbd",
         "talkId": "63",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -193,7 +193,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "47194152-6580-4526-90b9-00abc48fe1ee",
+        "ItemInternalId": "debdd96e-cfdd-4364-8898-8aac1960b853",
         "talkId": "70",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -209,7 +209,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "cb9ec46a-ebb0-45ca-94a3-37cfe087aa65",
+        "ItemInternalId": "68354e6c-2591-4c01-b7c8-1de8c0e627b0",
         "talkId": "75",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -225,7 +225,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "9b224eec-1ce5-4d6b-b1af-a55bb4000931",
+        "ItemInternalId": "7f5f03e9-4c38-4303-8798-d107a30ed27d",
         "talkId": "145",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -241,7 +241,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "f7f0330c-e179-4e94-889c-cc1e4cc84589",
+        "ItemInternalId": "c2660ea8-6ada-40fe-b192-4769a907f2d0",
         "talkId": "154",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -257,7 +257,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "3e8ba823-0c43-444b-a809-e6756cdcbf4a",
+        "ItemInternalId": "1ac11b2b-79fb-4201-b793-8673168a2b2b",
         "talkId": "170",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -273,7 +273,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "dae2f787-620b-4382-bf85-bfe277bdf839",
+        "ItemInternalId": "1560bf17-ef55-4dfd-9f85-5541863a31af",
         "talkId": "878",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -289,7 +289,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "a2d45e2b-8187-441c-b726-648133f588b1",
+        "ItemInternalId": "f5311ff5-8b9d-43f0-b316-79ba9ad23cb7",
         "talkId": "33",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -305,15 +305,15 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "51fa7cf7-bf0e-4839-8ddf-8d75c1d56893",
+        "ItemInternalId": "c26fed04-603a-4bc1-af43-ae9700907a65",
         "talkId": "83",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
         "track": "Business Application",
-        "title": "Copilot Studio ou Azure AI Foundry? Escolhendo a solução certa para o seu projeto de IA",
+        "title": "Copilot Studio ou Azure AI Foundry? Escolhendo a solução certa para o seu projeto de IA",
         "speaker": "Henrique Souza",
         "room": "Sala 208",
-        "description": "Nesta palestra, vamos comparar o Copilot Studio e o Azure AI Foundry, destacando quando usar cada um em projetos de IA. Com foco em casos reais, você entenderá as diferenças entre soluções low-code voltadas ao negócio e arquiteturas personalizadas com RAG e orchestration para times técnicos, ajudando a escolher a abordagem ideal para sua empresa.",
+        "description": "Nesta palestra, vamos comparar o Copilot Studio e o Azure AI Foundry, destacando quando usar cada um em projetos de IA. Com foco em casos reais, você entenderá as diferenças entre soluções low-code voltadas ao negócio e arquiteturas personalizadas com RAG e orchestration para times técnicos, ajudando a escolher a abordagem ideal para sua empresa.",
         "level": "Intermediário",
         "limite": "100",
         "atual": "",
@@ -321,7 +321,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "d9352bf5-3d04-4fb3-a8e0-e15645041990",
+        "ItemInternalId": "e66ac9f1-272f-478f-9104-423bad511be0",
         "talkId": "251",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -337,7 +337,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "f0a5ddf9-4d35-4a33-84a0-4ad381373636",
+        "ItemInternalId": "78e6911f-2bf4-4395-ac4c-0c425751abc4",
         "talkId": "615",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -353,7 +353,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "a416fae8-23d1-42d3-81ff-406556255272",
+        "ItemInternalId": "0385f848-67aa-4d3c-8ed2-79002d135fa4",
         "talkId": "9987",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -369,7 +369,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "7b5cd28d-fe10-4887-b88c-4322e4e6d13f",
+        "ItemInternalId": "e9b109bd-4a81-42f3-a672-087ac2b05c9f",
         "talkId": "34",
         "slotId": "2025-10-24-1700",
         "start": "2025-10-24T17:00:00",
@@ -385,7 +385,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "a95b4b83-ed7f-40c2-b0a5-9b461649c4b0",
+        "ItemInternalId": "dea088bb-abc6-435d-90f3-46594ac2a886",
         "talkId": "78",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -401,7 +401,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "bfe8adbd-53cd-40d9-8a8e-82638a3ed39a",
+        "ItemInternalId": "ba30364b-1378-4804-9a90-3b0827ebc109",
         "talkId": "92",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -417,7 +417,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "c2695250-2f40-41b5-8fb9-2b9b41962b3b",
+        "ItemInternalId": "587fd386-159f-4215-ac98-0a61a6c3b42b",
         "talkId": "188",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -433,7 +433,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "df9ab831-32f0-497b-86f3-d813de79851e",
+        "ItemInternalId": "be3c2fd4-054f-437f-a571-f6e09c1c52ee",
         "talkId": "190",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -449,7 +449,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "22216b73-cdd2-474d-be29-80b4fde93873",
+        "ItemInternalId": "26f3dfa1-7e25-4e78-ba2a-8d711dd3fb1e",
         "talkId": "224",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -465,7 +465,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "086dfb37-a2da-458c-9473-46db9f375ccc",
+        "ItemInternalId": "4baf2e81-d92b-4c82-a277-2c76691fac95",
         "talkId": "254",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -481,7 +481,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "3940d471-4934-4fcb-8fb7-eb8efcaeef02",
+        "ItemInternalId": "65eeabe9-6dcf-4082-ab31-42380bc1c647",
         "talkId": "616",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -497,7 +497,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "f2ecc3b3-4f4f-469a-b2f6-46c43ff1136f",
+        "ItemInternalId": "bfed7b9b-2f0e-4dfb-8825-a4b324f8436f",
         "talkId": "899",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -513,7 +513,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "17d02e04-bf19-43ed-abd0-7eb56d835f21",
+        "ItemInternalId": "6a513731-a309-4371-8615-e446133d1612",
         "talkId": "917",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -529,7 +529,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "8fe79e1b-1c02-4e30-b4e3-ed366eee2159",
+        "ItemInternalId": "40b6be50-050a-4874-bc84-b694d7084e40",
         "talkId": "47",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -545,7 +545,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "23b2287d-ad75-4339-a1ae-0ee380fdce8a",
+        "ItemInternalId": "9563e2f4-1768-4eea-bfac-2c286c3e3d44",
         "talkId": "223",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -561,7 +561,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "b0e03192-d2a9-4c42-9bf6-34c39ea6e05b",
+        "ItemInternalId": "74496bf9-b251-4853-a2de-85fc3d08f25f",
         "talkId": "221",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -577,7 +577,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "546b5ada-4779-43ee-9373-a3593ef82097",
+        "ItemInternalId": "b0fc2ab8-1d3d-4942-a6e9-c36ba575b071",
         "talkId": "222",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -593,7 +593,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "6f87128c-9932-4c43-ae31-2b2d74a2dbf8",
+        "ItemInternalId": "0c291cea-c366-40f7-a2fb-052e035e8ce6",
         "talkId": "263",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -609,7 +609,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "e86f98c2-b08f-4d30-a7b4-db9010829bcf",
+        "ItemInternalId": "5ed828e8-d7da-445f-a2f3-4e98aeb87d63",
         "talkId": "265",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -625,7 +625,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "5fc596b4-cc87-4eaf-9fdf-ec27d153520b",
+        "ItemInternalId": "03bd3104-17ee-4d1e-8e62-3876b6ae3a99",
         "talkId": "255",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -641,7 +641,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "bb0194a2-d819-4044-b3e7-fd870cf74e86",
+        "ItemInternalId": "c09d155a-491a-4c44-a0b4-49ae020d7b04",
         "talkId": "244",
         "slotId": "2025-10-24-1700",
         "start": "2025-10-24T17:00:00",
@@ -657,7 +657,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "77b6952a-27b6-4660-ba5b-f3d133c37e11",
+        "ItemInternalId": "a872d132-2d77-4550-a82e-241828491c37",
         "talkId": "54",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -673,7 +673,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "21f62299-a711-4c42-aafb-087653d8a02c",
+        "ItemInternalId": "cfc9acc6-704c-4aa2-b593-fda0e50109c3",
         "talkId": "62",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -689,7 +689,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "e7ae40c8-8649-4367-9bb2-da6b68dcc7be",
+        "ItemInternalId": "8db08b44-7dc5-4c99-8f4b-7ab3f7cf69d2",
         "talkId": "130",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -705,7 +705,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "38bab483-bf0f-4e16-a768-3db2bc6f1b91",
+        "ItemInternalId": "c4d7bd3c-8688-4207-85ed-4c37e556b8ed",
         "talkId": "239",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -721,7 +721,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "9e339509-9e70-4990-9277-5d7324e346ee",
+        "ItemInternalId": "8bdc5156-cbfe-4054-8887-66b1328958f1",
         "talkId": "242",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -737,7 +737,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "2ff73e02-4361-496e-934b-a30efbe8f57c",
+        "ItemInternalId": "88ab7fac-7a6a-4661-84a5-6d3822b9dadd",
         "talkId": "250",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -753,7 +753,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "e7121b5e-2895-44a4-87b7-2c4252f6e38e",
+        "ItemInternalId": "ec448ea9-c269-4e65-abbc-deb524284c38",
         "talkId": "252",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -769,7 +769,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "cd03d0aa-adc0-416b-a56c-4c2d345457b9",
+        "ItemInternalId": "a2c81059-64fc-4a74-9d6b-d2ce2c178f98",
         "talkId": "270",
         "slotId": "2025-10-25-1600",
         "start": "2025-10-25T16:00:00",
@@ -785,7 +785,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "391179cf-c3d2-4616-8eb8-f3741944f0e8",
+        "ItemInternalId": "73044a87-eeb3-40c0-acd4-a960fbb604d9",
         "talkId": "9898",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -801,7 +801,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "03bbf508-a53a-49b7-a6d7-132954570115",
+        "ItemInternalId": "938c88c3-b544-45f3-9948-fee70a905dbe",
         "talkId": "155",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -817,7 +817,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "1b3281a5-4dd2-4de1-ab4c-fd93e3ca6fbe",
+        "ItemInternalId": "71503f0f-8c5d-4b40-ac16-5a91ad7a305e",
         "talkId": "91",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -833,7 +833,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "73093b77-ead2-411b-8fd1-11d66cdeb0d5",
+        "ItemInternalId": "273582c7-60c4-4741-9369-07d88b5ddb8d",
         "talkId": "128",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -849,7 +849,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "4ae29cbc-4d62-4700-bacd-bd41e44dbd49",
+        "ItemInternalId": "d550169b-d919-44cf-9da5-eceb7dbd1439",
         "talkId": "218",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -865,7 +865,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "4b0a7bab-1006-4b8f-bb2c-d5c85f64255e",
+        "ItemInternalId": "4d02d80f-8e15-4fe2-8ddb-db7ec79217bd",
         "talkId": "7",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -881,7 +881,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "a3cc1438-8dac-4082-85f5-f7f106ce361e",
+        "ItemInternalId": "b1c4ac91-cfb5-40c6-a494-e953951b1ff9",
         "talkId": "216",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -897,7 +897,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "99b0d44b-784c-49ee-b9e5-8863822f5d3d",
+        "ItemInternalId": "49e09613-583a-46f0-93a2-6f8662d7c1e4",
         "talkId": "200",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -913,7 +913,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "6886c8c2-2fa6-4382-a5e4-5bc7f57d3c08",
+        "ItemInternalId": "9cb339dd-daea-43a6-b651-677d370c8baf",
         "talkId": "185",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -929,7 +929,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "0c3f615c-8561-41ad-847e-c50e4424982e",
+        "ItemInternalId": "528a5812-f072-4f20-bc26-c5a51f9c71e7",
         "talkId": "214",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -945,7 +945,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "dcaccafa-0c4c-493c-b509-f68f1479a166",
+        "ItemInternalId": "0e689e2c-33a3-4ec2-afb1-21d297b6a676",
         "talkId": "127",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -961,7 +961,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "c01251ac-1cdc-44d4-8243-c5dda670fa1f",
+        "ItemInternalId": "17e2f81a-732d-4c09-89c8-986906dffbd0",
         "talkId": "215",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -977,7 +977,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "f2d575b2-b7c0-4ca3-bb6b-2c8559af8125",
+        "ItemInternalId": "5873167b-f781-406e-b3af-6b6eabf9ca42",
         "talkId": "13",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -993,7 +993,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "fd277c63-2c8b-4a65-a0df-71532871d8e2",
+        "ItemInternalId": "55bb5e2b-ca85-4e4f-b0bf-f4c9d86c230b",
         "talkId": "104",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -1009,7 +1009,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "4af17853-11fc-401a-a74f-d4383baf8931",
+        "ItemInternalId": "d00b9304-dbd9-49e7-869f-9ce3d08c8ab8",
         "talkId": "94",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -1025,7 +1025,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "7674a1d4-dc7f-43c1-87e8-cfc3eec42496",
+        "ItemInternalId": "c849d70c-c4ff-49ba-b5f6-21a35149d7ec",
         "talkId": "217",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -1041,7 +1041,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "9c6bd08a-082f-4418-9c95-fd8563e6ed90",
+        "ItemInternalId": "e4b288a8-3fef-4567-9b62-09b7ad555bfa",
         "talkId": "219",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -1057,7 +1057,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "2f5caf98-ec16-4c6a-96ec-03242420af2b",
+        "ItemInternalId": "d05ebcae-7db9-4cf6-a656-5c4139e79a7a",
         "talkId": "630",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -1073,7 +1073,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "fed0cdc3-7440-49bd-ba40-015b521a247d",
+        "ItemInternalId": "80dcbe34-c78b-45c5-9ea9-09e37dc2609f",
         "talkId": "19",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -1089,7 +1089,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "30eae534-275c-4611-a55b-c2912e92a650",
+        "ItemInternalId": "9d90781f-df8d-40d0-bdbd-f3de44b96289",
         "talkId": "44",
         "slotId": "2025-10-24-1700",
         "start": "2025-10-24T17:00:00",
@@ -1105,7 +1105,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "eeaff7ba-12d1-43de-ad42-ea258c280c53",
+        "ItemInternalId": "5bbeef7f-53e2-4852-8303-99dec86f9acc",
         "talkId": "24",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -1113,7 +1113,7 @@
         "title": "DAX UDF: o futuro do reuso de código no Power BI",
         "speaker": "Renato José Ferreira Lira",
         "room": "Sala 409",
-        "description": "O DAX acaba de ganhar um recurso aguardado há muito tempo: as funções personalizadas ( UDF - User Defined Functions ), que possibilitam o verdadeiro reuso de código dentro dos modelos do Power BI. Nesta sessão vamos explorar a criação de funções personalizadas, os diferentes tipos de parâmetros e como funcionam em contraste às medidas, especialmente em relação à sempre desafiadora transição de contexto. Trilharemos exemplos práticos uso de códigos baseados em DAX UDF disponíveis publicamente, discutindo seus usos conceituais e mostrando como a nova abordagem resolve problemas comuns em modelos compostos.Também veremos como aplicar UDFs em cenários híbridos com Direct Lake + Import, trazendo mais elegância, consistência e governança às soluções de BI corporativo.",
+        "description": "O DAX acaba de ganhar um recurso aguardado há muito tempo: as funções personalizadas ( UDF - User Defined Functions ), que possibilitam o verdadeiro reuso de código dentro dos modelos do Power BI. Nesta sessão vamos explorar a criação de funções personalizadas, os diferentes tipos de parâmetros e como funcionam em contraste às medidas, especialmente em relação à sempre desafiadora transição de contexto. Trilharemos exemplos práticos uso de códigos baseados em DAX UDF disponíveis publicamente, discutindo seus usos conceituais e mostrando como a nova abordagem resolve problemas comuns em modelos compostos.Também veremos como aplicar UDFs em cenários híbridos com Direct Lake + Import, trazendo mais elegância, consistência e governança às soluções de BI corporativo.",
         "level": "Intermediário",
         "limite": "100",
         "atual": "",
@@ -1121,7 +1121,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "d8986e15-3379-4106-9eb7-da70cdaccc4c",
+        "ItemInternalId": "2263bc3c-516f-4df0-a1fe-256ea701caab",
         "talkId": "30",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -1137,7 +1137,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "abf10287-c3ee-4280-952e-c4639a1cad6e",
+        "ItemInternalId": "393e045f-82ce-4735-a64f-81d331bc36aa",
         "talkId": "32",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -1153,7 +1153,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "0c0493c5-d28a-4389-b160-49b2089e158f",
+        "ItemInternalId": "4083284d-6e66-4555-a960-2add86dd4fce",
         "talkId": "55",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -1169,7 +1169,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "5bc58861-0ada-40f7-9259-0fe065a8dc45",
+        "ItemInternalId": "e18c85fd-c296-4051-981e-2522d7e62222",
         "talkId": "65",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -1185,7 +1185,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "7c47b1d2-308b-4fba-8b6c-ec3f975020dd",
+        "ItemInternalId": "d5ea2305-72df-4172-8134-7d3bf02817dc",
         "talkId": "66",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -1201,7 +1201,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "3f9acc7a-2c4e-4c47-a349-b647cdae62a4",
+        "ItemInternalId": "cc27c578-520e-4bdf-9138-8770596bf50a",
         "talkId": "80",
         "slotId": "2025-10-25-1600",
         "start": "2025-10-25T16:00:00",
@@ -1217,7 +1217,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "8f9b43ea-4d28-465c-b839-dbf2f6219660",
+        "ItemInternalId": "d5fb9950-7d27-4e7d-b82e-79326ed58de7",
         "talkId": "112",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -1233,12 +1233,12 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "2fb09f3a-d7e5-470b-ba1c-7d30e801d71e",
+        "ItemInternalId": "528881fc-1757-4f7e-9528-e8e91c0785ce",
         "talkId": "113",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
         "track": "Data Platform",
-        "title": "Fabric sob Controle: Como Automatizar o Scale-up e Scale-down para Cortar Gastos em Tempo Real",
+        "title": "Fabric sob Controle: Como Automatizar o Scale-up e Scale-down para Cortar Gastos em Tempo Real",
         "speaker": "Sulamita Dantas / Rafael Gobbi ",
         "room": "Sala 403",
         "description": "Fabric sob Controle: Como Automatizar o Scale-up e Scale-down para Cortar Gastos em Tempo Real\n\nNesta palestra, você vai descobrir como assumir o controle total dos custos no Microsoft Fabric, implementando automações inteligentes que ajustam, em tempo real, a capacidade de processamento conforme a demanda do seu ambiente. Vamos explorar estratégias práticas de scale-up e scale-down automático, como monitorar uso, identificar picos de consumo, evitar desperdícios e otimizar recursos de forma eficiente. Prepare-se para aprender técnicas que podem gerar economia imediata, aumentar a governança dos ambientes e garantir alta performance sem surpresas na fatura.",
@@ -1249,7 +1249,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "460743c5-69b2-4fc4-87c3-c7a27b410adc",
+        "ItemInternalId": "fc20843c-81cc-475a-91cc-d2016d5e8f47",
         "talkId": "138",
         "slotId": "2025-10-25-1600",
         "start": "2025-10-25T16:00:00",
@@ -1265,7 +1265,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "c1f4197c-0b93-4263-9433-fccdecd431c5",
+        "ItemInternalId": "89f004bc-d133-4d9e-882b-dfddf37d714f",
         "talkId": "156",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -1281,7 +1281,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "e6b1d2e9-cab8-4ee7-ad77-eb0c0c4559bb",
+        "ItemInternalId": "feb36f67-4cf2-447c-8c01-2d4908c82452",
         "talkId": "182",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -1297,7 +1297,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "c8a14150-0d9c-4da4-b41f-fb9bd84fa11b",
+        "ItemInternalId": "2ce08c1a-2dfc-4e5a-b120-95b8a79d8c50",
         "talkId": "184",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -1313,7 +1313,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "4bcd09e4-fc0f-4ec6-85ce-560e02c672be",
+        "ItemInternalId": "7c59cf23-7d43-4c0b-8fa4-77b4750d5238",
         "talkId": "187",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -1329,7 +1329,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "2a11d643-1dc2-490d-a466-8d8aba0f5a75",
+        "ItemInternalId": "ddf1d4ac-0c90-47bc-bc34-d5cf88118ad8",
         "talkId": "197",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -1345,7 +1345,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "fa6f359d-abc7-40b8-9429-a53579b760c4",
+        "ItemInternalId": "5f4a1658-ba63-4266-8871-1cbd335b6628",
         "talkId": "229",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -1361,7 +1361,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "7d66a4bd-33d1-4ba7-8efb-9ed4d5b39333",
+        "ItemInternalId": "7dbbfe74-ba07-4905-a9dc-dcaccf702324",
         "talkId": "236",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -1377,7 +1377,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "83f9c482-d674-4b8e-827d-b59f592d6b7f",
+        "ItemInternalId": "77c05b4b-c89a-49b5-9afe-acd6d8ee6978",
         "talkId": "257",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -1393,7 +1393,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "d702fab4-bdf0-4666-919b-cf42f397b41d",
+        "ItemInternalId": "23933453-37c7-4f58-96f7-066de210144b",
         "talkId": "259",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -1409,7 +1409,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "3745f202-75a3-48b3-ad59-3bda5cf6ad87",
+        "ItemInternalId": "2f90091f-739c-48eb-af88-a8590089d075",
         "talkId": "260",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -1425,7 +1425,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "cbe3fe75-0d1b-4cf3-9e88-e48bafe52faf",
+        "ItemInternalId": "20900d70-e36f-4e9e-aad2-22372ab5bc0a",
         "talkId": "266",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -1441,7 +1441,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "0dcfa9ba-4141-40bf-9257-c2fab63165f8",
+        "ItemInternalId": "ecd83167-bdbd-4f2d-bc4b-8dbe962a03d5",
         "talkId": "500",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -1457,7 +1457,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "b7b8e2f5-5681-48ed-83ec-64df042d8471",
+        "ItemInternalId": "09d433b7-0b93-413b-87cf-d82e21a0b885",
         "talkId": "501",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -1473,7 +1473,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "b7db7eb7-e40c-453c-a0cf-3f9a3fde2fa4",
+        "ItemInternalId": "c206d98f-dd70-433a-8d28-d048acde1a61",
         "talkId": "502",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -1489,7 +1489,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "2d180c0a-a322-47d8-a6b9-34c3726b2821",
+        "ItemInternalId": "8ce920af-bbd9-489c-9e15-e0efa1046175",
         "talkId": "3",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -1505,7 +1505,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "14a669b5-7487-4eb3-92ac-913eb0e10fae",
+        "ItemInternalId": "be7dd032-223b-46a9-8e4a-a9a19c48f980",
         "talkId": "126",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -1521,7 +1521,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "33d599b4-bb29-4776-bca8-e47e06d504ca",
+        "ItemInternalId": "26d41ecf-6d71-4d29-ab44-72307879ec51",
         "talkId": "12",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -1537,7 +1537,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "638bed01-7921-4543-8871-f542217d074d",
+        "ItemInternalId": "f3eca96e-6b46-4c25-8c92-d7a8994e2234",
         "talkId": "15",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -1553,7 +1553,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "97713a30-0ff7-4a50-a278-f498cae5fd0a",
+        "ItemInternalId": "00436728-d7af-47f8-ba4a-67d22e5aee71",
         "talkId": "27",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -1569,7 +1569,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "8616b30b-abd7-44b8-86ce-e2e4869e7e03",
+        "ItemInternalId": "4ef06acd-044a-4e4e-a997-2c2ede85bebd",
         "talkId": "125",
         "slotId": "2025-10-24-1700",
         "start": "2025-10-24T17:00:00",
@@ -1585,7 +1585,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "0632796f-6989-4950-974f-1d5d5e942404",
+        "ItemInternalId": "acc1376c-a41f-4a80-93f1-1815e0eb7b5f",
         "talkId": "108",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -1601,7 +1601,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "0aa87610-a033-48eb-9a11-0a86e2136cdc",
+        "ItemInternalId": "5c43c961-3f44-411d-b477-47c13a339649",
         "talkId": "37",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -1617,7 +1617,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "f20fc883-0d25-4a42-9fc8-3b4832d6f13b",
+        "ItemInternalId": "37d76c4d-0705-41e6-8a4b-e9ffbdf6238b",
         "talkId": "98",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -1633,7 +1633,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "7fd63cb1-cb1f-4240-a368-928c26774e2d",
+        "ItemInternalId": "60c56b9b-5c8d-4eaf-9d8b-4297d8a67bb4",
         "talkId": "6",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -1649,7 +1649,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "7c436ff7-6d89-40e4-99b4-2d7331915c79",
+        "ItemInternalId": "dc4cac7a-661c-44c4-9fa4-b94abf03e657",
         "talkId": "175",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -1665,12 +1665,12 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "b7f40ed6-afb3-408b-a448-8bc67cb98869",
+        "ItemInternalId": "373650bb-6a67-4abd-b239-d1b652469163",
         "talkId": "17",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
         "track": "Developer Technologies",
-        "title": "Arquiteturas que reagem: uma introdução à Orientação a Eventos",
+        "title": "Arquiteturas que reagem: uma introdução à Orientação a Eventos",
         "speaker": "Thamirys Gameiro ",
         "room": "Sala 309",
         "description": "Você já se perguntou o que realmente acontece com sua aplicação quando ela começa a ganhar usuários? Nesta palestra, vamos explorar de forma prática, direta e cheia de exemplos reais o caminho do crescimento de uma aplicação — desde os primeiros acessos até lidar com milhões de requisições por segundo.\nMais do que mostrar \"como escalar\", vamos entender quando escalar, o que escalar, e por que escalar — explorando as limitações de disco, memória, CPU, rede, banco de dados, cache e, claro, aplicação.\n ",
@@ -1681,7 +1681,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "f5dae5ab-f2b0-4800-9ee4-c61e3911981c",
+        "ItemInternalId": "609bfb66-b661-466a-b34e-348d9b92e6e7",
         "talkId": "115",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -1697,7 +1697,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "d2569443-fc59-4848-be57-5cb638e5af52",
+        "ItemInternalId": "1c0c6979-5757-4512-855d-1ba03ebe97b3",
         "talkId": "194",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -1713,12 +1713,12 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "44aaedad-7f80-4a08-9f0a-e6a1b95b45ce",
+        "ItemInternalId": "85048708-ca2e-4d6c-a45f-227fb5109934",
         "talkId": "213",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
         "track": "Developer Technologies",
-        "title": "Integrando o SDK do .NET com o Serviço OpenAI do Azure",
+        "title": "Integrando o SDK do .NET com o Serviço OpenAI do Azure",
         "speaker": "Laura de Alencar / Thamirys Gameiro",
         "room": "Sala 303",
         "description": "Nesta palestra irei demonstrar com detalhes implementações avançadas de aplicações multi-tenants com .NET, utilizando recursos existentes no .NET 9, Asp.Net Core e Entity Framework. Além disso, serão demonstradas e discutidas na prática prós e contras de abordagens dessa arquitetura baseado em casos reais de implementação em projetos de larga escala em que trabalhei nos Estados Unidos, Europa e outros locais. Desmontração de boas práticas em casos reais é o foco dessa palestra.",
@@ -1729,7 +1729,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "5ab97f60-8409-477b-b638-65c294a81019",
+        "ItemInternalId": "3afbf0c4-c8e2-4fca-9f7f-3c5915a222bb",
         "talkId": "205",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -1745,7 +1745,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "e822fb5f-32d9-487a-b92a-e4918b43303c",
+        "ItemInternalId": "6fcbf0fc-4b8e-4374-ae9d-eebade2f0824",
         "talkId": "103",
         "slotId": "2025-10-24-1700",
         "start": "2025-10-24T17:00:00",
@@ -1761,7 +1761,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "71afb805-ba41-4e3f-b5b6-755c81a9511e",
+        "ItemInternalId": "8375fb2c-197b-442b-963c-892ff6afb4f0",
         "talkId": "40",
         "slotId": "2025-10-25-1600",
         "start": "2025-10-25T16:00:00",
@@ -1777,7 +1777,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "165cebd5-a56b-4436-9ac4-f10946f5cc12",
+        "ItemInternalId": "ac291b25-1f26-48a7-a4fa-aac59238f5ac",
         "talkId": "60",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -1793,7 +1793,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "2397b03c-f5fd-4e20-a43a-8a063fdacea0",
+        "ItemInternalId": "a74a6166-7014-4997-bde1-1d3aa0faf637",
         "talkId": "64",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -1809,7 +1809,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "c9352c7f-11e4-46e7-a87c-810cdfdb3c63",
+        "ItemInternalId": "d891f2ee-ef78-4206-99bf-4b191c4b4c22",
         "talkId": "87",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -1825,7 +1825,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "f731bbc3-de81-4df3-816e-ec2f5c8d9923",
+        "ItemInternalId": "4efef5bd-bc6e-4c15-85ea-06bf9a50efd7",
         "talkId": "116",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -1841,7 +1841,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "1e3f7829-4123-4de0-9b1b-808093b4aac7",
+        "ItemInternalId": "5cd75d9c-53e7-42ab-b01c-6690850e95c8",
         "talkId": "121",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -1857,7 +1857,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "2d4f0cce-bc4d-484b-897c-92532fc001f8",
+        "ItemInternalId": "890ad398-1c8d-45c4-97b1-fa802ae891bf",
         "talkId": "122",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -1873,7 +1873,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "c4bc5b18-297a-4b17-b265-26fc89221e5a",
+        "ItemInternalId": "2d1c1420-89e9-47a3-82a8-23e8d2946768",
         "talkId": "153",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -1889,7 +1889,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "72d70005-6be0-4e1a-a1be-36b9cbc95ba3",
+        "ItemInternalId": "16ea4139-5d8c-4a63-a980-21df055bcc86",
         "talkId": "157",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -1905,7 +1905,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "d6ea698c-0195-4bbc-b50d-6abdddc510a8",
+        "ItemInternalId": "05e06181-04af-4802-a980-51ebe13f33ee",
         "talkId": "159",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -1921,7 +1921,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "4489cd0c-6222-428b-92b4-7318594b7ca3",
+        "ItemInternalId": "4b400aa4-8094-4d0d-be73-bf556c32814b",
         "talkId": "167",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -1937,7 +1937,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "8b40d9ba-3850-4d6b-8c39-a7065f2f9794",
+        "ItemInternalId": "03bfc996-c8d2-4448-a805-5004c9506571",
         "talkId": "171",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -1953,7 +1953,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "4c65925d-73d3-4d94-a5ab-0680ef56ee97",
+        "ItemInternalId": "4daaa051-3709-4e11-9478-1ae37a328637",
         "talkId": "195",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -1961,7 +1961,7 @@
         "title": "Vertical Slice Architecture em .NET: Dos pitfalls às melhores práticas",
         "speaker": "Luiz Guilherme Couto Motta",
         "room": "Sala 309",
-        "description": "A maioria dos exemplos de Vertical Slice Architecture em .NET que encontramos são apenas recortes simplificados de sistemas maiores. Mas como aplicar esse padrão em cenários realmente complexos? Quando saímos do contexto didático e enfrentamos as demandas do mundo real, é comum cair em armadilhas que comprometem a evolução e a saúde da arquitetura.\n\nNesta palestra, vamos além do básico. O foco será mostrar, com exemplos reais, como implementar Vertical Slice Architecture em .NET em sistemas complexos, discutir os erros mais comuns cometidos por desenvolvedores e arquitetos — inclusive por mim — e apresentar estratégias práticas para evitá-los.\n\nVeremos como Domain-Driven Design, Minimal APIs e o padrão REPR (Request-Endpoint-Response) podem ser aplicados em conjunto, além de como extrair o melhor de ferramentas como EF Core e .NET Aspire para sustentar projetos baseados em vertical slices em cenários reais.\n\nSerá uma palestra densa, voltada a quem já domina os fundamentos e quer entender como levar a Vertical Slice Architecture em .NET a um nível realmente aplicável em sistemas de larga escala.",
+        "description": "A maioria dos exemplos de Vertical Slice Architecture em .NET que encontramos são apenas recortes simplificados de sistemas maiores. Mas como aplicar esse padrão em cenários realmente complexos? Quando saímos do contexto didático e enfrentamos as demandas do mundo real, é comum cair em armadilhas que comprometem a evolução e a saúde da arquitetura.\n\nNesta palestra, vamos além do básico. O foco será mostrar, com exemplos reais, como implementar Vertical Slice Architecture em .NET em sistemas complexos, discutir os erros mais comuns cometidos por desenvolvedores e arquitetos — inclusive por mim — e apresentar estratégias práticas para evitá-los.\n\nVeremos como Domain-Driven Design, Minimal APIs e o padrão REPR (Request-Endpoint-Response) podem ser aplicados em conjunto, além de como extrair o melhor de ferramentas como EF Core e .NET Aspire para sustentar projetos baseados em vertical slices em cenários reais.\n\nSerá uma palestra densa, voltada a quem já domina os fundamentos e quer entender como levar a Vertical Slice Architecture em .NET a um nível realmente aplicável em sistemas de larga escala.",
         "level": "Intermediário",
         "limite": "100",
         "atual": "",
@@ -1969,7 +1969,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "4cd0da8f-ebc9-411c-94a2-7ebd0de1d009",
+        "ItemInternalId": "501c083b-d8e1-4527-afe3-bd9ec8025f56",
         "talkId": "207",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -1977,7 +1977,7 @@
         "title": "Messaging Patterns na Arquitetura de Software: Como os Padrões Guiam a Escolha da Tecnologia",
         "speaker": "Tania Stormovski",
         "room": "Sala 310",
-        "description": "Não é sobre escolher RabbitMQ, Kafka ou Service Bus.\nÉ sobre entender o padrão de mensageria que o seu sistema precisa e só então decidir a tecnologia.\n\nMensageria está no coração de sistemas distribuídos modernos. Porém, adotar RabbitMQ, Azure Service Bus, Kafka ou qualquer outra tecnologia sem compreender profundamente os padrões de mensageria pode levar a arquiteturas frágeis e difíceis de evoluir.\nNesta palestra, vamos explorar como padrões como Publish/Subscribe, Competing Consumers, Dead Letter Queue e outros influenciam diretamente a escolha das ferramentas. Mais do que entender a teoria, veremos cenários reais de trade-offs e como alinhar padrões de integração, escalabilidade e resiliência à tecnologia certa para o seu contexto.",
+        "description": "Não é sobre escolher RabbitMQ, Kafka ou Service Bus.\nÉ sobre entender o padrão de mensageria que o seu sistema precisa e só então decidir a tecnologia.\n\nMensageria está no coração de sistemas distribuídos modernos. Porém, adotar RabbitMQ, Azure Service Bus, Kafka ou qualquer outra tecnologia sem compreender profundamente os padrões de mensageria pode levar a arquiteturas frágeis e difíceis de evoluir.\nNesta palestra, vamos explorar como padrões como Publish/Subscribe, Competing Consumers, Dead Letter Queue e outros influenciam diretamente a escolha das ferramentas. Mais do que entender a teoria, veremos cenários reais de trade-offs e como alinhar padrões de integração, escalabilidade e resiliência à tecnologia certa para o seu contexto.",
         "level": "Intermediário",
         "limite": "100",
         "atual": "",
@@ -1985,7 +1985,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "a1823b5f-0b0a-40d7-862b-0192eaf25881",
+        "ItemInternalId": "38af7e22-8713-46b8-95b7-353e6d1d017b",
         "talkId": "208",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -2001,7 +2001,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "f239f90c-2017-4212-a823-32be772d6b39",
+        "ItemInternalId": "9014b2ab-4554-40c3-8ea1-5850573fc8a6",
         "talkId": "212",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -2017,7 +2017,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "3479c072-2676-4309-9256-620aedd8f1a9",
+        "ItemInternalId": "429f3e33-135c-4f07-b7ab-45ea89f876e2",
         "talkId": "226",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -2033,7 +2033,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "dbfb67de-416f-4ff3-acff-0e1deb289082",
+        "ItemInternalId": "8ba5bc81-eea3-4559-8ab8-72019b70e2b7",
         "talkId": "231",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -2049,7 +2049,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "8b5da0fd-9a08-4aed-82c6-b934d1ebf415",
+        "ItemInternalId": "21e0f140-1e1d-48cb-bff8-4feb3fa70c06",
         "talkId": "253",
         "slotId": "2025-10-25-1600",
         "start": "2025-10-25T16:00:00",
@@ -2065,7 +2065,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "64e024cc-077f-46b6-8d0c-855eca893e3a",
+        "ItemInternalId": "c35cd2a4-349b-4129-992b-b71688c0aeb1",
         "talkId": "505",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -2073,7 +2073,7 @@
         "title": "Dissecando a IA, o que não te contam",
         "speaker": "Carlos dos Santos",
         "room": "Sala 309",
-        "description": "Entenda como as IAs são criadas, como funcionam, principais problemas e soluções e como colocar isto par rodar no seu negócio",
+        "description": "Entenda como as IAs são criadas, como funcionam, principais problemas e soluções e como colocar isto par rodar no seu negócio",
         "level": "Intermediário",
         "limite": "100",
         "atual": "",
@@ -2081,7 +2081,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "f7d41589-943a-48b9-80ec-f0d7f3e83798",
+        "ItemInternalId": "70792934-8a98-4f5e-9c95-c38e9dc6251e",
         "talkId": "42",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -2097,7 +2097,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "fef170ba-88e8-4675-849e-828b6bb1b8fe",
+        "ItemInternalId": "3d3cb039-bc05-42ac-94d7-0c84a6a30dc1",
         "talkId": "178",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -2113,7 +2113,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "9262d9d4-7a5c-44bd-b7bf-1a2b784c8286",
+        "ItemInternalId": "8d43bac0-5d16-4fb6-b7a9-813238edc762",
         "talkId": "209",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -2129,7 +2129,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "7c241e41-3278-41b4-b07b-c5775e01c487",
+        "ItemInternalId": "f425125b-414c-4e90-a0b4-fa4615261930",
         "talkId": "26",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -2145,7 +2145,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "33fe13d3-f8bd-4b4b-bd64-dc9d87ac38d1",
+        "ItemInternalId": "718ac0f8-7cce-4c1d-8824-af9b28d464c5",
         "talkId": "31",
         "slotId": "2025-10-24-1700",
         "start": "2025-10-24T17:00:00",
@@ -2161,7 +2161,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "1f28127e-329a-49d9-b39e-e76464d90957",
+        "ItemInternalId": "f290a638-cd0e-484a-b067-a275c45e4833",
         "talkId": "230",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -2177,7 +2177,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "7f832710-b5d8-4990-a278-0610fb9604ee",
+        "ItemInternalId": "6c818bc4-b40a-4fa3-bf07-ed111782749d",
         "talkId": "123",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -2193,7 +2193,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "c6ca5776-ed6c-4628-b473-77a44ac80c57",
+        "ItemInternalId": "c93e3ffe-ecf0-4fee-aea6-b64e1a3f266c",
         "talkId": "210",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -2209,7 +2209,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "dd6a5c72-9b1f-46c5-ab05-82485e05bace",
+        "ItemInternalId": "1cbfec76-1680-4cd3-a8ad-eee4210cbb74",
         "talkId": "234",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -2225,7 +2225,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "078165c0-3c08-4376-b6db-856a10fd8cf6",
+        "ItemInternalId": "12937c8c-2272-4a27-b381-b39f32adbf49",
         "talkId": "237",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -2241,7 +2241,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "a2d69518-fbf1-4210-ac26-09fc22cdc09a",
+        "ItemInternalId": "dc78d0dc-7a96-4c23-b54b-842fccc44816",
         "talkId": "258",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -2257,7 +2257,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "ce77d564-a12d-46a9-97cf-763f72b5300d",
+        "ItemInternalId": "2572f076-3a61-483a-aae4-00aa24e977d0",
         "talkId": "264",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -2273,7 +2273,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "242af8c0-99ad-450b-9c38-6d8e27d09245",
+        "ItemInternalId": "e168a2fc-3e3c-4fe4-8c34-67663afa4523",
         "talkId": "129",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -2289,7 +2289,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "a54021e9-eba2-4920-b1cb-18dce08cae24",
+        "ItemInternalId": "be464a0d-ad53-4406-a3d0-f9f9d3a1e54a",
         "talkId": "176",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -2305,12 +2305,12 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "a1d7ddd8-bf10-4767-a724-084a46b005cd",
+        "ItemInternalId": "f083a9a1-2a57-4e56-8fe8-4d3f5c190fd4",
         "talkId": "202",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
         "track": "Inteligencia Artificial",
-        "title": "Como Construir seu Próprio Copilot com a Stack de IA da Microsoft",
+        "title": "Como Construir seu Próprio Copilot com a Stack de IA da Microsoft",
         "speaker": "Shirley Rios",
         "room": "Sala 410",
         "description": "Nesta palestra eu mostro exemplos práticos de aplicações com múltiplos agentes de IA e lidero uma discussão focada no que fazer, e no que evitar, ao projetar esses sistemas. Abordo arquitetura, coordenação entre agentes, riscos comuns e recomendações para garantir eficiência, segurança e interpretabilidade.",
@@ -2321,7 +2321,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "06bd1813-be73-48f8-8225-6b106b915031",
+        "ItemInternalId": "48c4cabc-213e-4ae2-be21-a9070cdb9d0f",
         "talkId": "256",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -2337,7 +2337,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "8e89732d-bec7-4f8e-855f-05135c022897",
+        "ItemInternalId": "8b9ae43a-171d-488e-82a7-f97cf83567bc",
         "talkId": "267",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -2353,12 +2353,12 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "13d8d5cc-d610-4d35-a630-20e251b82965",
+        "ItemInternalId": "366e95be-129f-43e2-80d2-e7cf78296fcd",
         "talkId": "606",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
         "track": "Inteligencia Artificial",
-        "title": "Do Raciocínio à Execução: Engenharia de Prompt Avançada para Programadores",
+        "title": "Do Raciocínio à Execução: Engenharia de Prompt Avançada para Programadores",
         "speaker": "Glaucio Daniel ",
         "room": "Sala 407",
         "description": "\"Imagine uma organização acordando com seus servidores criptografados e milhões de dólares em risco. Do outro lado do mundo, um grupo de hackers APT está comemorando. Mas essa não é uma cena de filme. É a realidade.\"\nVamos mergulhar nos grupos avançados e entender como eles realizam ataques avançados que parecem cenas de filme, explorando técnicas furtivas como spear phishing, LOLBins e C2. Aprenda a identificá-los e caçá-los usando o Microsoft Sentinel e outras ferramentas de Threat Hunting. Conheça casos reais e domine estratégias práticas para proteger sua rede. ",
@@ -2369,7 +2369,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "c9fa7ee1-3170-4dd2-a875-cf524700fda2",
+        "ItemInternalId": "43076739-8c55-4222-8300-4694c2e6fda2",
         "talkId": "5",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -2385,7 +2385,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "b5b785a2-c45d-4f5c-a3e4-ce91e4437baf",
+        "ItemInternalId": "4659eaf5-ac82-4764-bd5c-d040b075b6e3",
         "talkId": "25",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -2401,7 +2401,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "c9dd6c54-4269-4af9-87c0-b8334e1800ee",
+        "ItemInternalId": "c3a2e474-29b2-425c-8b7e-82f7ccc21ee2",
         "talkId": "46",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -2417,7 +2417,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "574a2c66-fa8f-4eec-bb49-35d302815c4e",
+        "ItemInternalId": "238cb87b-f576-44b1-9b50-a779f3d74235",
         "talkId": "49",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -2433,7 +2433,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "333239c3-ef9d-485a-9ebe-352a774dc17c",
+        "ItemInternalId": "41906761-6fe6-4b06-89b3-b9895c71f60d",
         "talkId": "57",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -2449,7 +2449,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "3fb09911-cd5a-42d2-ad55-54d93e358899",
+        "ItemInternalId": "b0fc6b29-d7e9-4a5c-8623-fbc4fe9161d5",
         "talkId": "68",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -2465,7 +2465,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "bd59428e-2033-4e1b-8454-1e9eac8f9abd",
+        "ItemInternalId": "9ffc69f3-9cb8-4108-aff5-fd492c0fe7a7",
         "talkId": "82",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -2481,7 +2481,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "e0071ff3-22d8-4b41-aa5e-1709196ac3d9",
+        "ItemInternalId": "95930e48-b558-43bb-930d-f8282b0ccd4f",
         "talkId": "89",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -2497,7 +2497,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "0f092a65-9780-44d4-897d-9a5a14626af3",
+        "ItemInternalId": "972e87d1-c741-4af0-8bec-926529e427da",
         "talkId": "118",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -2513,7 +2513,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "ecc9589f-bef6-4b34-9958-0c298abaf3b8",
+        "ItemInternalId": "682c12af-5047-4389-9baf-bcd49858ecb4",
         "talkId": "141",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -2529,7 +2529,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "afd39cc4-ded3-4a71-b9bf-1f33c69ff93f",
+        "ItemInternalId": "ab17ac6a-894b-46d8-9494-28094d0348d4",
         "talkId": "142",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -2545,7 +2545,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "80e73e67-a58f-4d4e-817d-d21951f5ae7e",
+        "ItemInternalId": "c1e016f3-7025-4341-adcc-b86395668ad6",
         "talkId": "143",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -2561,7 +2561,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "66aea6ff-e39d-4eeb-9491-4006829cabad",
+        "ItemInternalId": "0ba28dd1-6dbc-4091-a6d5-24373af40efb",
         "talkId": "147",
         "slotId": "2025-10-25-1600",
         "start": "2025-10-25T16:00:00",
@@ -2577,7 +2577,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "48b18159-d4e2-4973-8e2b-02add7c12b17",
+        "ItemInternalId": "23a633a1-c081-4223-a323-006586360246",
         "talkId": "181",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -2593,7 +2593,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "bebf70db-dafb-4d6d-80b2-9d213da523f5",
+        "ItemInternalId": "21816747-3f07-456f-bedb-9b753ad68ae5",
         "talkId": "183",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -2609,7 +2609,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "b2509af0-3b64-4099-89b2-d3730dc7f96e",
+        "ItemInternalId": "5f93938f-d53c-4512-af6b-3261b54935fc",
         "talkId": "199",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -2625,7 +2625,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "8b141cd7-1228-45ee-a3f8-84561fa3db4e",
+        "ItemInternalId": "f8f0e488-0a23-4014-8929-5b6718a2f6e9",
         "talkId": "228",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -2641,7 +2641,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "73e8e3aa-cda8-4eb0-baf9-1ec9653c54d6",
+        "ItemInternalId": "41eef43d-9e1c-492f-a04f-87d615c77b9c",
         "talkId": "232",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -2657,7 +2657,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "f8d29ab2-817e-4143-9abd-baba867dca22",
+        "ItemInternalId": "3bf62ced-9176-4424-9dee-383ebac33367",
         "talkId": "238",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -2673,7 +2673,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "eab1f830-e954-4a00-8877-68ebbe6ea181",
+        "ItemInternalId": "db5511fe-a4e3-4a0c-ac44-e643b005878e",
         "talkId": "262",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -2689,7 +2689,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "e42ca0cd-260d-4796-a0cd-4b41a6ead785",
+        "ItemInternalId": "78f39545-66b9-49c4-aea4-74108e04fb7c",
         "talkId": "99264",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -2705,7 +2705,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "5642671a-f63d-4189-9230-1de1472211f7",
+        "ItemInternalId": "a7b63d09-dda0-4833-9f17-f155985596e5",
         "talkId": "611",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -2721,7 +2721,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "dc1d8ed7-cf5c-4bfa-ae2c-04a75f0b4267",
+        "ItemInternalId": "23178d7e-6fd8-4590-ba6b-c98eb46a3ee1",
         "talkId": "607",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -2737,7 +2737,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "ee623d86-faf8-4390-a1b9-ba9591a236b4",
+        "ItemInternalId": "0c9d9003-71be-4d24-942e-0d24f49fc735",
         "talkId": "900",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -2753,12 +2753,12 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "09c60aaa-acb2-46e0-8bac-590f1315be74",
+        "ItemInternalId": "0a8c6b15-fa22-4483-9a26-158e75119373",
         "talkId": "613",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
         "track": "Microsoft 365",
-        "title": "Do Conceito à Prática: O papel da Estatística em um mundo de ferramentas acessíveis",
+        "title": "Do Conceito à Prática: O papel da Estatística em um mundo de ferramentas acessíveis",
         "speaker": "Yago Santiago Soares",
         "room": "Sala 106",
         "description": "O futuro já chegou ao Excel 365 Insider com a função =COPILOT(). Agora, você pode usar linguagem natural diretamente em fórmulas para pedir análises, explicações e até gerar cálculos complexos sem precisar conhecer cada detalhe de sintaxe. Nesta palestra, vamos explorar como a função =COPILOT() funciona, mostrar exemplos práticos de uso em planilhas reais e discutir como essa novidade pode revolucionar a forma de trabalhar com dados, fórmulas e relatórios no dia a dia.",
@@ -2769,12 +2769,12 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "3289fd7f-1d5b-4bd3-9553-1f8eea0aa0db",
+        "ItemInternalId": "c21475a5-e11f-469e-9bcb-02ffedf1ce51",
         "talkId": "614",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
         "track": "Microsoft 365",
-        "title": "Fórmulas no Excel: Boas práticas, otimizações e new school vs old school",
+        "title": "Fórmulas no Excel: Boas práticas, otimizações e new school vs old school",
         "speaker": "Jardiel Euflázio Felismino",
         "room": "Sala 206",
         "description": "Como ir além do Copilot nativo, unindo Microsoft Graph, Power Platform e IA para criar soluções personalizadas que aumentam produtividade.Microsoft Teams + IA Avançada: integrações práticas com Graph, Copilot e Power Platform Sessão sobre APIs Graph, copilotos customizados, automações inteligentes e arquitetura segura no Teams.",
@@ -2785,12 +2785,12 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "0e2c3f3b-93fb-48a0-a2dd-d1ea7a3b852b",
+        "ItemInternalId": "39ec0aeb-6dec-470c-8d11-68f8f98f54c1",
         "talkId": "619",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
         "track": "Microsoft 365",
-        "title": "O Fim do Project - E agora? O que usar para Gerenciamento de Projetos no M365",
+        "title": "O Fim do Project - E agora? O que usar para Gerenciamento de Projetos no M365",
         "speaker": "Heber Lopes",
         "room": "Sala 207",
         "description": "Do Excel ao Power BI: como organizar processos e aumentar a produtividade na GTF (case real)",
@@ -2801,7 +2801,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "9b0e811b-d9e5-474c-88d2-3b8c7442787c",
+        "ItemInternalId": "4d251c1c-946a-418e-8afa-1f7eb5f4eba7",
         "talkId": "146",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -2817,7 +2817,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "8a867a44-fa60-49b0-a7dc-3924400fd348",
+        "ItemInternalId": "59950030-54f9-4855-9516-1bb2147258be",
         "talkId": "86",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -2833,7 +2833,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "81096dea-62a2-4aac-9a21-9ec678793178",
+        "ItemInternalId": "b74bc7b5-26c6-4269-96f9-194fecdcafed",
         "talkId": "39",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -2849,7 +2849,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "3f48e380-8626-4a7e-8ee2-1eaa416d1892",
+        "ItemInternalId": "7f06ee96-8046-45b3-a201-bfe7a2879069",
         "talkId": "180",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -2865,7 +2865,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "5f3abde6-7110-41f0-9c99-3a61ac8f354b",
+        "ItemInternalId": "d2a0c1c1-0014-40ee-a1b2-48122a9f4d89",
         "talkId": "149",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -2881,7 +2881,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "7f59fee8-41b1-4c77-9b30-285a5d9ee461",
+        "ItemInternalId": "37ba9446-544f-495a-8c81-eae33e1d58c8",
         "talkId": "10",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -2897,7 +2897,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "91feec39-73b5-491d-8a04-926deabf6fd5",
+        "ItemInternalId": "0f0a7b4c-57a0-4c3a-8322-32d88e3e27e1",
         "talkId": "617",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -2913,7 +2913,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "b5539037-f4a5-4d0b-b503-da09bb776827",
+        "ItemInternalId": "289e9b59-fc19-40de-bb20-c52f4e1a1dbb",
         "talkId": "601",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -2929,7 +2929,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "c4ac22da-2328-435a-ba3c-223700c4dae3",
+        "ItemInternalId": "adba0b00-b559-4a10-9c20-94959d097a76",
         "talkId": "618",
         "slotId": "2025-10-24-1700",
         "start": "2025-10-24T17:00:00",
@@ -2945,7 +2945,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "db683cf6-94ae-4479-94bc-33e51a787d3e",
+        "ItemInternalId": "45fca15a-430b-406f-8c16-0f953f6e2d91",
         "talkId": "9968",
         "slotId": "2025-10-24-1700",
         "start": "2025-10-24T17:00:00",
@@ -2961,7 +2961,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "4c53b967-771c-4eb1-a310-3446187f1747",
+        "ItemInternalId": "83644f58-8aec-4e41-b927-41cee5a385df",
         "talkId": "602",
         "slotId": "2025-10-24-1700",
         "start": "2025-10-24T17:00:00",
@@ -2977,7 +2977,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "dc50d2bd-b953-4def-9ae1-c8376c21a730",
+        "ItemInternalId": "76eecc09-c756-4c87-b76b-a8f600296097",
         "talkId": "8",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -2993,7 +2993,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "4e17b32a-e9c0-4fb2-ad46-c584a37d85e6",
+        "ItemInternalId": "7433efff-a5e1-433e-b7d4-8091530434bf",
         "talkId": "67",
         "slotId": "2025-10-25-1600",
         "start": "2025-10-25T16:00:00",
@@ -3009,7 +3009,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "25220f08-b710-4d74-beea-faedf34eab96",
+        "ItemInternalId": "aa59f19b-470c-4d13-ad5c-cef9ff6d83fc",
         "talkId": "74",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -3025,7 +3025,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "cf7040c7-aa5a-488e-8f6a-6d7182f0d862",
+        "ItemInternalId": "a0b7bcf8-86e4-4e60-b70e-076d10a5bbed",
         "talkId": "79",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -3041,7 +3041,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "817fcf66-db08-453b-8fd2-cd3873be2abc",
+        "ItemInternalId": "4d910338-8f18-4e82-be1b-96a635dada95",
         "talkId": "102",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -3057,7 +3057,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "4096fd86-72d7-410d-aa0e-5cf21f64a807",
+        "ItemInternalId": "48517728-1c85-43d3-93de-56af336d1184",
         "talkId": "131",
         "slotId": "2025-10-25-1600",
         "start": "2025-10-25T16:00:00",
@@ -3073,7 +3073,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "c045e0b5-9c41-44a4-869c-86e20585ba76",
+        "ItemInternalId": "1eb9f9ec-1757-4076-a98c-585795af94c4",
         "talkId": "133",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -3089,7 +3089,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "8343b788-2fc5-40af-af26-8974dee1f305",
+        "ItemInternalId": "4f3d86ca-2470-4791-9972-f73b086145b6",
         "talkId": "134",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -3105,7 +3105,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "64417d2c-52ef-4af2-95ab-4645508efa68",
+        "ItemInternalId": "c9703339-476b-4b3c-913c-f961d3528efe",
         "talkId": "135",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -3121,7 +3121,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "df4da237-0920-4eea-b4f6-d38d8355b1f6",
+        "ItemInternalId": "ef8b7916-4df1-49cf-8e97-d94123888f06",
         "talkId": "136",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -3137,7 +3137,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "55976582-1898-4ec6-b341-d16fad6364f8",
+        "ItemInternalId": "ad00e104-f21b-4e39-9e4b-0e14bee4f120",
         "talkId": "137",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -3153,7 +3153,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "45254062-581c-417d-83d8-f439146294c6",
+        "ItemInternalId": "c75988a8-0d1f-4f12-87a6-711c9d84237e",
         "talkId": "140",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -3169,7 +3169,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "a98799c5-6c94-40cb-8ddc-6e37b4455e18",
+        "ItemInternalId": "c2d801be-bcc1-4771-9347-9c99fbf0b24f",
         "talkId": "148",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -3185,7 +3185,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "a3a68628-740b-427f-a2c2-2d497e2749dc",
+        "ItemInternalId": "3b552435-6893-45d9-8d51-dc3b5c3ae4fb",
         "talkId": "173",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -3201,7 +3201,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "9921599f-475b-4e1c-85f6-6c9bd93bf375",
+        "ItemInternalId": "9670cc87-5682-457e-8a54-1bb1f1bc329e",
         "talkId": "600",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -3217,7 +3217,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "e276d574-7e24-4073-aa6a-4857d3fc748c",
+        "ItemInternalId": "cb1bdb51-433c-4208-9c17-778acc7ed74d",
         "talkId": "603",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -3233,7 +3233,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "6bafd618-acf9-448f-a918-983e1c3fffd2",
+        "ItemInternalId": "80e5cf7e-a828-41db-953b-581db671f1d3",
         "talkId": "604",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -3249,7 +3249,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "eaf7790c-f004-4797-b4be-522b64fd12cc",
+        "ItemInternalId": "3a35a37b-c879-47f2-81fc-2a7a429011f6",
         "talkId": "605",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -3265,7 +3265,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "e4db501a-8249-48f0-932b-2bd42dfd28a9",
+        "ItemInternalId": "79e7e1bc-d59f-4412-9ac6-ad25cd6fc91f",
         "talkId": "610",
         "slotId": "2025-10-25-1600",
         "start": "2025-10-25T16:00:00",
@@ -3281,15 +3281,15 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "9a1e91df-7abb-4b7f-a98d-24bffd9c8160",
+        "ItemInternalId": "99e3c95a-2adc-40ff-98e7-9c3a4b584deb",
         "talkId": "612",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
         "track": "Microsoft 365",
-        "title": "Dicas e Truques Poderosos no Excel",
+        "title": "Dicas e Truques Poderosos no Excel",
         "speaker": "Fabio Baldini",
         "room": "Sala 207",
-        "description": "Será demonstrada truques e dicas valiosos de como aplicar o Excel de maneira extraordinária, onde terá uma compreensão além do inimaginável no Excel",
+        "description": "Será demonstrada truques e dicas valiosos de como aplicar o Excel de maneira extraordinária, onde terá uma compreensão além do inimaginável no Excel",
         "level": "Intermediário",
         "limite": "100",
         "atual": "",
@@ -3297,7 +3297,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "09e27fbd-afa7-45cd-b82f-c6f4d2a91826",
+        "ItemInternalId": "89b2bf1e-2d9c-40dc-9031-26726173f84e",
         "talkId": "90",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -3313,7 +3313,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "679e0e68-b6af-4747-bc38-8e2c1853882b",
+        "ItemInternalId": "881189b0-b387-4bec-8ca3-b5b43875a30f",
         "talkId": "404",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -3329,7 +3329,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "87568ecb-76a9-4b0b-86e3-d0bed3d1ba25",
+        "ItemInternalId": "47428002-b758-4d8a-b56c-9513e03923ca",
         "talkId": "401",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -3345,7 +3345,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "2fef8a8c-6c28-431b-b58d-7d19f5c85bb8",
+        "ItemInternalId": "913f7e8f-c13e-49b1-951d-436e5993c130",
         "talkId": "402",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -3361,7 +3361,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "e898fc8c-9489-4218-bec4-08d1b6567dcd",
+        "ItemInternalId": "223de233-3ebe-4fe8-bdde-2d57393414f6",
         "talkId": "48",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -3377,7 +3377,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "6e1a9e88-d7fa-40b6-9715-94c4a7c19523",
+        "ItemInternalId": "bb33bba5-e237-4f56-95bb-1f55f824e7d1",
         "talkId": "407",
         "slotId": "2025-10-24-1700",
         "start": "2025-10-24T17:00:00",
@@ -3393,7 +3393,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "fa7ebe93-376a-46cc-a743-06a3e77aaea0",
+        "ItemInternalId": "4c5a772b-8c80-4e4d-b080-6ce3e277fd09",
         "talkId": "100",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -3409,7 +3409,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "15891bf4-ece1-4acc-8861-24044c2dc150",
+        "ItemInternalId": "f0aeccd2-bed8-4ad6-9f13-c0cc1d6fb310",
         "talkId": "948",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -3425,7 +3425,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "856dd56d-db94-4d0c-bb3a-83fcd6cb16e5",
+        "ItemInternalId": "edea8466-5027-45ef-baa0-b88e7479f2d6",
         "talkId": "109",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -3441,7 +3441,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "caad8fc5-f55c-413a-8b40-2200b0ec5b7d",
+        "ItemInternalId": "596f5d44-d007-4625-8648-9839304e341c",
         "talkId": "105",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -3457,7 +3457,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "47100f48-2116-4d27-ba64-ecc4f2716c78",
+        "ItemInternalId": "2ac2b0a7-2722-4f4f-8509-df50a6c1f5bc",
         "talkId": "177",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -3473,7 +3473,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "c51d6312-7441-4c4e-9058-6d3265a48859",
+        "ItemInternalId": "f5dedcf5-6551-4249-a309-20a7118d4c8f",
         "talkId": "196",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -3489,7 +3489,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "da1b452e-4a8d-4e3c-acc1-fe782414891e",
+        "ItemInternalId": "3e508c5f-38ea-460e-a7e6-687a53dbc4ca",
         "talkId": "246",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -3505,7 +3505,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "a645ff0c-094f-457b-908d-3ab429642763",
+        "ItemInternalId": "319ef751-5b3a-449f-8d5f-b45bc37cc57b",
         "talkId": "192",
         "slotId": "2025-10-24-1600",
         "start": "2025-10-24T16:00:00",
@@ -3521,7 +3521,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "208172cd-6ed8-4726-b055-5db4b9254ffb",
+        "ItemInternalId": "d77ff19a-fb47-43fc-8fe0-d0b6aabfb14e",
         "talkId": "16",
         "slotId": "2025-10-24-1700",
         "start": "2025-10-24T17:00:00",
@@ -3537,7 +3537,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "582488f5-0c39-4645-8f65-4a9f91b193d4",
+        "ItemInternalId": "24edc69d-21a5-4cfe-a35e-38278ee30387",
         "talkId": "18",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -3553,7 +3553,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "bab46e7a-0383-4a9a-95a8-013789689246",
+        "ItemInternalId": "953bfb02-5d0e-4f3d-a518-5a03337999ee",
         "talkId": "50",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -3569,7 +3569,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "9546bfdd-ec99-4883-bc38-c348608043a5",
+        "ItemInternalId": "b14cf6c0-b074-4d6c-a600-63709d196b17",
         "talkId": "72",
         "slotId": "2025-10-25-1600",
         "start": "2025-10-25T16:00:00",
@@ -3585,7 +3585,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "7ec16e6c-6cb4-485b-ab98-313e4e428247",
+        "ItemInternalId": "76dee6e9-7fe7-4b7f-b418-23bbe2b5e137",
         "talkId": "73",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -3601,7 +3601,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "19445f23-399a-4450-82b9-bfc146842fd2",
+        "ItemInternalId": "add19c1e-ee38-4875-bd2d-703c78cbbb34",
         "talkId": "96",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -3617,7 +3617,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "43954f39-6b2b-47e7-bd06-5fea3ee8c68e",
+        "ItemInternalId": "186db875-9813-4529-b3b3-bd4e80027714",
         "talkId": "144",
         "slotId": "2025-10-25-1600",
         "start": "2025-10-25T16:00:00",
@@ -3633,7 +3633,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "e3dc0959-4ebf-4896-ba57-ecda6f065f9a",
+        "ItemInternalId": "358ef225-e386-47a1-b6c2-eb4a12b8efbe",
         "talkId": "150",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -3649,7 +3649,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "a1a4ec75-cef0-4156-af53-afa23f95ee54",
+        "ItemInternalId": "861f891e-8ccf-470a-812f-e573214d4ac1",
         "talkId": "191",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -3665,7 +3665,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "fed9075c-78d2-4b69-9cc6-b2c5379c73e4",
+        "ItemInternalId": "bf841cf6-7215-46a8-9925-b1f07fa32518",
         "talkId": "198",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -3681,7 +3681,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "633beb14-6d64-4cea-9494-9215176b187b",
+        "ItemInternalId": "5644f218-adf5-4341-afa7-c044d96c9810",
         "talkId": "227",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -3697,39 +3697,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "633beb14-6d64-4cea-9494-9215176b187b",
-        "talkId": "227",
-        "slotId": "2025-10-25-1400",
-        "start": "2025-10-25T14:00:00",
-        "track": "Security",
-        "title": "Microsoft Security - Defendendo-se contra ameaças Cibernéticas antes que ocorram",
-        "speaker": "Denis Vinícius de Mello",
-        "room": "Sala 308",
-        "description": "Falar sobre um panorama de ameaças cibernéticas no Brasil, principais ameaças e vetores, ataques Supply Chain e como soluções Microsoft podem ajudar nesta jornada.",
-        "level": "Intermediário",
-        "limite": "100",
-        "atual": "",
-        "lotado": "False"
-    },
-    {
-        "@odata.etag": "",
-        "ItemInternalId": "b022f2c0-80f1-41f3-bd91-7670339896ce",
-        "talkId": "987227",
-        "slotId": "2025-10-25-1400",
-        "start": "2025-10-25T14:00:00",
-        "track": "Gestão",
-        "title": "Escuta Pontual: Inovação com Propósito será uma conversa inspiradora sobre como ampliar a escuta em saúde mental com impacto real, conectando inovação e propósito.",
-        "speaker": "Denise Abreu",
-        "room": "Sala 307",
-        "description": "",
-        "level": "Intermediário",
-        "limite": "100",
-        "atual": "",
-        "lotado": "False"
-    },
-    {
-        "@odata.etag": "",
-        "ItemInternalId": "f088bdb4-7eaf-4fdf-b3f6-82aead3dfbc1",
+        "ItemInternalId": "c399e6f1-d7ab-496d-a2e6-0479f07ebacb",
         "talkId": "233",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -3745,7 +3713,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "65458dc0-292b-4093-8a41-2690fb8e34e7",
+        "ItemInternalId": "2076cc15-1c01-4ca8-8efd-cb111c247f52",
         "talkId": "245",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -3761,7 +3729,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "531e61b1-409f-4ac4-bab3-077cc78df6b1",
+        "ItemInternalId": "4c2d0ff5-23c3-4e26-bd0e-db76e952618b",
         "talkId": "261",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -3777,7 +3745,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "5ebe67cf-697f-4685-8a14-f79cdf2de6f4",
+        "ItemInternalId": "00f49f12-fc22-41f4-825a-2bc10f166fb4",
         "talkId": "995",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -3793,7 +3761,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "19f2bfa8-f1ab-40b4-bac8-43272685ba8f",
+        "ItemInternalId": "6ad8cf9c-daed-462e-8347-3e35436385eb",
         "talkId": "1002",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -3809,7 +3777,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "41f0033f-c799-4270-922d-d86c3c4fc217",
+        "ItemInternalId": "aede93b5-a5ac-4c4c-8955-8d7c1ba42dac",
         "talkId": "1013",
         "slotId": "2025-10-24-1000",
         "start": "2025-10-24T10:00:00",
@@ -3817,7 +3785,7 @@
         "title": "[às 10:30] - Boas práticas para dominar o GitHub Copilot Chat",
         "speaker": "Cynthia Zanoni",
         "room": "Auditório",
-        "description": "Descubra como aproveitar ao máximo os modos Ask, Edit e Agent do GitHub Copilot Chat para transformar seu dia a dia no Visual Studio Code.",
+        "description": "Descubra como aproveitar ao máximo os modos Ask, Edit e Agent do GitHub Copilot Chat para transformar seu dia a dia no Visual Studio Code.",
         "level": "",
         "limite": "",
         "atual": "",
@@ -3825,7 +3793,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "ace99088-19fb-433e-83e9-2c556d2b89ea",
+        "ItemInternalId": "83b2c7b2-49d7-4a88-9114-96d2ecf660cf",
         "talkId": "14",
         "slotId": "2025-10-24-1100",
         "start": "2025-10-24T11:00:00",
@@ -3841,7 +3809,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "5b98e9e7-46ca-4a53-8922-434f1037a570",
+        "ItemInternalId": "4b7f3681-bfa5-47f8-86e0-db5def35d582",
         "talkId": "1004",
         "slotId": "2025-10-24-1400",
         "start": "2025-10-24T14:00:00",
@@ -3857,7 +3825,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "0e7d6b5b-a60e-4198-baff-9ee90782d07e",
+        "ItemInternalId": "17f55a35-e9f9-464a-80e1-70591777daf7",
         "talkId": "1005",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
@@ -3865,7 +3833,7 @@
         "title": "Do Windows ao Copilot: aprendizados de 20 anos com o ecossistema Microsoft",
         "speaker": "Rodrigo Paiva",
         "room": "Auditório",
-        "description": "¹ Ex-executivo da Microsoft, hoje fundador da Addaxia, investidor de startups e COO da Blip, Rodrigo Paiva compartilha bastidores e aprendizados de duas décadas convivendo com parceiros, MVPs e especialistas Microsoft. A palestra traz um olhar estratégico sobre a transformação da empresa — de uma gigante de software a uma plataforma de nuvem e inteligência artificial — e reflete sobre como liderança, cultura e ecossistema se combinam para impulsionar inovação e impacto nos negócios.",
+        "description": "¹ Ex-executivo da Microsoft, hoje fundador da Addaxia, investidor de startups e COO da Blip, Rodrigo Paiva compartilha bastidores e aprendizados de duas décadas convivendo com parceiros, MVPs e especialistas Microsoft. A palestra traz um olhar estratégico sobre a transformação da empresa — de uma gigante de software a uma plataforma de nuvem e inteligência artificial — e reflete sobre como liderança, cultura e ecossistema se combinam para impulsionar inovação e impacto nos negócios.",
         "level": "",
         "limite": "",
         "atual": "",
@@ -3873,15 +3841,15 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "1782c4ff-949c-4ebd-b077-577473ff23f4",
+        "ItemInternalId": "f7e676dd-3ecd-4642-9485-f3056cb4687a",
         "talkId": "1014",
         "slotId": "2025-10-24-1500",
         "start": "2025-10-24T15:00:00",
         "track": "Auditorio",
-        "title": "[às 15:45] - Parcerias Inteligentes: O Papel da Distribuição na Nova Era da Experiência do Cliente",
+        "title": "[às 15:45] - Parcerias Inteligentes: O Papel da Distribuição na Nova Era da Experiência do Cliente",
         "speaker": "Teles Souza",
         "room": "Auditório",
-        "description": "Nesta palestra, Teles compartilha sua trajetória profissional com foco em experiências que moldaram sua visão sobre negócios e colaboração. A apresentação explora como o modelo de distribuição, quando integrado a um ecossistema sólido, gera valor real para o cliente final — oferecendo soluções completas, agilidade e confiança. Além disso, destaca os benefícios estratégicos de ser parceiro nesse ecossistema, mostrando como a conexão entre empresas pode impulsionar resultados sustentáveis e crescimento mútuo",
+        "description": "Nesta palestra, Teles compartilha sua trajetória profissional com foco em experiências que moldaram sua visão sobre negócios e colaboração. A apresentação explora como o modelo de distribuição, quando integrado a um ecossistema sólido, gera valor real para o cliente final — oferecendo soluções completas, agilidade e confiança. Além disso, destaca os benefícios estratégicos de ser parceiro nesse ecossistema, mostrando como a conexão entre empresas pode impulsionar resultados sustentáveis e crescimento mútuo",
         "level": "",
         "limite": "",
         "atual": "",
@@ -3889,10 +3857,10 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "214995ee-fdd0-4a1a-8565-6dad0dc3d008",
+        "ItemInternalId": "68eda2b4-e017-4f9e-b3d8-632611537f5c",
         "talkId": "106",
-        "slotId": "2025-10-24-1700",
-        "start": "2025-10-24T17:00:00",
+        "slotId": "2025-10-25-1700",
+        "start": "2025-10-25T17:00:00",
         "track": "Business Application",
         "title": "Como Construir Aplicativos Escaláveis com Parametrização & Modularidade Aplicadas ao Power Apps",
         "speaker": "Danilo Ciciliotti",
@@ -3905,7 +3873,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "371307e4-463f-4c32-af75-cd2ae823e340",
+        "ItemInternalId": "32a4cfdd-124b-44d0-b51b-c10bdae6527b",
         "talkId": "1006",
         "slotId": "2025-10-24-1700",
         "start": "2025-10-24T17:00:00",
@@ -3921,7 +3889,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "c3194088-69ef-49ce-a115-abd65a737634",
+        "ItemInternalId": "aa95e218-387c-4f3a-884c-c5b1847dfb0c",
         "talkId": "1007",
         "slotId": "2025-10-25-0900",
         "start": "2025-10-25T09:00:00",
@@ -3937,7 +3905,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "9153625a-dbb7-4708-9c99-02668999c1f8",
+        "ItemInternalId": "697c52b8-d582-4fc8-855b-1023b6e2524f",
         "talkId": "1003",
         "slotId": "2025-10-25-1000",
         "start": "2025-10-25T10:00:00",
@@ -3953,7 +3921,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "fcff481f-9cd2-4fbb-86ee-960623b0406b",
+        "ItemInternalId": "836632f7-a341-4077-bd7d-b78ff82f089a",
         "talkId": "1009",
         "slotId": "2025-10-25-1100",
         "start": "2025-10-25T11:00:00",
@@ -3969,7 +3937,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "b77b8c0a-ae2a-4bb5-8103-8c1eb0e836f5",
+        "ItemInternalId": "4b98a0dd-031e-4e37-b286-312d0d7f98de",
         "talkId": "1010",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -3977,7 +3945,7 @@
         "title": "[às 14:40] A IA será seu novo colega de trabalho",
         "speaker": "Fabio Hara",
         "room": "Auditório",
-        "description": "Nesta palestra, vamos explorar os novos recursos de inteligência artificial que estão transformando a forma como trabalhamos na área de tecnologia. Além dos assistentes de codificação, já bem conhecidos, apresentaremos soluções inovadoras como assistentes para análise de custos e apoio à arquitetura, que ampliam significativamente a eficiência e o impacto das equipes técnicas.",
+        "description": "Nesta palestra, vamos explorar os novos recursos de inteligência artificial que estão transformando a forma como trabalhamos na área de tecnologia. Além dos assistentes de codificação, já bem conhecidos, apresentaremos soluções inovadoras como assistentes para análise de custos e apoio à arquitetura, que ampliam significativamente a eficiência e o impacto das equipes técnicas.",
         "level": "",
         "limite": "",
         "atual": "",
@@ -3985,7 +3953,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "92ad9c8e-0391-4190-8344-d41f18d55f50",
+        "ItemInternalId": "b42d091a-8ca3-46b1-93bd-7b5592ccef14",
         "talkId": "1012",
         "slotId": "2025-10-25-1400",
         "start": "2025-10-25T14:00:00",
@@ -3993,7 +3961,7 @@
         "title": "Frontier, a era dos agentes!",
         "speaker": "Rande Rodrigues",
         "room": "Auditório",
-        "description": "Nesta palestra, vamos explorar a nova fronteira da tecnologia: a era dos agentes de IA. Entenda como essas inteligências autônomas estão transformando a forma como criamos, trabalhamos e interagimos com o mundo digital — inaugurando um novo capítulo na inovação e na produtividade.",
+        "description": "Nesta palestra, vamos explorar a nova fronteira da tecnologia: a era dos agentes de IA. Entenda como essas inteligências autônomas estão transformando a forma como criamos, trabalhamos e interagimos com o mundo digital — inaugurando um novo capítulo na inovação e na produtividade.",
         "level": "",
         "limite": "",
         "atual": "",
@@ -4001,7 +3969,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "e53b88b1-8614-4132-8804-5975f561567d",
+        "ItemInternalId": "869d6800-07b1-4b89-af32-a7d606ccb6cc",
         "talkId": "1011",
         "slotId": "2025-10-25-1500",
         "start": "2025-10-25T15:00:00",
@@ -4009,7 +3977,7 @@
         "title": "[às 15:30] Do Prompt ao Veredito: Como LLMs Julgam Respostas e Geram Insights no Azure",
         "speaker": "Dani Monteiro",
         "room": "Auditório",
-        "description": "Uma jornada do zero à prática: aprenda a criar pipelines inteligentes onde a IA não só responde, mas também avalia e gera insights.  Descubra como transformar grandes modelos de linguagem em verdadeiros “juízes virtuais”, capazes de avaliar, comparar e validar respostas com precisão, inteligência e rapidez. Nesta palestra, você aprenderá a aplicar o conceito LLM as a Judge no Azure para construir pipelines de avaliação automatizada, explorando arquitetura, casos de uso reais e as melhores práticas de segurança e governança — tudo de forma prática e objetiva.",
+        "description": "Uma jornada do zero à prática: aprenda a criar pipelines inteligentes onde a IA não só responde, mas também avalia e gera insights.  Descubra como transformar grandes modelos de linguagem em verdadeiros “juízes virtuais”, capazes de avaliar, comparar e validar respostas com precisão, inteligência e rapidez. Nesta palestra, você aprenderá a aplicar o conceito LLM as a Judge no Azure para construir pipelines de avaliação automatizada, explorando arquitetura, casos de uso reais e as melhores práticas de segurança e governança — tudo de forma prática e objetiva.",
         "level": "",
         "limite": "",
         "atual": "",
@@ -4017,7 +3985,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "6c8a4631-1d9c-4a76-85f9-c4623cf5c2a0",
+        "ItemInternalId": "653dbb74-913e-4de5-a41b-19e2eb9e07c0",
         "talkId": "1008",
         "slotId": "2025-10-25-1600",
         "start": "2025-10-25T16:00:00",
@@ -4033,7 +4001,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "3a5029f0-10d2-4578-84ff-c525de723a75",
+        "ItemInternalId": "a0915bee-2b3a-43bc-b118-769f40d83a91",
         "talkId": "503",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
@@ -4049,7 +4017,7 @@
     },
     {
         "@odata.etag": "",
-        "ItemInternalId": "44f0f6e6-6a2f-4112-903d-3434f95237a5",
+        "ItemInternalId": "addccd47-88bc-46f3-bb6a-975b8151a251",
         "talkId": "1111",
         "slotId": "2025-10-25-1700",
         "start": "2025-10-25T17:00:00",
