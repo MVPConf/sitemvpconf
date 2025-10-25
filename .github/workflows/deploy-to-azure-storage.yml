@@ -32,7 +32,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Upload to Azure Storage
+      - name: Upload Main Site to Azure Storage
         uses: azure/CLI@v2
         with:
           inlineScript: |
@@ -41,6 +41,18 @@ jobs:
               --auth-mode key \
               --destination '$web' \
               --source ./dist \
+              --overwrite \
+              --pattern '*'
+
+      - name: Upload Agenda App to Azure Storage
+        uses: azure/CLI@v2
+        with:
+          inlineScript: |
+            az storage blob upload-batch \
+              --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+              --auth-mode key \
+              --destination '$web/agenda' \
+              --source ./public/agenda \
               --overwrite \
               --pattern '*'
 
