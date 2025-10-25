@@ -2159,7 +2159,7 @@
             "level": "Intermediário",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3759,7 +3759,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3775,7 +3775,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3791,7 +3791,7 @@
             "level": "Intermediário",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3807,7 +3807,7 @@
             "level": "Intermediário",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3823,7 +3823,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3839,23 +3839,23 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
             "ItemInternalId": "164fbcbc-5584-44d9-a626-03592a3e2725",
-            "talkId": "106",
-            "slotId": "2025-10-24-1600",
-            "start": "2025-10-24T16:00:00",
+            "talkId": "9106",
+            "slotId": "2025-10-25-1600",
+            "start": "2025-10-25T16:00:00",
             "track": "Business Application",
-            "title": "[às 16:20] Como Construir Aplicativos Escaláveis com Parametrização & Modularidade Aplicadas ao Power Apps",
+            "title": "Como Construir Aplicativos Escaláveis com Parametrização & Modularidade Aplicadas ao Power Apps",
             "speaker": "Danilo Ciciliotti",
-            "room": "Auditório",
+            "room": "208",
             "description": "Nesta palestra, Danilo Ciciliotti revela como equipes que dominam parametrização e modularidade conseguem acelerar entregas, reduzir retrabalho e escalar soluções no Power Apps com qualidade e consistência. Com cases reais que mostram na prática o impacto dessas estratégias em projetos de diferentes portes.",
             "level": "Avançado",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3871,7 +3871,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3887,7 +3887,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3903,7 +3903,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3919,7 +3919,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3935,7 +3935,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3951,7 +3951,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3967,7 +3967,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3983,7 +3983,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -3999,7 +3999,7 @@
             "level": "Expert",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         },
         {
             "@odata.etag": "",
@@ -4015,7 +4015,7 @@
             "level": "",
             "limite": "",
             "atual": "",
-            "lotado": "True"
+            "lotado": "False"
         }
     ]
 }
