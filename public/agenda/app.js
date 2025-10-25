@@ -12,7 +12,7 @@ import { trackCoordinators, scheduleByDay } from './data.js';
 // false = 🌐 Carrega da API POWER AUTOMATE (Excel online)
 //         Use para: produção, dados em tempo real
 //
-const USE_LOCAL_JSON = true;
+const USE_LOCAL_JSON = false;
 // ========================================
 
 const STORAGE_KEY = 'mvpconf-agenda';
@@ -1280,4 +1280,3 @@ try {
     renderSchedule();
   });
 } catch {}
-
