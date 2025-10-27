@@ -17,10 +17,10 @@ export function useAuth() {
 
   // Inicia o fluxo de autenticação enviando e-mail
   const startAuth = useCallback(async (email: string): Promise<ApiResponse> => {
-    const url = import.meta.env.VITE_AUTH_API_URL;
+    const url = import.meta.env.AUTH_API_URL;
     
     if (!url) {
-      console.error('🚨 VITE_AUTH_API_URL não encontrada no .env');
+      console.error('🚨 AUTH_API_URL não encontrada no .env');
       return { 
         ok: false, 
         message: 'URL da API de autenticação não configurada.' 
@@ -28,7 +28,7 @@ export function useAuth() {
     }
     
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), Number(import.meta.env.VITE_API_TIMEOUT) || 12000);
+    const timeout = setTimeout(() => controller.abort(), Number(import.meta.env.API_TIMEOUT) || 12000);
 
     try {
       setIsLoading(true);

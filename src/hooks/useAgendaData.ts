@@ -39,10 +39,10 @@ export function useAgendaData(options: UseAgendaDataOptions) {
   }, []);
 
   const loadFromApi = useCallback(async (): Promise<ApiResponse<ApiLoadResponse>> => {
-    const url = options.apiUrl || import.meta.env.VITE_TALKS_API_URL;
+    const url = options.apiUrl || import.meta.env.TALKS_API_URL;
 
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), Number(import.meta.env.VITE_API_TIMEOUT) || 12000);
+    const timeout = setTimeout(() => controller.abort(), Number(import.meta.env.API_TIMEOUT) || 12000);
 
     try {
       const response = await fetch(url, {

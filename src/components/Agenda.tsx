@@ -29,7 +29,7 @@ const Agenda: React.FC<AgendaProps> = ({ className = '' }) => {
 
   // Hook de dados da agenda
   const { schedule, loading: loadingSchedule, error: scheduleError, refetch } = useAgendaData({
-    useLocalJson: import.meta.env.VITE_USE_LOCAL_JSON === 'true'
+    useLocalJson: import.meta.env.USE_LOCAL_JSON === 'true'
   });
 
   // Hook de autenticação

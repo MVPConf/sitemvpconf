@@ -41,7 +41,7 @@ export const buildStorageUrl = (baseSasUrl: string, path: string): string => {
  * Obtém a URL do Storage Account do ambiente
  */
 export const getStorageAccountUrl = (): string => {
-  return import.meta.env.VITE_STORAGE_ACCOUNT_URL;
+  return import.meta.env.STORAGE_ACCOUNT_URL;
 };
 
 /**
