@@ -20,7 +20,7 @@ export type Day = {
   tracks: Track[];
 };
 
-const API_URL = 'https://stmvpconf2025.blob.core.windows.net/data/schedule.json';
+const API_URL = '/data/2025/schedule.json';
 
 export function useSchedule() {
   const { data, loading, error } = useRemoteData<Day[]>(API_URL);

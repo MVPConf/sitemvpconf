@@ -1,4 +1,5 @@
 import React from "react";
+import { buildStorageUrl, getStorageAccountUrl } from '../utils/storage';
 
 const BoardOfDirectors: React.FC = () => {
   type Member = {
@@ -11,52 +12,52 @@ const BoardOfDirectors: React.FC = () => {
     {
       nome: "Rosani Coutinho",
       funcao: "Diretora Presidente",
-      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Rosani Coutinho.jpeg",
+      image: buildStorageUrl(getStorageAccountUrl(), "/data/2025/speakers/Rosani Coutinho.jpeg"),
     },
     {
       nome: "Johnson Cruz",
       funcao: "Diretor Executivo",
-      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Johnson de Souza Cruz.jpeg",
+      image: buildStorageUrl(getStorageAccountUrl(), "/data/2025/speakers/Johnson de Souza Cruz.jpeg"),
     },
     {
       nome: "Mayumi Shingaki",
       funcao: "Conselho Administração",
-      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Mayumi Shingaki.png",
+      image: buildStorageUrl(getStorageAccountUrl(), "/data/2025/speakers/Mayumi Shingaki.png"),
     },
     {
       nome: "Gustavo Moraes",
       funcao: "Conselho Administração",
-      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Gustavo Moraes.jpeg",
+      image: buildStorageUrl(getStorageAccountUrl(), "/data/2025/speakers/Gustavo Moraes.jpeg"),
     },
     {
       nome: "Sulamita Dantas",
       funcao: "Conselho Administração",
-      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Sulamita Dantas.jpeg",
+      image: buildStorageUrl(getStorageAccountUrl(), "/data/2025/speakers/Sulamita Dantas.jpeg"),
     },
     {
       nome: "Heber Lopes",
       funcao: "Conselho Administração",
-      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Heber Lopes.jpeg",
+      image: buildStorageUrl(getStorageAccountUrl(), "/data/2025/speakers/Heber Lopes.jpeg"),
     },
     {
       nome: "Thaise Medeiros",
       funcao: "Conselho Fiscal",
-      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Thaise Medeiros.jpeg",
+      image: buildStorageUrl(getStorageAccountUrl(), "/data/2025/speakers/Thaise Medeiros.jpeg"),
     },
     {
       nome: "Claudio Raposo",
       funcao: "Conselho Fiscal",
-      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Claudio Filipe Lima Raposo.jpeg",
+      image: buildStorageUrl(getStorageAccountUrl(), "/data/2025/speakers/Claudio Filipe Lima Raposo.jpeg"),
     },
     {
       nome: "Vanessa Valle",
       funcao: "Conselho Fiscal",
-      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Vanessa Valle.jpeg",
+      image: buildStorageUrl(getStorageAccountUrl(), "/data/2025/speakers/Vanessa Valle.jpeg"),
     },
     {
       nome: "Jamil Lopes",
       funcao: "Conselho Consultivo",
-      image: "https://stmvpconf2025.blob.core.windows.net/data/speakers/Jamil Lopes.png",
+      image: buildStorageUrl(getStorageAccountUrl(), "/data/2025/speakers/Jamil Lopes.png"),
     },
   ];
 

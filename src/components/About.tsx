@@ -125,7 +125,7 @@ const SobreEvento: React.FC = () => {
               ) : ongs2025.length > 0 ? (
                 ongs2025.map((ong) => (
                   <a 
-                    key={ong.id}
+                    key={ong.name}
                     href={ong.url} 
                     target="_blank" 
                     rel="noopener noreferrer"
@@ -161,7 +161,7 @@ const SobreEvento: React.FC = () => {
               ) : ongsPrevious.length > 0 ? (
                 ongsPrevious.map((ong) => (
                   <a 
-                    key={ong.id}
+                    key={ong.name}
                     href={ong.url} 
                     target="_blank" 
                     rel="noopener noreferrer"

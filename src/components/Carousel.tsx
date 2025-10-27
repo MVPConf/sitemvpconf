@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { buildStorageUrl, getStorageAccountUrl } from '../utils/storage';
 
 const images = [
-  "https://stmvpconf2025.blob.core.windows.net/data/pictures/foto000.jpeg",
-  "https://stmvpconf2025.blob.core.windows.net/data/pictures/foto111.jpg",
-  "https://stmvpconf2025.blob.core.windows.net/data/pictures/foto47.jpg",
-  "https://stmvpconf2025.blob.core.windows.net/data/pictures/foto77.jpg",
+  buildStorageUrl(getStorageAccountUrl(), "/data/2019/pictures/foto000.jpeg"),
+  buildStorageUrl(getStorageAccountUrl(), "/data/2019/pictures/foto111.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "/data/2019/pictures/foto47.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "/data/2019/pictures/foto77.jpg"),
 ];
 
 const Carousel: React.FC = () => {
@@ -138,7 +139,7 @@ const Carousel: React.FC = () => {
           <img
             src={images[current]}
             alt={`Foto ${current + 1}`}
-            className="max-w-full max-h-full object-contain"
+            className="max-w-4xl max-h-[80vh] object-contain rounded-lg shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
 

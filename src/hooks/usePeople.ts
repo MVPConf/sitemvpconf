@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import { useRemoteData } from './useRemoteData';
+import { buildStorageUrl, getStorageAccountUrl } from '../utils/storage';
 
 export interface Person {
-  id: number;
-  name: string;
+  name: string; // Usado como identificador único
   title: string;
   company: string;
   image: string;
@@ -30,7 +30,7 @@ export interface TrackCoordinator extends Person {
   trackName: string;
 }
 
-const API_URL = 'https://stmvpconf2025.blob.core.windows.net/data/speakers.json';
+const API_URL = '/data/2025/speakers.json';
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   const shuffled = [...array];
@@ -41,20 +41,15 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return shuffled;
 };
 
-// Remove duplicidades pelo ID primeiro, depois pelo nome (case-insensitive, trimming)
-const uniqueById = <T extends { id: number; name: string }>(items: T[]): T[] => {
-  const seenIds = new Set<number>();
+// Remove duplicidades pelo nome (case-insensitive, trimming)
+const uniqueByName = <T extends { name: string }>(items: T[]): T[] => {
   const seenNames = new Set<string>();
 
   return items.filter(item => {
-    // Verifica por ID primeiro
-    if (seenIds.has(item.id)) return false;
-
     // Verifica por nome (case-insensitive)
     const nameKey = item.name.trim().toLowerCase();
     if (seenNames.has(nameKey)) return false;
 
-    seenIds.add(item.id);
     seenNames.add(nameKey);
     return true;
   });
@@ -63,22 +58,38 @@ const uniqueById = <T extends { id: number; name: string }>(items: T[]): T[] => 
 export const usePeople = () => {
   const { data, loading, error } = useRemoteData<Person[]>(API_URL);
 
+  const processedData: Person[] = useMemo(() => {
+    if (!data) return [];
+
+    return (data ?? []).map((person: Person) => {
+      const processedImage = person.image.startsWith('http')
+        ? person.image
+        : buildStorageUrl(getStorageAccountUrl(), `/data/2025${person.image}`);
+
+      return {
+        ...person,
+        // Constrói a URL da imagem corretamente com SAS token se for um caminho relativo
+        image: processedImage
+      };
+    });
+  }, [data]);
+
   const activeData: Person[] = useMemo(
-    () => (data ?? []).filter((person: Person) => person.enabled !== false),
-    [data]
+    () => processedData.filter((person: Person) => person.enabled !== false),
+    [processedData]
   );
 
   // Palestrantes: todos os registros ativos (inclui também coordenadores para aparecerem nas duas seções)
   const speakers = useMemo(
     () => shuffleArray(
-      uniqueById(activeData)
+      uniqueByName(activeData)
     ),
     [activeData]
   );
 
   const coordinators = useMemo(
     () => shuffleArray(
-      uniqueById(activeData.filter((person: Person) => person.isTrackCoordinator === true))
+      uniqueByName(activeData.filter((person: Person) => person.isTrackCoordinator === true))
     ) as TrackCoordinator[],
     [activeData]
   );

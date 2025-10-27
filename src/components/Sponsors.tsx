@@ -3,7 +3,7 @@ import { useSponsors } from '../hooks/useSponsors';
 
 const Sponsors: React.FC = () => {
   const { sponsors } = useSponsors();
-  const [hiddenSponsors, setHiddenSponsors] = useState<Set<number>>(new Set());
+  const [hiddenSponsors, setHiddenSponsors] = useState<Set<string>>(new Set());
 
   const tierConfig = {
     platinum: {
@@ -43,10 +43,10 @@ const Sponsors: React.FC = () => {
   };
 
   // Quando a imagem não carregar, ocultamos apenas a imagem (mantemos o card)
-  const handleImageError = (id: number) => {
+  const handleImageError = (name: string) => {
     setHiddenSponsors(prev => {
       const next = new Set(prev);
-      next.add(id);
+      next.add(name);
       return next;
     });
   };
@@ -68,7 +68,7 @@ const Sponsors: React.FC = () => {
         <div className={`grid ${config.gridCols} gap-6 max-w-7xl mx-auto`}>
           {sponsorsInTier.map((sponsor) => (
             <a
-              key={sponsor.id}
+              key={sponsor.name}
               href={sponsor.website}
               target="_blank"
               rel="noopener noreferrer"
@@ -77,12 +77,12 @@ const Sponsors: React.FC = () => {
               {/* Efeito de brilho no hover */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 group-hover:translate-x-full transition-all duration-700"></div>
 
-              {sponsor.logo && !hiddenSponsors.has(sponsor.id) ? (
+              {sponsor.logo && !hiddenSponsors.has(sponsor.name) ? (
                 <img
                   src={sponsor.logo}
                   alt={`${sponsor.name} logo`}
                   className={`${config.logoSize} object-contain transition-all duration-300 max-w-full relative z-10`}
-                  onError={() => handleImageError(sponsor.id)}
+                  onError={() => handleImageError(sponsor.name)}
                   loading="lazy"
                 />
               ) : (

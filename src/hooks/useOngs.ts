@@ -1,13 +1,12 @@
 import { useRemoteData } from './useRemoteData';
 
 export interface ONG {
-  id: number;
   name: string;
   url: string;
   current: boolean;
 }
 
-const API_URL = 'https://stmvpconf2025.blob.core.windows.net/data/ongs.json';
+const API_URL = '/data/2025/ongs.json';
 
 export const useOngs = () => {
   const { data, loading, error } = useRemoteData<ONG[]>(API_URL);

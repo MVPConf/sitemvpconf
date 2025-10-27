@@ -16,9 +16,9 @@ const Header: React.FC = () => {
   const navItems = [
     // { name: 'Início', href: '#hero' },
     { name: 'Sobre o Evento', href: '#sobre-evento' },
-    { name: 'Galeria', href: '#Carousel' },
+    { name: 'Galeria Fotos', href: '/gallery', external: true },
     { name: 'Palestrantes', href: '#speakers' },
-    { name: 'Agenda', href: 'https://mvpconf.com.br/agenda/index.html', external: true },
+    { name: 'Agenda', href: '/agenda', external: true },
     { name: 'Patrocinadores', href: '#sponsors' },
     { name: 'Local', href: '#location' },
     { name: 'Ingressos', href: '#tickets' },
@@ -27,16 +27,40 @@ const Header: React.FC = () => {
   ];
 
   const scrollToSection = (href: string, external?: boolean) => {
+    setIsOpen(false);
+
     if (external) {
       window.location.href = href;
-      setIsOpen(false);
       return;
     }
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
+
+    // Para rotas especiais (agenda, gallery), navegar diretamente
+    if (href === '/agenda' || href === '/gallery') {
+      window.history.pushState(null, '', href);
+      window.location.reload();
+      return;
     }
+
+    // Se estamos em uma página especial e tentamos ir para uma seção da home
+    if ((window.location.pathname === '/agenda' || window.location.pathname === '/gallery') && href.startsWith('#')) {
+      // Usar setTimeout para garantir que o click seja processado
+      setTimeout(() => {
+        window.location.href = '/' + href;
+      }, 10);
+      return;
+    }
+
+    // Se estamos na home, fazer scroll suave para a seção
+    if (window.location.pathname === '/' && href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      return;
+    }
+
+    // Fallback: navegar normalmente
+    window.location.href = href.startsWith('#') ? '/' + href : href;
   };
 
   return (
@@ -46,10 +70,10 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-3 cursor-pointer"
-               onClick={() => scrollToSection("#hero")} >
+               onClick={() => window.location.pathname === '/agenda' ? window.location.href = '/' : scrollToSection("#hero")} >
             <div className="p-2 bg-ms-white-600 rounded-lg">
               <img
-                src="/logo_blue.png"
+                src="/src/assets/logo_blue.png"
                 alt="Logo MVP Conf"
                 className="h-8 w-8 bg-ms-white-600 rounded-lg"
               />

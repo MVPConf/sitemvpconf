@@ -17,16 +17,16 @@ const Speakers: React.FC = () => {
     if (!coordinatorSearchTerm.trim()) return coordinators;
 
     const term = coordinatorSearchTerm.toLowerCase().trim();
-    
+
     return coordinators.filter(coordinator => {
       const name = coordinator.name.toLowerCase();
       const title = (coordinator.title || '').toLowerCase();
       const company = (coordinator.company || '').toLowerCase();
       const trackName = (coordinator.trackName || '').toLowerCase();
-      
+
       // Busca por palavras completas ou início de palavras
       const searchWords = term.split(/\s+/);
-      
+
       return searchWords.every(word =>
         name.includes(word) ||
         title.includes(word) ||
@@ -43,18 +43,18 @@ const Speakers: React.FC = () => {
 
   const filteredSpeakers = useMemo(() => {
     if (!searchTerm.trim()) return speakers;
-    
+
     const term = searchTerm.toLowerCase().trim();
-    
+
     return speakers.filter((speaker: Person) => {
       const name = speaker.name.toLowerCase();
       const title = (speaker.title || '').toLowerCase();
       const company = (speaker.company || '').toLowerCase();
-      
+
       // Busca por palavras completas ou início de palavras
       const searchWords = term.split(/\s+/);
-      
-      return searchWords.every(word => 
+
+      return searchWords.every(word =>
         name.includes(word) ||
         title.includes(word) ||
         company.includes(word)
@@ -132,7 +132,7 @@ const Speakers: React.FC = () => {
                 {/* Grid de Coordenadores */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   {displayedCoordinators.map((coordinator) => (
-                    <div key={coordinator.id} className="bg-gradient-to-br from-ms-blue-50 to-white rounded-2xl shadow-lg overflow-hidden card-hover group flex flex-col items-center py-6 px-4 border-2 border-ms-blue-200">
+                    <div key={coordinator.name} className="bg-gradient-to-br from-ms-blue-50 to-white rounded-2xl shadow-lg overflow-hidden card-hover group flex flex-col items-center py-6 px-4 border-2 border-ms-blue-200">
                       <img
                         src={coordinator.image}
                         alt={coordinator.name}
@@ -232,7 +232,7 @@ const Speakers: React.FC = () => {
               {/* Grid de Palestrantes */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {displayedSpeakers.map((speaker) => (
-                  <div key={speaker.id} className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover group flex flex-col items-center py-6 px-4">
+                  <div key={speaker.name} className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover group flex flex-col items-center py-6 px-4">
                     <img
                       src={speaker.image}
                       alt={speaker.name}

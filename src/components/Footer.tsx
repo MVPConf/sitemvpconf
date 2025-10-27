@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
               >
                 <div className="p-2 bg-ms-white-600 rounded-lg">
                   <img
-                    src="/logo_blue.png"
+                    src="/src/assets/logo_blue.png"
                     alt="Logo MVP Conf"
                     className="h-8 w-8 bg-ms-white-600 rounded-lg"
                   />
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
                 </div>
               </div>
               <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
-                O maior evento de especialistas Microsoft do Brasil. Conectando comunidades, 
+                O maior evento de especialistas Microsoft do Brasil. Conectando comunidades,
                 compartilhando conhecimento e inspirando inovação.
               </p>
               <div className="flex space-x-4">
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
               <h4 className="text-lg font-semibold mb-6">Links Rápidos</h4>
               <ul className="space-y-3">
                 <li>
-                  <button 
+                  <button
                     onClick={() => document.querySelector('#speakers')?.scrollIntoView({ behavior: 'smooth' })}
                     className="text-gray-300 hover:text-white transition-colors"
                   >
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
                   </button>
                 </li>
                 <li>
-                  <button 
+                  <button
                     onClick={() => document.querySelector('#schedule')?.scrollIntoView({ behavior: 'smooth' })}
                     className="text-gray-300 hover:text-white transition-colors"
                   >
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
                   </button>
                 </li>
                 <li>
-                  <button 
+                  <button
                     onClick={() => document.querySelector('#tickets')?.scrollIntoView({ behavior: 'smooth' })}
                     className="text-gray-300 hover:text-white transition-colors"
                   >
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
                   </button>
                 </li>
                 <li>
-                  <button 
+                  <button
                     onClick={() => document.querySelector('#location')?.scrollIntoView({ behavior: 'smooth' })}
                     className="text-gray-300 hover:text-white transition-colors"
                   >
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
                   </button>
                 </li>
                 <li>
-                  <button 
+                  <button
                     onClick={() => document.querySelector('#sponsors')?.scrollIntoView({ behavior: 'smooth' })}
                     className="text-gray-300 hover:text-white transition-colors"
                   >
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
                   </button>
                 </li>
                 <li>
-                  <button 
+                  <button
                     onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                     className="text-gray-300 hover:text-white transition-colors"
                   >
@@ -162,7 +162,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Site Credits */}
         <SiteCredits />
       </footer>

@@ -13,6 +13,8 @@ import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfUse from './components/TermsOfUse';
 import CodeOfConduct from './components/CodeOfConduct';
+import Agenda from './components/Agenda';
+import Gallery from './components/Gallery';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -32,6 +34,24 @@ function App() {
   }
   if (path === '/code-of-conduct') {
     return <CodeOfConduct onBack={() => (window.location.href = '/')} />;
+  }
+  if (path === '/agenda') {
+    return (
+      <div className="min-h-screen">
+        <Header />
+        <Agenda />
+        <Footer />
+      </div>
+    );
+  }
+  if (path === '/gallery') {
+    return (
+      <div className="min-h-screen">
+        <Header />
+        <Gallery />
+        <Footer />
+      </div>
+    );
   }
 
   return (

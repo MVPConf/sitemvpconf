@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - hom
   workflow_dispatch:
 
 jobs:
@@ -18,11 +19,43 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Create .env file
+        run: |
+          cat > .env << EOF
+          # ========================================
+          # 🌐 CONFIGURAÇÕES DE API E STORAGE
+          # ========================================
+
+          # Storage Account do Azure (usado para imagens, arquivos estáticos, etc.)
+          VITE_STORAGE_ACCOUNT_URL=${{ secrets.VITE_STORAGE_ACCOUNT_URL }}
+
+          # API do Power Automate para carregar palestras (Excel)
+          VITE_TALKS_API_URL=${{ secrets.VITE_TALKS_API_URL }}
+
+          # API do Power Automate para autenticação (envio de email)
+          VITE_AUTH_API_URL=${{ secrets.VITE_AUTH_API_URL }}
+
+          # ========================================
+          # ⚙️ CONFIGURAÇÕES DA AGENDA
+          # ========================================
+
+          # Fonte de dados da agenda (true = JSON local, false = API Excel)
+          VITE_USE_LOCAL_JSON=false
+
+          # Timeout para chamadas de API (em milissegundos)
+          VITE_API_TIMEOUT=12000
+          EOF
+
+      - name: Verify .env file (debug)
+        run: |
+          echo "Contents of .env file:"
+          cat .env
 
       - name: Build project
         run: npm run build
