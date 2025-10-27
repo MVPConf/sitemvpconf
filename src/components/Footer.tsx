@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
               >
                 <div className="p-2 bg-ms-white-600 rounded-lg">
                   <img
-                    src="/src/assets/logo_blue.png"
+                    src="/logo_blue.png"
                     alt="Logo MVP Conf"
                     className="h-8 w-8 bg-ms-white-600 rounded-lg"
                   />
