@@ -1,0 +1,602 @@
+{
+    "years": [
+        {
+            "year": 2025,
+            "title": "MVP Conf 2025",
+            "description": "Nossa edição mais recente com palestras incríveis, networking e muito aprendizado. Foi um evento memorável com participantes de todo o Brasil.",
+            "coverImage": "/pictures/2025/cover.jpg",
+            "totalPhotos": 15,
+            "photos": [
+                {
+                    "filename": "/pictures/2025/abertura.jpg",
+                    "alt": "Abertura do MVP Conf 2025",
+                    "description": "Momento de abertura do evento com toda equipe",
+                    "photographer": "Equipe MVP Conf"
+                },
+                {
+                    "filename": "/pictures/2025/keynote.jpg",
+                    "alt": "Keynote principal do evento",
+                    "description": "Palestra principal sobre inovação em tecnologia",
+                    "photographer": "Equipe MVP Conf"
+                },
+                {
+                    "filename": "/pictures/2025/networking.jpg",
+                    "alt": "Momento de networking",
+                    "description": "Participantes conversando e fazendo networking",
+                    "photographer": "Equipe MVP Conf"
+                },
+                {
+                    "filename": "/pictures/2025/workshop.jpg",
+                    "alt": "Workshop prático",
+                    "description": "Workshop hands-on de desenvolvimento",
+                    "photographer": "Equipe MVP Conf"
+                },
+                {
+                    "filename": "/pictures/2025/palestrantes.jpg",
+                    "alt": "Palestrantes do evento",
+                    "description": "Nossos incríveis palestrantes MVPs",
+                    "photographer": "Equipe MVP Conf"
+                }
+            ]
+        },
+        {
+            "year": 2019,
+            "title": "MVP Conf 2019",
+            "description": "Nossa primeira edição que marcou o início de uma jornada incrível. Foi o evento que deu origem a toda nossa comunidade.",
+            "coverImage": "2019/pictures/foto000.jpeg",
+            "totalPhotos": 114,
+            "photos": [
+                {
+                    "filename": "2019/pictures/foto000.jpeg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Momento especial do evento inaugural"
+                },
+                {
+                    "filename": "2019/pictures/foto5.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Participantes do evento"
+                },
+                {
+                    "filename": "2019/pictures/foto6.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Apresentações técnicas"
+                },
+                {
+                    "filename": "2019/pictures/foto7.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Networking entre participantes"
+                },
+                {
+                    "filename": "2019/pictures/foto8.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Palestras inspiradoras"
+                },
+                {
+                    "filename": "2019/pictures/foto9.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Momentos de aprendizado"
+                },
+                {
+                    "filename": "2019/pictures/foto10.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Interação com palestrantes"
+                },
+                {
+                    "filename": "2019/pictures/foto11.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Sessões de workshop"
+                },
+                {
+                    "filename": "2019/pictures/foto12.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Comunidade MVP reunida"
+                },
+                {
+                    "filename": "2019/pictures/foto13.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Troca de conhecimento"
+                },
+                {
+                    "filename": "2019/pictures/foto14.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Evento histórico"
+                },
+                {
+                    "filename": "2019/pictures/foto15.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Primeiro dia do evento"
+                },
+                {
+                    "filename": "2019/pictures/foto16.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Participação ativa"
+                },
+                {
+                    "filename": "2019/pictures/foto17.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Momentos únicos"
+                },
+                {
+                    "filename": "2019/pictures/foto18.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Tecnologia em destaque"
+                },
+                {
+                    "filename": "2019/pictures/foto19.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Conexões valiosas"
+                },
+                {
+                    "filename": "2019/pictures/foto20.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Aprendizado colaborativo"
+                },
+                {
+                    "filename": "2019/pictures/foto21.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Inovação tecnológica"
+                },
+                {
+                    "filename": "2019/pictures/foto22.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Experiências compartilhadas"
+                },
+                {
+                    "filename": "2019/pictures/foto23.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Desenvolvimento profissional"
+                },
+                {
+                    "filename": "2019/pictures/foto24.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Comunidade técnica"
+                },
+                {
+                    "filename": "2019/pictures/foto25.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Conhecimento técnico"
+                },
+                {
+                    "filename": "2019/pictures/foto26.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Networking profissional"
+                },
+                {
+                    "filename": "2019/pictures/foto27.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Palestras técnicas"
+                },
+                {
+                    "filename": "2019/pictures/foto28.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Evento memorável"
+                },
+                {
+                    "filename": "2019/pictures/foto29.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Intercâmbio de ideias"
+                },
+                {
+                    "filename": "2019/pictures/foto30.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Tecnologia Microsoft"
+                },
+                {
+                    "filename": "2019/pictures/foto31.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Comunidade MVP"
+                },
+                {
+                    "filename": "2019/pictures/foto32.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Aprendizado técnico"
+                },
+                {
+                    "filename": "2019/pictures/foto33.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Sessões práticas"
+                },
+                {
+                    "filename": "2019/pictures/foto34.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Desenvolvimento de software"
+                },
+                {
+                    "filename": "2019/pictures/foto35.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Inovação digital"
+                },
+                {
+                    "filename": "2019/pictures/foto36.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Experiência única"
+                },
+                {
+                    "filename": "2019/pictures/foto37.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Conhecimento compartilhado"
+                },
+                {
+                    "filename": "2019/pictures/foto38.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Tecnologias emergentes"
+                },
+                {
+                    "filename": "2019/pictures/foto39.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Networking estratégico"
+                },
+                {
+                    "filename": "2019/pictures/foto40.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Palestras inspiradoras"
+                },
+                {
+                    "filename": "2019/pictures/foto41.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Desenvolvimento profissional"
+                },
+                {
+                    "filename": "2019/pictures/foto42.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Comunidade ativa"
+                },
+                {
+                    "filename": "2019/pictures/foto43.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Tecnologia avançada"
+                },
+                {
+                    "filename": "2019/pictures/foto44.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Aprendizado colaborativo"
+                },
+                {
+                    "filename": "2019/pictures/foto45.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Experiências valiosas"
+                },
+                {
+                    "filename": "2019/pictures/foto46.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Conexões profissionais"
+                },
+                {
+                    "filename": "2019/pictures/foto47.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Participantes engajados"
+                },
+                {
+                    "filename": "2019/pictures/foto48.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Sessões técnicas"
+                },
+                {
+                    "filename": "2019/pictures/foto49.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Conhecimento técnico"
+                },
+                {
+                    "filename": "2019/pictures/foto50.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Inovação tecnológica"
+                },
+                {
+                    "filename": "2019/pictures/foto51.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Desenvolvimento ágil"
+                },
+                {
+                    "filename": "2019/pictures/foto52.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Tecnologia Microsoft"
+                },
+                {
+                    "filename": "2019/pictures/foto53.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Aprendizado prático"
+                },
+                {
+                    "filename": "2019/pictures/foto54.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Networking efetivo"
+                },
+                {
+                    "filename": "2019/pictures/foto55.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Palestras técnicas"
+                },
+                {
+                    "filename": "2019/pictures/foto56.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Comunidade técnica"
+                },
+                {
+                    "filename": "2019/pictures/foto57.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Experiências compartilhadas"
+                },
+                {
+                    "filename": "2019/pictures/foto58.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Desenvolvimento profissional"
+                },
+                {
+                    "filename": "2019/pictures/foto59.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Tecnologia em foco"
+                },
+                {
+                    "filename": "2019/pictures/foto60.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Aprendizado contínuo"
+                },
+                {
+                    "filename": "2019/pictures/foto61.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Inovação digital"
+                },
+                {
+                    "filename": "2019/pictures/foto62.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Conexões valiosas"
+                },
+                {
+                    "filename": "2019/pictures/foto63.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Conhecimento técnico"
+                },
+                {
+                    "filename": "2019/pictures/foto64.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Sessões práticas"
+                },
+                {
+                    "filename": "2019/pictures/foto65.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Tecnologia avançada"
+                },
+                {
+                    "filename": "2019/pictures/foto66.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Desenvolvimento de software"
+                },
+                {
+                    "filename": "2019/pictures/foto67.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Networking profissional"
+                },
+                {
+                    "filename": "2019/pictures/foto68.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Aprendizado colaborativo"
+                },
+                {
+                    "filename": "2019/pictures/foto69.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Experiências únicas"
+                },
+                {
+                    "filename": "2019/pictures/foto70.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Comunidade MVP"
+                },
+                {
+                    "filename": "2019/pictures/foto71.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Tecnologia Microsoft"
+                },
+                {
+                    "filename": "2019/pictures/foto72.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Palestras inspiradoras"
+                },
+                {
+                    "filename": "2019/pictures/foto73.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Desenvolvimento ágil"
+                },
+                {
+                    "filename": "2019/pictures/foto74.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Conhecimento compartilhado"
+                },
+                {
+                    "filename": "2019/pictures/foto75.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Inovação tecnológica"
+                },
+                {
+                    "filename": "2019/pictures/foto76.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Aprendizado técnico"
+                },
+                {
+                    "filename": "2019/pictures/foto77.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Networking estratégico"
+                },
+                {
+                    "filename": "2019/pictures/foto78.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Sessões técnicas"
+                },
+                {
+                    "filename": "2019/pictures/foto79.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Tecnologia em destaque"
+                },
+                {
+                    "filename": "2019/pictures/foto80.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Desenvolvimento profissional"
+                },
+                {
+                    "filename": "2019/pictures/foto81.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Comunidade ativa"
+                },
+                {
+                    "filename": "2019/pictures/foto82.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Experiências valiosas"
+                },
+                {
+                    "filename": "2019/pictures/foto83.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Conexões profissionais"
+                },
+                {
+                    "filename": "2019/pictures/foto84.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Aprendizado prático"
+                },
+                {
+                    "filename": "2019/pictures/foto85.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Tecnologia avançada"
+                },
+                {
+                    "filename": "2019/pictures/foto86.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Inovação digital"
+                },
+                {
+                    "filename": "2019/pictures/foto87.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Conhecimento técnico"
+                },
+                {
+                    "filename": "2019/pictures/foto88.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Desenvolvimento de software"
+                },
+                {
+                    "filename": "2019/pictures/foto89.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Networking efetivo"
+                },
+                {
+                    "filename": "2019/pictures/foto90.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Palestras técnicas"
+                },
+                {
+                    "filename": "2019/pictures/foto91.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Aprendizado colaborativo"
+                },
+                {
+                    "filename": "2019/pictures/foto92.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Experiências compartilhadas"
+                },
+                {
+                    "filename": "2019/pictures/foto93.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Tecnologia Microsoft"
+                },
+                {
+                    "filename": "2019/pictures/foto94.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Comunidade técnica"
+                },
+                {
+                    "filename": "2019/pictures/foto95.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Desenvolvimento ágil"
+                },
+                {
+                    "filename": "2019/pictures/foto96.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Conhecimento compartilhado"
+                },
+                {
+                    "filename": "2019/pictures/foto97.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Inovação tecnológica"
+                },
+                {
+                    "filename": "2019/pictures/foto98.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Sessões práticas"
+                },
+                {
+                    "filename": "2019/pictures/foto99.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Tecnologia em foco"
+                },
+                {
+                    "filename": "2019/pictures/foto100.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Aprendizado contínuo"
+                },
+                {
+                    "filename": "2019/pictures/foto101.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Networking profissional"
+                },
+                {
+                    "filename": "2019/pictures/foto102.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Desenvolvimento profissional"
+                },
+                {
+                    "filename": "2019/pictures/foto103.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Comunidade MVP"
+                },
+                {
+                    "filename": "2019/pictures/foto104.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Experiências únicas"
+                },
+                {
+                    "filename": "2019/pictures/foto105.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Tecnologia avançada"
+                },
+                {
+                    "filename": "2019/pictures/foto106.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Conexões valiosas"
+                },
+                {
+                    "filename": "2019/pictures/foto107.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Aprendizado técnico"
+                },
+                {
+                    "filename": "2019/pictures/foto108.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Inovação digital"
+                },
+                {
+                    "filename": "2019/pictures/foto109.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Conhecimento técnico"
+                },
+                {
+                    "filename": "2019/pictures/foto110.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Desenvolvimento de software"
+                },
+                {
+                    "filename": "2019/pictures/foto111.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Palestras inspiradoras"
+                },
+                {
+                    "filename": "2019/pictures/foto112.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Tecnologia Microsoft"
+                },
+                {
+                    "filename": "2019/pictures/foto113.jpg",
+                    "alt": "MVP Conf 2019",
+                    "description": "Evento histórico e memorável"
+                }
+            ]
+        }
+    ]
+}

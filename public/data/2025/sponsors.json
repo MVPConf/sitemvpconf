@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Unip",
+    "logo": "/sponsors/logo-unip.svg",
+    "tier": "gold",
+    "website": "https://www.unip.br/"
+  },
+  {
+    "name": "Witec",
+    "logo": "/sponsors/witec-logo-azul.png",
+    "tier": "gold",
+    "website": "https://witec.com.br/"
+  },
+  {
+    "name": "Microsoft",
+    "logo": "/sponsors/microsoft-logo.png",
+    "tier": "gold",
+    "website": "https://www.microsoft.com/pt-br/"
+  },
+  {
+    "name": "Grupo Oakmont",
+    "logo": "/sponsors/logo-oakmont.png",
+    "tier": "gold",
+    "website": "https://oakmontgroup.com.br/"
+  },
+  {
+    "name": "Microkids",
+    "logo": "/sponsors/microkids.png",
+    "tier": "gold",
+    "website": "https://microkids.com.br/"
+  },
+  {
+    "name": "Hub Connect Eventos",
+    "logo": "/sponsors/hub.png",
+    "tier": "gold",
+    "website": "https://hubconnecteventos.com.br"
+  },
+  {
+    "name": "Mundo 365",
+    "logo": "/sponsors/mundo365.png",
+    "tier": "gold",
+    "website": "https://mundo365.com.br"
+  },
+  {
+    "name": "TD SYNNEX",
+    "logo": "/sponsors/tdsynnex.png",
+    "tier": "gold",
+    "website": "https://lac.tdsynnex.com/br/pt-br"
+  },
+  {
+    "name": "ITCore",
+    "logo": "/sponsors/itcore.png",
+    "tier": "gold",
+    "website": "https://www.itcore.com.br"
+  },
+  {
+    "name": "Repiper Academy",
+    "logo": "/sponsors/repiper.png",
+    "tier": "gold",
+    "website": "https://www.linkedin.com/company/repiper-academy"
+  },
+  {
+    "name": "Advanced Info",
+    "logo": "/sponsors/advancedinfo.svg",
+    "tier": "gold",
+    "website": "https://advancedinfo.com.br/"
+  }
+]

@@ -1,0 +1,20 @@
+{
+    "event": {
+        "name": "MVPConf 2025",
+        "year": 2025
+    },
+    "schedule": {
+        "days": [
+            {
+                "date": "2025-10-24",
+                "label": "24/10",
+                "weekday": "Sexta-feira"
+            },
+            {
+                "date": "2025-10-25",
+                "label": "25/10",
+                "weekday": "Sábado"
+            }
+        ]
+    }
+}
