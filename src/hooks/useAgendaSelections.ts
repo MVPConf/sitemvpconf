@@ -19,7 +19,8 @@ import {
   removeFromLocalStorage,
   selectionsToCSV,
   downloadCSV,
-  createVacantSelection
+  createVacantSelection,
+  formatTimeFromSlotId
 } from '../utils/agenda';
 
 const STORAGE_KEY = 'mvpconf-agenda';
@@ -62,8 +63,8 @@ export function useAgendaSelections(schedule: Schedule) {
       talkTitle: talk.title,
       track: talk.track,
       room: talk.room,
-      time: talk.time,
-      speakers: talk.speakers || [],
+      time: formatTimeFromSlotId(slotId),
+      speakers: talk.speaker ? [talk.speaker] : [],
       isVacant: talk.isVacant || false
     };
 

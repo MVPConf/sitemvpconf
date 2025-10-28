@@ -430,7 +430,7 @@ const Agenda: React.FC<AgendaProps> = ({ className = '' }) => {
                                     ) : (
                                       <>
                                         <div className="text-gray-800 font-medium mb-1 line-clamp-2">
-                                          {selection.title}
+                                          {selection.talkTitle}
                                         </div>
                                         {selection.track && (
                                           <div className="inline-block bg-blue-100 text-blue-800 px-2 py-0.5 rounded text-xs font-medium mb-1">
