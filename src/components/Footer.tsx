@@ -124,10 +124,7 @@ const Footer: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Denúncia Info */}
-            <div>
+              <br />
               <h4 className="text-lg font-semibold mb-6">Denúncia</h4>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
@@ -138,6 +135,7 @@ const Footer: React.FC = () => {
                 </div>
               </div>
             </div>
+
           </div>
 
           {/* Bottom Bar */}

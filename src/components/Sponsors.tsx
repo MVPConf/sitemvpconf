@@ -64,7 +64,7 @@ const Sponsors: React.FC = () => {
             {config.badge}
           </div>
         </div>
-        
+
         <div className={`grid ${config.gridCols} gap-6 max-w-7xl mx-auto`}>
           {sponsorsInTier.map((sponsor) => (
             <a
@@ -104,7 +104,7 @@ const Sponsors: React.FC = () => {
       {/* Elementos decorativos */}
       <div className="absolute top-20 left-0 w-72 h-72 bg-ms-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
       <div className="absolute bottom-20 right-0 w-72 h-72 bg-ms-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -131,7 +131,7 @@ const Sponsors: React.FC = () => {
                 backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.1) 10px, rgba(255,255,255,.1) 20px)'
               }}></div>
             </div>
-            
+
             <div className="relative z-10 text-center">
               <div className="inline-block mb-4">
                 <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto backdrop-blur-sm">
@@ -140,17 +140,17 @@ const Sponsors: React.FC = () => {
                   </svg>
                 </div>
               </div>
-              
+
               <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Quer ser nosso patrocinador?
               </h3>
               <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                Junte-se a nós e apoie a maior comunidade de especialistas Microsoft do Brasil. 
+                Junte-se a nós e apoie a maior comunidade de especialistas Microsoft do Brasil.
                 Diversas oportunidades de patrocínio disponíveis.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button 
+                <button
                   onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="px-8 py-4 bg-white text-ms-blue-700 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
