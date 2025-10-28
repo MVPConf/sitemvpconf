@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { buildStorageUrl, getStorageAccountUrl } from '../utils/storage';
 
 const images = [
@@ -28,6 +28,15 @@ const Carousel: React.FC = () => {
 
   const next = () => setCurrent((prev) => (prev + 1) % images.length);
   const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
+
+  // Auto-play com 5 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      next();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -101,38 +110,6 @@ const Carousel: React.FC = () => {
                 </svg>
               </button>
             </div>
-          </div>
-
-          {/* Grid de Miniaturas */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {images.map((img, idx) => (
-              <div
-                key={idx}
-                onClick={() => setCurrent(idx)}
-                className={`relative cursor-pointer rounded-xl overflow-hidden group transition-all duration-300 ${
-                  current === idx
-                    ? 'ring-4 ring-cyan-400 scale-105'
-                    : 'ring-2 ring-gray-700 hover:ring-cyan-500'
-                }`}
-              >
-                <img
-                  src={img}
-                  alt={`Miniatura ${idx + 1}`}
-                  className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className={`absolute inset-0 transition-opacity duration-300 ${
-                  current === idx
-                    ? 'bg-cyan-500/20'
-                    : 'bg-black/40 group-hover:bg-black/20'
-                }`}></div>
-
-                {current === idx && (
-                  <div className="absolute top-2 right-2">
-                    <div className="w-3 h-3 bg-cyan-400 rounded-full shadow-lg"></div>
-                  </div>
-                )}
-              </div>
-            ))}
           </div>
         </div>
       </section>
