@@ -18,7 +18,7 @@ const Header: React.FC = () => {
     { name: 'Sobre o Evento', href: '#sobre-evento' },
     { name: 'Galeria Fotos', href: '/gallery', external: true },
     { name: 'Palestrantes', href: '#speakers' },
-    { name: 'Agenda', href: '/agenda', external: true },
+    { name: 'Agenda', href: '/agenda' },
     { name: 'Patrocinadores', href: '#sponsors' },
     { name: 'Local', href: '#location' },
     { name: 'Ingressos', href: '#tickets' },
