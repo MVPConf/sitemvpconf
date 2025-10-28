@@ -65,10 +65,21 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      - name: Clean Azure Storage Container
+        uses: azure/CLI@v2
+        with:
+          inlineScript: |
+            echo "🧹 Limpando container \$web..."
+            az storage blob delete-batch \
+              --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+              --auth-mode key \
+              --source '$web' || echo "Container já estava vazio ou erro na limpeza (continuando...)"
+
       - name: Upload Main Site to Azure Storage
         uses: azure/CLI@v2
         with:
           inlineScript: |
+            echo "📤 Fazendo upload dos novos arquivos..."
             az storage blob upload-batch \
               --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
               --auth-mode key \
