@@ -7,10 +7,10 @@ interface GalleryYearSelectorProps {
   loading?: boolean;
 }
 
-const GalleryYearSelector: React.FC<GalleryYearSelectorProps> = ({ 
-  years, 
-  onSelectYear, 
-  loading = false 
+const GalleryYearSelector: React.FC<GalleryYearSelectorProps> = ({
+  years,
+  onSelectYear,
+  loading = false
 }) => {
   if (loading) {
     return (
@@ -24,7 +24,7 @@ const GalleryYearSelector: React.FC<GalleryYearSelectorProps> = ({
   }
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-ms-blue-900 to-gray-900 relative overflow-hidden">
+    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-ms-blue-900 to-gray-900 relative overflow-hidden z-0">
       {/* Grid pattern background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -33,9 +33,9 @@ const GalleryYearSelector: React.FC<GalleryYearSelectorProps> = ({
         }}></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 relative z-10">
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Galeria de <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Fotos</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -58,10 +58,10 @@ const GalleryYearSelector: React.FC<GalleryYearSelectorProps> = ({
                   alt={`MVP Conf ${yearData.year}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                
+
                 {/* Overlay com gradiente */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                
+
                 {/* Badge do ano */}
                 <div className="absolute top-4 right-4">
                   <div className="bg-cyan-400 text-gray-900 px-4 py-2 rounded-full font-bold text-lg shadow-lg">
@@ -88,7 +88,7 @@ const GalleryYearSelector: React.FC<GalleryYearSelectorProps> = ({
                 <p className="text-gray-300 mb-4 line-clamp-3">
                   {yearData.description}
                 </p>
-                
+
                 {/* Call to Action */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-cyan-400 font-semibold">

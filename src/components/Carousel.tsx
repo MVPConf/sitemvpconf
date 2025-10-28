@@ -125,7 +125,7 @@ const Carousel: React.FC = () => {
 
       {/* Modal Fullscreen */}
       {isFullscreen && (
-        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4" onClick={() => setIsFullscreen(false)}>
+        <div className="fixed inset-0 bg-black/95 z-[10002] flex items-center justify-center p-4" onClick={() => setIsFullscreen(false)}>
           <button
             onClick={() => setIsFullscreen(false)}
             className="absolute top-4 right-4 text-white hover:text-cyan-400 transition-colors z-10"

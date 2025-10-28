@@ -129,7 +129,7 @@ main[id] {
 
   /* Garantir que o header tenha prioridade máxima */
   header.fixed {
-    z-index: 100;
+    z-index: 9999;
   }
 }
 

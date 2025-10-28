@@ -48,7 +48,7 @@ const GalleryPhotoGrid: React.FC<GalleryPhotoGridProps> = ({ yearData, onBack })
 
   return (
     <section
-      className="min-h-screen bg-gradient-to-br from-gray-900 via-ms-blue-900 to-gray-900 relative overflow-hidden"
+      className="min-h-screen bg-gradient-to-br from-gray-900 via-ms-blue-900 to-gray-900 relative overflow-hidden z-0"
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
@@ -60,7 +60,7 @@ const GalleryPhotoGrid: React.FC<GalleryPhotoGridProps> = ({ yearData, onBack })
         }}></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 relative z-10">
         {/* Header com botão de voltar */}
         <div className="flex items-center justify-between mb-8">
           <button
@@ -76,13 +76,13 @@ const GalleryPhotoGrid: React.FC<GalleryPhotoGridProps> = ({ yearData, onBack })
           </button>
 
           <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
               {yearData.title}
             </h1>
             <p className="text-gray-300">{yearData.totalPhotos} fotos</p>
           </div>
 
-          <div className="w-32"></div> {/* Spacer para centralizar o título */}
+          <div className="w-32 lg:w-40"></div> {/* Spacer para centralizar o título */}
         </div>
 
         {/* Grid de fotos */}
@@ -150,7 +150,7 @@ const GalleryPhotoGrid: React.FC<GalleryPhotoGridProps> = ({ yearData, onBack })
       {/* Lightbox Modal */}
       {selectedPhoto !== null && (
         <div
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/95 z-[10002] flex items-center justify-center p-4"
           onClick={closeLightbox}
         >
           {/* Botão fechar */}

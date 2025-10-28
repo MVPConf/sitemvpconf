@@ -64,11 +64,11 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className={`fixed top-0 w-full z-[100] transition-all duration-300 ${
+    <header className={`fixed top-0 w-full z-[9999] transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-3 md:py-4">
           <div className="flex items-center space-x-3 cursor-pointer"
                onClick={() => window.location.pathname === '/agenda' ? window.location.href = '/' : scrollToSection("#hero")} >
             <div className="p-2 bg-ms-white-600 rounded-lg">
@@ -89,12 +89,12 @@ const Header: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex space-x-6 xl:space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href, item.external)}
-                className={`font-medium transition-colors duration-300 hover:text-ms-blue-600 ${
+                className={`font-medium text-sm xl:text-base transition-colors duration-300 hover:text-ms-blue-600 whitespace-nowrap ${
                   isScrolled ? 'text-gray-700' : 'text-white hover:text-blue-200'
                 }`}
               >
@@ -106,7 +106,7 @@ const Header: React.FC = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden p-2 rounded-lg transition-colors z-[110] ${
+            className={`lg:hidden p-2 rounded-lg transition-colors relative z-[10001] ${
               isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
             }`}
           >
@@ -116,7 +116,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-white rounded-lg shadow-xl mt-2 py-4 z-[105] relative">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white rounded-lg shadow-xl mt-2 py-4 z-[10000] mx-4">
             {navItems.map((item) => (
               <button
                 key={item.name}
