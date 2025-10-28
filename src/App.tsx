@@ -65,7 +65,7 @@ function App() {
       <Sponsors />
       <Location />
       <Tickets />
-      <BoardOfDirectors />
+      {/* <BoardOfDirectors /> */}
       <Contact />
       <Footer />
     </div>
