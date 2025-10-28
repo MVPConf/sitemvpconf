@@ -10,7 +10,7 @@ const SobreEvento: React.FC = () => {
     {/* Elementos decorativos de fundo */}
     <div className="absolute top-0 left-0 w-96 h-96 bg-ms-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
     <div className="absolute bottom-0 right-0 w-96 h-96 bg-ms-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
-    
+
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -124,10 +124,10 @@ const SobreEvento: React.FC = () => {
                 <p className="text-gray-600">Carregando...</p>
               ) : ongs2025.length > 0 ? (
                 ongs2025.map((ong) => (
-                  <a 
+                  <a
                     key={ong.name}
-                    href={ong.url} 
-                    target="_blank" 
+                    href={ong.url}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="block p-4 bg-gradient-to-r from-green-50 to-white rounded-xl hover:shadow-md transition-all group"
                   >
@@ -160,10 +160,10 @@ const SobreEvento: React.FC = () => {
                 <p className="text-gray-600">Carregando...</p>
               ) : ongsPrevious.length > 0 ? (
                 ongsPrevious.map((ong) => (
-                  <a 
+                  <a
                     key={ong.name}
-                    href={ong.url} 
-                    target="_blank" 
+                    href={ong.url}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="block p-4 bg-gradient-to-r from-blue-50 to-white rounded-xl hover:shadow-md transition-all group"
                   >
@@ -184,7 +184,7 @@ const SobreEvento: React.FC = () => {
       </div>
     </div>
 
-    <BuyTickets title="Adquira seu Ingresso" />
+    {/* <BuyTickets title="Adquira seu Ingresso" /> */}
   </section>
   );
 };

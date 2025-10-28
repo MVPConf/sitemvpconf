@@ -373,7 +373,7 @@ const Schedule = () => {
         )}
       </div>
 
-        <BuyTickets title="Adquira seu Ingresso" />
+        {/* <BuyTickets title="Adquira seu Ingresso" /> */}
 
         {/* Modal de descrição da palestra */}
         {openTalk && hasDescription(openTalk) && (

@@ -279,7 +279,7 @@ const Speakers: React.FC = () => {
         )}
       </div>
 
-      <BuyTickets title="Garanta agora seu Ingresso" />
+      {/* <BuyTickets title="Garanta agora seu Ingresso" /> */}
 
     </section>
   );

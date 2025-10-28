@@ -9,7 +9,7 @@ const Tickets: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Garanta seu <span className="gradient-text">ingresso</span> agora
           </h2>
-          <BuyTickets title="Compre Agora" />
+          {/* <BuyTickets title="Compre Agora" /> */}
         </div>
 
         {/* Informações Adicionais */}
@@ -17,7 +17,7 @@ const Tickets: React.FC = () => {
           <div className="bg-gradient-to-br from-ms-blue-50 to-ms-blue-100 rounded-2xl p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Garantia de Satisfação</h3>
             <p className="text-gray-700">
-              Não ficou satisfeito? Oferecemos reembolso total até 30 dias antes do evento. 
+              Não ficou satisfeito? Oferecemos reembolso total até 30 dias antes do evento.
               Sua satisfação é nossa prioridade.
             </p>
           </div>
@@ -25,7 +25,7 @@ const Tickets: React.FC = () => {
           <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Pagamento Seguro</h3>
             <p className="text-gray-700">
-              Aceitamos cartão de crédito, débito, PIX e boleto bancário. 
+              Aceitamos cartão de crédito, débito, PIX e boleto bancário.
               Todos os pagamentos são processados com segurança total.
             </p>
           </div>
