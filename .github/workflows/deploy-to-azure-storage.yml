@@ -46,7 +46,7 @@ jobs:
           # ========================================
 
           # Fonte de dados da agenda (true = JSON local, false = API Excel)
-          USE_LOCAL_JSON=true
+          USE_LOCAL_JSON=false
 
           # Timeout para chamadas de API (em milissegundos)
           API_TIMEOUT=12000
