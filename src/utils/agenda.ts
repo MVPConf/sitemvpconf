@@ -111,14 +111,19 @@ export function createVacantTalk(slot: Slot): Talk {
 }
 
 export function createVacantSelection(slot: Slot, day: Day): Selection {
+  // Extrai o horário do slotId (formato: YYYY-MM-DD-HHmm)
+  const timeFromSlotId = slot.id.slice(-4);
+  const formattedTime = `${timeFromSlotId.slice(0, 2)}:${timeFromSlotId.slice(2)}`;
+
   return {
     day,
     slotId: slot.id,
     talkId: `${slot.id}-vacant`,
     talkTitle: 'Slot vago',
-    track: 'Horario livre',
+    track: 'Horário livre',
     room: 'Livre',
-    speaker: '',
+    time: formattedTime,
+    speakers: [],
     isVacant: true
   };
 }

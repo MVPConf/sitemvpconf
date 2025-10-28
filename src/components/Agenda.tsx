@@ -399,25 +399,66 @@ const Agenda: React.FC<AgendaProps> = ({ className = '' }) => {
                 </button>
               </div>
 
-              {/* Lista resumida da agenda - simplificada por enquanto */}
+              {/* Lista detalhada da agenda */}
               {stats.selectedTalks > 0 && (
                 <div className="mt-6">
-                  <h3 className="text-sm font-medium text-gray-900 mb-2">Seleções por dia:</h3>
-                  {Object.entries(selectionsByDay).map(([day, daySelections]) => {
-                    const nonVacantSelections = daySelections.filter(s => !s.isVacant);
-                    if (nonVacantSelections.length === 0) return null;
+                  <h3 className="text-sm font-medium text-gray-900 mb-3">Minha programação:</h3>
+                  <div className="space-y-4">
+                    {Object.entries(selectionsByDay).map(([day, daySelections]) => {
+                      const allSelections = daySelections; // Inclui slots vazios também
+                      if (allSelections.length === 0) return null;
 
-                    return (
-                      <div key={day} className="mb-3">
-                        <div className="text-xs font-medium text-gray-700 mb-1">
-                          {day === '2025-10-24' ? '24/10' : '25/10'}
+                      return (
+                        <div key={day} className="border-b border-gray-200 pb-3 last:border-b-0">
+                          <div className="text-xs font-semibold text-gray-800 mb-2 uppercase tracking-wide">
+                            {day === '2025-10-24' ? 'Sexta-feira, 24 de Outubro' : 'Sábado, 25 de Outubro'}
+                          </div>
+                          <div className="space-y-2">
+                            {allSelections
+                              .sort((a, b) => a.time.localeCompare(b.time))
+                              .map((selection, idx) => (
+                              <div key={idx} className="bg-gray-50 rounded-lg p-3 text-xs">
+                                <div className="flex items-start justify-between">
+                                  <div className="flex-1">
+                                    <div className="font-medium text-gray-900 mb-1">
+                                      {selection.time}
+                                    </div>
+                                    {selection.isVacant ? (
+                                      <div className="text-gray-500 italic">
+                                        Slot livre
+                                      </div>
+                                    ) : (
+                                      <>
+                                        <div className="text-gray-800 font-medium mb-1 line-clamp-2">
+                                          {selection.title}
+                                        </div>
+                                        {selection.track && (
+                                          <div className="inline-block bg-blue-100 text-blue-800 px-2 py-0.5 rounded text-xs font-medium mb-1">
+                                            {selection.track}
+                                          </div>
+                                        )}
+                                        {selection.speakers && selection.speakers.length > 0 && (
+                                          <div className="text-gray-600">
+                                            👤 {selection.speakers.slice(0, 2).join(', ')}
+                                            {selection.speakers.length > 2 && ` +${selection.speakers.length - 2}`}
+                                          </div>
+                                        )}
+                                        {selection.room && (
+                                          <div className="text-gray-500 mt-1">
+                                            📍 {selection.room}
+                                          </div>
+                                        )}
+                                      </>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
                         </div>
-                        <div className="text-xs text-gray-500">
-                          {nonVacantSelections.length} palestra(s) selecionada(s)
-                        </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
               )}
             </div>

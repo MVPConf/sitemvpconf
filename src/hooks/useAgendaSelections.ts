@@ -62,7 +62,8 @@ export function useAgendaSelections(schedule: Schedule) {
       talkTitle: talk.title,
       track: talk.track,
       room: talk.room,
-      speaker: talk.speaker || '',
+      time: talk.time,
+      speakers: talk.speakers || [],
       isVacant: talk.isVacant || false
     };
 

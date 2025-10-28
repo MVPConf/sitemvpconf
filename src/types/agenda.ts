@@ -32,7 +32,8 @@ export interface Selection {
   talkTitle: string;
   track: string;
   room: string;
-  speaker?: string;
+  time: string;
+  speakers?: string[];
   isVacant?: boolean;
 }
 
