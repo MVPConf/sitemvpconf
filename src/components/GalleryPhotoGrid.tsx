@@ -9,24 +9,82 @@ interface GalleryPhotoGridProps {
 const GalleryPhotoGrid: React.FC<GalleryPhotoGridProps> = ({ yearData, onBack }) => {
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
   const [imageLoadErrors, setImageLoadErrors] = useState<Set<string>>(new Set());
+  const [zoom, setZoom] = useState(1);
+  const [panX, setPanX] = useState(0);
+  const [panY, setPanY] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
   const openLightbox = (index: number) => {
     setSelectedPhoto(index);
+    resetZoom();
   };
 
   const closeLightbox = () => {
     setSelectedPhoto(null);
+    resetZoom();
+  };
+
+  const resetZoom = () => {
+    setZoom(1);
+    setPanX(0);
+    setPanY(0);
+  };
+
+  const zoomIn = () => {
+    setZoom(prev => Math.min(prev * 1.5, 5));
+  };
+
+  const zoomOut = () => {
+    setZoom(prev => {
+      const newZoom = prev / 1.5;
+      if (newZoom <= 1) {
+        setPanX(0);
+        setPanY(0);
+        return 1;
+      }
+      return newZoom;
+    });
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (zoom > 1) {
+      setIsDragging(true);
+      setDragStart({ x: e.clientX - panX, y: e.clientY - panY });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && zoom > 1) {
+      setPanX(e.clientX - dragStart.x);
+      setPanY(e.clientY - dragStart.y);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleWheel = (e: React.WheelEvent) => {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+      zoomIn();
+    } else {
+      zoomOut();
+    }
   };
 
   const nextPhoto = () => {
     if (selectedPhoto !== null) {
       setSelectedPhoto((selectedPhoto + 1) % yearData.photos.length);
+      resetZoom();
     }
   };
 
   const prevPhoto = () => {
     if (selectedPhoto !== null) {
       setSelectedPhoto((selectedPhoto - 1 + yearData.photos.length) % yearData.photos.length);
+      resetZoom();
     }
   };
 
@@ -164,6 +222,47 @@ const GalleryPhotoGrid: React.FC<GalleryPhotoGridProps> = ({ yearData, onBack })
             </svg>
           </button>
 
+          {/* Controles de Zoom */}
+          <div className="absolute top-4 left-4 flex flex-col gap-2 z-30">
+            <button
+              onClick={(e) => { e.stopPropagation(); zoomIn(); }}
+              className="bg-black/50 backdrop-blur-md hover:bg-black/70 text-white rounded-full p-3 transition-all hover:scale-110"
+              aria-label="Aumentar zoom"
+              title="Aumentar zoom"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              </svg>
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); zoomOut(); }}
+              className="bg-black/50 backdrop-blur-md hover:bg-black/70 text-white rounded-full p-3 transition-all hover:scale-110"
+              aria-label="Diminuir zoom"
+              title="Diminuir zoom"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 12H6" />
+              </svg>
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); resetZoom(); }}
+              className="bg-black/50 backdrop-blur-md hover:bg-black/70 text-white rounded-full p-3 transition-all hover:scale-110"
+              aria-label="Ajustar à tela"
+              title="Ajustar à tela"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Instrução de uso */}
+          {zoom === 1 && (
+            <div className="absolute top-20 left-4 bg-black/60 backdrop-blur-md rounded-lg px-3 py-2 text-white text-xs z-30 max-w-48">
+              <p>💡 Use os botões ao lado ou scroll do mouse para zoom. Arraste para navegar quando com zoom.</p>
+            </div>
+          )}
+
           {/* Navegação */}
           {yearData.photos.length > 1 && (
             <>
@@ -189,12 +288,30 @@ const GalleryPhotoGrid: React.FC<GalleryPhotoGridProps> = ({ yearData, onBack })
           )}
 
           {/* Imagem principal */}
-          <div className="max-w-[90vw] max-h-[85vh] mx-auto flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={yearData.photos[selectedPhoto].filename}
-              alt={yearData.photos[selectedPhoto].alt}
-              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-            />
+          <div 
+            className="max-w-[90vw] max-h-[85vh] mx-auto flex items-center justify-center overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+            onWheel={handleWheel}
+          >
+            <div
+              className="relative"
+              style={{
+                transform: `translate(${panX}px, ${panY}px) scale(${zoom})`,
+                cursor: zoom > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default',
+                transition: isDragging ? 'none' : 'transform 0.2s ease-out'
+              }}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+            >
+              <img
+                src={yearData.photos[selectedPhoto].filename}
+                alt={yearData.photos[selectedPhoto].alt}
+                className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg shadow-2xl select-none"
+                draggable={false}
+              />
+            </div>
           </div>
 
           {/* Informações da foto */}
@@ -211,10 +328,19 @@ const GalleryPhotoGrid: React.FC<GalleryPhotoGridProps> = ({ yearData, onBack })
                 )}
               </div>
             )}
-            <div className="bg-black/40 backdrop-blur-md rounded-full px-3 py-1">
-              <p className="text-xs font-medium">
-                {selectedPhoto + 1} / {yearData.photos.length}
-              </p>
+            <div className="flex gap-2 justify-center">
+              <div className="bg-black/40 backdrop-blur-md rounded-full px-3 py-1">
+                <p className="text-xs font-medium">
+                  {selectedPhoto + 1} / {yearData.photos.length}
+                </p>
+              </div>
+              {zoom !== 1 && (
+                <div className="bg-black/40 backdrop-blur-md rounded-full px-3 py-1">
+                  <p className="text-xs font-medium">
+                    {Math.round(zoom * 100)}%
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
