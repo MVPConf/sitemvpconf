@@ -19,21 +19,21 @@ export function useAgendaData(options: UseAgendaDataOptions) {
 
   const loadFromLocal = useCallback(async (): Promise<ApiResponse<ApiLoadResponse>> => {
     try {
-      const response = await fetch('./agenda/Palestras.json');
+      const response = await fetch('/data/2025/schedule.json');
       if (!response.ok) {
         return {
           ok: false,
           status: response.status,
-          message: `Falha ao carregar Palestras.json (HTTP ${response.status}).`
+          message: `Falha ao carregar schedule.json (HTTP ${response.status}).`
         };
       }
       const data = await response.json();
       return { ok: true, data: data || {} };
-    } catch (err) {
-      console.warn('loadFromLocal error', err);
+    } catch (error) {
+      console.error('loadFromLocal error:', error);
       return {
         ok: false,
-        message: 'Não foi possível carregar o arquivo Palestras.json.'
+        message: 'Não foi possível carregar o arquivo schedule.json.'
       };
     }
   }, []);
