@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
+import { Mail, Facebook, X, Linkedin, Instagram, Youtube } from 'lucide-react';
 import SiteCredits from './SiteCredits';
 
 const Footer: React.FC = () => {
@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
       <footer className="bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Footer Content */}
-          <div className="py-16 grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="py-16 grid grid-cols-1 md:grid-cols-5 gap-8">
             {/* Brand Section */}
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-3 mb-6 cursor-pointer"
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
                   <Facebook className="h-5 w-5" />
                 </a>
                 <a href="https://twitter.com/MVPConference" className="p-2 bg-gray-800 rounded-lg hover:bg-ms-blue-600 transition-colors">
-                  <Twitter className="h-5 w-5" />
+                  <X className="h-5 w-5" />
                 </a>
                 <a href="https://www.linkedin.com/company/mvp-conf" className="p-2 bg-gray-800 rounded-lg hover:bg-ms-blue-600 transition-colors">
                   <Linkedin className="h-5 w-5" />
@@ -123,6 +123,13 @@ const Footer: React.FC = () => {
                     <p className="text-gray-300">contato@mvpconf.com.br</p>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Denúncia Info */}
+            <div>
+              <h4 className="text-lg font-semibold mb-6">Denúncia</h4>
+              <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <Mail className="h-5 w-5 text-ms-blue-400 mt-0.5 flex-shrink-0" />
                   <div>
