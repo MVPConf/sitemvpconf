@@ -2,10 +2,24 @@ import React, { useState } from "react";
 import { buildStorageUrl, getStorageAccountUrl } from '../utils/storage';
 
 const images = [
-  buildStorageUrl(getStorageAccountUrl(), "/data/2019/pictures/foto000.jpeg"),
-  buildStorageUrl(getStorageAccountUrl(), "/data/2019/pictures/foto111.jpg"),
-  buildStorageUrl(getStorageAccountUrl(), "/data/2019/pictures/foto47.jpg"),
-  buildStorageUrl(getStorageAccountUrl(), "/data/2019/pictures/foto77.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0001.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0002.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0003.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0004.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0005.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0006.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0007.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0008.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0009.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0010.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0011.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0012.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0013.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0014.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0015.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0016.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0017.jpg"),
+  buildStorageUrl(getStorageAccountUrl(), "2025/pictures/carousel/MVPConf2025_0018.jpg")
 ];
 
 const Carousel: React.FC = () => {
