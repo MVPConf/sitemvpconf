@@ -136,12 +136,14 @@ const Carousel: React.FC = () => {
             </svg>
           </button>
 
-          <img
-            src={images[current]}
-            alt={`Foto ${current + 1}`}
-            className="max-w-4xl max-h-[80vh] object-contain rounded-lg shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          />
+          <div className="max-w-3xl max-h-[70vh] mx-auto">
+            <img
+              src={images[current]}
+              alt={`Foto ${current + 1}`}
+              className="w-full h-full object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
 
           <button
             onClick={(e) => { e.stopPropagation(); prev(); }}

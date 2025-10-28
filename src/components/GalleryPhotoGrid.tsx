@@ -189,11 +189,11 @@ const GalleryPhotoGrid: React.FC<GalleryPhotoGridProps> = ({ yearData, onBack })
           )}
 
           {/* Imagem principal */}
-          <div className="max-w-4xl max-h-[80vh]" onClick={(e) => e.stopPropagation()}>
+          <div className="max-w-3xl max-h-[70vh] mx-auto" onClick={(e) => e.stopPropagation()}>
             <img
               src={yearData.photos[selectedPhoto].filename}
               alt={yearData.photos[selectedPhoto].alt}
-              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+              className="w-full h-full object-contain rounded-lg shadow-2xl"
             />
           </div>
 
