@@ -86,28 +86,28 @@ const GalleryPhotoGrid: React.FC<GalleryPhotoGridProps> = ({ yearData, onBack })
         </div>
 
         {/* Grid de fotos */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4 mb-8">
           {yearData.photos.map((photo, index) => (
             <div
               key={photo.filename}
               onClick={() => openLightbox(index)}
-              className="group cursor-pointer bg-white/5 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105"
+              className="group cursor-pointer bg-white/5 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 aspect-square"
             >
               {!imageLoadErrors.has(photo.filename) ? (
                 <img
                   src={photo.filename}
                   alt={photo.alt}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   onError={() => handleImageError(photo.filename)}
                   loading="lazy"
                 />
               ) : (
-                <div className="w-full h-48 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
                   <div className="text-center text-gray-400">
-                    <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    <p className="text-sm">Imagem indisponível</p>
+                    <p className="text-xs">Imagem indisponível</p>
                   </div>
                 </div>
               )}
@@ -156,10 +156,10 @@ const GalleryPhotoGrid: React.FC<GalleryPhotoGridProps> = ({ yearData, onBack })
           {/* Botão fechar */}
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 text-white hover:text-cyan-400 transition-colors z-10"
+            className="absolute top-4 right-4 bg-black/50 backdrop-blur-md hover:bg-black/70 text-white hover:text-cyan-400 rounded-full p-3 transition-all hover:scale-110 z-30"
             aria-label="Fechar lightbox"
           >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
@@ -169,19 +169,19 @@ const GalleryPhotoGrid: React.FC<GalleryPhotoGridProps> = ({ yearData, onBack })
             <>
               <button
                 onClick={(e) => { e.stopPropagation(); prevPhoto(); }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white rounded-full p-4 shadow-lg transition-all hover:scale-110"
+                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-black/50 backdrop-blur-md hover:bg-black/70 text-white rounded-full p-3 md:p-4 shadow-lg transition-all hover:scale-110 z-20"
                 aria-label="Foto anterior"
               >
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
               <button
                 onClick={(e) => { e.stopPropagation(); nextPhoto(); }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white rounded-full p-4 shadow-lg transition-all hover:scale-110"
+                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-black/50 backdrop-blur-md hover:bg-black/70 text-white rounded-full p-3 md:p-4 shadow-lg transition-all hover:scale-110 z-20"
                 aria-label="Próxima foto"
               >
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
@@ -189,31 +189,33 @@ const GalleryPhotoGrid: React.FC<GalleryPhotoGridProps> = ({ yearData, onBack })
           )}
 
           {/* Imagem principal */}
-          <div className="max-w-3xl max-h-[70vh] mx-auto" onClick={(e) => e.stopPropagation()}>
+          <div className="max-w-[90vw] max-h-[85vh] mx-auto flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
             <img
               src={yearData.photos[selectedPhoto].filename}
               alt={yearData.photos[selectedPhoto].alt}
-              className="w-full h-full object-contain rounded-lg shadow-2xl"
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
             />
           </div>
 
           {/* Informações da foto */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center text-white">
-            <div className="bg-black/50 backdrop-blur-md rounded-lg px-6 py-3 mb-2">
-              {yearData.photos[selectedPhoto].description && (
-                <p className="text-lg font-medium mb-1">
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center text-white max-w-[90vw]">
+            {yearData.photos[selectedPhoto].description && (
+              <div className="bg-black/60 backdrop-blur-md rounded-lg px-4 py-2 mb-2 max-w-md mx-auto">
+                <p className="text-sm font-medium">
                   {yearData.photos[selectedPhoto].description}
                 </p>
-              )}
-              {yearData.photos[selectedPhoto].photographer && (
-                <p className="text-sm text-gray-300">
-                  📸 {yearData.photos[selectedPhoto].photographer}
-                </p>
-              )}
+                {yearData.photos[selectedPhoto].photographer && (
+                  <p className="text-xs text-gray-300 mt-1">
+                    📸 {yearData.photos[selectedPhoto].photographer}
+                  </p>
+                )}
+              </div>
+            )}
+            <div className="bg-black/40 backdrop-blur-md rounded-full px-3 py-1">
+              <p className="text-xs font-medium">
+                {selectedPhoto + 1} / {yearData.photos.length}
+              </p>
             </div>
-            <p className="text-sm font-medium">
-              {selectedPhoto + 1} / {yearData.photos.length}
-            </p>
           </div>
         </div>
       )}
