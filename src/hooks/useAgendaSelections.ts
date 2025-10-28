@@ -51,27 +51,42 @@ export function useAgendaSelections(schedule: Schedule) {
 
   // Seleciona uma palestra em um slot
   const selectTalk = useCallback((talk: Talk, slotId: string) => {
-    const slot = Object.values(schedule).flat().find(s => s.id === slotId);
-    if (!slot) return;
+    try {
+      console.log('📋 Selecionando palestra:', { talk: talk?.title, slotId });
+      
+      const slot = Object.values(schedule).flat().find(s => s.id === slotId);
+      if (!slot) {
+        console.error('❌ Slot não encontrado:', slotId);
+        return;
+      }
 
-    const day = slotId.slice(0, 10); // YYYY-MM-DD
+      const day = slotId.slice(0, 10); // YYYY-MM-DD
 
-    const selection: Selection = {
-      day,
-      slotId,
-      talkId: talk.id,
-      talkTitle: talk.title,
-      track: talk.track,
-      room: talk.room,
-      time: formatTimeFromSlotId(slotId),
-      speakers: talk.speaker ? [talk.speaker] : [],
-      isVacant: talk.isVacant || false
-    };
+      const selection: Selection = {
+        day,
+        slotId,
+        talkId: talk.id,
+        talkTitle: talk.title,
+        track: talk.track,
+        room: talk.room,
+        time: formatTimeFromSlotId(slotId),
+        speakers: talk.speaker ? [talk.speaker] : [],
+        isVacant: talk.isVacant || false
+      };
 
-    setSelections(prev => ({
-      ...prev,
-      [slotId]: selection
-    }));
+      console.log('✅ Seleção criada:', selection);
+
+      setSelections(prev => ({
+        ...prev,
+        [slotId]: selection
+      }));
+      
+      console.log('📊 Seleções atualizadas');
+    } catch (error) {
+      console.error('🚨 Erro ao selecionar palestra:', error);
+      console.error('🚨 Talk data:', talk);
+      console.error('🚨 SlotId:', slotId);
+    }
   }, [schedule]);
 
   // Limpa todas as seleções
