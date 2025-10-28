@@ -57,7 +57,9 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* MVP Startups Challenge Box */}
+        {/* Seções removidas - evento já passou */}
+        {/* 
+        MVP Startups Challenge Box
         <div className="mb-12 max-w-4xl mx-auto">
           <a 
             href="/mvp-startups-challenge.html" 
@@ -119,7 +121,6 @@ const Hero: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Avisos de Data e Chegada */}
                 <div className="mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-3">
                   <div className="inline-flex items-center space-x-2 bg-blue-500/20 px-3 py-1 rounded-full border border-blue-400/30 text-blue-100 text-sm">
                     <Calendar className="h-4 w-4 text-blue-200" />
@@ -145,7 +146,7 @@ const Hero: React.FC = () => {
           </a>
         </div>
 
-        {/* Intensivão de Segurança Box */}
+        Intensivão de Segurança Box
         <div className="mb-12 max-w-4xl mx-auto">
           <a
             href="/intensivao-sc900.html"
@@ -191,6 +192,7 @@ const Hero: React.FC = () => {
             </div>
           </a>
         </div>
+        */}
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 sm:mb-16 lg:mb-20">
