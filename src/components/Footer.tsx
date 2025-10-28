@@ -123,6 +123,12 @@ const Footer: React.FC = () => {
                     <p className="text-gray-300">contato@mvpconf.com.br</p>
                   </div>
                 </div>
+                <div className="flex items-start space-x-3">
+                  <Mail className="h-5 w-5 text-ms-blue-400 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-gray-300">ouvidoria@mvpconf.com.br</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
