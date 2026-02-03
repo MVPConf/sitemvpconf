@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/logo_blue.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>MVP Conf Africa 2026 | Connecting Africa Through Technology</title>
+  <meta name="title" content="MVP Conf Africa 2026 | Connecting Africa Through Technology" />
+  <meta name="description" content="Join us for the first MVP Conf in Africa! A free online event celebrating innovation, diversity, and the Microsoft technology community across the African continent." />
+  <meta name="keywords" content="Microsoft MVP, MVP Conf Africa, technology event, online conference, Microsoft Africa, Azure, .NET, Power Platform, AI, cloud computing, Africa tech" />
+  <meta name="author" content="MVP Conf" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mvpconf.africa/" />
+  <meta property="og:title" content="MVP Conf Africa 2026 | Connecting Africa Through Technology" />
+  <meta property="og:description" content="Join us for the first MVP Conf in Africa! A free online event celebrating innovation and the Microsoft community." />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://mvpconf.africa/" />
+  <meta property="twitter:title" content="MVP Conf Africa 2026" />
+  <meta property="twitter:description" content="Join us for the first MVP Conf in Africa! A free online event." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: #ffffff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    /* Language Switcher */
+    .lang-switcher {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 8px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .lang-btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .lang-btn.active {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+    }
+    
+    .lang-btn:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px 60px;
+      position: relative;
+      overflow: hidden;
+      background: 
+        /* African sunset gradient */
+        linear-gradient(180deg, 
+          rgba(15, 23, 42, 0.9) 0%,
+          rgba(30, 20, 10, 0.85) 30%,
+          rgba(120, 50, 20, 0.7) 60%,
+          rgba(200, 100, 30, 0.6) 80%,
+          rgba(245, 158, 11, 0.4) 100%
+        );
+    }
+    
+    /* African pattern overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        /* Tribal geometric patterns */
+        repeating-linear-gradient(
+          60deg,
+          transparent,
+          transparent 30px,
+          rgba(245, 158, 11, 0.03) 30px,
+          rgba(245, 158, 11, 0.03) 32px
+        ),
+        repeating-linear-gradient(
+          -60deg,
+          transparent,
+          transparent 30px,
+          rgba(217, 119, 6, 0.03) 30px,
+          rgba(217, 119, 6, 0.03) 32px
+        ),
+        /* Diamond pattern inspired by Kente cloth */
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 50px,
+          rgba(255, 200, 100, 0.02) 50px,
+          rgba(255, 200, 100, 0.02) 52px
+        ),
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 50px,
+          rgba(255, 150, 50, 0.02) 50px,
+          rgba(255, 150, 50, 0.02) 52px
+        );
+      pointer-events: none;
+    }
+    
+    /* Animated background elements */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(217, 119, 6, 0.12) 0%, transparent 35%),
+        radial-gradient(circle at 40% 80%, rgba(180, 83, 9, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 70% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 30%);
+      animation: float 25s ease-in-out infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+      25% { transform: translate(-15px, -25px) rotate(2deg) scale(1.02); }
+      50% { transform: translate(-25px, -15px) rotate(5deg) scale(1); }
+      75% { transform: translate(-10px, -30px) rotate(3deg) scale(1.01); }
+    }
+    
+    /* Floating African-themed decorative elements */
+    .hero-decorations {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    
+    .deco-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid rgba(245, 158, 11, 0.2);
+      animation: floatElement 8s ease-in-out infinite;
+    }
+    
+    .deco-circle:nth-child(1) {
+      width: 100px;
+      height: 100px;
+      top: 10%;
+      left: 5%;
+      animation-delay: 0s;
+      border-color: rgba(245, 158, 11, 0.15);
+    }
+    
+    .deco-circle:nth-child(2) {
+      width: 60px;
+      height: 60px;
+      top: 20%;
+      right: 10%;
+      animation-delay: 2s;
+      border-color: rgba(217, 119, 6, 0.2);
+    }
+    
+    .deco-circle:nth-child(3) {
+      width: 80px;
+      height: 80px;
+      bottom: 25%;
+      left: 8%;
+      animation-delay: 4s;
+      border-color: rgba(251, 191, 36, 0.15);
+    }
+    
+    .deco-circle:nth-child(4) {
+      width: 120px;
+      height: 120px;
+      bottom: 15%;
+      right: 5%;
+      animation-delay: 1s;
+      border-color: rgba(180, 83, 9, 0.12);
+    }
+    
+    .deco-diamond {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.05));
+      transform: rotate(45deg);
+      animation: floatElement 10s ease-in-out infinite;
+    }
+    
+    .deco-diamond:nth-child(5) {
+      top: 15%;
+      left: 15%;
+      animation-delay: 3s;
+    }
+    
+    .deco-diamond:nth-child(6) {
+      top: 30%;
+      right: 20%;
+      animation-delay: 5s;
+      width: 30px;
+      height: 30px;
+    }
+    
+    .deco-diamond:nth-child(7) {
+      bottom: 35%;
+      right: 15%;
+      animation-delay: 7s;
+      width: 50px;
+      height: 50px;
+    }
+    
+    /* African-inspired triangles */
+    .deco-triangle {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+      border-bottom: 43px solid rgba(245, 158, 11, 0.08);
+      animation: floatElement 12s ease-in-out infinite;
+    }
+    
+    .deco-triangle:nth-child(8) {
+      top: 25%;
+      left: 20%;
+      animation-delay: 2s;
+    }
+    
+    .deco-triangle:nth-child(9) {
+      bottom: 20%;
+      left: 25%;
+      animation-delay: 6s;
+      transform: rotate(180deg);
+      border-bottom-color: rgba(217, 119, 6, 0.06);
+    }
+    
+    @keyframes floatElement {
+      0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+      50% { transform: translateY(-20px) rotate(10deg); opacity: 1; }
+    }
+    
+    /* Sun glow effect */
+    .sun-glow {
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse at center bottom, 
+        rgba(255, 150, 50, 0.4) 0%,
+        rgba(245, 158, 11, 0.2) 30%,
+        rgba(217, 119, 6, 0.1) 50%,
+        transparent 70%
+      );
+      filter: blur(40px);
+      animation: sunPulse 8s ease-in-out infinite;
+    }
+    
+    @keyframes sunPulse {
+      0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+      50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+    }
+    
+    /* Acacia tree silhouettes */
+    .tree-silhouette {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 150px;
+      background: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cpath d='M20,100 L22,70 Q10,65 5,55 Q0,45 15,40 Q5,35 10,25 Q15,15 30,20 Q25,10 35,5 Q50,0 60,15 Q70,5 80,15 Q90,0 100,10 Q110,5 115,20 Q130,15 135,30 Q145,25 150,40 Q165,35 160,50 Q175,55 165,65 Q180,70 178,100 Z' fill='rgba(10,10,15,0.4)'/%3E%3C/svg%3E") 
+        no-repeat left bottom / 200px 100px,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cpath d='M20,100 L22,70 Q10,65 5,55 Q0,45 15,40 Q5,35 10,25 Q15,15 30,20 Q25,10 35,5 Q50,0 60,15 Q70,5 80,15 Q90,0 100,10 Q110,5 115,20 Q130,15 135,30 Q145,25 150,40 Q165,35 160,50 Q175,55 165,65 Q180,70 178,100 Z' fill='rgba(10,10,15,0.3)'/%3E%3C/svg%3E") 
+        no-repeat right bottom / 180px 90px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 10;
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(217, 119, 6, 0.2));
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 17px;
+      font-weight: 600;
+      color: #fbbf24;
+      margin-bottom: 35px;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+    }
+    
+    .hero h1 {
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 800;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 60px rgba(245, 158, 11, 0.3);
+    }
+    
+    .hero h1 span {
+      display: block;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 600;
+      background: linear-gradient(135deg, #ffffff, #e2e8f0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-top: 12px;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 800px;
+      margin: 0 auto 50px;
+      line-height: 1.9;
+    }
+    
+    .hero-icons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+    
+    .hero-icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.3s ease;
+    }
+    
+    .hero-icon-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .hero-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(217, 119, 6, 0.2));
+      border: 2px solid rgba(245, 158, 11, 0.35);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
+      transition: all 0.3s ease;
+    }
+    
+    .hero-icon-item:hover .hero-icon {
+      border-color: rgba(245, 158, 11, 0.6);
+      box-shadow: 0 15px 40px rgba(245, 158, 11, 0.25);
+    }
+    
+    .hero-icon-text {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 600;
+    }
+    
+    /* Section Styles */
+    section {
+      padding: 100px 20px;
+    }
+    
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 60px;
+      line-height: 1.7;
+    }
+    
+    /* History Section */
+    .history {
+      background: linear-gradient(180deg, transparent, rgba(245, 158, 11, 0.05), transparent);
+    }
+    
+    .history-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    @media (max-width: 768px) {
+      .history-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+    
+    .history-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    
+    .history-text p {
+      margin-bottom: 20px;
+    }
+    
+    .history-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .stat-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(245, 158, 11, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    /* Purpose Section */
+    .purpose {
+      background: linear-gradient(180deg, transparent, rgba(217, 119, 6, 0.05), transparent);
+    }
+    
+    .purpose-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .purpose-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 40px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .purpose-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #fbbf24, #f59e0b, #d97706);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .purpose-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(245, 158, 11, 0.3);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    }
+    
+    .purpose-card:hover::before {
+      opacity: 1;
+    }
+    
+    .purpose-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(217, 119, 6, 0.2));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
+    
+    .purpose-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #fbbf24;
+    }
+    
+    .purpose-card p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.7;
+    }
+    
+    /* Sessions Section */
+    .sessions {
+      background: linear-gradient(180deg, transparent, rgba(245, 158, 11, 0.08), transparent);
+    }
+    
+    .sessions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+    
+    @media (max-width: 400px) {
+      .sessions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .session-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      padding: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .session-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: rgba(245, 158, 11, 0.4);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    }
+    
+    .session-header {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(217, 119, 6, 0.2));
+      padding: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .session-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fbbf24;
+      margin-bottom: 12px;
+    }
+    
+    .session-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.4;
+    }
+    
+    .session-body {
+      padding: 24px;
+    }
+    
+    .session-description {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    
+    .session-speaker {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .speaker-avatar {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #fbbf24, #d97706);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+      color: white;
+    }
+    
+    .speaker-info h4 {
+      font-weight: 600;
+      color: white;
+      margin-bottom: 4px;
+    }
+    
+    .speaker-info p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .online-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(22, 163, 74, 0.2));
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #4ade80;
+      margin-left: auto;
+    }
+    
+    .online-dot {
+      width: 8px;
+      height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: blink 1.5s infinite;
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    
+    /* YouTube Section */
+    .youtube {
+      text-align: center;
+      padding: 120px 20px;
+      background: linear-gradient(180deg, transparent, rgba(245, 158, 11, 0.1));
+    }
+    
+    .youtube-icon {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #ff0000, #cc0000);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      font-size: 48px;
+      box-shadow: 0 20px 40px rgba(255, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .youtube-icon:hover {
+      transform: scale(1.1) rotate(-5deg);
+    }
+    
+    .youtube h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+    }
+    
+    .youtube p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    
+    .youtube-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #ff0000, #cc0000);
+      color: white;
+      padding: 18px 40px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+    }
+    
+    .youtube-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(255, 0, 0, 0.4);
+    }
+    
+    .youtube-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+    
+    /* Footer */
+    footer {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    footer p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 14px;
+    }
+    
+    footer a {
+      color: #fbbf24;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    footer a:hover {
+      color: #f59e0b;
+    }
+    
+    /* Language visibility */
+    [data-lang="pt"] { display: none; }
+    html[lang="pt"] [data-lang="en"] { display: none; }
+    html[lang="pt"] [data-lang="pt"] { display: block; }
+    html[lang="pt"] span[data-lang="pt"] { display: inline; }
+    html[lang="en"] span[data-lang="pt"] { display: none; }
+    html[lang="en"] span[data-lang="en"] { display: inline; }
+    html[lang="pt"] span[data-lang="en"] { display: none; }
+  </style>
+</head>
+
+<body>
+  <!-- Language Switcher -->
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLanguage('en')" id="btn-en">EN</button>
+    <button class="lang-btn" onclick="setLanguage('pt')" id="btn-pt">PT</button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Decorative African elements -->
+    <div class="hero-decorations">
+      <div class="deco-circle"></div>
+      <div class="deco-circle"></div>
+      <div class="deco-circle"></div>
+      <div class="deco-circle"></div>
+      <div class="deco-diamond"></div>
+      <div class="deco-diamond"></div>
+      <div class="deco-diamond"></div>
+      <div class="deco-triangle"></div>
+      <div class="deco-triangle"></div>
+    </div>
+    
+    <!-- Sun glow effect -->
+    <div class="sun-glow"></div>
+    
+    <!-- Tree silhouettes -->
+    <div class="tree-silhouette"></div>
+    
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>🌍</span>
+        <span data-lang="en">First Edition in Africa</span>
+        <span data-lang="pt">Primeira Edição na África</span>
+      </div>
+      
+      <h1>
+        MVP Conf Africa
+        <span>2026</span>
+      </h1>
+      
+      <p class="hero-subtitle" data-lang="en">
+        🌅 From the heart of the African savanna to screens worldwide. Join us for an extraordinary 
+        online event celebrating innovation, Ubuntu spirit, and the vibrant Microsoft community 
+        across the African continent.
+      </p>
+      <p class="hero-subtitle" data-lang="pt">
+        🌅 Do coração da savana africana para telas em todo o mundo. Junte-se a nós em um evento 
+        online extraordinário celebrando a inovação, o espírito Ubuntu e a vibrante comunidade 
+        Microsoft em todo o continente africano.
+      </p>
+      
+      <div class="hero-icons">
+        <div class="hero-icon-item">
+          <div class="hero-icon">🌍</div>
+          <span class="hero-icon-text" data-lang="en">Pan-African</span>
+          <span class="hero-icon-text" data-lang="pt">Pan-Africano</span>
+        </div>
+        <div class="hero-icon-item">
+          <div class="hero-icon">📡</div>
+          <span class="hero-icon-text" data-lang="en">100% Online</span>
+          <span class="hero-icon-text" data-lang="pt">100% Online</span>
+        </div>
+        <div class="hero-icon-item">
+          <div class="hero-icon">🎫</div>
+          <span class="hero-icon-text" data-lang="en">Free Access</span>
+          <span class="hero-icon-text" data-lang="pt">Acesso Gratuito</span>
+        </div>
+        <div class="hero-icon-item">
+          <div class="hero-icon">🦁</div>
+          <span class="hero-icon-text" data-lang="en">African Spirit</span>
+          <span class="hero-icon-text" data-lang="pt">Espírito Africano</span>
+        </div>
+        <div class="hero-icon-item">
+          <div class="hero-icon">🤝</div>
+          <span class="hero-icon-text" data-lang="en">Ubuntu</span>
+          <span class="hero-icon-text" data-lang="pt">Ubuntu</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History Section -->
+  <section class="history" id="history">
+    <div class="container">
+      <h2 class="section-title" data-lang="en">The History of MVP Conf</h2>
+      <h2 class="section-title" data-lang="pt">A História do MVP Conf</h2>
+      
+      <p class="section-subtitle" data-lang="en">
+        A journey of passion, community, and technological excellence
+      </p>
+      <p class="section-subtitle" data-lang="pt">
+        Uma jornada de paixão, comunidade e excelência tecnológica
+      </p>
+      
+      <div class="history-content">
+        <div class="history-text">
+          <p data-lang="en">
+            MVP Conf started in Brazil as a small gathering of Microsoft Most Valuable Professionals (MVPs) 
+            who shared a common goal: to spread knowledge and build a stronger tech community. What began as 
+            a modest local event has grown into one of the most important Microsoft community conferences in 
+            Latin America.
+          </p>
+          <p data-lang="pt">
+            O MVP Conf começou no Brasil como um pequeno encontro de Microsoft Most Valuable Professionals (MVPs) 
+            que compartilhavam um objetivo comum: disseminar conhecimento e construir uma comunidade tech mais forte. 
+            O que começou como um evento local modesto cresceu e se tornou uma das conferências de comunidade Microsoft 
+            mais importantes da América Latina.
+          </p>
+          
+          <p data-lang="en">
+            Over the years, MVP Conf has hosted hundreds of sessions covering Azure, .NET, Power Platform, 
+            Microsoft 365, AI, and emerging technologies. The event has become a platform where seasoned 
+            experts and newcomers alike can learn, share experiences, and forge lasting professional relationships.
+          </p>
+          <p data-lang="pt">
+            Ao longo dos anos, o MVP Conf hospedou centenas de sessões cobrindo Azure, .NET, Power Platform, 
+            Microsoft 365, IA e tecnologias emergentes. O evento se tornou uma plataforma onde especialistas 
+            experientes e iniciantes podem aprender, compartilhar experiências e formar relacionamentos 
+            profissionais duradouros.
+          </p>
+          
+          <p data-lang="en">
+            Now, we are thrilled to bring this tradition to Africa, expanding our mission to empower 
+            tech communities across continents and celebrate the incredible talent emerging from the 
+            African technology ecosystem.
+          </p>
+          <p data-lang="pt">
+            Agora, estamos entusiasmados em trazer essa tradição para a África, expandindo nossa missão 
+            de empoderar comunidades tech através dos continentes e celebrar o incrível talento emergente 
+            do ecossistema tecnológico africano.
+          </p>
+        </div>
+        
+        <div class="history-stats">
+          <div class="stat-card">
+            <div class="stat-number">10+</div>
+            <div class="stat-label" data-lang="en">Years of History</div>
+            <div class="stat-label" data-lang="pt">Anos de História</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">500+</div>
+            <div class="stat-label" data-lang="en">Sessions Delivered</div>
+            <div class="stat-label" data-lang="pt">Sessões Realizadas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">200+</div>
+            <div class="stat-label" data-lang="en">Expert Speakers</div>
+            <div class="stat-label" data-lang="pt">Palestrantes Especialistas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">5000+</div>
+            <div class="stat-label" data-lang="en">Community Members</div>
+            <div class="stat-label" data-lang="pt">Membros da Comunidade</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Purpose Section -->
+  <section class="purpose" id="purpose">
+    <div class="container">
+      <h2 class="section-title" data-lang="en">Our Purpose</h2>
+      <h2 class="section-title" data-lang="pt">Nosso Propósito</h2>
+      
+      <p class="section-subtitle" data-lang="en">
+        MVP Conf Africa is more than an event — it's a movement to unite and empower
+      </p>
+      <p class="section-subtitle" data-lang="pt">
+        O MVP Conf Africa é mais do que um evento — é um movimento para unir e empoderar
+      </p>
+      
+      <div class="purpose-grid">
+        <div class="purpose-card">
+          <div class="purpose-icon">🌍</div>
+          <h3 data-lang="en">Connect Africa to the World</h3>
+          <h3 data-lang="pt">Conectar a África ao Mundo</h3>
+          <p data-lang="en">
+            Bridge the gap between African tech talent and the global Microsoft community, 
+            creating opportunities for collaboration, mentorship, and growth.
+          </p>
+          <p data-lang="pt">
+            Conectar o talento tech africano à comunidade global Microsoft, criando 
+            oportunidades para colaboração, mentoria e crescimento.
+          </p>
+        </div>
+        
+        <div class="purpose-card">
+          <div class="purpose-icon">💡</div>
+          <h3 data-lang="en">Inspire Innovation</h3>
+          <h3 data-lang="pt">Inspirar Inovação</h3>
+          <p data-lang="en">
+            Showcase cutting-edge technologies and innovative solutions that are 
+            transforming industries across the African continent and beyond.
+          </p>
+          <p data-lang="pt">
+            Apresentar tecnologias de ponta e soluções inovadoras que estão 
+            transformando indústrias em todo o continente africano e além.
+          </p>
+        </div>
+        
+        <div class="purpose-card">
+          <div class="purpose-icon">🤝</div>
+          <h3 data-lang="en">Build Community</h3>
+          <h3 data-lang="pt">Construir Comunidade</h3>
+          <p data-lang="en">
+            Foster a supportive network of developers, IT professionals, and technology 
+            enthusiasts who share knowledge and lift each other up.
+          </p>
+          <p data-lang="pt">
+            Fomentar uma rede de apoio de desenvolvedores, profissionais de TI e 
+            entusiastas de tecnologia que compartilham conhecimento e se ajudam mutuamente.
+          </p>
+        </div>
+        
+        <div class="purpose-card">
+          <div class="purpose-icon">🚀</div>
+          <h3 data-lang="en">Accelerate Careers</h3>
+          <h3 data-lang="pt">Acelerar Carreiras</h3>
+          <p data-lang="en">
+            Provide valuable learning experiences and networking opportunities that 
+            help attendees advance their professional journeys.
+          </p>
+          <p data-lang="pt">
+            Proporcionar experiências de aprendizado valiosas e oportunidades de 
+            networking que ajudam os participantes a avançar em suas jornadas profissionais.
+          </p>
+        </div>
+        
+        <div class="purpose-card">
+          <div class="purpose-icon">🎯</div>
+          <h3 data-lang="en">Democratize Knowledge</h3>
+          <h3 data-lang="pt">Democratizar o Conhecimento</h3>
+          <p data-lang="en">
+            Make high-quality technical content accessible to everyone, regardless of 
+            location or economic background, through our free online format.
+          </p>
+          <p data-lang="pt">
+            Tornar conteúdo técnico de alta qualidade acessível a todos, independentemente 
+            de localização ou condição econômica, através do nosso formato online gratuito.
+          </p>
+        </div>
+        
+        <div class="purpose-card">
+          <div class="purpose-icon">🌟</div>
+          <h3 data-lang="en">Celebrate Diversity</h3>
+          <h3 data-lang="pt">Celebrar a Diversidade</h3>
+          <p data-lang="en">
+            Honor the rich cultural heritage and diverse perspectives that African 
+            technologists bring to the global tech community.
+          </p>
+          <p data-lang="pt">
+            Honrar a rica herança cultural e as perspectivas diversas que os 
+            tecnologistas africanos trazem para a comunidade tech global.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sessions Section -->
+  <section class="sessions" id="sessions">
+    <div class="container">
+      <h2 class="section-title" data-lang="en">Sessions</h2>
+      <h2 class="section-title" data-lang="pt">Palestras</h2>
+      
+      <p class="section-subtitle" data-lang="en">
+        Three inspiring online sessions delivered by Microsoft experts
+      </p>
+      <p class="section-subtitle" data-lang="pt">
+        Três sessões online inspiradoras apresentadas por especialistas Microsoft
+      </p>
+      
+      <div class="sessions-grid">
+        <!-- Session 1 -->
+        <div class="session-card">
+          <div class="session-header">
+            <div class="session-time">
+              🕐 <span data-lang="en">Session 1</span><span data-lang="pt">Sessão 1</span>
+            </div>
+            <h3 class="session-title" data-lang="en">Building the Future with Azure AI</h3>
+            <h3 class="session-title" data-lang="pt">Construindo o Futuro com Azure AI</h3>
+          </div>
+          <div class="session-body">
+            <p class="session-description" data-lang="en">
+              Explore the latest advancements in Azure AI services and learn how African 
+              organizations are leveraging artificial intelligence to solve local challenges 
+              and drive innovation.
+            </p>
+            <p class="session-description" data-lang="pt">
+              Explore os últimos avanços em serviços Azure AI e aprenda como organizações 
+              africanas estão aproveitando a inteligência artificial para resolver desafios 
+              locais e impulsionar a inovação.
+            </p>
+            <div class="session-speaker">
+              <div class="speaker-avatar">TBA</div>
+              <div class="speaker-info">
+                <h4 data-lang="en">Speaker TBA</h4>
+                <h4 data-lang="pt">Palestrante a confirmar</h4>
+                <p>Microsoft MVP</p>
+              </div>
+              <span class="online-badge">
+                <span class="online-dot"></span>
+                ONLINE
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Session 2 -->
+        <div class="session-card">
+          <div class="session-header">
+            <div class="session-time">
+              🕐 <span data-lang="en">Session 2</span><span data-lang="pt">Sessão 2</span>
+            </div>
+            <h3 class="session-title" data-lang="en">Power Platform: Empowering Citizen Developers</h3>
+            <h3 class="session-title" data-lang="pt">Power Platform: Empoderando Desenvolvedores Cidadãos</h3>
+          </div>
+          <div class="session-body">
+            <p class="session-description" data-lang="en">
+              Discover how Power Platform enables anyone to build powerful applications 
+              without traditional coding skills, democratizing technology across Africa.
+            </p>
+            <p class="session-description" data-lang="pt">
+              Descubra como a Power Platform permite que qualquer pessoa construa aplicações 
+              poderosas sem habilidades tradicionais de programação, democratizando a tecnologia 
+              em toda a África.
+            </p>
+            <div class="session-speaker">
+              <div class="speaker-avatar">TBA</div>
+              <div class="speaker-info">
+                <h4 data-lang="en">Speaker TBA</h4>
+                <h4 data-lang="pt">Palestrante a confirmar</h4>
+                <p>Microsoft MVP</p>
+              </div>
+              <span class="online-badge">
+                <span class="online-dot"></span>
+                ONLINE
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Session 3 -->
+        <div class="session-card">
+          <div class="session-header">
+            <div class="session-time">
+              🕐 <span data-lang="en">Session 3</span><span data-lang="pt">Sessão 3</span>
+            </div>
+            <h3 class="session-title" data-lang="en">Cloud Native Development with .NET</h3>
+            <h3 class="session-title" data-lang="pt">Desenvolvimento Cloud Native com .NET</h3>
+          </div>
+          <div class="session-body">
+            <p class="session-description" data-lang="en">
+              Learn best practices for building scalable, resilient cloud-native applications 
+              using the latest .NET technologies and Azure Kubernetes Service.
+            </p>
+            <p class="session-description" data-lang="pt">
+              Aprenda as melhores práticas para construir aplicações cloud-native escaláveis 
+              e resilientes usando as últimas tecnologias .NET e Azure Kubernetes Service.
+            </p>
+            <div class="session-speaker">
+              <div class="speaker-avatar">TBA</div>
+              <div class="speaker-info">
+                <h4 data-lang="en">Speaker TBA</h4>
+                <h4 data-lang="pt">Palestrante a confirmar</h4>
+                <p>Microsoft MVP</p>
+              </div>
+              <span class="online-badge">
+                <span class="online-dot"></span>
+                ONLINE
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YouTube Section -->
+  <section class="youtube" id="watch">
+    <div class="container">
+      <div class="youtube-icon">
+        ▶️
+      </div>
+      
+      <h2 data-lang="en">Watch Live on YouTube</h2>
+      <h2 data-lang="pt">Assista ao Vivo no YouTube</h2>
+      
+      <p data-lang="en">
+        Can't attend live? No problem! All sessions will be streamed on our YouTube channel. 
+        Subscribe now to get notified when we go live!
+      </p>
+      <p data-lang="pt">
+        Não pode participar ao vivo? Sem problema! Todas as sessões serão transmitidas em nosso 
+        canal do YouTube. Inscreva-se agora para ser notificado quando estivermos ao vivo!
+      </p>
+      
+      <a href="https://youtube.com/@mvpconf" target="_blank" rel="noopener noreferrer" class="youtube-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+        <span data-lang="en">Subscribe on YouTube</span>
+        <span data-lang="pt">Inscreva-se no YouTube</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p data-lang="en">
+        © 2026 MVP Conf Africa. An initiative by the <a href="https://mvpconf.com.br">MVP Conf Brasil</a> community.
+        <br><br>
+        Made with 🧡 for the African tech community
+      </p>
+      <p data-lang="pt">
+        © 2026 MVP Conf Africa. Uma iniciativa da comunidade <a href="https://mvpconf.com.br">MVP Conf Brasil</a>.
+        <br><br>
+        Feito com 🧡 para a comunidade tech africana
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      
+      // Update button states
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+      
+      // Save preference
+      localStorage.setItem('mvpconf-africa-lang', lang);
+    }
+    
+    // Load saved language preference
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('mvpconf-africa-lang') || 'en';
+      setLanguage(savedLang);
+    });
+  </script>
+</body>
+
+</html>
