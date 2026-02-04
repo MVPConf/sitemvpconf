@@ -799,13 +799,25 @@
     }
     
     /* Language visibility */
-    [data-lang="pt"] { display: none; }
-    html[lang="pt"] [data-lang="en"] { display: none; }
+    [data-lang="pt"], [data-lang="fr"] { display: none; }
+    
+    /* English active */
+    html[lang="en"] [data-lang="en"] { display: block; }
+    html[lang="en"] span[data-lang="en"] { display: inline; }
+    html[lang="en"] [data-lang="pt"], html[lang="en"] [data-lang="fr"] { display: none; }
+    html[lang="en"] span[data-lang="pt"], html[lang="en"] span[data-lang="fr"] { display: none; }
+    
+    /* Portuguese active */
     html[lang="pt"] [data-lang="pt"] { display: block; }
     html[lang="pt"] span[data-lang="pt"] { display: inline; }
-    html[lang="en"] span[data-lang="pt"] { display: none; }
-    html[lang="en"] span[data-lang="en"] { display: inline; }
-    html[lang="pt"] span[data-lang="en"] { display: none; }
+    html[lang="pt"] [data-lang="en"], html[lang="pt"] [data-lang="fr"] { display: none; }
+    html[lang="pt"] span[data-lang="en"], html[lang="pt"] span[data-lang="fr"] { display: none; }
+    
+    /* French active */
+    html[lang="fr"] [data-lang="fr"] { display: block; }
+    html[lang="fr"] span[data-lang="fr"] { display: inline; }
+    html[lang="fr"] [data-lang="en"], html[lang="fr"] [data-lang="pt"] { display: none; }
+    html[lang="fr"] span[data-lang="en"], html[lang="fr"] span[data-lang="pt"] { display: none; }
   </style>
 </head>
 
@@ -813,6 +825,7 @@
   <!-- Language Switcher -->
   <div class="lang-switcher">
     <button class="lang-btn active" onclick="setLanguage('en')" id="btn-en">EN</button>
+    <button class="lang-btn" onclick="setLanguage('fr')" id="btn-fr">FR</button>
     <button class="lang-btn" onclick="setLanguage('pt')" id="btn-pt">PT</button>
   </div>
 
@@ -841,6 +854,7 @@
       <div class="hero-badge">
         <span>🌍</span>
         <span data-lang="en">First Edition in Africa</span>
+        <span data-lang="fr">Première Édition en Afrique</span>
         <span data-lang="pt">Primeira Edição na África</span>
       </div>
       
@@ -854,6 +868,11 @@
         online event celebrating innovation, Ubuntu spirit, and the vibrant Microsoft community 
         across the African continent.
       </p>
+      <p class="hero-subtitle" data-lang="fr">
+        🌅 Du cœur de la savane africaine aux écrans du monde entier. Rejoignez-nous pour un événement 
+        en ligne extraordinaire célébrant l'innovation, l'esprit Ubuntu et la communauté Microsoft 
+        vibrante à travers le continent africain.
+      </p>
       <p class="hero-subtitle" data-lang="pt">
         🌅 Do coração da savana africana para telas em todo o mundo. Junte-se a nós em um evento 
         online extraordinário celebrando a inovação, o espírito Ubuntu e a vibrante comunidade 
@@ -864,26 +883,31 @@
         <div class="hero-icon-item">
           <div class="hero-icon">🌍</div>
           <span class="hero-icon-text" data-lang="en">Pan-African</span>
+          <span class="hero-icon-text" data-lang="fr">Panafricain</span>
           <span class="hero-icon-text" data-lang="pt">Pan-Africano</span>
         </div>
         <div class="hero-icon-item">
           <div class="hero-icon">📡</div>
           <span class="hero-icon-text" data-lang="en">100% Online</span>
+          <span class="hero-icon-text" data-lang="fr">100% En Ligne</span>
           <span class="hero-icon-text" data-lang="pt">100% Online</span>
         </div>
         <div class="hero-icon-item">
           <div class="hero-icon">🎫</div>
           <span class="hero-icon-text" data-lang="en">Free Access</span>
+          <span class="hero-icon-text" data-lang="fr">Accès Gratuit</span>
           <span class="hero-icon-text" data-lang="pt">Acesso Gratuito</span>
         </div>
         <div class="hero-icon-item">
           <div class="hero-icon">🦁</div>
           <span class="hero-icon-text" data-lang="en">African Spirit</span>
+          <span class="hero-icon-text" data-lang="fr">Esprit Africain</span>
           <span class="hero-icon-text" data-lang="pt">Espírito Africano</span>
         </div>
         <div class="hero-icon-item">
           <div class="hero-icon">🤝</div>
           <span class="hero-icon-text" data-lang="en">Ubuntu</span>
+          <span class="hero-icon-text" data-lang="fr">Ubuntu</span>
           <span class="hero-icon-text" data-lang="pt">Ubuntu</span>
         </div>
       </div>
@@ -894,10 +918,14 @@
   <section class="history" id="history">
     <div class="container">
       <h2 class="section-title" data-lang="en">The History of MVP Conf</h2>
+      <h2 class="section-title" data-lang="fr">L'Histoire de MVP Conf</h2>
       <h2 class="section-title" data-lang="pt">A História do MVP Conf</h2>
       
       <p class="section-subtitle" data-lang="en">
         A journey of passion, community, and technological excellence
+      </p>
+      <p class="section-subtitle" data-lang="fr">
+        Un voyage de passion, de communauté et d'excellence technologique
       </p>
       <p class="section-subtitle" data-lang="pt">
         Uma jornada de paixão, comunidade e excelência tecnológica
@@ -911,6 +939,12 @@
             a modest local event has grown into one of the most important Microsoft community conferences in 
             Latin America.
           </p>
+          <p data-lang="fr">
+            MVP Conf a commencé au Brésil comme un petit rassemblement de Microsoft Most Valuable Professionals (MVPs) 
+            qui partageaient un objectif commun : diffuser les connaissances et construire une communauté tech plus forte. 
+            Ce qui a commencé comme un modeste événement local est devenu l'une des conférences communautaires Microsoft 
+            les plus importantes d'Amérique latine.
+          </p>
           <p data-lang="pt">
             O MVP Conf começou no Brasil como um pequeno encontro de Microsoft Most Valuable Professionals (MVPs) 
             que compartilhavam um objetivo comum: disseminar conhecimento e construir uma comunidade tech mais forte. 
@@ -922,6 +956,12 @@
             Over the years, MVP Conf has hosted hundreds of sessions covering Azure, .NET, Power Platform, 
             Microsoft 365, AI, and emerging technologies. The event has become a platform where seasoned 
             experts and newcomers alike can learn, share experiences, and forge lasting professional relationships.
+          </p>
+          <p data-lang="fr">
+            Au fil des années, MVP Conf a accueilli des centaines de sessions couvrant Azure, .NET, Power Platform, 
+            Microsoft 365, l'IA et les technologies émergentes. L'événement est devenu une plateforme où experts 
+            chevronnés et nouveaux venus peuvent apprendre, partager des expériences et forger des relations 
+            professionnelles durables.
           </p>
           <p data-lang="pt">
             Ao longo dos anos, o MVP Conf hospedou centenas de sessões cobrindo Azure, .NET, Power Platform, 
@@ -935,6 +975,11 @@
             tech communities across continents and celebrate the incredible talent emerging from the 
             African technology ecosystem.
           </p>
+          <p data-lang="fr">
+            Maintenant, nous sommes ravis d'apporter cette tradition en Afrique, élargissant notre mission 
+            pour autonomiser les communautés tech à travers les continents et célébrer l'incroyable talent 
+            émergeant de l'écosystème technologique africain.
+          </p>
           <p data-lang="pt">
             Agora, estamos entusiasmados em trazer essa tradição para a África, expandindo nossa missão 
             de empoderar comunidades tech através dos continentes e celebrar o incrível talento emergente 
@@ -946,21 +991,25 @@
           <div class="stat-card">
             <div class="stat-number">10+</div>
             <div class="stat-label" data-lang="en">Years of History</div>
+            <div class="stat-label" data-lang="fr">Années d'Histoire</div>
             <div class="stat-label" data-lang="pt">Anos de História</div>
           </div>
           <div class="stat-card">
             <div class="stat-number">500+</div>
             <div class="stat-label" data-lang="en">Sessions Delivered</div>
+            <div class="stat-label" data-lang="fr">Sessions Réalisées</div>
             <div class="stat-label" data-lang="pt">Sessões Realizadas</div>
           </div>
           <div class="stat-card">
             <div class="stat-number">200+</div>
             <div class="stat-label" data-lang="en">Expert Speakers</div>
+            <div class="stat-label" data-lang="fr">Conférenciers Experts</div>
             <div class="stat-label" data-lang="pt">Palestrantes Especialistas</div>
           </div>
           <div class="stat-card">
             <div class="stat-number">5000+</div>
             <div class="stat-label" data-lang="en">Community Members</div>
+            <div class="stat-label" data-lang="fr">Membres de la Communauté</div>
             <div class="stat-label" data-lang="pt">Membros da Comunidade</div>
           </div>
         </div>
@@ -972,10 +1021,14 @@
   <section class="purpose" id="purpose">
     <div class="container">
       <h2 class="section-title" data-lang="en">Our Purpose</h2>
+      <h2 class="section-title" data-lang="fr">Notre Mission</h2>
       <h2 class="section-title" data-lang="pt">Nosso Propósito</h2>
       
       <p class="section-subtitle" data-lang="en">
         MVP Conf Africa is more than an event — it's a movement to unite and empower
+      </p>
+      <p class="section-subtitle" data-lang="fr">
+        MVP Conf Africa est plus qu'un événement — c'est un mouvement pour unir et autonomiser
       </p>
       <p class="section-subtitle" data-lang="pt">
         O MVP Conf Africa é mais do que um evento — é um movimento para unir e empoderar
@@ -985,10 +1038,15 @@
         <div class="purpose-card">
           <div class="purpose-icon">🌍</div>
           <h3 data-lang="en">Connect Africa to the World</h3>
+          <h3 data-lang="fr">Connecter l'Afrique au Monde</h3>
           <h3 data-lang="pt">Conectar a África ao Mundo</h3>
           <p data-lang="en">
             Bridge the gap between African tech talent and the global Microsoft community, 
             creating opportunities for collaboration, mentorship, and growth.
+          </p>
+          <p data-lang="fr">
+            Combler le fossé entre les talents tech africains et la communauté Microsoft mondiale, 
+            créant des opportunités de collaboration, de mentorat et de croissance.
           </p>
           <p data-lang="pt">
             Conectar o talento tech africano à comunidade global Microsoft, criando 
@@ -999,10 +1057,15 @@
         <div class="purpose-card">
           <div class="purpose-icon">💡</div>
           <h3 data-lang="en">Inspire Innovation</h3>
+          <h3 data-lang="fr">Inspirer l'Innovation</h3>
           <h3 data-lang="pt">Inspirar Inovação</h3>
           <p data-lang="en">
             Showcase cutting-edge technologies and innovative solutions that are 
             transforming industries across the African continent and beyond.
+          </p>
+          <p data-lang="fr">
+            Présenter les technologies de pointe et les solutions innovantes qui 
+            transforment les industries à travers le continent africain et au-delà.
           </p>
           <p data-lang="pt">
             Apresentar tecnologias de ponta e soluções inovadoras que estão 
@@ -1013,10 +1076,15 @@
         <div class="purpose-card">
           <div class="purpose-icon">🤝</div>
           <h3 data-lang="en">Build Community</h3>
+          <h3 data-lang="fr">Construire la Communauté</h3>
           <h3 data-lang="pt">Construir Comunidade</h3>
           <p data-lang="en">
             Foster a supportive network of developers, IT professionals, and technology 
             enthusiasts who share knowledge and lift each other up.
+          </p>
+          <p data-lang="fr">
+            Favoriser un réseau de soutien de développeurs, professionnels IT et passionnés 
+            de technologie qui partagent leurs connaissances et s'entraident.
           </p>
           <p data-lang="pt">
             Fomentar uma rede de apoio de desenvolvedores, profissionais de TI e 
@@ -1027,10 +1095,15 @@
         <div class="purpose-card">
           <div class="purpose-icon">🚀</div>
           <h3 data-lang="en">Accelerate Careers</h3>
+          <h3 data-lang="fr">Accélérer les Carrières</h3>
           <h3 data-lang="pt">Acelerar Carreiras</h3>
           <p data-lang="en">
             Provide valuable learning experiences and networking opportunities that 
             help attendees advance their professional journeys.
+          </p>
+          <p data-lang="fr">
+            Offrir des expériences d'apprentissage précieuses et des opportunités de 
+            réseautage qui aident les participants à progresser dans leurs parcours professionnels.
           </p>
           <p data-lang="pt">
             Proporcionar experiências de aprendizado valiosas e oportunidades de 
@@ -1041,10 +1114,15 @@
         <div class="purpose-card">
           <div class="purpose-icon">🎯</div>
           <h3 data-lang="en">Democratize Knowledge</h3>
+          <h3 data-lang="fr">Démocratiser le Savoir</h3>
           <h3 data-lang="pt">Democratizar o Conhecimento</h3>
           <p data-lang="en">
             Make high-quality technical content accessible to everyone, regardless of 
             location or economic background, through our free online format.
+          </p>
+          <p data-lang="fr">
+            Rendre le contenu technique de haute qualité accessible à tous, quel que soit 
+            le lieu ou le contexte économique, grâce à notre format en ligne gratuit.
           </p>
           <p data-lang="pt">
             Tornar conteúdo técnico de alta qualidade acessível a todos, independentemente 
@@ -1055,10 +1133,15 @@
         <div class="purpose-card">
           <div class="purpose-icon">🌟</div>
           <h3 data-lang="en">Celebrate Diversity</h3>
+          <h3 data-lang="fr">Célébrer la Diversité</h3>
           <h3 data-lang="pt">Celebrar a Diversidade</h3>
           <p data-lang="en">
             Honor the rich cultural heritage and diverse perspectives that African 
             technologists bring to the global tech community.
+          </p>
+          <p data-lang="fr">
+            Honorer le riche patrimoine culturel et les perspectives diverses que les 
+            technologues africains apportent à la communauté tech mondiale.
           </p>
           <p data-lang="pt">
             Honrar a rica herança cultural e as perspectivas diversas que os 
@@ -1073,10 +1156,14 @@
   <section class="sessions" id="sessions">
     <div class="container">
       <h2 class="section-title" data-lang="en">Sessions</h2>
+      <h2 class="section-title" data-lang="fr">Sessions</h2>
       <h2 class="section-title" data-lang="pt">Palestras</h2>
       
       <p class="section-subtitle" data-lang="en">
         Three inspiring online sessions delivered by Microsoft experts
+      </p>
+      <p class="section-subtitle" data-lang="fr">
+        Trois sessions en ligne inspirantes présentées par des experts Microsoft
       </p>
       <p class="section-subtitle" data-lang="pt">
         Três sessões online inspiradoras apresentadas por especialistas Microsoft
@@ -1087,9 +1174,10 @@
         <div class="session-card">
           <div class="session-header">
             <div class="session-time">
-              🕐 <span data-lang="en">Session 1</span><span data-lang="pt">Sessão 1</span>
+              🕐 <span data-lang="en">Session 1</span><span data-lang="fr">Session 1</span><span data-lang="pt">Sessão 1</span>
             </div>
             <h3 class="session-title" data-lang="en">Building the Future with Azure AI</h3>
+            <h3 class="session-title" data-lang="fr">Construire l'Avenir avec Azure AI</h3>
             <h3 class="session-title" data-lang="pt">Construindo o Futuro com Azure AI</h3>
           </div>
           <div class="session-body">
@@ -1097,6 +1185,11 @@
               Explore the latest advancements in Azure AI services and learn how African 
               organizations are leveraging artificial intelligence to solve local challenges 
               and drive innovation.
+            </p>
+            <p class="session-description" data-lang="fr">
+              Explorez les dernières avancées des services Azure AI et découvrez comment les 
+              organisations africaines exploitent l'intelligence artificielle pour résoudre 
+              les défis locaux et stimuler l'innovation.
             </p>
             <p class="session-description" data-lang="pt">
               Explore os últimos avanços em serviços Azure AI e aprenda como organizações 
@@ -1107,6 +1200,7 @@
               <div class="speaker-avatar">TBA</div>
               <div class="speaker-info">
                 <h4 data-lang="en">Speaker TBA</h4>
+                <h4 data-lang="fr">Conférencier à confirmer</h4>
                 <h4 data-lang="pt">Palestrante a confirmar</h4>
                 <p>Microsoft MVP</p>
               </div>
@@ -1122,15 +1216,21 @@
         <div class="session-card">
           <div class="session-header">
             <div class="session-time">
-              🕐 <span data-lang="en">Session 2</span><span data-lang="pt">Sessão 2</span>
+              🕐 <span data-lang="en">Session 2</span><span data-lang="fr">Session 2</span><span data-lang="pt">Sessão 2</span>
             </div>
             <h3 class="session-title" data-lang="en">Power Platform: Empowering Citizen Developers</h3>
+            <h3 class="session-title" data-lang="fr">Power Platform: Autonomiser les Développeurs Citoyens</h3>
             <h3 class="session-title" data-lang="pt">Power Platform: Empoderando Desenvolvedores Cidadãos</h3>
           </div>
           <div class="session-body">
             <p class="session-description" data-lang="en">
               Discover how Power Platform enables anyone to build powerful applications 
               without traditional coding skills, democratizing technology across Africa.
+            </p>
+            <p class="session-description" data-lang="fr">
+              Découvrez comment Power Platform permet à quiconque de créer des applications 
+              puissantes sans compétences de codage traditionnelles, démocratisant la technologie 
+              à travers l'Afrique.
             </p>
             <p class="session-description" data-lang="pt">
               Descubra como a Power Platform permite que qualquer pessoa construa aplicações 
@@ -1141,6 +1241,7 @@
               <div class="speaker-avatar">TBA</div>
               <div class="speaker-info">
                 <h4 data-lang="en">Speaker TBA</h4>
+                <h4 data-lang="fr">Conférencier à confirmer</h4>
                 <h4 data-lang="pt">Palestrante a confirmar</h4>
                 <p>Microsoft MVP</p>
               </div>
@@ -1156,15 +1257,20 @@
         <div class="session-card">
           <div class="session-header">
             <div class="session-time">
-              🕐 <span data-lang="en">Session 3</span><span data-lang="pt">Sessão 3</span>
+              🕐 <span data-lang="en">Session 3</span><span data-lang="fr">Session 3</span><span data-lang="pt">Sessão 3</span>
             </div>
             <h3 class="session-title" data-lang="en">Cloud Native Development with .NET</h3>
+            <h3 class="session-title" data-lang="fr">Développement Cloud Native avec .NET</h3>
             <h3 class="session-title" data-lang="pt">Desenvolvimento Cloud Native com .NET</h3>
           </div>
           <div class="session-body">
             <p class="session-description" data-lang="en">
               Learn best practices for building scalable, resilient cloud-native applications 
               using the latest .NET technologies and Azure Kubernetes Service.
+            </p>
+            <p class="session-description" data-lang="fr">
+              Apprenez les meilleures pratiques pour créer des applications cloud-native 
+              évolutives et résilientes en utilisant les dernières technologies .NET et Azure Kubernetes Service.
             </p>
             <p class="session-description" data-lang="pt">
               Aprenda as melhores práticas para construir aplicações cloud-native escaláveis 
@@ -1174,6 +1280,7 @@
               <div class="speaker-avatar">TBA</div>
               <div class="speaker-info">
                 <h4 data-lang="en">Speaker TBA</h4>
+                <h4 data-lang="fr">Conférencier à confirmer</h4>
                 <h4 data-lang="pt">Palestrante a confirmar</h4>
                 <p>Microsoft MVP</p>
               </div>
@@ -1196,11 +1303,16 @@
       </div>
       
       <h2 data-lang="en">Watch Live on YouTube</h2>
+      <h2 data-lang="fr">Regardez en Direct sur YouTube</h2>
       <h2 data-lang="pt">Assista ao Vivo no YouTube</h2>
       
       <p data-lang="en">
         Can't attend live? No problem! All sessions will be streamed on our YouTube channel. 
         Subscribe now to get notified when we go live!
+      </p>
+      <p data-lang="fr">
+        Vous ne pouvez pas assister en direct ? Pas de problème ! Toutes les sessions seront 
+        diffusées sur notre chaîne YouTube. Abonnez-vous maintenant pour être notifié !
       </p>
       <p data-lang="pt">
         Não pode participar ao vivo? Sem problema! Todas as sessões serão transmitidas em nosso 
@@ -1212,6 +1324,7 @@
           <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
         </svg>
         <span data-lang="en">Subscribe on YouTube</span>
+        <span data-lang="fr">S'abonner sur YouTube</span>
         <span data-lang="pt">Inscreva-se no YouTube</span>
       </a>
     </div>
@@ -1224,6 +1337,11 @@
         © 2026 MVP Conf Africa. An initiative by the <a href="https://mvpconf.com.br">MVP Conf Brasil</a> community.
         <br><br>
         Made with 🧡 for the African tech community
+      </p>
+      <p data-lang="fr">
+        © 2026 MVP Conf Africa. Une initiative de la communauté <a href="https://mvpconf.com.br">MVP Conf Brasil</a>.
+        <br><br>
+        Fait avec 🧡 pour la communauté tech africaine
       </p>
       <p data-lang="pt">
         © 2026 MVP Conf Africa. Uma iniciativa da comunidade <a href="https://mvpconf.com.br">MVP Conf Brasil</a>.
@@ -1239,6 +1357,7 @@
       
       // Update button states
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
       document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
       
       // Save preference
