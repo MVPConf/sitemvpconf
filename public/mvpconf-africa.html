@@ -103,13 +103,17 @@
       position: relative;
       overflow: hidden;
       background: 
-        /* African sunset gradient */
+        /* African sunset gradient inspired by savanna */
         linear-gradient(180deg, 
-          rgba(15, 23, 42, 0.9) 0%,
-          rgba(30, 20, 10, 0.85) 30%,
-          rgba(120, 50, 20, 0.7) 60%,
-          rgba(200, 100, 30, 0.6) 80%,
-          rgba(245, 158, 11, 0.4) 100%
+          #3E2723 0%,
+          #5D3A1A 15%,
+          #8B4513 30%,
+          #A0522D 45%,
+          #CD6600 60%,
+          #E65100 72%,
+          #F57C00 82%,
+          #FF9800 90%,
+          #FFC107 100%
         );
     }
     
@@ -124,30 +128,30 @@
           60deg,
           transparent,
           transparent 30px,
-          rgba(245, 158, 11, 0.03) 30px,
-          rgba(245, 158, 11, 0.03) 32px
+          rgba(255, 193, 7, 0.04) 30px,
+          rgba(255, 193, 7, 0.04) 32px
         ),
         repeating-linear-gradient(
           -60deg,
           transparent,
           transparent 30px,
-          rgba(217, 119, 6, 0.03) 30px,
-          rgba(217, 119, 6, 0.03) 32px
+          rgba(230, 81, 0, 0.04) 30px,
+          rgba(230, 81, 0, 0.04) 32px
         ),
         /* Diamond pattern inspired by Kente cloth */
         repeating-linear-gradient(
           45deg,
           transparent,
           transparent 50px,
-          rgba(255, 200, 100, 0.02) 50px,
-          rgba(255, 200, 100, 0.02) 52px
+          rgba(255, 152, 0, 0.03) 50px,
+          rgba(255, 152, 0, 0.03) 52px
         ),
         repeating-linear-gradient(
           -45deg,
           transparent,
           transparent 50px,
-          rgba(255, 150, 50, 0.02) 50px,
-          rgba(255, 150, 50, 0.02) 52px
+          rgba(139, 69, 19, 0.03) 50px,
+          rgba(139, 69, 19, 0.03) 52px
         );
       pointer-events: none;
     }
@@ -161,10 +165,11 @@
       width: 200%;
       height: 200%;
       background: 
-        radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 80% 30%, rgba(217, 119, 6, 0.12) 0%, transparent 35%),
-        radial-gradient(circle at 40% 80%, rgba(180, 83, 9, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 70% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 30%);
+        radial-gradient(circle at 50% 90%, rgba(255, 193, 7, 0.35) 0%, transparent 40%),
+        radial-gradient(circle at 20% 20%, rgba(139, 69, 19, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(230, 81, 0, 0.15) 0%, transparent 35%),
+        radial-gradient(circle at 40% 60%, rgba(205, 102, 0, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 70% 70%, rgba(255, 152, 0, 0.1) 0%, transparent 30%);
       animation: float 25s ease-in-out infinite;
       pointer-events: none;
     }
@@ -197,7 +202,7 @@
       top: 10%;
       left: 5%;
       animation-delay: 0s;
-      border-color: rgba(245, 158, 11, 0.15);
+      border-color: rgba(255, 193, 7, 0.2);
     }
     
     .deco-circle:nth-child(2) {
@@ -206,7 +211,7 @@
       top: 20%;
       right: 10%;
       animation-delay: 2s;
-      border-color: rgba(217, 119, 6, 0.2);
+      border-color: rgba(230, 81, 0, 0.25);
     }
     
     .deco-circle:nth-child(3) {
@@ -215,7 +220,7 @@
       bottom: 25%;
       left: 8%;
       animation-delay: 4s;
-      border-color: rgba(251, 191, 36, 0.15);
+      border-color: rgba(255, 152, 0, 0.2);
     }
     
     .deco-circle:nth-child(4) {
@@ -224,14 +229,14 @@
       bottom: 15%;
       right: 5%;
       animation-delay: 1s;
-      border-color: rgba(180, 83, 9, 0.12);
+      border-color: rgba(139, 69, 19, 0.18);
     }
     
     .deco-diamond {
       position: absolute;
       width: 40px;
       height: 40px;
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.05));
+      background: linear-gradient(135deg, rgba(255, 193, 7, 0.12), rgba(230, 81, 0, 0.06));
       transform: rotate(45deg);
       animation: floatElement 10s ease-in-out infinite;
     }
@@ -265,7 +270,7 @@
       height: 0;
       border-left: 25px solid transparent;
       border-right: 25px solid transparent;
-      border-bottom: 43px solid rgba(245, 158, 11, 0.08);
+      border-bottom: 43px solid rgba(255, 152, 0, 0.1);
       animation: floatElement 12s ease-in-out infinite;
     }
     
@@ -280,7 +285,7 @@
       left: 25%;
       animation-delay: 6s;
       transform: rotate(180deg);
-      border-bottom-color: rgba(217, 119, 6, 0.06);
+      border-bottom-color: rgba(230, 81, 0, 0.08);
     }
     
     @keyframes floatElement {
@@ -291,18 +296,19 @@
     /* Sun glow effect */
     .sun-glow {
       position: absolute;
-      bottom: -100px;
+      bottom: -80px;
       left: 50%;
       transform: translateX(-50%);
-      width: 600px;
-      height: 300px;
+      width: 700px;
+      height: 350px;
       background: radial-gradient(ellipse at center bottom, 
-        rgba(255, 150, 50, 0.4) 0%,
-        rgba(245, 158, 11, 0.2) 30%,
-        rgba(217, 119, 6, 0.1) 50%,
-        transparent 70%
+        rgba(255, 193, 7, 0.6) 0%,
+        rgba(255, 152, 0, 0.4) 25%,
+        rgba(245, 124, 0, 0.25) 45%,
+        rgba(230, 81, 0, 0.12) 65%,
+        transparent 85%
       );
-      filter: blur(40px);
+      filter: blur(50px);
       animation: sunPulse 8s ease-in-out infinite;
     }
     
