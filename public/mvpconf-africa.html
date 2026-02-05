@@ -7,24 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- Primary Meta Tags -->
-  <title>MVP Conf Africa 2026 | Connecting Africa Through Technology</title>
-  <meta name="title" content="MVP Conf Africa 2026 | Connecting Africa Through Technology" />
-  <meta name="description" content="Join us for the first MVP Conf in Africa! A free online event celebrating innovation, diversity, and the Microsoft technology community across the African continent." />
-  <meta name="keywords" content="Microsoft MVP, MVP Conf Africa, technology event, online conference, Microsoft Africa, Azure, .NET, Power Platform, AI, cloud computing, Africa tech" />
-  <meta name="author" content="MVP Conf" />
+  <title>MVP Conference Africa 2026 | Connecting Africa Through Technology</title>
+  <meta name="title" content="MVP Conference Africa 2026 | Connecting Africa Through Technology" />
+  <meta name="description" content="Join us for the first MVP Conference in Africa! A free online event celebrating innovation, diversity, and the Microsoft technology community across the African continent." />
+  <meta name="keywords" content="Microsoft MVP, MVP Conference Africa, technology event, online conference, Microsoft Africa, Azure, .NET, Power Platform, AI, cloud computing, Africa tech" />
+  <meta name="author" content="MVP Conference" />
   <meta name="robots" content="index, follow" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mvpconf.africa/" />
-  <meta property="og:title" content="MVP Conf Africa 2026 | Connecting Africa Through Technology" />
-  <meta property="og:description" content="Join us for the first MVP Conf in Africa! A free online event celebrating innovation and the Microsoft community." />
+  <meta property="og:title" content="MVP Conference Africa 2026 | Connecting Africa Through Technology" />
+  <meta property="og:description" content="Join us for the first MVP Conference in Africa! A free online event celebrating innovation and the Microsoft community." />
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://mvpconf.africa/" />
-  <meta property="twitter:title" content="MVP Conf Africa 2026" />
-  <meta property="twitter:description" content="Join us for the first MVP Conf in Africa! A free online event." />
+  <meta property="twitter:title" content="MVP Conference Africa 2026" />
+  <meta property="twitter:description" content="Join us for the first MVP Conference in Africa! A free online event." />
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,7 +98,7 @@
       padding: 0 20px;
     }
     
-    /* Hero Section */
+    /* Hero Section - Tech Style with African Colors */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -109,80 +109,58 @@
       position: relative;
       overflow: hidden;
       background: 
-        /* Clean beige background inspired by African earth tones */
-        linear-gradient(180deg, 
+        linear-gradient(135deg, 
           #F5F0E6 0%,
-          #EDE8DC 30%,
-          #E8E2D5 60%,
-          #F0EBE1 100%
+          #EDE8DC 25%,
+          #E8E2D5 50%,
+          #EDE8DC 75%,
+          #F5F0E6 100%
         );
     }
     
-    /* African pattern overlay */
+    /* Circuit board grid pattern */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background-image: 
-        /* Tribal geometric patterns */
-        repeating-linear-gradient(
-          60deg,
-          transparent,
-          transparent 30px,
-          rgba(45, 74, 62, 0.03) 30px,
-          rgba(45, 74, 62, 0.03) 32px
-        ),
-        repeating-linear-gradient(
-          -60deg,
-          transparent,
-          transparent 30px,
-          rgba(139, 58, 58, 0.03) 30px,
-          rgba(139, 58, 58, 0.03) 32px
-        ),
-        /* Diamond pattern inspired by Kente cloth */
-        repeating-linear-gradient(
-          45deg,
-          transparent,
-          transparent 50px,
-          rgba(196, 163, 90, 0.04) 50px,
-          rgba(196, 163, 90, 0.04) 52px
-        ),
-        repeating-linear-gradient(
-          -45deg,
-          transparent,
-          transparent 50px,
-          rgba(45, 74, 62, 0.03) 50px,
-          rgba(45, 74, 62, 0.03) 52px
-        );
+        /* Grid lines - green olive */
+        linear-gradient(rgba(45, 74, 62, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45, 74, 62, 0.06) 1px, transparent 1px),
+        /* Larger grid */
+        linear-gradient(rgba(45, 74, 62, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45, 74, 62, 0.1) 1px, transparent 1px);
+      background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+      animation: gridMove 20s linear infinite;
       pointer-events: none;
     }
     
-    /* Animated background elements */
+    @keyframes gridMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(100px, 100px); }
+    }
+    
+    /* Glowing orbs - African earth tones */
     .hero::after {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
+      inset: 0;
       background: 
-        radial-gradient(circle at 50% 90%, rgba(196, 163, 90, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 20% 20%, rgba(45, 74, 62, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 80% 30%, rgba(139, 58, 58, 0.08) 0%, transparent 35%),
-        radial-gradient(circle at 40% 60%, rgba(196, 163, 90, 0.06) 0%, transparent 40%),
-        radial-gradient(circle at 70% 70%, rgba(45, 74, 62, 0.05) 0%, transparent 30%);
-      animation: float 25s ease-in-out infinite;
+        radial-gradient(ellipse at 20% 20%, rgba(45, 74, 62, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(196, 107, 46, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(212, 163, 90, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 90% 20%, rgba(139, 58, 58, 0.08) 0%, transparent 40%),
+        radial-gradient(ellipse at 10% 80%, rgba(45, 74, 62, 0.1) 0%, transparent 45%);
+      animation: glowPulse 8s ease-in-out infinite;
       pointer-events: none;
     }
     
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
-      25% { transform: translate(-15px, -25px) rotate(2deg) scale(1.02); }
-      50% { transform: translate(-25px, -15px) rotate(5deg) scale(1); }
-      75% { transform: translate(-10px, -30px) rotate(3deg) scale(1.01); }
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
     }
     
-    /* Floating African-themed decorative elements */
+    /* Tech decorative elements */
     .hero-decorations {
       position: absolute;
       inset: 0;
@@ -190,247 +168,404 @@
       pointer-events: none;
     }
     
+    /* Floating hexagons - tech nodes */
     .deco-circle {
       position: absolute;
-      border-radius: 50%;
-      border: 2px solid rgba(45, 74, 62, 0.15);
-      animation: floatElement 8s ease-in-out infinite;
+      background: transparent;
+      border: 2px solid rgba(45, 74, 62, 0.25);
+      animation: floatNode 10s ease-in-out infinite;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+    
+    .deco-circle::before {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      background: rgba(45, 74, 62, 0.03);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     }
     
     .deco-circle:nth-child(1) {
-      width: 100px;
-      height: 100px;
-      top: 10%;
+      width: 80px;
+      height: 80px;
+      top: 15%;
       left: 5%;
       animation-delay: 0s;
-      border-color: rgba(45, 74, 62, 0.2);
+      border-color: rgba(45, 74, 62, 0.35);
     }
     
     .deco-circle:nth-child(2) {
-      width: 60px;
-      height: 60px;
-      top: 20%;
-      right: 10%;
+      width: 50px;
+      height: 50px;
+      top: 25%;
+      right: 8%;
       animation-delay: 2s;
-      border-color: rgba(139, 58, 58, 0.2);
+      border-color: rgba(196, 107, 46, 0.4);
     }
     
     .deco-circle:nth-child(3) {
-      width: 80px;
-      height: 80px;
-      bottom: 25%;
-      left: 8%;
+      width: 65px;
+      height: 65px;
+      bottom: 30%;
+      left: 10%;
       animation-delay: 4s;
-      border-color: rgba(196, 163, 90, 0.25);
+      border-color: rgba(212, 163, 90, 0.4);
     }
     
     .deco-circle:nth-child(4) {
-      width: 120px;
-      height: 120px;
-      bottom: 15%;
+      width: 90px;
+      height: 90px;
+      bottom: 20%;
       right: 5%;
       animation-delay: 1s;
-      border-color: rgba(45, 74, 62, 0.15);
+      border-color: rgba(139, 58, 58, 0.3);
     }
     
+    /* Data nodes / connection points */
     .deco-diamond {
       position: absolute;
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, rgba(45, 74, 62, 0.1), rgba(196, 163, 90, 0.08));
-      transform: rotate(45deg);
-      animation: floatElement 10s ease-in-out infinite;
+      width: 8px;
+      height: 8px;
+      background: rgba(45, 74, 62, 0.9);
+      border-radius: 50%;
+      box-shadow: 
+        0 0 10px rgba(45, 74, 62, 0.5),
+        0 0 20px rgba(45, 74, 62, 0.3),
+        0 0 30px rgba(45, 74, 62, 0.15);
+      animation: pulseNode 3s ease-in-out infinite;
+      transform: none;
     }
     
     .deco-diamond:nth-child(5) {
-      top: 15%;
-      left: 15%;
-      animation-delay: 3s;
+      top: 20%;
+      left: 20%;
+      animation-delay: 0s;
     }
     
     .deco-diamond:nth-child(6) {
-      top: 30%;
-      right: 20%;
-      animation-delay: 5s;
-      width: 30px;
-      height: 30px;
+      top: 35%;
+      right: 25%;
+      animation-delay: 1s;
+      background: rgba(196, 107, 46, 0.9);
+      box-shadow: 
+        0 0 10px rgba(196, 107, 46, 0.5),
+        0 0 20px rgba(196, 107, 46, 0.3);
     }
     
     .deco-diamond:nth-child(7) {
-      bottom: 35%;
-      right: 15%;
-      animation-delay: 7s;
-      width: 50px;
-      height: 50px;
+      bottom: 40%;
+      right: 18%;
+      animation-delay: 2s;
+      background: rgba(139, 58, 58, 0.9);
+      box-shadow: 
+        0 0 10px rgba(139, 58, 58, 0.5),
+        0 0 20px rgba(139, 58, 58, 0.3);
     }
     
-    /* African-inspired triangles */
+    /* Connection lines */
     .deco-triangle {
       position: absolute;
-      width: 0;
-      height: 0;
-      border-left: 25px solid transparent;
-      border-right: 25px solid transparent;
-      border-bottom: 43px solid rgba(45, 74, 62, 0.08);
-      animation: floatElement 12s ease-in-out infinite;
+      width: 150px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(45, 74, 62, 0.4), transparent);
+      border: none;
+      animation: lineGlow 4s ease-in-out infinite;
     }
     
     .deco-triangle:nth-child(8) {
-      top: 25%;
-      left: 20%;
-      animation-delay: 2s;
+      top: 30%;
+      left: 10%;
+      transform: rotate(45deg);
     }
     
     .deco-triangle:nth-child(9) {
-      bottom: 20%;
-      left: 25%;
-      animation-delay: 6s;
-      transform: rotate(180deg);
-      border-bottom-color: rgba(139, 58, 58, 0.08);
+      bottom: 35%;
+      left: 15%;
+      transform: rotate(-30deg);
+      background: linear-gradient(90deg, transparent, rgba(196, 107, 46, 0.4), transparent);
     }
     
-    @keyframes floatElement {
-      0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
-      50% { transform: translateY(-20px) rotate(10deg); opacity: 1; }
+    @keyframes floatNode {
+      0%, 100% { 
+        transform: translateY(0) rotate(0deg); 
+        opacity: 0.5; 
+      }
+      50% { 
+        transform: translateY(-15px) rotate(5deg); 
+        opacity: 0.9; 
+      }
     }
     
-    /* Sun glow effect */
+    @keyframes pulseNode {
+      0%, 100% { 
+        transform: scale(1); 
+        opacity: 0.6; 
+      }
+      50% { 
+        transform: scale(1.5); 
+        opacity: 1; 
+      }
+    }
+    
+    @keyframes lineGlow {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+    
+    /* Central glow effect */
     .sun-glow {
       position: absolute;
-      bottom: -80px;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 350px;
-      background: radial-gradient(ellipse at center bottom, 
-        rgba(196, 163, 90, 0.25) 0%,
-        rgba(212, 168, 83, 0.15) 25%,
-        rgba(196, 163, 90, 0.08) 45%,
-        rgba(45, 74, 62, 0.05) 65%,
-        transparent 85%
-      );
-      filter: blur(50px);
-      animation: sunPulse 8s ease-in-out infinite;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 800px;
+      background: 
+        radial-gradient(ellipse at center, 
+          rgba(212, 163, 90, 0.12) 0%,
+          rgba(45, 74, 62, 0.06) 30%,
+          transparent 70%
+        );
+      filter: blur(60px);
+      animation: centerGlow 6s ease-in-out infinite;
     }
     
-    @keyframes sunPulse {
-      0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
-      50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+    @keyframes centerGlow {
+      0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
     }
     
-    /* Acacia tree silhouettes */
+    /* Particle field / data stream bottom */
     .tree-silhouette {
       position: absolute;
       bottom: 0;
+      left: 0;
       width: 100%;
-      height: 150px;
+      height: 200px;
       background: 
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cpath d='M20,100 L22,70 Q10,65 5,55 Q0,45 15,40 Q5,35 10,25 Q15,15 30,20 Q25,10 35,5 Q50,0 60,15 Q70,5 80,15 Q90,0 100,10 Q110,5 115,20 Q130,15 135,30 Q145,25 150,40 Q165,35 160,50 Q175,55 165,65 Q180,70 178,100 Z' fill='rgba(45,74,62,0.15)'/%3E%3C/svg%3E") 
-        no-repeat left bottom / 200px 100px,
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cpath d='M20,100 L22,70 Q10,65 5,55 Q0,45 15,40 Q5,35 10,25 Q15,15 30,20 Q25,10 35,5 Q50,0 60,15 Q70,5 80,15 Q90,0 100,10 Q110,5 115,20 Q130,15 135,30 Q145,25 150,40 Q165,35 160,50 Q175,55 165,65 Q180,70 178,100 Z' fill='rgba(45,74,62,0.1)'/%3E%3C/svg%3E") 
-        no-repeat right bottom / 180px 90px;
-      opacity: 0.5;
+        linear-gradient(0deg, rgba(45, 74, 62, 0.08) 0%, transparent 100%);
       pointer-events: none;
+    }
+    
+    .tree-silhouette::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(45, 74, 62, 0.6), 
+        rgba(196, 107, 46, 0.6), 
+        rgba(139, 58, 58, 0.5),
+        transparent
+      );
+      box-shadow: 0 0 20px rgba(45, 74, 62, 0.4);
     }
     
     .hero-content {
       position: relative;
       z-index: 10;
+      max-width: 900px;
     }
     
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, rgba(45, 74, 62, 0.1), rgba(45, 74, 62, 0.15));
-      border: 1px solid rgba(45, 74, 62, 0.3);
-      padding: 14px 32px;
-      border-radius: 50px;
-      font-size: 17px;
-      font-weight: 600;
+    /* Pre-title */
+    .hero-pretitle {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
       color: #2D4A3E;
-      margin-bottom: 35px;
-      animation: pulse 2s infinite;
+      margin-bottom: 16px;
+      opacity: 0.85;
     }
     
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(45, 74, 62, 0.3); }
-      50% { box-shadow: 0 0 0 10px rgba(45, 74, 62, 0); }
-    }
-    
+    /* Main Title */
     .hero h1 {
-      font-size: clamp(3rem, 10vw, 6rem);
+      font-size: clamp(2.8rem, 9vw, 5.5rem);
       font-weight: 800;
-      margin-bottom: 24px;
-      background: linear-gradient(135deg, #2D4A3E, #1E352A);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-shadow: 0 0 60px rgba(45, 74, 62, 0.2);
+      line-height: 1;
+      margin-bottom: 8px;
+      color: #2D4A3E;
+      text-shadow: none;
     }
     
-    .hero h1 span {
-      display: block;
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      font-weight: 600;
-      background: linear-gradient(135deg, #8B3A3A, #A0522D);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-top: 12px;
+    .hero-title-africa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 40px;
     }
     
+    .hero-title-africa .line {
+      width: 60px;
+      height: 3px;
+      background: #2D4A3E;
+      flex-shrink: 0;
+    }
+    
+    .hero-title-africa span {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 800;
+      color: #C46B2E;
+      letter-spacing: 0.05em;
+    }
+    
+    .hero-title-africa .star {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: #C46B2E;
+    }
+    
+    /* Subtitle */
     .hero-subtitle {
-      font-size: clamp(1.1rem, 3vw, 1.5rem);
-      color: #4A4A4A;
-      max-width: 800px;
-      margin: 0 auto 50px;
-      line-height: 1.9;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: #2D4A3E;
+      margin-bottom: 45px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 16px 30px;
+      background: linear-gradient(135deg, rgba(45, 74, 62, 0.08), rgba(196, 107, 46, 0.06));
+      border-left: 4px solid #C46B2E;
+      border-radius: 0 8px 8px 0;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(45, 74, 62, 0.1);
     }
     
-    .hero-icons {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-bottom: 50px;
-      flex-wrap: wrap;
-    }
-    
-    .hero-icon-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      transition: transform 0.3s ease;
-    }
-    
-    .hero-icon-item:hover {
-      transform: translateY(-5px);
-    }
-    
-    .hero-icon {
-      width: 80px;
-      height: 80px;
-      background: rgba(255, 255, 255, 0.9);
+    /* Description Box */
+    .hero-description-box {
+      position: relative;
       border: 2px solid #2D4A3E;
-      border-radius: 20px;
+      padding: 35px 40px;
+      margin: 0 auto 45px;
+      max-width: 750px;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(8px);
+    }
+    
+    .hero-description-box::before,
+    .hero-description-box::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #2D4A3E;
+    }
+    
+    .hero-description-box::before {
+      top: -8px;
+      left: -8px;
+      border-right: none;
+      border-bottom: none;
+    }
+    
+    .hero-description-box::after {
+      bottom: -8px;
+      right: -8px;
+      border-left: none;
+      border-top: none;
+    }
+    
+    .hero-description {
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      color: #3D3D3D;
+      line-height: 1.8;
+      margin: 0;
+    }
+    
+    .hero-description strong {
+      color: #2D4A3E;
+      font-weight: 700;
+    }
+    
+    .hero-description .highlight {
+      color: #C46B2E;
+      font-weight: 700;
+    }
+    
+    /* Info Cards */
+    .hero-info-cards {
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-size: 38px;
-      box-shadow: 0 10px 30px rgba(45, 74, 62, 0.15);
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    
+    .hero-info-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 24px 36px;
+      min-width: 160px;
+      box-shadow: 0 8px 30px rgba(45, 74, 62, 0.12);
       transition: all 0.3s ease;
+      border: 1px solid rgba(45, 74, 62, 0.1);
     }
     
-    .hero-icon-item:hover .hero-icon {
-      border-color: #8B3A3A;
-      box-shadow: 0 15px 40px rgba(139, 58, 58, 0.2);
+    .hero-info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(45, 74, 62, 0.18);
     }
     
-    .hero-icon-text {
-      font-size: 16px;
+    .hero-info-card .card-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    
+    .hero-info-card .card-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2D4A3E;
+      line-height: 1.4;
+    }
+    
+    .hero-info-card .card-text small {
+      display: block;
+      font-weight: 400;
+      color: #5A5A5A;
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+    
+    /* Social handle */
+    .hero-social {
+      font-size: 1.1rem;
       color: #2D4A3E;
       font-weight: 600;
+      margin-top: 30px;
+    }
+    
+    .hero-social a {
+      color: #C46B2E;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .hero-social a:hover {
+      color: #8B3A3A;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-description-box {
+        padding: 25px 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      
+      .hero-title-africa .line {
+        width: 30px;
+      }
+      
+      .hero-info-cards {
+        gap: 15px;
+      }
+      
+      .hero-info-card {
+        padding: 18px 24px;
+        min-width: 140px;
+      }
     }
     
     /* Section Styles */
@@ -813,18 +948,24 @@
     /* English active */
     html[lang="en"] [data-lang="en"] { display: block; }
     html[lang="en"] span[data-lang="en"] { display: inline; }
+    html[lang="en"] p[data-lang="en"] { display: block; }
+    html[lang="en"] .hero-pretitle span[data-lang="en"] { display: inline; }
     html[lang="en"] [data-lang="pt"], html[lang="en"] [data-lang="fr"] { display: none; }
     html[lang="en"] span[data-lang="pt"], html[lang="en"] span[data-lang="fr"] { display: none; }
     
     /* Portuguese active */
     html[lang="pt"] [data-lang="pt"] { display: block; }
     html[lang="pt"] span[data-lang="pt"] { display: inline; }
+    html[lang="pt"] p[data-lang="pt"] { display: block; }
+    html[lang="pt"] .hero-pretitle span[data-lang="pt"] { display: inline; }
     html[lang="pt"] [data-lang="en"], html[lang="pt"] [data-lang="fr"] { display: none; }
     html[lang="pt"] span[data-lang="en"], html[lang="pt"] span[data-lang="fr"] { display: none; }
     
     /* French active */
     html[lang="fr"] [data-lang="fr"] { display: block; }
     html[lang="fr"] span[data-lang="fr"] { display: inline; }
+    html[lang="fr"] p[data-lang="fr"] { display: block; }
+    html[lang="fr"] .hero-pretitle span[data-lang="fr"] { display: inline; }
     html[lang="fr"] [data-lang="en"], html[lang="fr"] [data-lang="pt"] { display: none; }
     html[lang="fr"] span[data-lang="en"], html[lang="fr"] span[data-lang="pt"] { display: none; }
   </style>
@@ -860,53 +1001,68 @@
     <div class="tree-silhouette"></div>
     
     <div class="hero-content">
-      <div class="hero-badge">
-        <span>🌍</span>
-        <span data-lang="en">First Edition in Africa</span>
-        <span data-lang="fr">Première Édition en Afrique</span>
-        <span data-lang="pt">Primeira Edição na África</span>
+      <p class="hero-pretitle">
+        <span data-lang="en">Our First</span>
+        <span data-lang="fr">Notre Première</span>
+        <span data-lang="pt">Nossa Primeira</span>
+      </p>
+      
+      <h1>MVP Conference</h1>
+      
+      <div class="hero-title-africa">
+        <span class="line"></span>
+        <span>AFRICA</span>
+        <span class="star">★</span>
       </div>
       
-      <h1>
-        MVP Conf Africa
-        <span>2026</span>
-      </h1>
-      
-      <p class="hero-subtitle" data-lang="en">
-        🌅 From the heart of the African savanna to screens worldwide. Join us for an extraordinary 
-        online event celebrating innovation, Ubuntu spirit, and the vibrant Microsoft community 
-        across the African continent.
-      </p>
-      <p class="hero-subtitle" data-lang="fr">
-        🌅 Du cœur de la savane africaine aux écrans du monde entier. Rejoignez-nous pour un événement 
-        en ligne extraordinaire célébrant l'innovation, l'esprit Ubuntu et la communauté Microsoft 
-        vibrante à travers le continent africain.
-      </p>
-      <p class="hero-subtitle" data-lang="pt">
-        🌅 Do coração da savana africana para telas em todo o mundo. Junte-se a nós em um evento 
-        online extraordinário celebrando a inovação, o espírito Ubuntu e a vibrante comunidade 
-        Microsoft em todo o continente africano.
+      <p class="hero-subtitle">
+        <span data-lang="en">Microsoft technology at a global level. Pure technical content.</span>
+        <span data-lang="fr">Technologie Microsoft à un niveau mondial. Contenu purement technique.</span>
+        <span data-lang="pt">Tecnologia Microsoft em nível global. Conteúdo puramente técnico.</span>
       </p>
       
-      <div class="hero-icons">
-        <div class="hero-icon-item">
-          <div class="hero-icon">🌍</div>
-          <span class="hero-icon-text" data-lang="en">Pan-African</span>
-          <span class="hero-icon-text" data-lang="fr">Panafricain</span>
-          <span class="hero-icon-text" data-lang="pt">Pan-Africano</span>
+      <div class="hero-description-box">
+        <p class="hero-description" data-lang="en">
+          <strong>International speakers</strong> and recognized industry <strong>experts</strong>.
+          <br><br>
+          A <span class="highlight">free online event</span> by Microsoft MVPs worldwide, focused on <span class="highlight">real-world architecture</span>, <span class="highlight">performance</span>, and <span class="highlight">enterprise-grade solutions</span>. No sales pitches — just <strong>pure technical content</strong>.
+        </p>
+        <p class="hero-description" data-lang="fr">
+          <strong>Conférenciers internationaux</strong> et <strong>experts</strong> reconnus de l'industrie.
+          <br><br>
+          Un <span class="highlight">événement en ligne gratuit</span> par des Microsoft MVPs du monde entier, axé sur <span class="highlight">l'architecture réelle</span>, la <span class="highlight">performance</span> et les <span class="highlight">solutions d'entreprise</span>. Pas de discours commercial — juste du <strong>contenu technique pur</strong>.
+        </p>
+        <p class="hero-description" data-lang="pt">
+          <strong>Palestrantes internacionais</strong> e <strong>especialistas</strong> reconhecidos da indústria.
+          <br><br>
+          Um <span class="highlight">evento online e gratuito</span> por Microsoft MVPs do mundo todo, focado em <span class="highlight">arquitetura real</span>, <span class="highlight">performance</span> e <span class="highlight">soluções enterprise</span>. Sem papo de vendas — apenas <strong>conteúdo técnico puro</strong>.
+        </p>
+      </div>
+      
+      <div class="hero-info-cards">
+        <div class="hero-info-card">
+          <span class="card-icon">🕐</span>
+          <div class="card-text">
+            9:00 AM -<br>5:00 PM
+            <small>(CAT)</small>
+          </div>
         </div>
-        <div class="hero-icon-item">
-          <div class="hero-icon">📡</div>
-          <span class="hero-icon-text" data-lang="en">100% Online</span>
-          <span class="hero-icon-text" data-lang="fr">100% En Ligne</span>
-          <span class="hero-icon-text" data-lang="pt">100% Online</span>
+        <div class="hero-info-card">
+          <span class="card-icon">📅</span>
+          <div class="card-text">
+            <span data-lang="en">March 7, 2026</span>
+            <span data-lang="fr">7 Mars 2026</span>
+            <span data-lang="pt">7 de Março de 2026</span>
+          </div>
         </div>
-        <div class="hero-icon-item">
-          <div class="hero-icon">🎫</div>
-          <span class="hero-icon-text" data-lang="en">Free Access</span>
-          <span class="hero-icon-text" data-lang="fr">Accès Gratuit</span>
-          <span class="hero-icon-text" data-lang="pt">Acesso Gratuito</span>
+        <div class="hero-info-card">
+          <span class="card-icon">💻</span>
+          <div class="card-text">Online</div>
         </div>
+      </div>
+      
+      <div class="hero-social">
+        <a href="https://instagram.com/mvpconference.africa" target="_blank">@mvpconference.africa</a>
       </div>
     </div>
   </section>
@@ -914,9 +1070,9 @@
   <!-- History Section -->
   <section class="history" id="history">
     <div class="container">
-      <h2 class="section-title" data-lang="en">The History of MVP Conf</h2>
-      <h2 class="section-title" data-lang="fr">L'Histoire de MVP Conf</h2>
-      <h2 class="section-title" data-lang="pt">A História do MVP Conf</h2>
+      <h2 class="section-title" data-lang="en">The History of MVP Conference</h2>
+      <h2 class="section-title" data-lang="fr">L'Histoire de MVP Conference</h2>
+      <h2 class="section-title" data-lang="pt">A História do MVP Conference</h2>
       
       <p class="section-subtitle" data-lang="en">
         A journey of passion, community, and technological excellence
@@ -931,37 +1087,37 @@
       <div class="history-content">
         <div class="history-text">
           <p data-lang="en">
-            MVP Conf started in Brazil as a small gathering of Microsoft Most Valuable Professionals (MVPs) 
+            MVP Conference started in Brazil as a small gathering of Microsoft Most Valuable Professionals (MVPs) 
             who shared a common goal: to spread knowledge and build a stronger tech community. What began as 
             a modest local event has grown into one of the most important Microsoft community conferences in 
             Latin America.
           </p>
           <p data-lang="fr">
-            MVP Conf a commencé au Brésil comme un petit rassemblement de Microsoft Most Valuable Professionals (MVPs) 
+            MVP Conference a commencé au Brésil comme un petit rassemblement de Microsoft Most Valuable Professionals (MVPs) 
             qui partageaient un objectif commun : diffuser les connaissances et construire une communauté tech plus forte. 
             Ce qui a commencé comme un modeste événement local est devenu l'une des conférences communautaires Microsoft 
             les plus importantes d'Amérique latine.
           </p>
           <p data-lang="pt">
-            O MVP Conf começou no Brasil como um pequeno encontro de Microsoft Most Valuable Professionals (MVPs) 
+            O MVP Conference começou no Brasil como um pequeno encontro de Microsoft Most Valuable Professionals (MVPs) 
             que compartilhavam um objetivo comum: disseminar conhecimento e construir uma comunidade tech mais forte. 
             O que começou como um evento local modesto cresceu e se tornou uma das conferências de comunidade Microsoft 
             mais importantes da América Latina.
           </p>
           
           <p data-lang="en">
-            Over the years, MVP Conf has hosted hundreds of sessions covering Azure, .NET, Power Platform, 
+            Over the years, MVP Conference has hosted hundreds of sessions covering Azure, .NET, Power Platform, 
             Microsoft 365, AI, and emerging technologies. The event has become a platform where seasoned 
             experts and newcomers alike can learn, share experiences, and forge lasting professional relationships.
           </p>
           <p data-lang="fr">
-            Au fil des années, MVP Conf a accueilli des centaines de sessions couvrant Azure, .NET, Power Platform, 
+            Au fil des années, MVP Conference a accueilli des centaines de sessions couvrant Azure, .NET, Power Platform, 
             Microsoft 365, l'IA et les technologies émergentes. L'événement est devenu une plateforme où experts 
             chevronnés et nouveaux venus peuvent apprendre, partager des expériences et forger des relations 
             professionnelles durables.
           </p>
           <p data-lang="pt">
-            Ao longo dos anos, o MVP Conf hospedou centenas de sessões cobrindo Azure, .NET, Power Platform, 
+            Ao longo dos anos, o MVP Conference hospedou centenas de sessões cobrindo Azure, .NET, Power Platform, 
             Microsoft 365, IA e tecnologias emergentes. O evento se tornou uma plataforma onde especialistas 
             experientes e iniciantes podem aprender, compartilhar experiências e formar relacionamentos 
             profissionais duradouros.
@@ -1022,13 +1178,13 @@
       <h2 class="section-title" data-lang="pt">Nosso Propósito</h2>
       
       <p class="section-subtitle" data-lang="en">
-        MVP Conf Africa is more than an event — it's a movement to unite and empower
+        MVP Conference Africa is more than an event — it's a movement to unite and empower
       </p>
       <p class="section-subtitle" data-lang="fr">
-        MVP Conf Africa est plus qu'un événement — c'est un mouvement pour unir et autonomiser
+        MVP Conference Africa est plus qu'un événement — c'est un mouvement pour unir et autonomiser
       </p>
       <p class="section-subtitle" data-lang="pt">
-        O MVP Conf Africa é mais do que um evento — é um movimento para unir e empoderar
+        O MVP Conference Africa é mais do que um evento — é um movimento para unir e empoderar
       </p>
       
       <div class="purpose-grid">
@@ -1164,6 +1320,16 @@
       </p>
       <p class="section-subtitle" data-lang="pt">
         Três sessões online inspiradoras apresentadas por especialistas Microsoft
+      </p>
+      
+      <p class="section-subtitle" style="margin-top: 10px; font-size: 16px;" data-lang="en">
+        🌐 Sessions will be presented in <strong>English</strong>, <strong>French</strong>, and <strong>Portuguese</strong>
+      </p>
+      <p class="section-subtitle" style="margin-top: 10px; font-size: 16px;" data-lang="fr">
+        🌐 Les sessions seront présentées en <strong>anglais</strong>, <strong>français</strong> et <strong>portugais</strong>
+      </p>
+      <p class="section-subtitle" style="margin-top: 10px; font-size: 16px;" data-lang="pt">
+        🌐 As palestras serão apresentadas em <strong>português</strong>, <strong>inglês</strong> e <strong>francês</strong>
       </p>
       
       <div class="sessions-grid">
@@ -1331,17 +1497,17 @@
   <footer>
     <div class="container">
       <p data-lang="en">
-        © 2026 MVP Conf Africa. An initiative by the <a href="https://mvpconf.com.br">MVP Conf Brasil</a> community.
+        © 2026 MVP Conference Africa. An initiative by the <a href="https://mvpconf.com.br">MVP Conference Brasil</a> community.
         <br><br>
         Made with 🧡 for the African tech community
       </p>
       <p data-lang="fr">
-        © 2026 MVP Conf Africa. Une initiative de la communauté <a href="https://mvpconf.com.br">MVP Conf Brasil</a>.
+        © 2026 MVP Conference Africa. Une initiative de la communauté <a href="https://mvpconf.com.br">MVP Conference Brasil</a>.
         <br><br>
         Fait avec 🧡 pour la communauté tech africaine
       </p>
       <p data-lang="pt">
-        © 2026 MVP Conf Africa. Uma iniciativa da comunidade <a href="https://mvpconf.com.br">MVP Conf Brasil</a>.
+        © 2026 MVP Conference Africa. Uma iniciativa da comunidade <a href="https://mvpconf.com.br">MVP Conference Brasil</a>.
         <br><br>
         Feito com 🧡 para a comunidade tech africana
       </p>
