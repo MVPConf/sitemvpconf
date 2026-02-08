@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, MapPin, Users, ArrowRight, Presentation, Rocket, Trophy, Award, Shield, AlertTriangle } from 'lucide-react';
+import { Calendar, MapPin, Users, ArrowRight, Presentation, Rocket, Trophy, Award, Shield, AlertTriangle, Globe, Wifi } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const scrollToTickets = () => {
@@ -210,6 +210,76 @@ const Hero: React.FC = () => {
             Ver Palestrantes
           </button>
         </div>
+
+        {/* MVPConf Africa 2026 Box - Comentado temporariamente para publicação
+        <div className="mb-12 sm:mb-16 lg:mb-20 max-w-4xl mx-auto">
+          <a 
+            href="/mvpconf-africa.html" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block group"
+          >
+            <div className="relative bg-gradient-to-br from-amber-600/20 via-orange-600/20 to-red-600/20 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-amber-400/30 hover:border-amber-400/60 transition-all duration-300 overflow-hidden">
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute inset-0" style={{
+                  backgroundImage: 'repeating-linear-gradient(45deg, rgba(251, 191, 36, 0.3) 0px, rgba(251, 191, 36, 0.3) 2px, transparent 2px, transparent 10px)',
+                  backgroundSize: '14px 14px'
+                }}></div>
+              </div>
+
+              <div className="absolute -top-20 -right-20 w-40 h-40 bg-amber-500/30 rounded-full blur-3xl group-hover:bg-amber-400/40 transition-all duration-500"></div>
+              <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-orange-500/30 rounded-full blur-3xl group-hover:bg-orange-400/40 transition-all duration-500"></div>
+
+              <div className="relative z-10">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-3">
+                  <div className="flex items-center space-x-3">
+                    <div className="bg-gradient-to-br from-amber-500 to-orange-600 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                      <Globe className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-amber-200 via-orange-100 to-yellow-200 bg-clip-text text-transparent">
+                        MVP Conf Africa 2026
+                      </h3>
+                      <p className="text-sm text-amber-200/80">🌍 Conectando continentes através da tecnologia</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-amber-500/20 px-4 py-2 rounded-full border border-amber-400/30">
+                    <Wifi className="h-4 w-4 text-green-300" />
+                    <span className="text-sm font-semibold text-amber-100">Participe Online!</span>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                  <div className="flex items-start space-x-3">
+                    <Calendar className="h-5 w-5 text-amber-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="text-sm font-semibold text-white">Evento Internacional</p>
+                      <p className="text-xs text-amber-200/70">A primeira edição do MVP Conf no continente africano</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Users className="h-5 w-5 text-orange-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="text-sm font-semibold text-white">Comunidade Global</p>
+                      <p className="text-xs text-amber-200/70">MVPs e especialistas de todo o mundo reunidos</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-between pt-4 border-t border-amber-400/20 gap-3">
+                  <p className="text-amber-100 text-sm text-center sm:text-left">
+                    🦁 Junte-se a nós nesta celebração da inovação e diversidade tecnológica africana
+                  </p>
+                  <div className="flex items-center space-x-2 text-amber-200 group-hover:text-white transition-colors whitespace-nowrap">
+                    <span className="font-semibold">Saiba mais</span>
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        */}
       </div>
 
       {/* Scroll indicator */}
