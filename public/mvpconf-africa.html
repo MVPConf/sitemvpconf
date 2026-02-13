@@ -431,6 +431,58 @@
       color: rgba(255, 255, 255, 0.8);
       font-weight: 600;
     }
+
+    /* Event Info Section */
+    .event-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 50px;
+      padding: 24px 32px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .event-date {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fbbf24;
+    }
+
+    .event-date svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .event-languages {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .event-languages svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    .lang-flags {
+      display: flex;
+      gap: 8px;
+      font-size: 1.3rem;
+    }
     
     /* Section Styles */
     section {
@@ -884,6 +936,26 @@
         online extraordinário celebrando a inovação, o espírito Ubuntu e a vibrante comunidade 
         Microsoft em todo o continente africano.
       </p>
+
+      <div class="event-info">
+        <div class="event-date">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <span data-lang="en">April 26, 2026 • 9:00 AM - 6:00 PM (WAT)</span>
+          <span data-lang="fr">26 Avril 2026 • 9h00 - 18h00 (WAT)</span>
+          <span data-lang="pt">26 de Abril de 2026 • 9h00 - 18h00 (WAT)</span>
+        </div>
+        <div class="event-languages">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+          </svg>
+          <span data-lang="en">Talks in Portuguese, English & French</span>
+          <span data-lang="fr">Conférences en Portugais, Anglais & Français</span>
+          <span data-lang="pt">Palestras em Português, Inglês e Francês</span>
+          <span class="lang-flags">🇧🇷 🇬🇧 🇫🇷</span>
+        </div>
+      </div>
       
       <div class="hero-icons">
         <div class="hero-icon-item">
