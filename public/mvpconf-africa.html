@@ -924,6 +924,531 @@
     html[lang="fr"] span[data-lang="fr"] { display: inline; }
     html[lang="fr"] [data-lang="en"], html[lang="fr"] [data-lang="pt"] { display: none; }
     html[lang="fr"] span[data-lang="en"], html[lang="fr"] span[data-lang="pt"] { display: none; }
+
+    /* ==================== MOBILE RESPONSIVE STYLES ==================== */
+    
+    /* Tablets and smaller (max-width: 992px) */
+    @media (max-width: 992px) {
+      .hero-icons {
+        gap: 25px;
+      }
+      
+      .hero-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 32px;
+      }
+      
+      .purpose-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      
+      .sessions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+      
+      .sun-glow {
+        width: 500px;
+        height: 250px;
+      }
+    }
+    
+    /* Mobile devices (max-width: 768px) */
+    @media (max-width: 768px) {
+      /* Language Switcher - mobile optimized */
+      .lang-switcher {
+        top: 10px;
+        right: 10px;
+        padding: 6px;
+        gap: 4px;
+      }
+      
+      .lang-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+      
+      /* Hero Section */
+      .hero {
+        padding: 80px 15px 50px;
+        min-height: auto;
+      }
+      
+      .hero-badge {
+        padding: 10px 20px;
+        font-size: 14px;
+        margin-bottom: 25px;
+      }
+      
+      .hero h1 {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+      }
+      
+      .hero h1 span {
+        font-size: clamp(1.2rem, 4vw, 2rem);
+      }
+      
+      .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
+        margin-bottom: 35px;
+      }
+      
+      /* Hero Icons Grid */
+      .hero-icons {
+        gap: 15px;
+        justify-content: center;
+      }
+      
+      .hero-icon-item {
+        flex: 0 0 calc(33.333% - 15px);
+        min-width: 80px;
+      }
+      
+      .hero-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+        border-radius: 14px;
+      }
+      
+      .hero-icon-text {
+        font-size: 11px;
+      }
+      
+      /* Event Info */
+      .event-info {
+        padding: 18px 20px;
+        margin-bottom: 35px;
+      }
+      
+      .event-date {
+        font-size: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+      }
+      
+      .event-date svg {
+        width: 22px;
+        height: 22px;
+      }
+      
+      .event-languages {
+        font-size: 0.85rem;
+      }
+      
+      .lang-flags {
+        font-size: 1.1rem;
+      }
+      
+      /* Sections */
+      section {
+        padding: 60px 15px;
+      }
+      
+      .section-title {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        margin-bottom: 15px;
+      }
+      
+      .section-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 40px;
+        padding: 0 10px;
+      }
+      
+      /* History Stats */
+      .history-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      
+      .stat-card {
+        padding: 20px 15px;
+        border-radius: 16px;
+      }
+      
+      .stat-number {
+        font-size: 1.8rem;
+      }
+      
+      .stat-label {
+        font-size: 0.75rem;
+      }
+      
+      /* Purpose Cards */
+      .purpose-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      
+      .purpose-card {
+        padding: 28px 24px;
+        border-radius: 18px;
+      }
+      
+      .purpose-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 26px;
+        border-radius: 14px;
+        margin-bottom: 18px;
+      }
+      
+      .purpose-card h3 {
+        font-size: 1.2rem;
+      }
+      
+      .purpose-card p {
+        font-size: 0.9rem;
+      }
+      
+      /* Track Tabs */
+      .track-tabs {
+        gap: 8px;
+        margin-bottom: 30px;
+      }
+      
+      .track-tab {
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+      
+      /* Session Cards */
+      .sessions-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .session-card {
+        border-radius: 18px;
+      }
+      
+      .session-header {
+        padding: 18px;
+      }
+      
+      .session-title {
+        font-size: 1.1rem;
+      }
+      
+      .session-body {
+        padding: 18px;
+      }
+      
+      .session-description {
+        font-size: 0.9rem;
+      }
+      
+      .session-speaker {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      
+      .online-badge {
+        margin-left: 0;
+        margin-top: 8px;
+        width: 100%;
+        justify-content: center;
+      }
+      
+      /* YouTube Section */
+      .youtube {
+        padding: 80px 15px;
+      }
+      
+      .youtube-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 32px;
+        border-radius: 18px;
+        margin-bottom: 20px;
+      }
+      
+      .youtube h2 {
+        font-size: clamp(1.4rem, 4vw, 2rem);
+      }
+      
+      .youtube p {
+        font-size: 0.95rem;
+        padding: 0 10px;
+      }
+      
+      .youtube-btn {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+      }
+      
+      /* Footer */
+      footer {
+        padding: 40px 15px;
+      }
+      
+      footer p {
+        font-size: 13px;
+      }
+      
+      /* Decorative Elements - reduce on mobile */
+      .deco-circle,
+      .deco-diamond,
+      .deco-triangle {
+        opacity: 0.4;
+        transform: scale(0.7);
+      }
+      
+      .sun-glow {
+        width: 350px;
+        height: 175px;
+        bottom: -50px;
+      }
+      
+      .tree-silhouette {
+        height: 100px;
+        opacity: 0.3;
+      }
+    }
+    
+    /* Small mobile devices (max-width: 480px) */
+    @media (max-width: 480px) {
+      .lang-switcher {
+        top: 8px;
+        right: 8px;
+        padding: 4px;
+        gap: 3px;
+      }
+      
+      .lang-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+      }
+      
+      .hero {
+        padding: 70px 12px 40px;
+      }
+      
+      .hero-badge {
+        padding: 8px 16px;
+        font-size: 12px;
+        gap: 6px;
+      }
+      
+      .hero h1 {
+        font-size: clamp(1.8rem, 10vw, 2.5rem);
+      }
+      
+      .hero h1 span {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+      }
+      
+      .hero-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+      
+      /* Hero icons - 3 columns on very small screens */
+      .hero-icons {
+        gap: 10px;
+      }
+      
+      .hero-icon-item {
+        flex: 0 0 calc(33.333% - 10px);
+        min-width: 70px;
+      }
+      
+      .hero-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+        border-radius: 12px;
+      }
+      
+      .hero-icon-text {
+        font-size: 10px;
+      }
+      
+      .event-info {
+        padding: 15px;
+        border-radius: 16px;
+      }
+      
+      .event-date {
+        font-size: 0.85rem;
+      }
+      
+      .event-date svg {
+        width: 18px;
+        height: 18px;
+      }
+      
+      .event-languages {
+        font-size: 0.8rem;
+      }
+      
+      section {
+        padding: 50px 12px;
+      }
+      
+      .section-title {
+        font-size: clamp(1.3rem, 5vw, 1.8rem);
+      }
+      
+      /* History - stack stats vertically */
+      .history-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      
+      .stat-card {
+        padding: 18px 12px;
+      }
+      
+      .stat-number {
+        font-size: 1.5rem;
+      }
+      
+      .stat-label {
+        font-size: 0.7rem;
+      }
+      
+      .history-text {
+        font-size: 0.95rem;
+      }
+      
+      /* Track Tabs - wrap nicely */
+      .track-tabs {
+        gap: 6px;
+      }
+      
+      .track-tab {
+        padding: 8px 12px;
+        font-size: 12px;
+        flex: 1;
+        min-width: auto;
+        text-align: center;
+      }
+      
+      .session-header {
+        padding: 15px;
+      }
+      
+      .session-time {
+        font-size: 11px;
+        padding: 5px 10px;
+      }
+      
+      .session-title {
+        font-size: 1rem;
+      }
+      
+      .session-body {
+        padding: 15px;
+      }
+      
+      .speaker-avatar {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+      }
+      
+      .speaker-info h4 {
+        font-size: 0.9rem;
+      }
+      
+      .speaker-info p {
+        font-size: 11px;
+      }
+      
+      .youtube-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+      }
+      
+      .youtube-btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        gap: 10px;
+      }
+      
+      .youtube-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+      
+      /* Hide some decorative elements on very small screens */
+      .deco-circle:nth-child(3),
+      .deco-circle:nth-child(4),
+      .deco-diamond:nth-child(7),
+      .deco-triangle:nth-child(9) {
+        display: none;
+      }
+      
+      .sun-glow {
+        width: 280px;
+        height: 140px;
+      }
+    }
+    
+    /* Extra small devices (max-width: 360px) */
+    @media (max-width: 360px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      
+      .hero h1 span {
+        font-size: 0.9rem;
+      }
+      
+      .hero-badge {
+        font-size: 11px;
+        padding: 6px 14px;
+      }
+      
+      .hero-icon-item {
+        flex: 0 0 calc(33.333% - 8px);
+      }
+      
+      .hero-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+      }
+      
+      .hero-icon-text {
+        font-size: 9px;
+      }
+      
+      .track-tab {
+        font-size: 11px;
+        padding: 7px 10px;
+      }
+      
+      .stat-number {
+        font-size: 1.3rem;
+      }
+    }
+    
+    /* Landscape orientation adjustments */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .hero {
+        min-height: auto;
+        padding: 60px 20px 40px;
+      }
+      
+      .hero-icons {
+        margin-bottom: 30px;
+      }
+      
+      .sun-glow {
+        display: none;
+      }
+      
+      .tree-silhouette {
+        height: 60px;
+      }
+    }
   </style>
 </head>
 
@@ -990,9 +1515,9 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
-          <span data-lang="en">April 26, 2026 • 9:00 AM - 6:00 PM (WAT)</span>
-          <span data-lang="fr">26 Avril 2026 • 9h00 - 18h00 (WAT)</span>
-          <span data-lang="pt">26 de Abril de 2026 • 9h00 - 18h00 (WAT)</span>
+          <span data-lang="en">March 7, 2026 • 9:00 AM - 6:00 PM (WAT)</span>
+          <span data-lang="fr">7 Mars 2026 • 9h00 - 18h00 (WAT)</span>
+          <span data-lang="pt">7 de Março de 2026 • 9h00 - 18h00 (WAT)</span>
         </div>
         <div class="event-languages">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1006,12 +1531,6 @@
       </div>
       
       <div class="hero-icons">
-        <div class="hero-icon-item">
-          <div class="hero-icon">🌍</div>
-          <span class="hero-icon-text" data-lang="en">Pan-African</span>
-          <span class="hero-icon-text" data-lang="fr">Panafricain</span>
-          <span class="hero-icon-text" data-lang="pt">Pan-Africano</span>
-        </div>
         <div class="hero-icon-item">
           <div class="hero-icon">📡</div>
           <span class="hero-icon-text" data-lang="en">100% Online</span>
@@ -1029,12 +1548,6 @@
           <span class="hero-icon-text" data-lang="en">African Spirit</span>
           <span class="hero-icon-text" data-lang="fr">Esprit Africain</span>
           <span class="hero-icon-text" data-lang="pt">Espírito Africano</span>
-        </div>
-        <div class="hero-icon-item">
-          <div class="hero-icon">🤝</div>
-          <span class="hero-icon-text" data-lang="en">Ubuntu</span>
-          <span class="hero-icon-text" data-lang="fr">Ubuntu</span>
-          <span class="hero-icon-text" data-lang="pt">Ubuntu</span>
         </div>
       </div>
     </div>
