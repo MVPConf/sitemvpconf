@@ -829,12 +829,19 @@
       margin-bottom: 20px;
     }
     
+    .session-speakers-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 16px;
+    }
+    
     .session-speaker {
       display: flex;
       align-items: center;
       gap: 16px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     .speaker-avatar {
@@ -1929,7 +1936,7 @@
       </p>
       
       <div class="speakers-grid" id="speakers-container">
-        <!-- Speakers will be loaded dynamically from /data/talks-africa.json -->
+        <!-- Speakers will be loaded dynamically from ./talks.json -->
         <p style="color: rgba(255,255,255,0.5); text-align: center; padding: 40px; grid-column: 1/-1;">Loading speakers...</p>
       </div>
     </div>
@@ -1959,7 +1966,7 @@
       
       <!-- Sessions Container - Loaded from JSON -->
       <div id="sessions-container">
-        <!-- Sessions will be loaded dynamically from /data/talks-africa.json -->
+        <!-- Sessions will be loaded dynamically from ./talks.json -->
         <div class="sessions-track active" id="track-pt">
           <div class="sessions-grid">
             <p style="color: rgba(255,255,255,0.5); text-align: center; padding: 40px;">Loading sessions...</p>
@@ -2061,7 +2068,7 @@
       });
     }
     
-    function createSpeakerCard(speaker) {
+    function createSpeakerCard(speaker, language) {
       const langFlags = {
         'pt-br': '🇧🇷',
         'fr-FR': '🇫🇷',
@@ -2076,7 +2083,7 @@
       const hasRealPhoto = speaker.photoUrl && speaker.photoUrl.startsWith('http') && !speaker.photoUrl.includes('placeholder');
       
       const photoContent = hasRealPhoto 
-        ? `<img src="${photoUrl}" alt="${speaker.speakerName}" loading="lazy">` 
+        ? `<img src="${photoUrl}" alt="${speaker.name}" loading="lazy">` 
         : `<div class="speaker-card-initials">${speaker.initials}</div>`;
       
       const linkedinLink = speaker.linkedin 
@@ -2088,9 +2095,9 @@
           <div class="speaker-card-photo">
             ${photoContent}
           </div>
-          <h3 class="speaker-card-name">${speaker.speakerName}</h3>
-          <p class="speaker-card-title">${speaker.title}</p>
-          <span class="speaker-card-lang">${langFlags[speaker.language] || '🌍'} ${langNames[speaker.language] || speaker.language}</span>
+          <h3 class="speaker-card-name">${speaker.name}</h3>
+          <p class="speaker-card-title">${speaker.talkTitle || ''}</p>
+          <span class="speaker-card-lang">${langFlags[language] || '🌍'} ${langNames[language] || language}</span>
           ${linkedinLink}
         </div>
       `;
@@ -2104,22 +2111,39 @@
       // Collect unique speakers from all tracks
       for (const [langKey, track] of Object.entries(data.tracks)) {
         track.talks.forEach(talk => {
-          if (!seenNames.has(talk.speakerName)) {
-            seenNames.add(talk.speakerName);
-            allSpeakers.push({
-              ...talk,
-              language: langKey
-            });
-          }
+          talk.speakers.forEach(speaker => {
+            if (!seenNames.has(speaker.name)) {
+              seenNames.add(speaker.name);
+              allSpeakers.push({
+                ...speaker,
+                talkTitle: talk.title,
+                language: langKey
+              });
+            }
+          });
         });
       }
       
       // Render speaker cards
-      speakersContainer.innerHTML = allSpeakers.map(speaker => createSpeakerCard(speaker)).join('');
+      speakersContainer.innerHTML = allSpeakers.map(speaker => createSpeakerCard(speaker, speaker.language)).join('');
     }
     
     function createSessionCard(talk) {
       const timeDisplay = talk.time || 'TBA';
+      const speakerNames = talk.speakers.map(s => s.name).join(' & ');
+      const firstSpeaker = talk.speakers[0];
+      const initials = talk.speakers.map(s => s.initials).join('/');
+      
+      const speakersHtml = talk.speakers.map(speaker => `
+        <div class="session-speaker">
+          <div class="speaker-avatar">${speaker.initials}</div>
+          <div class="speaker-info">
+            <h4>${speaker.name}</h4>
+            <p>Microsoft MVP</p>
+          </div>
+        </div>
+      `).join('');
+      
       return `
         <div class="session-card">
           <div class="session-header">
@@ -2128,14 +2152,10 @@
           </div>
           <div class="session-body">
             <p class="session-description">${talk.abstract}</p>
-            <div class="session-speaker">
-              <div class="speaker-avatar">${talk.initials}</div>
-              <div class="speaker-info">
-                <h4>${talk.speakerName}</h4>
-                <p>Microsoft MVP</p>
-              </div>
-              <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
+            <div class="session-speakers-list">
+              ${speakersHtml}
             </div>
+            <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
           </div>
         </div>
       `;
@@ -2194,7 +2214,7 @@
     
     async function loadTalks() {
       try {
-        const response = await fetch('/data/talks-africa.json');
+        const response = await fetch('./talks.json');
         talksData = await response.json();
         renderSpeakers(talksData);
         renderTracks(talksData);
