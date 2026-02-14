@@ -12,13 +12,13 @@
             {
               "name": "José Quintino",
               "linkedin": "https://www.linkedin.com/in/josequintinocosta/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/jose-quintino.jpeg",
               "initials": "JQ"
             },
             {
               "name": "Rajir Palhares",
-              "linkedin": "",
-              "photoUrl": "",
+              "linkedin": "https://www.linkedin.com/in/rajirpalhares/",
+              "photoUrl": "./images/speakers/rajir-palhares.jpeg",
               "initials": "RP"
             }
           ],
