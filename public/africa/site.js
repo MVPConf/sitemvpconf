@@ -1,5 +1,44 @@
 let talksData = null;
 
+// Display local timezone time
+function displayLocalTime() {
+  const localTimeEl = document.getElementById('local-time');
+  if (!localTimeEl) return;
+  
+  // Event times in UTC+1: March 7, 2026 08:00-17:00 (UTC+1 = 07:00-16:00 UTC)
+  const startUTC = new Date('2026-03-07T07:00:00Z');
+  const endUTC = new Date('2026-03-07T16:00:00Z');
+  
+  // Get user's timezone
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const lang = document.documentElement.lang || 'en';
+  
+  // Format times in local timezone
+  const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: false };
+  const startLocal = startUTC.toLocaleTimeString(lang, timeOptions);
+  const endLocal = endUTC.toLocaleTimeString(lang, timeOptions);
+  
+  // Get timezone abbreviation or offset
+  const tzAbbr = new Date().toLocaleTimeString(lang, { timeZoneName: 'short' }).split(' ').pop();
+  
+  // Check if local time differs from UTC+1 (offset 1)
+  const utcOffset = -new Date().getTimezoneOffset() / 60;
+  if (utcOffset === 1) {
+    localTimeEl.style.display = 'none';
+    return;
+  }
+  
+  // Multilingual labels
+  const labels = {
+    en: 'In your local time',
+    fr: 'Dans votre fuseau horaire',
+    pt: 'No seu hor\u00e1rio local'
+  };
+  
+  localTimeEl.innerHTML = `<span data-lang="en">${labels.en}: ${startLocal} - ${endLocal} (${tzAbbr})</span><span data-lang="fr">${labels.fr}: ${startLocal} - ${endLocal} (${tzAbbr})</span><span data-lang="pt">${labels.pt}: ${startLocal} - ${endLocal} (${tzAbbr})</span>`;
+  localTimeEl.style.display = 'block';
+}
+
 function setLanguage(lang) {
   document.documentElement.lang = lang;
   
@@ -107,11 +146,21 @@ function createSessionCard(talk) {
     const avatarContent = hasPhoto 
       ? `<img src="${speaker.photoUrl}" alt="${speaker.name}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">` 
       : speaker.initials;
+    const hasLinkedin = speaker.linkedin && speaker.linkedin.trim() !== '';
+    
+    const avatarEl = hasLinkedin 
+      ? `<a href="${speaker.linkedin}" target="_blank" rel="noopener noreferrer" class="speaker-avatar speaker-link">${avatarContent}</a>`
+      : `<div class="speaker-avatar">${avatarContent}</div>`;
+    
+    const nameEl = hasLinkedin
+      ? `<a href="${speaker.linkedin}" target="_blank" rel="noopener noreferrer" class="speaker-name-link"><h4>${speaker.name}</h4></a>`
+      : `<h4>${speaker.name}</h4>`;
+    
     return `
     <div class="session-speaker">
-      <div class="speaker-avatar">${avatarContent}</div>
+      ${avatarEl}
       <div class="speaker-info">
-        <h4>${speaker.name}</h4>
+        ${nameEl}
         <p>Microsoft MVP</p>
       </div>
     </div>
@@ -199,6 +248,7 @@ async function loadTalks() {
 
 // Load saved language preference and talks data
 document.addEventListener('DOMContentLoaded', function() {
+  displayLocalTime();
   loadTalks().then(() => {
     const savedLang = localStorage.getItem('mvpconf-africa-lang') || 'en';
     setLanguage(savedLang);

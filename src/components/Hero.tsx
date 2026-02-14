@@ -211,10 +211,10 @@ const Hero: React.FC = () => {
           </button>
         </div>
 
-        {/* MVPConf Africa 2026 Box - Comentado temporariamente para publicação
+        
         <div className="mb-12 sm:mb-16 lg:mb-20 max-w-4xl mx-auto">
           <a 
-            href="/mvpconf-africa.html" 
+            href="/africa/index.html" 
             target="_blank" 
             rel="noopener noreferrer"
             className="block group"
@@ -238,7 +238,7 @@ const Hero: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-amber-200 via-orange-100 to-yellow-200 bg-clip-text text-transparent">
-                        MVP Conf Africa 2026
+                        MVP Conference Africa 2026
                       </h3>
                       <p className="text-sm text-amber-200/80">🌍 Conectando continentes através da tecnologia</p>
                     </div>
@@ -254,7 +254,7 @@ const Hero: React.FC = () => {
                     <Calendar className="h-5 w-5 text-amber-400 mt-1 flex-shrink-0" />
                     <div>
                       <p className="text-sm font-semibold text-white">Evento Internacional</p>
-                      <p className="text-xs text-amber-200/70">A primeira edição do MVP Conf no continente africano</p>
+                      <p className="text-xs text-amber-200/70">A primeira edição do MVP Conference no continente africano</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -279,7 +279,6 @@ const Hero: React.FC = () => {
             </div>
           </a>
         </div>
-        */}
       </div>
 
       {/* Scroll indicator */}

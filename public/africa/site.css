@@ -428,6 +428,23 @@ body {
   height: 28px;
 }
 
+.event-date-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.local-time {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-top: 4px;
+  display: inline-block;
+}
+
 .event-languages {
   display: flex;
   align-items: center;
@@ -832,6 +849,29 @@ section {
 .speaker-info p {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.5);
+}
+
+/* Speaker LinkedIn links in sessions */
+a.speaker-avatar {
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.speaker-avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.5);
+}
+
+.speaker-name-link {
+  text-decoration: none;
+}
+
+.speaker-name-link h4 {
+  transition: color 0.2s ease;
+}
+
+.speaker-name-link:hover h4 {
+  color: #fbbf24;
 }
 
 .online-badge {
@@ -1540,5 +1580,103 @@ html[lang="fr"] span[data-lang="en"], html[lang="fr"] span[data-lang="pt"] { dis
   
   .tree-silhouette {
     height: 60px;
+  }
+}
+
+/* Registration CTA Button */
+.register-cta {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+/* Hero button - white for contrast with orange/brown gradient */
+.hero .register-btn {
+  background: linear-gradient(135deg, #ffffff, #f5f5f5);
+  color: #3E2723;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 0 3px rgba(255, 255, 255, 0.5);
+  border: 3px solid rgba(62, 39, 35, 0.2);
+}
+
+.hero .register-btn:hover {
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  color: #2E1810;
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 0 4px rgba(255, 255, 255, 0.7);
+}
+
+.register-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+  border: none;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(245, 158, 11, 0.5);
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+.register-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.register-btn-hero {
+  padding: 20px 48px;
+  font-size: 1.2rem;
+  animation: pulse 2s infinite;
+}
+
+.register-btn-secondary {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(217, 119, 6, 0.2));
+  border: 2px solid rgba(245, 158, 11, 0.5);
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
+}
+
+.register-btn-secondary:hover {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border-color: transparent;
+}
+
+/* Mobile adjustments for register buttons */
+@media (max-width: 768px) {
+  .register-btn {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+  
+  .register-btn-hero {
+    padding: 16px 32px;
+    font-size: 1rem;
+  }
+  
+  .register-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+  
+  .register-btn-hero {
+    padding: 14px 28px;
+    font-size: 0.95rem;
   }
 }
