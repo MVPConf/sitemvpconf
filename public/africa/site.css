@@ -69,7 +69,7 @@ body {
   position: relative;
   overflow: hidden;
   background: 
-    /* African sunset gradient inspired by savanna */
+    /* Warm gradient inspired by African earth tones and innovation */
     linear-gradient(180deg, 
       #3E2723 0%,
       #5D3A1A 15%,
@@ -259,7 +259,7 @@ body {
   50% { transform: translateY(-20px) rotate(10deg); opacity: 1; }
 }
 
-/* Sun glow effect */
+/* Abstract glow effect - inspired by African innovation */
 .sun-glow {
   position: absolute;
   bottom: -80px;
@@ -268,33 +268,51 @@ body {
   width: 700px;
   height: 350px;
   background: radial-gradient(ellipse at center bottom, 
-    rgba(255, 193, 7, 0.6) 0%,
-    rgba(255, 152, 0, 0.4) 25%,
-    rgba(245, 124, 0, 0.25) 45%,
-    rgba(230, 81, 0, 0.12) 65%,
-    transparent 85%
+    rgba(255, 193, 7, 0.5) 0%,
+    rgba(255, 152, 0, 0.3) 30%,
+    rgba(245, 124, 0, 0.15) 50%,
+    transparent 75%
   );
-  filter: blur(50px);
-  animation: sunPulse 8s ease-in-out infinite;
+  filter: blur(60px);
+  animation: glowPulse 8s ease-in-out infinite;
 }
 
-@keyframes sunPulse {
-  0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
-  50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+  50% { opacity: 0.9; transform: translateX(-50%) scale(1.05); }
 }
 
-/* Acacia tree silhouettes */
+/* Kente-inspired geometric pattern border */
 .tree-silhouette {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 150px;
+  height: 80px;
   background: 
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cpath d='M20,100 L22,70 Q10,65 5,55 Q0,45 15,40 Q5,35 10,25 Q15,15 30,20 Q25,10 35,5 Q50,0 60,15 Q70,5 80,15 Q90,0 100,10 Q110,5 115,20 Q130,15 135,30 Q145,25 150,40 Q165,35 160,50 Q175,55 165,65 Q180,70 178,100 Z' fill='rgba(10,10,15,0.4)'/%3E%3C/svg%3E") 
-    no-repeat left bottom / 200px 100px,
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cpath d='M20,100 L22,70 Q10,65 5,55 Q0,45 15,40 Q5,35 10,25 Q15,15 30,20 Q25,10 35,5 Q50,0 60,15 Q70,5 80,15 Q90,0 100,10 Q110,5 115,20 Q130,15 135,30 Q145,25 150,40 Q165,35 160,50 Q175,55 165,65 Q180,70 178,100 Z' fill='rgba(10,10,15,0.3)'/%3E%3C/svg%3E") 
-    no-repeat right bottom / 180px 90px;
-  opacity: 0.5;
+    /* Kente-inspired horizontal stripes */
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 193, 7, 0.15) 0px,
+      rgba(255, 193, 7, 0.15) 4px,
+      transparent 4px,
+      transparent 8px
+    ),
+    /* Adinkra-inspired zigzag pattern */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 20px,
+      rgba(230, 81, 0, 0.1) 20px,
+      rgba(230, 81, 0, 0.1) 40px
+    ),
+    /* Ndebele-inspired geometric shapes */
+    linear-gradient(
+      to top,
+      rgba(139, 69, 19, 0.25) 0%,
+      rgba(139, 69, 19, 0.15) 30%,
+      transparent 100%
+    );
+  opacity: 0.8;
   pointer-events: none;
 }
 

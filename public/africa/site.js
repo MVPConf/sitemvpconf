@@ -170,7 +170,6 @@ function createSessionCard(talk) {
   return `
     <div class="session-card">
       <div class="session-header">
-        <div class="session-time">🕐 ${timeDisplay}</div>
         <h3 class="session-title">${talk.title}</h3>
       </div>
       <div class="session-body">
