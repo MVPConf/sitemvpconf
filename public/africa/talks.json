@@ -290,7 +290,7 @@
             {
               "name": "Jamel ABED",
               "linkedin": "https://www.linkedin.com/in/professionalsharepoint/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/jamel-abed.jpg",
               "initials": "JA"
             }
           ],
@@ -304,7 +304,7 @@
             {
               "name": "Walid CHAFROUD",
               "linkedin": "https://www.linkedin.com/in/walidchafroud/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/walid-chafroud.jpg",
               "initials": "WC"
             }
           ],
@@ -323,8 +323,8 @@
           "speakers": [
             {
               "name": "Chiugo Josephat Okpala",
-              "linkedin": "https://www.linkedin.com/in/chiugo-j-okpala-azure-mvp-66362b1a/",
-              "photoUrl": "",
+              "linkedin": "https://www.linkedin.com/in/chiugo-j-okpala-azure-mvp-%E2%9C%A8-66362b1a/",
+              "photoUrl": "./images/speakers/chiugo-okpala.jpg",
               "initials": "CO"
             }
           ],
@@ -337,8 +337,8 @@
           "speakers": [
             {
               "name": "Chiugo Josephat Okpala",
-              "linkedin": "https://www.linkedin.com/in/chiugo-j-okpala-azure-mvp-66362b1a/",
-              "photoUrl": "",
+              "linkedin": "https://www.linkedin.com/in/chiugo-j-okpala-azure-mvp-%E2%9C%A8-66362b1a/",
+              "photoUrl": "./images/speakers/chiugo-okpala.jpg",
               "initials": "CO"
             }
           ],
@@ -352,7 +352,7 @@
             {
               "name": "Isaiah Clifford Opoku",
               "linkedin": "https://www.linkedin.com/in/isaiah-clifford-opoku/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/isaiah-clifford.jpg",
               "initials": "IO"
             }
           ],
@@ -365,8 +365,8 @@
           "speakers": [
             {
               "name": "Abdul Wahab",
-              "linkedin": "",
-              "photoUrl": "",
+              "linkedin": "https://www.linkedin.com/in/abdul-wahab-a5b8b011a/",
+              "photoUrl": "./images/speakers/abdul-wahab.jpg",
               "initials": "AW"
             }
           ],
@@ -380,7 +380,7 @@
             {
               "name": "Rehab Ragab",
               "linkedin": "https://www.linkedin.com/in/rehab-ragab/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/rehab-ragab.jpg",
               "initials": "RR"
             }
           ],
@@ -394,7 +394,7 @@
             {
               "name": "Olajumoke Toriola",
               "linkedin": "https://www.linkedin.com/in/oltoriola/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/olajumoke-toriola.jpg",
               "initials": "OT"
             }
           ],
@@ -408,7 +408,7 @@
             {
               "name": "Oluwaseyi Oluwawumiju",
               "linkedin": "https://www.linkedin.com/in/oluwaseyioluwawumiju/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/oluwaSeyi-oluwawumiju.jpg",
               "initials": "OO"
             }
           ],
@@ -422,7 +422,7 @@
             {
               "name": "Audrey MENGUE",
               "linkedin": "https://www.linkedin.com/in/audreyhmmengue",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/audrey-mengue.jpg",
               "initials": "AM"
             }
           ],
@@ -436,7 +436,7 @@
             {
               "name": "Joseph Afeso",
               "linkedin": "https://www.linkedin.com/in/joseph-afeso/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/joseph-afeso.jpg",
               "initials": "JA"
             }
           ],
@@ -450,7 +450,7 @@
             {
               "name": "Heba Ahmed Ali Hegab",
               "linkedin": "https://www.linkedin.com/in/hhegab/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/heba-hegab.png",
               "initials": "HH"
             }
           ],
