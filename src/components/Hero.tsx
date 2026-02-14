@@ -214,7 +214,7 @@ const Hero: React.FC = () => {
         
         <div className="mb-12 sm:mb-16 lg:mb-20 max-w-4xl mx-auto">
           <a 
-            href="/africa/index.html" 
+            href="/africa" 
             target="_blank" 
             rel="noopener noreferrer"
             className="block group"
