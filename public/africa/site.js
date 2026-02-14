@@ -246,9 +246,27 @@ async function loadTalks() {
   }
 }
 
+// Registration coming soon alert
+function showRegistrationAlert(event) {
+  event.preventDefault();
+  const lang = document.documentElement.lang || 'en';
+  const messages = {
+    en: '🎫 Registration coming soon!\n\nThe registration link will be available shortly. Stay tuned!',
+    fr: '🎫 Inscription bientôt disponible!\n\nLe lien d\'inscription sera disponible prochainement. Restez connecté!',
+    pt: '🎫 Inscrições em breve!\n\nO link para inscrição estará disponível em breve. Fique ligado!'
+  };
+  alert(messages[lang] || messages.en);
+}
+
 // Load saved language preference and talks data
 document.addEventListener('DOMContentLoaded', function() {
   displayLocalTime();
+  
+  // Attach click handlers to registration buttons
+  document.querySelectorAll('.register-btn').forEach(btn => {
+    btn.addEventListener('click', showRegistrationAlert);
+  });
+  
   loadTalks().then(() => {
     const savedLang = localStorage.getItem('mvpconf-africa-lang') || 'en';
     setLanguage(savedLang);
