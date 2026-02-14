@@ -32,7 +32,7 @@
             {
               "name": "Abel Azarias Marquele",
               "linkedin": "https://www.linkedin.com/in/abelazariasmarquele/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/abel-azarias-marquele.png",
               "initials": "AA"
             }
           ],
@@ -46,7 +46,7 @@
             {
               "name": "Elvira Cambe",
               "linkedin": "https://www.linkedin.com/in/elviracambe/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/elvira-cambe.png",
               "initials": "EC"
             }
           ],
@@ -60,7 +60,7 @@
             {
               "name": "Alexandre Capita",
               "linkedin": "https://www.linkedin.com/in/alexandre-c-95643952/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/alexandre-capita.jpeg",
               "initials": "AC"
             }
           ],
@@ -74,7 +74,7 @@
             {
               "name": "Tiago Costa",
               "linkedin": "https://www.linkedin.com/in/tiagocosta/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/tiago-costa.jpeg",
               "initials": "TC"
             }
           ],
@@ -88,7 +88,7 @@
             {
               "name": "Ladislau André",
               "linkedin": "https://www.linkedin.com/in/ladislau-andr%C3%A9-data-analyst/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/ladislau-andre.jpeg",
               "initials": "LA"
             }
           ],
@@ -102,7 +102,7 @@
             {
               "name": "Cremildo Manhique",
               "linkedin": "https://www.linkedin.com/in/cremildosamanhique",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/cremildo-manhique.jpeg",
               "initials": "CM"
             }
           ],
@@ -116,7 +116,7 @@
             {
               "name": "André Melancia",
               "linkedin": "https://www.linkedin.com/in/AndreMelancia",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/andre-melancia.jpeg",
               "initials": "AM"
             }
           ],
@@ -130,7 +130,7 @@
             {
               "name": "Francisca Peixoto",
               "linkedin": "https://www.linkedin.com/in/francisca-peixoto/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/francisca-peixoto.jpeg",
               "initials": "FP"
             }
           ],
@@ -144,7 +144,7 @@
             {
               "name": "José Tabula Afonso",
               "linkedin": "https://www.linkedin.com/in/jjoseafonso/",
-              "photoUrl": "",
+              "photoUrl": "./images/speakers/jose-tabula-afonso.png",
               "initials": "JA"
             }
           ],
