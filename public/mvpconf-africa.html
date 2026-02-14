@@ -1809,613 +1809,23 @@
       </p>
       
       <!-- Language Track Tabs -->
-      <div class="track-tabs">
-        <button class="track-tab active" data-track="pt">🇧🇷 Português (14)</button>
-        <button class="track-tab" data-track="fr">🇫🇷 Français (7)</button>
-        <button class="track-tab" data-track="en">🇬🇧 English (10)</button>
+      <div class="track-tabs" id="track-tabs-container">
+        <!-- Tabs will be loaded dynamically -->
       </div>
       
-      <!-- Portuguese Track -->
-      <div class="sessions-track active" id="track-pt">
-        <div class="sessions-grid">
-          <!-- José Quintino e Rajir Palhares -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 Morning</div>
-              <h3 class="session-title">Mesa-Redonda: Microsoft 365 Copilot – Insights e Estudos de Caso</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">A round table discussion on Microsoft 365 Copilot with Rajir Palhares, exploring real-world case studies, practical use cases, and best practices for driving productivity and innovation in organizations.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">JQ</div>
-                <div class="speaker-info">
-                  <h4>José Quintino e Rajir Palhares</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Abel Azarias Marquele -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 TBA</div>
-              <h3 class="session-title">Power BI + DHIS2: Dashboards Dinâmicos a Impulsionar o Impacto na Saúde Pública</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Aprenda como integrar Power BI com DHIS2 para criar dashboards dinâmicos que impulsionam o impacto na saúde pública.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">AA</div>
-                <div class="speaker-info">
-                  <h4>Abel Azarias Marquele</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Elvira Cambe -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 TBA</div>
-              <h3 class="session-title">O Caminho da Maturidade: Arquitetura Integrada com Azure Data Factory, SQL Server e Power BI</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Explore o caminho para a maturidade em dados com uma arquitetura integrada utilizando Azure Data Factory, SQL Server e Power BI.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">EC</div>
-                <div class="speaker-info">
-                  <h4>Elvira Cambe</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Alexandre Capita -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 TBA</div>
-              <h3 class="session-title">AVD para o Local de Trabalho Moderno: Arquitetura e Boas Práticas</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Descubra as melhores práticas e arquiteturas para implementar Azure Virtual Desktop no local de trabalho moderno.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">AC</div>
-                <div class="speaker-info">
-                  <h4>Alexandre Capita</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tiago Costa -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 TBA</div>
-              <h3 class="session-title">Proteger o Azure OpenAI e os Serviços de Azure AI: Boas Práticas para o Terreno</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Aprenda boas práticas de segurança para proteger o Azure OpenAI e outros serviços de Azure AI em cenários reais.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">TC</div>
-                <div class="speaker-info">
-                  <h4>Tiago Costa</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Ladislau André -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 TBA</div>
-              <h3 class="session-title">Do Excel e Power BI ao Fabric: Capacitar a Próxima Geração de Profissionais de Dados</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Descubra como capacitar a próxima geração de profissionais de dados transitando do Excel e Power BI para o Microsoft Fabric.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">LA</div>
-                <div class="speaker-info">
-                  <h4>Ladislau André</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Cremildo Manhique -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 TBA</div>
-              <h3 class="session-title">Adoção de Zero Trust com o Microsoft Intune: Reforçar o Pilar dos Dispositivos</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Aprenda como implementar Zero Trust usando Microsoft Intune para reforçar a segurança do pilar de dispositivos.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">CM</div>
-                <div class="speaker-info">
-                  <h4>Cremildo Manhique</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- André Melancia -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 TBA</div>
-              <h3 class="session-title">Desenvolver para a Inclusão com IA: Uma História com o Azure</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Explore como desenvolver soluções inclusivas usando Inteligência Artificial e serviços do Azure.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">AM</div>
-                <div class="speaker-info">
-                  <h4>André Melancia</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Francisca Peixoto -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 TBA</div>
-              <h3 class="session-title">Atalhos do Copilot para Tarefas do Dia a Dia</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Most people use Copilot for drafting and summarizing — but that's only the beginning. In this fast-paced, practical session I will share the less-known, high-impact Copilot capabilities that can transform your daily work.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">FP</div>
-                <div class="speaker-info">
-                  <h4>Francisca Peixoto</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- José Tabula Afonso -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 TBA</div>
-              <h3 class="session-title">Engenharia de Prompts e os seus Benefícios</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Aprenda técnicas de engenharia de prompts e como elas podem beneficiar o seu trabalho com IA.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">JA</div>
-                <div class="speaker-info">
-                  <h4>José Tabula Afonso</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Edson Alberto Diogo -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 TBA</div>
-              <h3 class="session-title">DevOps com AI - Código e Pipeline</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Explore como integrar Inteligência Artificial em práticas de DevOps para otimizar código e pipelines.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">ED</div>
-                <div class="speaker-info">
-                  <h4>Edson Alberto Diogo</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Lídia André -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 TBA</div>
-              <h3 class="session-title">Copilot Chat</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Descubra o poder do Copilot Chat e como ele pode transformar a sua produtividade no dia a dia.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">LA</div>
-                <div class="speaker-info">
-                  <h4>Lídia André</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Shalom Mundele André -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 TBA</div>
-              <h3 class="session-title">Converse com seus dados usando agentes de dados do Microsoft Fabric</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Aprenda como usar agentes de dados do Microsoft Fabric para interagir com seus dados de forma conversacional.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">SA</div>
-                <div class="speaker-info">
-                  <h4>Shalom Mundele André</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Márcia Santos -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 Morning</div>
-              <h3 class="session-title">Excel e Inteligência Artificial: Aplicações Práticas</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Descobre como a Inteligência Artificial pode transformar o Excel numa ferramenta ainda mais poderosa. Nesta sessão prática, exploram-se aplicações reais de IA para automatizar tarefas, analisar dados e apoiar decisões.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">MS</div>
-                <div class="speaker-info">
-                  <h4>Márcia Santos</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
+      <!-- Sessions Container - Loaded from JSON -->
+      <div id="sessions-container">
+        <!-- Sessions will be loaded dynamically from /data/talks-africa.json -->
+        <div class="sessions-track active" id="track-pt">
+          <div class="sessions-grid">
+            <p style="color: rgba(255,255,255,0.5); text-align: center; padding: 40px;">Loading sessions...</p>
           </div>
         </div>
-      </div>
-
-      <!-- French Track -->
-      <div class="sessions-track" id="track-fr">
-        <div class="sessions-grid">
-          <!-- Rodrigue YENGO -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 Afternoon</div>
-              <h3 class="session-title">Microsoft Fabric: Construire la base de données clients ultime</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Construire la base de données clients ultime dans l'écosystème Microsoft avec Microsoft Fabric.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">RY</div>
-                <div class="speaker-info">
-                  <h4>Rodrigue YENGO</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Cherifoulaye DIALLO -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 Morning</div>
-              <h3 class="session-title">Microsoft Purview: Lutter Contre la fuite de données</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Implémenter des mesures pour lutter Contre la fuite de données à travers Microsoft Purview.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">CD</div>
-                <div class="speaker-info">
-                  <h4>Cherifoulaye DIALLO</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Guisse Mamadou -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 08h30 - 09h00 GMT</div>
-              <h3 class="session-title">Digitalisation d'une demande de congé</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Automatisation d'un processus de validation d'une demande de congé et enregistrement d'un fiche de congé dans une bibliothèque de documents.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">GM</div>
-                <div class="speaker-info">
-                  <h4>Guisse Mamadou</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Ariane Djeupang -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 10h00 GMT+1</div>
-              <h3 class="session-title">Zero-Harm AI: Tableau de bord de l'IA responsable de Microsoft dans Azure</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Le déploiement éthique de l'IA nécessite plus que de bonnes intentions, il exige des garanties techniques vérifiables. Cette session montre comment opérationnaliser le tableau de bord Responsible AI Dashboard de Microsoft dans les pipelines Azure ML.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">AD</div>
-                <div class="speaker-info">
-                  <h4>Ariane Djeupang</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Frank Boucher -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 14h00 - 16h00 GMT+1</div>
-              <h3 class="session-title">Quand vos apps apprennent à voir</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">L'IA capable de comprendre des images et des vidéos, ça sonne impressionnant… et compliqué. Mais ce n'est pas obligé de l'être. Et si vos applications pouvaient décrire ce qu'il y a dans une photo, répondre à des questions sur une vidéo ou déclencher des actions basées sur ce qu'elles « voient » ?</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">FB</div>
-                <div class="speaker-info">
-                  <h4>Frank Boucher</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Jamel ABED -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 Afternoon</div>
-              <h3 class="session-title">Introduction à Microsoft SharePoint Embedded</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Cette session est conçue pour vous aider à démarrer avec SharePoint Embedded, un puissant système de gestion de fichiers et de documents basé sur le cloud qui s'intègre parfaitement à toute application.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">JA</div>
-                <div class="speaker-info">
-                  <h4>Jamel ABED</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Walid CHAFROUD -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 Morning/Afternoon</div>
-              <h3 class="session-title">Build your first Power Apps with No code</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Turn your ideas into real apps—without coding. In this session, you'll see how Microsoft Power Apps empowers anyone to build smart, professional business applications in minutes.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">WC</div>
-                <div class="speaker-info">
-                  <h4>Walid CHAFROUD</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
+        <div class="sessions-track" id="track-fr">
+          <div class="sessions-grid"></div>
         </div>
-      </div>
-
-      <!-- English Track -->
-      <div class="sessions-track" id="track-en">
-        <div class="sessions-grid">
-          <!-- Chiugo Josephat Okpala - Generative AI -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 17h00 CET</div>
-              <h3 class="session-title">Introduction to AI in Azure - Generative AI</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">AI imitates human behavior by using machine learning to interact with the environment and execute tasks without explicit directions. Generative AI is a subset of AI in which an AI model creates original content in response to a natural language prompt.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">CO</div>
-                <div class="speaker-info">
-                  <h4>Chiugo Josephat Okpala</h4>
-                  <p>Azure MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Chiugo Josephat Okpala - Information Extraction -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 19h00 CET</div>
-              <h3 class="session-title">Introduction to AI in Azure - Information Extraction</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">AI-powered information extraction replaces the need to manually inspect each piece of content for insights. Computer vision can extract insights from images to describe the people, places, things, and words they depict.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">CO</div>
-                <div class="speaker-info">
-                  <h4>Chiugo Josephat Okpala</h4>
-                  <p>Azure MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Isaiah Clifford Opoku -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 Afternoon</div>
-              <h3 class="session-title">Building Cloud-Native Applications with .NET Aspire and Azure</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">.NET Aspire is the next evolution for building cloud-native applications with .NET. In this session, we'll explore how Aspire simplifies microservices development, configuration, and deployment.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">IO</div>
-                <div class="speaker-info">
-                  <h4>Isaiah Clifford Opoku</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Abdul Wahab -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 Morning</div>
-              <h3 class="session-title">Business Process Flows</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">What is a business process flow? How can we handle certain validations using business rules? How can we manage multiple business rules for a table or across multi-level tables?</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">AW</div>
-                <div class="speaker-info">
-                  <h4>Abdul Wahab</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Rehab Ragab -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 Afternoon</div>
-              <h3 class="session-title">Modern DevOps on GitHub: An Agentic Approach</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">DevOps workflows are evolving, and GitHub offers a platform where planning, coding, reviewing, testing, and deployment can work together more intelligently. This session explores an agentic approach where different parts of the workflow can act independently.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">RR</div>
-                <div class="speaker-info">
-                  <h4>Rehab Ragab</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Olajumoke Toriola -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 Afternoon</div>
-              <h3 class="session-title">Prompt-Driven UI: Using GitHub Copilot to Ship a Mobile-First Website in 30 Minutes</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Modern frontend development demands speed, consistency, and exceptional user experience, especially for e-commerce platforms. In this session, I will demonstrate how GitHub Copilot can accelerate the delivery of a fully responsive, mobile-first storefront.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">OT</div>
-                <div class="speaker-info">
-                  <h4>Olajumoke Toriola</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Oluwaseyi Oluwawumiju -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 Afternoon</div>
-              <h3 class="session-title">From AI Hype to Enterprise Value: Designing Practical AI Architectures That Scale</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Many organizations struggle to move AI from proof-of-concept into real, scalable enterprise solutions. This session focuses on how to design practical, secure, and scalable AI enterprise architectures using real-world patterns.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">OO</div>
-                <div class="speaker-info">
-                  <h4>Oluwaseyi Oluwawumiju</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Audrey MENGUE -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 Afternoon</div>
-              <h3 class="session-title">Building Scalable APIs with Modern .NET for African Startups</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">African startups need APIs that scale without increasing complexity and cost. In this session, Audrey Mengue shows how modern .NET 8 and ASP.NET Core can be used to build fast, secure, and scalable APIs.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">AM</div>
-                <div class="speaker-info">
-                  <h4>Audrey MENGUE</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Joseph Afeso -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 Morning</div>
-              <h3 class="session-title">M365 User Offboarding: Secure Accounts When Employees Leave</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Every day, employees join organizations and every day, others leave. Knowing how to properly offboard users in Microsoft 365 is critical to protecting company data and maintaining security.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">JA</div>
-                <div class="speaker-info">
-                  <h4>Joseph Afeso</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Heba Ahmed Ali Hegab -->
-          <div class="session-card">
-            <div class="session-header">
-              <div class="session-time">🕐 Morning</div>
-              <h3 class="session-title">Microsoft Syntex</h3>
-            </div>
-            <div class="session-body">
-              <p class="session-description">Learn about Microsoft Syntex and how it can transform your content management and document processing workflows.</p>
-              <div class="session-speaker">
-                <div class="speaker-avatar">HH</div>
-                <div class="speaker-info">
-                  <h4>Heba Ahmed Ali Hegab</h4>
-                  <p>Microsoft MVP</p>
-                </div>
-                <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
-              </div>
-            </div>
-          </div>
+        <div class="sessions-track" id="track-en">
+          <div class="sessions-grid"></div>
         </div>
       </div>
     </div>
@@ -2478,6 +1888,8 @@
   </footer>
 
   <script>
+    let talksData = null;
+    
     function setLanguage(lang) {
       document.documentElement.lang = lang;
       
@@ -2505,16 +1917,95 @@
       });
     }
     
-    // Load saved language preference
-    document.addEventListener('DOMContentLoaded', function() {
-      const savedLang = localStorage.getItem('mvpconf-africa-lang') || 'en';
-      setLanguage(savedLang);
+    function createSessionCard(talk) {
+      const timeDisplay = talk.time || 'TBA';
+      return `
+        <div class="session-card">
+          <div class="session-header">
+            <div class="session-time">🕐 ${timeDisplay}</div>
+            <h3 class="session-title">${talk.title}</h3>
+          </div>
+          <div class="session-body">
+            <p class="session-description">${talk.abstract}</p>
+            <div class="session-speaker">
+              <div class="speaker-avatar">${talk.initials}</div>
+              <div class="speaker-info">
+                <h4>${talk.speakerName}</h4>
+                <p>Microsoft MVP</p>
+              </div>
+              <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    
+    function renderTracks(data) {
+      const tabsContainer = document.getElementById('track-tabs-container');
+      const sessionsContainer = document.getElementById('sessions-container');
       
-      // Setup track tab click handlers
-      document.querySelectorAll('.track-tab').forEach(tab => {
-        tab.addEventListener('click', function() {
+      // Track mapping: JSON key -> display tab key
+      const trackMapping = {
+        'pt-br': { key: 'pt', flag: '🇧🇷', name: 'Português' },
+        'fr-FR': { key: 'fr', flag: '🇫🇷', name: 'Français' },
+        'en-US': { key: 'en', flag: '🇬🇧', name: 'English' }
+      };
+      
+      // Clear existing content
+      tabsContainer.innerHTML = '';
+      sessionsContainer.innerHTML = '';
+      
+      // Create tabs and track containers
+      let isFirst = true;
+      for (const [jsonKey, trackInfo] of Object.entries(trackMapping)) {
+        const track = data.tracks[jsonKey];
+        if (!track) continue;
+        
+        // Create tab button
+        const tabBtn = document.createElement('button');
+        tabBtn.className = 'track-tab' + (isFirst ? ' active' : '');
+        tabBtn.dataset.track = trackInfo.key;
+        tabBtn.textContent = `${trackInfo.flag} ${trackInfo.name} (${track.talks.length})`;
+        tabBtn.addEventListener('click', function() {
           setTrack(this.dataset.track);
         });
+        tabsContainer.appendChild(tabBtn);
+        
+        // Create track container
+        const trackDiv = document.createElement('div');
+        trackDiv.className = 'sessions-track' + (isFirst ? ' active' : '');
+        trackDiv.id = 'track-' + trackInfo.key;
+        
+        const gridDiv = document.createElement('div');
+        gridDiv.className = 'sessions-grid';
+        
+        // Add session cards
+        track.talks.forEach(talk => {
+          gridDiv.innerHTML += createSessionCard(talk);
+        });
+        
+        trackDiv.appendChild(gridDiv);
+        sessionsContainer.appendChild(trackDiv);
+        
+        isFirst = false;
+      }
+    }
+    
+    async function loadTalks() {
+      try {
+        const response = await fetch('/data/talks-africa.json');
+        talksData = await response.json();
+        renderTracks(talksData);
+      } catch (error) {
+        console.error('Error loading talks:', error);
+      }
+    }
+    
+    // Load saved language preference and talks data
+    document.addEventListener('DOMContentLoaded', function() {
+      loadTalks().then(() => {
+        const savedLang = localStorage.getItem('mvpconf-africa-lang') || 'en';
+        setLanguage(savedLang);
       });
     });
   </script>
