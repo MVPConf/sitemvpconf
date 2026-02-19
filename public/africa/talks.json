@@ -268,7 +268,7 @@
           ],
           "title": "Zero-Harm AI: Mise en œuvre du tableau de bord de l'IA responsable de Microsoft dans Azure",
           "abstract": "Le déploiement éthique de l'IA nécessite plus que de bonnes intentions, il exige des garanties techniques vérifiables. Cette session montre comment opérationnaliser le tableau de bord Responsible AI Dashboard de Microsoft dans les pipelines Azure ML.",
-          "time": "10h AM GMT+1"
+          "time": "10h AM GMT"
         },
         {
           "id": 19,
@@ -282,7 +282,7 @@
           ],
           "title": "Quand vos apps apprennent à voir",
           "abstract": "L'IA capable de comprendre des images et des vidéos, ça sonne impressionnant… et compliqué. Mais ce n'est pas obligé de l'être. Et si vos applications pouvaient décrire ce qu'il y a dans une photo, répondre à des questions sur une vidéo ou déclencher des actions basées sur ce qu'elles « voient » ?",
-          "time": "2h PM - 4h PM GMT+1"
+          "time": "2h PM - 4h PM GMT"
         },
         {
           "id": 20,

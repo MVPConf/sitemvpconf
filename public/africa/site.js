@@ -5,7 +5,7 @@ function displayLocalTime() {
   const localTimeEl = document.getElementById('local-time');
   if (!localTimeEl) return;
   
-  // Event times in UTC+1: March 7, 2026 08:00-17:00 (UTC+1 = 07:00-16:00 UTC)
+  // Event times in UTC: March 7, 2026 08:00-17:00 (UTC = 07:00-16:00 UTC)
   const startUTC = new Date('2026-03-07T07:00:00Z');
   const endUTC = new Date('2026-03-07T16:00:00Z');
   
@@ -21,7 +21,7 @@ function displayLocalTime() {
   // Get timezone abbreviation or offset
   const tzAbbr = new Date().toLocaleTimeString(lang, { timeZoneName: 'short' }).split(' ').pop();
   
-  // Check if local time differs from UTC+1 (offset 1)
+  // Check if local time differs from UTC (offset 1)
   const utcOffset = -new Date().getTimezoneOffset() / 60;
   if (utcOffset === 1) {
     localTimeEl.style.display = 'none';
