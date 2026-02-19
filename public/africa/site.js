@@ -245,16 +245,18 @@ async function loadTalks() {
   }
 }
 
-// Registration coming soon alert
-function showRegistrationAlert(event) {
+// Registration modal functions
+function openRegistrationModal(event) {
   event.preventDefault();
-  const lang = document.documentElement.lang || 'en';
-  const messages = {
-    en: '🎫 Registration coming soon!\n\nThe registration link will be available shortly. Stay tuned!',
-    fr: '🎫 Inscription bientôt disponible!\n\nLe lien d\'inscription sera disponible prochainement. Restez connecté!',
-    pt: '🎫 Inscrições em breve!\n\nO link para inscrição estará disponível em breve. Fique ligado!'
-  };
-  alert(messages[lang] || messages.en);
+  const modal = document.getElementById('registration-modal');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeRegistrationModal() {
+  const modal = document.getElementById('registration-modal');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
 }
 
 // Load saved language preference and talks data
@@ -263,7 +265,22 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Attach click handlers to registration buttons
   document.querySelectorAll('.register-btn').forEach(btn => {
-    btn.addEventListener('click', showRegistrationAlert);
+    btn.addEventListener('click', openRegistrationModal);
+  });
+  
+  // Close modal when clicking outside
+  const modal = document.getElementById('registration-modal');
+  modal.addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeRegistrationModal();
+    }
+  });
+  
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeRegistrationModal();
+    }
   });
   
   loadTalks().then(() => {
