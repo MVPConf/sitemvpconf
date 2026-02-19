@@ -5,7 +5,7 @@ function displayLocalTime() {
   const localTimeEl = document.getElementById('local-time');
   if (!localTimeEl) return;
   
-  // Event times in UTC: March 7, 2026 08:00-17:00 (UTC = 07:00-16:00 UTC)
+  // Event times in UTC: March 7, 2026 08:00-17:00 (UTC+1 = 07:00-16:00 UTC)
   const startUTC = new Date('2026-03-07T07:00:00Z');
   const endUTC = new Date('2026-03-07T16:00:00Z');
   
