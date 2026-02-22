@@ -68,7 +68,7 @@ function setTrack(track) {
 
 function createSpeakerCard(speaker, language) {
   const langFlags = {
-    'pt-br': '🇧🇷',
+    'pt-br': '🇦🇴',
     'fr-FR': '🇫🇷',
     'en-US': '🇬🇧'
   };
@@ -189,7 +189,7 @@ function renderTracks(data) {
   
   // Track mapping: JSON key -> display tab key
   const trackMapping = {
-    'pt-br': { key: 'pt', flag: '🇧🇷', name: 'Português' },
+    'pt-br': { key: 'pt', flag: '🇦🇴', name: 'Português' },
     'fr-FR': { key: 'fr', flag: '🇫🇷', name: 'Français' },
     'en-US': { key: 'en', flag: '🇬🇧', name: 'English' }
   };
