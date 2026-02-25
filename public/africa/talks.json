@@ -11,12 +11,14 @@
           "speakers": [
             {
               "name": "José Quintino",
+              "title": "Microsoft MVP",
               "linkedin": "https://www.linkedin.com/in/josequintinocosta/",
               "photoUrl": "./images/speakers/jose-quintino.jpeg",
               "initials": "JQ"
             },
             {
               "name": "Rajir Palhares",
+              "title": "CSA (Cloud Solution Architect)",
               "linkedin": "https://www.linkedin.com/in/rajirpalhares/",
               "photoUrl": "./images/speakers/rajir-palhares.jpeg",
               "initials": "RP"
@@ -31,6 +33,7 @@
           "speakers": [
             {
               "name": "Abel Azarias Marquele",
+              "title": "Desenvolvedor Sênior de BI",
               "linkedin": "https://www.linkedin.com/in/abelazariasmarquele/",
               "photoUrl": "./images/speakers/abel-azarias-marquele.png",
               "initials": "AA"
@@ -45,6 +48,7 @@
           "speakers": [
             {
               "name": "Elvira Cambe",
+              "title": "Business Intelligence Analyst & Developer",
               "linkedin": "https://www.linkedin.com/in/elviracambe/",
               "photoUrl": "./images/speakers/elvira-cambe.png",
               "initials": "EC"
@@ -59,6 +63,7 @@
           "speakers": [
             {
               "name": "Alexandre Capita",
+              "title": "Information Security Officer",
               "linkedin": "https://www.linkedin.com/in/alexandre-c-95643952/",
               "photoUrl": "./images/speakers/alexandre-capita.jpeg",
               "initials": "AC"
@@ -73,6 +78,7 @@
           "speakers": [
             {
               "name": "Tiago Costa",
+              "title": "Microsoft MVP",
               "linkedin": "https://www.linkedin.com/in/tiagocosta/",
               "photoUrl": "./images/speakers/tiago-costa.jpeg",
               "initials": "TC"
@@ -87,6 +93,7 @@
           "speakers": [
             {
               "name": "Ladislau André",
+              "title": "Data Analyst",
               "linkedin": "https://www.linkedin.com/in/ladislau-andr%C3%A9-data-analyst/",
               "photoUrl": "./images/speakers/ladislau-andre.jpeg",
               "initials": "LA"
@@ -101,6 +108,7 @@
           "speakers": [
             {
               "name": "Cremildo Manhique",
+              "title": "Systems Engineer",
               "linkedin": "https://www.linkedin.com/in/cremildosamanhique",
               "photoUrl": "./images/speakers/cremildo-manhique.jpeg",
               "initials": "CM"
@@ -115,6 +123,7 @@
           "speakers": [
             {
               "name": "André Melancia",
+              "title": "Microsoft Certified Trainer",
               "linkedin": "https://www.linkedin.com/in/AndreMelancia",
               "photoUrl": "./images/speakers/andre-melancia.jpeg",
               "initials": "AM"
@@ -125,24 +134,11 @@
           "time": "TBA"
         },
         {
-          "id": 9,
-          "speakers": [
-            {
-              "name": "Francisca Peixoto",
-              "linkedin": "https://www.linkedin.com/in/francisca-peixoto/",
-              "photoUrl": "./images/speakers/francisca-peixoto.jpeg",
-              "initials": "FP"
-            }
-          ],
-          "title": "Atalhos do Copilot para Tarefas do Dia a Dia",
-          "abstract": "Most people use Copilot for drafting and summarizing — but that's only the beginning. In this fast-paced, practical session I will share the less-known, high-impact Copilot capabilities that can transform your daily work.",
-          "time": "TBA"
-        },
-        {
           "id": 10,
           "speakers": [
             {
               "name": "José Tabula Afonso",
+              "title": "Data Science",
               "linkedin": "https://www.linkedin.com/in/jjoseafonso/",
               "photoUrl": "./images/speakers/jose-tabula-afonso.png",
               "initials": "JA"
@@ -157,6 +153,7 @@
           "speakers": [
             {
               "name": "Edson Alberto Diogo",
+              "title": "Expert DevOps",
               "linkedin": "https://www.linkedin.com/in/edsondiogo/",
               "photoUrl": "./images/speakers/edson-alberto-diogo.jpeg",
               "initials": "ED"
@@ -171,6 +168,7 @@
           "speakers": [
             {
               "name": "Lídia André",
+              "title": "Senior Customer Success Account Manager",
               "linkedin": "https://www.linkedin.com/in/lidia-andre-83903a90/",
               "photoUrl": "./images/speakers/lidia-andre.jpeg",
               "initials": "LA"
@@ -185,6 +183,7 @@
           "speakers": [
             {
               "name": "Shalom Mundele André",
+              "title": "Microsoft Student Ambassador",
               "linkedin": "https://www.linkedin.com/in/shalomandre/",
               "photoUrl": "./images/speakers/shalom-mundele-andre.jpeg",
               "initials": "SA"
@@ -199,6 +198,7 @@
           "speakers": [
             {
               "name": "Márcia Santos",
+              "title": "Microsoft MVP",
               "linkedin": "https://www.linkedin.com/in/marciasantos",
               "photoUrl": "./images/speakers/marcia-santos.jpeg",
               "initials": "MS"
