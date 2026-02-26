@@ -166,7 +166,7 @@ function createSessionCard(talk) {
       ${avatarEl}
       <div class="speaker-info">
         ${nameEl}
-        <p>Microsoft MVP</p>
+        <p>${speaker.title}</p>
       </div>
     </div>
   `;
