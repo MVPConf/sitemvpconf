@@ -181,7 +181,10 @@ function createSessionCard(talk) {
     return `
     <div class="agenda-speaker">
       ${avatarEl}
-      ${nameEl}
+      <div class="speaker-info">
+        ${nameEl}
+        <p>${speaker.title|| ""}</p>
+      </div>
     </div>
   `;
   }).join('');
