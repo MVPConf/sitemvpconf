@@ -291,7 +291,8 @@ function renderTracks(data) {
     const tabBtn = document.createElement('button');
     tabBtn.className = 'track-tab' + (isFirst ? ' active' : '');
     tabBtn.dataset.track = trackInfo.key;
-    tabBtn.textContent = `${trackInfo.flag} ${trackInfo.name} (${track.talks.length})`;
+    const talkCount = track.talks.filter(talk => !talk.isBreak).length;
+    tabBtn.textContent = `${trackInfo.flag} ${trackInfo.name} (${talkCount})`;
     tabBtn.addEventListener('click', function() {
       setTrack(this.dataset.track);
     });
