@@ -142,6 +142,23 @@ function renderSpeakers(data) {
 
 function createSessionCard(talk) {
   const timeDisplay = talk.time || 'TBA';
+  
+  // Handle break items differently
+  if (talk.isBreak) {
+    return `
+      <div class="agenda-item agenda-break">
+        <div class="agenda-time-block">
+          <div class="agenda-time agenda-time-break">${timeDisplay}</div>
+          <div class="agenda-time-line"></div>
+        </div>
+        <div class="agenda-content agenda-content-break">
+          <h3 class="agenda-title">${talk.title}</h3>
+          <p class="agenda-abstract">${talk.abstract}</p>
+        </div>
+      </div>
+    `;
+  }
+  
   const speakerNames = talk.speakers.map(s => s.name).join(' & ');
   const firstSpeaker = talk.speakers[0];
   const initials = talk.speakers.map(s => s.initials).join('/');
@@ -154,38 +171,46 @@ function createSessionCard(talk) {
     const hasLinkedin = speaker.linkedin && speaker.linkedin.trim() !== '';
     
     const avatarEl = hasLinkedin 
-      ? `<a href="${speaker.linkedin}" target="_blank" rel="noopener noreferrer" class="speaker-avatar speaker-link">${avatarContent}</a>`
-      : `<div class="speaker-avatar">${avatarContent}</div>`;
+      ? `<a href="${speaker.linkedin}" target="_blank" rel="noopener noreferrer" class="agenda-speaker-avatar speaker-link">${avatarContent}</a>`
+      : `<div class="agenda-speaker-avatar">${avatarContent}</div>`;
     
     const nameEl = hasLinkedin
-      ? `<a href="${speaker.linkedin}" target="_blank" rel="noopener noreferrer" class="speaker-name-link"><h4>${speaker.name}</h4></a>`
-      : `<h4>${speaker.name}</h4>`;
+      ? `<a href="${speaker.linkedin}" target="_blank" rel="noopener noreferrer" class="speaker-name-link"><span class="agenda-speaker-name">${speaker.name}</span></a>`
+      : `<span class="agenda-speaker-name">${speaker.name}</span>`;
     
     return `
-    <div class="session-speaker">
+    <div class="agenda-speaker">
       ${avatarEl}
-      <div class="speaker-info">
-        ${nameEl}
-        <p>Microsoft MVP</p>
-      </div>
+      ${nameEl}
     </div>
   `;
   }).join('');
   
   return `
-    <div class="session-card">
-      <div class="session-header">
-        <h3 class="session-title">${talk.title}</h3>
+    <div class="agenda-item">
+      <div class="agenda-time-block">
+        <div class="agenda-time">${timeDisplay}</div>
+        <div class="agenda-time-line"></div>
       </div>
-      <div class="session-body">
-        <p class="session-description">${talk.abstract}</p>
-        <div class="session-speakers-list">
+      <div class="agenda-content">
+        <div class="agenda-speakers-row">
           ${speakersHtml}
         </div>
-        <span class="online-badge"><span class="online-dot"></span>ONLINE</span>
+        <h3 class="agenda-title">${talk.title}</h3>
+        <p class="agenda-abstract">${talk.abstract}</p>
+        <span class="agenda-online-badge"><span class="online-dot"></span>ONLINE</span>
       </div>
     </div>
   `;
+}
+
+// Sort talks by time
+function sortTalksByTime(talks) {
+  return [...talks].sort((a, b) => {
+    const timeA = a.time || 'ZZZ';
+    const timeB = b.time || 'ZZZ';
+    return timeA.localeCompare(timeB);
+  });
 }
 
 function renderTracks(data) {
@@ -224,15 +249,16 @@ function renderTracks(data) {
     trackDiv.className = 'sessions-track' + (isFirst ? ' active' : '');
     trackDiv.id = 'track-' + trackInfo.key;
     
-    const gridDiv = document.createElement('div');
-    gridDiv.className = 'sessions-grid';
+    const agendaList = document.createElement('div');
+    agendaList.className = 'agenda-list';
     
-    // Add session cards
-    track.talks.forEach(talk => {
-      gridDiv.innerHTML += createSessionCard(talk);
+    // Sort and add session cards
+    const sortedTalks = sortTalksByTime(track.talks);
+    sortedTalks.forEach(talk => {
+      agendaList.innerHTML += createSessionCard(talk);
     });
     
-    trackDiv.appendChild(gridDiv);
+    trackDiv.appendChild(agendaList);
     sessionsContainer.appendChild(trackDiv);
     
     isFirst = false;
