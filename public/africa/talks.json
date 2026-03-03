@@ -362,7 +362,7 @@
           ],
           "title": "Introduction to AI in Azure - Generative AI",
           "abstract": "AI imitates human behavior by using machine learning to interact with the environment and execute tasks without explicit directions on what to output. Generative AI is a subset of AI in which an AI model creates original content in response to a natural language prompt.",
-          "time": "5:00 PM CET"
+          "time": "TBA"
         },
         {
           "id": 23,
@@ -376,7 +376,7 @@
           ],
           "title": "Introduction to AI in Azure - Information Extraction",
           "abstract": "AI-powered information extraction replaces the need to manually inspect each piece of content for insights. Computer vision can extract insights from images to describe the people, places, things, and words they depict.",
-          "time": "7:00 PM CET"
+          "time": "TBA"
         },
         {
           "id": 24,
@@ -390,7 +390,7 @@
           ],
           "title": "Building Cloud-Native Applications with .NET Aspire and Azure",
           "abstract": ".NET Aspire is the next evolution for building cloud-native applications with .NET. In this session, we'll explore how Aspire simplifies microservices development, configuration, and deployment.",
-          "time": "Afternoon"
+          "time": "TBA"
         },
         {
           "id": 25,
@@ -404,7 +404,7 @@
           ],
           "title": "Business Process Flows",
           "abstract": "What is a business process flow? How can we handle certain validations using business rules? How can we manage multiple business rules for a table or across multi-level tables?",
-          "time": "Morning"
+          "time": "TBA"
         },
         {
           "id": 26,
@@ -418,7 +418,7 @@
           ],
           "title": "Modern DevOps on GitHub: An Agentic Approach",
           "abstract": "DevOps workflows are evolving, and GitHub offers a platform where planning, coding, reviewing, testing, and deployment can work together more intelligently. This session explores an agentic approach where different parts of the workflow can act independently while humans stay in control of critical decisions.",
-          "time": "Afternoon"
+          "time": "TBA"
         },
         {
           "id": 27,
@@ -432,7 +432,7 @@
           ],
           "title": "Prompt-Driven UI: Using GitHub Copilot to Ship a Mobile-First Website in 30 Minutes",
           "abstract": "Modern frontend development demands speed, consistency, and exceptional user experience, especially for e-commerce platforms. In this session, I will demonstrate how GitHub Copilot can accelerate the delivery of a fully responsive, mobile-first storefront from idea to implementation.",
-          "time": "Afternoon"
+          "time": "TBA"
         },
         {
           "id": 28,
@@ -446,7 +446,7 @@
           ],
           "title": "From AI Hype to Enterprise Value: Designing Practical AI Architectures That Scale",
           "abstract": "Many organizations struggle to move AI from proof-of-concept into real, scalable enterprise solutions. This session focuses on how to design practical, secure, and scalable AI enterprise architectures using real-world patterns.",
-          "time": "Afternoon"
+          "time": "TBA"
         },
         {
           "id": 29,
@@ -460,7 +460,7 @@
           ],
           "title": "Building Scalable APIs with Modern .NET for African Startups",
           "abstract": "African startups need APIs that scale without increasing complexity and cost. In this session, Audrey Mengue shows how modern .NET 8 and ASP.NET Core can be used to build fast, secure, and scalable APIs using Minimal APIs, clean architecture principles, authentication, and performance best practices.",
-          "time": "Afternoon"
+          "time": "TBA"
         },
         {
           "id": 30,
@@ -474,7 +474,7 @@
           ],
           "title": "M365 User Offboarding: Secure Accounts When Employees Leave",
           "abstract": "Every day, employees join organizations and every day, others leave. Knowing how to properly offboard users in Microsoft 365 is critical to protecting company data and maintaining security.",
-          "time": "Morning"
+          "time": "TBA"
         },
         {
           "id": 31,
@@ -488,7 +488,7 @@
           ],
           "title": "Microsoft Syntex",
           "abstract": "Learn about Microsoft Syntex and how it can transform your content management and document processing workflows.",
-          "time": "Morning"
+          "time": "TBA"
         }
       ]
     }
