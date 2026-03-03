@@ -189,8 +189,11 @@ function createSessionCard(talk) {
   `;
   }).join('');
   
+  // Generate data attributes for live status check
+  const timeDataAttr = timeDisplay !== 'TBA' ? `data-time="${timeDisplay}"` : '';
+  
   return `
-    <div class="agenda-item">
+    <div class="agenda-item" ${timeDataAttr}>
       <div class="agenda-time-block">
         <div class="agenda-time">${timeDisplay}</div>
         <div class="agenda-time-line"></div>
@@ -201,10 +204,57 @@ function createSessionCard(talk) {
         </div>
         <h3 class="agenda-title">${talk.title}</h3>
         <p class="agenda-abstract">${talk.abstract}</p>
-        <span class="agenda-online-badge"><span class="online-dot"></span>ONLINE</span>
+        <span class="agenda-online-badge" style="display: none;"><span class="online-dot"></span>AO VIVO</span>
       </div>
     </div>
   `;
+}
+
+// Parse time range like "09:00 – 09:30" and check if current time is within
+function isSessionLive(timeStr) {
+  if (!timeStr || timeStr === 'TBA') return false;
+  
+  // Event date: March 7, 2026
+  const eventDate = '2026-03-07';
+  const now = new Date();
+  
+  // Parse time range (handles both "–" and "-")
+  const timeParts = timeStr.split(/\s*[–-]\s*/);
+  if (timeParts.length !== 2) return false;
+  
+  const [startTime, endTime] = timeParts;
+  
+  // Create Date objects for start and end times (UTC+1 = West Africa Time)
+  const startDate = new Date(`${eventDate}T${startTime}:00+01:00`);
+  const endDate = new Date(`${eventDate}T${endTime}:00+01:00`);
+  
+  return now >= startDate && now <= endDate;
+}
+
+// Update live status for all agenda items
+function updateLiveStatus() {
+  const agendaItems = document.querySelectorAll('.agenda-item[data-time]');
+  
+  agendaItems.forEach(item => {
+    const timeStr = item.getAttribute('data-time');
+    const badge = item.querySelector('.agenda-online-badge');
+    
+    if (badge) {
+      if (isSessionLive(timeStr)) {
+        badge.style.display = 'inline-flex';
+        item.classList.add('is-live');
+      } else {
+        badge.style.display = 'none';
+        item.classList.remove('is-live');
+      }
+    }
+  });
+}
+
+// Start live status checker (updates every 30 seconds)
+function startLiveStatusChecker() {
+  updateLiveStatus();
+  setInterval(updateLiveStatus, 30000);
 }
 
 // Sort talks by time
@@ -274,6 +324,7 @@ async function loadTalks() {
     talksData = await response.json();
     renderSpeakers(talksData);
     renderTracks(talksData);
+    startLiveStatusChecker();
   } catch (error) {
     console.error('Error loading talks:', error);
   }
