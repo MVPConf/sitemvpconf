@@ -344,6 +344,21 @@
           "title": "Build your first Power Apps with No code",
           "abstract": "Turn your ideas into real apps—without coding. In this session, you'll see how Microsoft Power Apps empowers anyone to build smart, professional business applications in minutes.",
           "time": "10:30 – 11:00"
+        },
+        {
+          "id": 32,
+          "speakers": [
+            {
+              "name": "Wael BAAZOUZI",
+              "linkedin": "https://www.linkedin.com/in/wael-baazouzi/",
+              "title": "Data Project Manager & Microsoft Certified Trainer | Specializing in Power BI, Data Analytics, Data Engineer and Data Science | PMP® & IBM Big Data Certified | Expert in Microsoft Fabric",
+              "photoUrl": "./images/speakers/wael-baazouzi.png",
+              "initials": "WB"
+            }
+          ],
+          "title": "Microsoft Fabric & Power BI",
+          "abstract": "Cette session présente comment Microsoft Fabric, en synergie avec Power BI, permet de construire une plateforme analytique unifiée de bout en bout. Les participants découvriront une approche moderne allant de l'ingestion des données à la visualisation interactive, avec un focus sur la simplification des architectures BI, la performance et la prise de décision rapide grâce à des cas concrets.",
+          "time": "14:30 – 15:00"
         }
       ]
     },
