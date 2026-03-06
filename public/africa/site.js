@@ -121,7 +121,7 @@ function renderSpeakers(data) {
   
   // Collect unique speakers from all tracks
   for (const [langKey, track] of Object.entries(data.tracks)) {
-    track.talks.forEach(talk => {
+    track.talks.filter(talk => !talk.hidden).forEach(talk => {
       talk.speakers.forEach(speaker => {
         if (!seenNames.has(speaker.name)) {
           seenNames.add(speaker.name);
@@ -291,7 +291,7 @@ function renderTracks(data) {
     const tabBtn = document.createElement('button');
     tabBtn.className = 'track-tab' + (isFirst ? ' active' : '');
     tabBtn.dataset.track = trackInfo.key;
-    const talkCount = track.talks.filter(talk => !talk.isBreak).length;
+    const talkCount = track.talks.filter(talk => !talk.isBreak && !talk.hidden).length;
     tabBtn.textContent = `${trackInfo.flag} ${trackInfo.name} (${talkCount})`;
     tabBtn.addEventListener('click', function() {
       setTrack(this.dataset.track);
@@ -306,8 +306,9 @@ function renderTracks(data) {
     const agendaList = document.createElement('div');
     agendaList.className = 'agenda-list';
     
-    // Sort and add session cards
-    const sortedTalks = sortTalksByTime(track.talks);
+    // Sort and add session cards (filter out hidden talks)
+    const visibleTalks = track.talks.filter(talk => !talk.hidden);
+    const sortedTalks = sortTalksByTime(visibleTalks);
     sortedTalks.forEach(talk => {
       agendaList.innerHTML += createSessionCard(talk);
     });
