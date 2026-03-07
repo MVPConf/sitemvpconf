@@ -2071,3 +2071,45 @@ html[lang="fr"] span[data-lang="en"], html[lang="fr"] span[data-lang="pt"] { dis
     font-size: 1rem;
   }
 }
+
+/* YouTube Watch Button */
+.session-youtube-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #FF0000, #CC0000);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
+}
+
+.session-youtube-btn:hover {
+  background: linear-gradient(135deg, #CC0000, #990000);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
+}
+
+.session-youtube-btn svg {
+  flex-shrink: 0;
+}
+
+.agenda-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+@media (max-width: 480px) {
+  .session-youtube-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}

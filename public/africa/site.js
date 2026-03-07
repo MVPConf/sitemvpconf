@@ -140,7 +140,7 @@ function renderSpeakers(data) {
   speakersContainer.innerHTML = shuffledSpeakers.map(speaker => createSpeakerCard(speaker, speaker.language)).join('');
 }
 
-function createSessionCard(talk) {
+function createSessionCard(talk, youtubeUrl) {
   const timeDisplay = talk.time || 'TBA';
   
   // Handle break items differently
@@ -192,6 +192,18 @@ function createSessionCard(talk) {
   // Generate data attributes for live status check
   const timeDataAttr = timeDisplay !== 'TBA' ? `data-time="${timeDisplay}"` : '';
   
+  // YouTube button HTML
+  const youtubeBtn = youtubeUrl ? `
+    <a href="${youtubeUrl}" target="_blank" rel="noopener noreferrer" class="session-youtube-btn" title="Watch on YouTube">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+      <span data-lang="en">Watch</span>
+      <span data-lang="fr">Voir</span>
+      <span data-lang="pt">Assistir</span>
+    </a>
+  ` : '';
+  
   return `
     <div class="agenda-item" ${timeDataAttr}>
       <div class="agenda-time-block">
@@ -204,7 +216,10 @@ function createSessionCard(talk) {
         </div>
         <h3 class="agenda-title">${talk.title}</h3>
         <p class="agenda-abstract">${talk.abstract}</p>
-        <span class="agenda-online-badge" style="display: none;"><span class="online-dot"></span>AO VIVO</span>
+        <div class="agenda-actions">
+          ${youtubeBtn}
+          <span class="agenda-online-badge" style="display: none;"><span class="online-dot"></span>AO VIVO</span>
+        </div>
       </div>
     </div>
   `;
@@ -272,9 +287,9 @@ function renderTracks(data) {
   
   // Track mapping: JSON key -> display tab key
   const trackMapping = {
-    'pt-br': { key: 'pt', flag: '🇦🇴', name: 'Português' },
-    'fr-FR': { key: 'fr', flag: '🇫🇷', name: 'Français' },
-    'en-US': { key: 'en', flag: '🇬🇧', name: 'English' }
+    'pt-br': { key: 'pt', flag: '🇦🇴', name: 'Português', youtube: 'https://www.youtube.com/watch?v=FX9xvzH9dII' },
+    'fr-FR': { key: 'fr', flag: '🇫🇷', name: 'Français', youtube: 'https://www.youtube.com/watch?v=p81l3QhaTKA' },
+    'en-US': { key: 'en', flag: '🇬🇧', name: 'English', youtube: 'https://www.youtube.com/watch?v=kmHjHJE5-Kc' }
   };
   
   // Clear existing content
@@ -310,7 +325,7 @@ function renderTracks(data) {
     const visibleTalks = track.talks.filter(talk => !talk.hidden);
     const sortedTalks = sortTalksByTime(visibleTalks);
     sortedTalks.forEach(talk => {
-      agendaList.innerHTML += createSessionCard(talk);
+      agendaList.innerHTML += createSessionCard(talk, trackInfo.youtube);
     });
     
     trackDiv.appendChild(agendaList);
