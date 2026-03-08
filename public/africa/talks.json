@@ -71,7 +71,8 @@
           ],
           "title": "AVD para o Local de Trabalho Moderno: Arquitetura e Boas Práticas",
           "abstract": "Descubra as melhores práticas e arquiteturas para implementar Azure Virtual Desktop no local de trabalho moderno.",
-          "time": "10:30 – 11:00"
+          "time": "10:30 – 11:00",
+          "hidden": true
         },
         {
           "id": 5,
@@ -176,7 +177,8 @@
           ],
           "title": "Copilot Chat",
           "abstract": "Descubra como usar o Copilot Chat para aumentar sua produtividade no dia a dia.",
-          "time": "15:30 – 16:00"
+          "time": "15:30 – 16:00",
+          "hidden": true
         },
         {
           "id": 13,
