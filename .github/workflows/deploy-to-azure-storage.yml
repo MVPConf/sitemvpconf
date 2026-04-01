@@ -68,7 +68,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Clean Azure Storage Container
-        uses: azure/CLI@v2
+        uses: azure/CLI@v3
         with:
           inlineScript: |
             echo "🧹 Limpando container \$web..."
@@ -78,7 +78,7 @@ jobs:
               --source '$web' || echo "Container já estava vazio ou erro na limpeza (continuando...)"
 
       - name: Upload Main Site to Azure Storage
-        uses: azure/CLI@v2
+        uses: azure/CLI@v3
         with:
           inlineScript: |
             echo "📤 Fazendo upload dos novos arquivos..."
@@ -91,7 +91,7 @@ jobs:
               --pattern '*'
 
       # - name: Upload Agenda App to Azure Storage
-      #   uses: azure/CLI@v2
+      #   uses: azure/CLI@v3
       #   with:
       #     inlineScript: |
       #       az storage blob upload-batch \
@@ -103,7 +103,7 @@ jobs:
       #         --pattern '*'
 
       # - name: Purge Azure CDN (optional)
-      #   uses: azure/CLI@v2
+      #   uses: azure/CLI@v3
       #   with:
       #     inlineScript: |
       #       if [ ! -z "${{ secrets.AZURE_CDN_PROFILE_NAME }}" ]; then
